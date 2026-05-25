@@ -1,0 +1,98 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
+
+const reviews = [
+  {
+    name: "Priya Mohan",
+    role: "B.Sc Agriculture · 2023 · Agronomist at ITC",
+    text: "Four years on a working farm taught me more than any textbook could. Imayam gave me both the science and the soil under my fingernails.",
+  },
+  {
+    name: "Karthik Raja",
+    role: "B.Tech Agri-Engineering · 2022 · Founder, AgriDrone Labs",
+    text: "The mechanisation labs and TNAU-aligned curriculum gave me the confidence to launch my own precision-farming startup straight out of college.",
+  },
+  {
+    name: "Anitha Selvam",
+    role: "B.Sc Horticulture · 2024 · Research Associate, ICAR",
+    text: "Our polyhouse training is hands-on from day one. The faculty treats every student like a future researcher.",
+  },
+];
+
+export function Testimonials() {
+  const [i, setI] = useState(0);
+  const next = () => setI((i + 1) % reviews.length);
+  const prev = () => setI((i - 1 + reviews.length) % reviews.length);
+
+  return (
+    <section className="py-24 lg:py-32">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="text-sm font-semibold text-primary tracking-widest uppercase">Voices</div>
+          <h2 className="mt-3 font-display text-4xl lg:text-5xl font-bold">
+            Stories from our <span className="text-gradient">alumni.</span>
+          </h2>
+        </div>
+
+        <div className="mt-14 max-w-3xl mx-auto">
+          <div className="relative rounded-3xl bg-card border shadow-glow p-8 lg:p-12 overflow-hidden">
+            <Quote className="absolute -top-2 -left-2 h-32 w-32 text-primary/5" />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.4 }}
+                className="relative"
+              >
+                <div className="flex gap-1 text-accent">
+                  {Array.from({ length: 5 }).map((_, k) => (
+                    <Star key={k} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <p className="mt-5 font-display text-xl lg:text-2xl leading-relaxed text-foreground">
+                  "{reviews[i].text}"
+                </p>
+                <div className="mt-6">
+                  <div className="font-display font-bold">{reviews[i].name}</div>
+                  <div className="text-sm text-muted-foreground">{reviews[i].role}</div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <button
+              onClick={prev}
+              className="grid h-11 w-11 place-items-center rounded-full border bg-card hover:bg-primary/10"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <div className="flex gap-1.5">
+              {reviews.map((_, k) => (
+                <button
+                  key={k}
+                  onClick={() => setI(k)}
+                  className={`h-2 rounded-full transition-all ${
+                    k === i ? "w-8 bg-primary" : "w-2 bg-border"
+                  }`}
+                  aria-label={`Go to slide ${k + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              className="grid h-11 w-11 place-items-center rounded-full border bg-card hover:bg-primary/10"
+              aria-label="Next"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
