@@ -88,9 +88,10 @@ export function Hero() {
         />
       </AnimatePresence>
 
-      {/* Lighter overlays for better picture visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-background/10" />
+      {/* Overlays tuned for strong text contrast while keeping pictures visible */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+
 
       <div className="relative container mx-auto px-4 pt-40 pb-24 lg:pt-48 lg:pb-32">
         <AnimatePresence mode="wait">
@@ -106,18 +107,18 @@ export function Hero() {
               <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
               {active.badge}
             </div>
-
-            <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.02] text-white drop-shadow-2xl">
+            <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.02] text-white [text-shadow:0_4px_24px_rgba(0,0,0,0.7)]">
               {active.titleTop}
               <br />
-              <span className="bg-gradient-to-r from-accent to-primary-light bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent to-primary-light bg-clip-text text-transparent drop-shadow-none">
                 {active.titleBottom}
               </span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg text-white/90 leading-relaxed drop-shadow-lg">
+            <p className="mt-6 max-w-2xl text-lg text-white leading-relaxed font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.85)]">
               {active.text}
             </p>
+
           </motion.div>
         </AnimatePresence>
 
