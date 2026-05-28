@@ -119,7 +119,6 @@ export function Hero() {
               {active.text}
             </p>
 
-            </p>
           </motion.div>
         </AnimatePresence>
 
