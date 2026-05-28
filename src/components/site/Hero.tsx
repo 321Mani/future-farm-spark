@@ -88,9 +88,10 @@ export function Hero() {
         />
       </AnimatePresence>
 
-      {/* Lighter overlays for better picture visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-background/10" />
+      {/* Overlays tuned for strong text contrast while keeping pictures visible */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+
 
       <div className="relative container mx-auto px-4 pt-40 pb-24 lg:pt-48 lg:pb-32">
         <AnimatePresence mode="wait">
