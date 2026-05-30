@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
+import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
+import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
+import { Route as AboutIcarRouteImport } from './routes/about.icar'
+import { Route as AboutChairmanRouteImport } from './routes/about.chairman'
+import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of-studies'
+import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
+import { Route as AboutAntiRaggingRouteImport } from './routes/about.anti-ragging'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
+  id: '/about/vision-mission',
+  path: '/about/vision-mission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutSexualHarassmentRoute = AboutSexualHarassmentRouteImport.update({
+  id: '/about/sexual-harassment',
+  path: '/about/sexual-harassment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutPrincipalRoute = AboutPrincipalRouteImport.update({
+  id: '/about/principal',
+  path: '/about/principal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIcarRoute = AboutIcarRouteImport.update({
+  id: '/about/icar',
+  path: '/about/icar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutChairmanRoute = AboutChairmanRouteImport.update({
+  id: '/about/chairman',
+  path: '/about/chairman',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutBoardOfStudiesRoute = AboutBoardOfStudiesRouteImport.update({
+  id: '/about/board-of-studies',
+  path: '/about/board-of-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutApprovalsRoute = AboutApprovalsRouteImport.update({
+  id: '/about/approvals',
+  path: '/about/approvals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutAntiRaggingRoute = AboutAntiRaggingRouteImport.update({
+  id: '/about/anti-ragging',
+  path: '/about/anti-ragging',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about/anti-ragging': typeof AboutAntiRaggingRoute
+  '/about/approvals': typeof AboutApprovalsRoute
+  '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
+  '/about/chairman': typeof AboutChairmanRoute
+  '/about/icar': typeof AboutIcarRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
+  '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about/anti-ragging': typeof AboutAntiRaggingRoute
+  '/about/approvals': typeof AboutApprovalsRoute
+  '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
+  '/about/chairman': typeof AboutChairmanRoute
+  '/about/icar': typeof AboutIcarRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
+  '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about/anti-ragging': typeof AboutAntiRaggingRoute
+  '/about/approvals': typeof AboutApprovalsRoute
+  '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
+  '/about/chairman': typeof AboutChairmanRoute
+  '/about/icar': typeof AboutIcarRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
+  '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about/anti-ragging'
+    | '/about/approvals'
+    | '/about/board-of-studies'
+    | '/about/chairman'
+    | '/about/icar'
+    | '/about/principal'
+    | '/about/sexual-harassment'
+    | '/about/vision-mission'
+    | '/about/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about/anti-ragging'
+    | '/about/approvals'
+    | '/about/board-of-studies'
+    | '/about/chairman'
+    | '/about/icar'
+    | '/about/principal'
+    | '/about/sexual-harassment'
+    | '/about/vision-mission'
+    | '/about'
+  id:
+    | '__root__'
+    | '/'
+    | '/about/anti-ragging'
+    | '/about/approvals'
+    | '/about/board-of-studies'
+    | '/about/chairman'
+    | '/about/icar'
+    | '/about/principal'
+    | '/about/sexual-harassment'
+    | '/about/vision-mission'
+    | '/about/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutAntiRaggingRoute: typeof AboutAntiRaggingRoute
+  AboutApprovalsRoute: typeof AboutApprovalsRoute
+  AboutBoardOfStudiesRoute: typeof AboutBoardOfStudiesRoute
+  AboutChairmanRoute: typeof AboutChairmanRoute
+  AboutIcarRoute: typeof AboutIcarRoute
+  AboutPrincipalRoute: typeof AboutPrincipalRoute
+  AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
+  AboutVisionMissionRoute: typeof AboutVisionMissionRoute
+  AboutIndexRoute: typeof AboutIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/vision-mission': {
+      id: '/about/vision-mission'
+      path: '/about/vision-mission'
+      fullPath: '/about/vision-mission'
+      preLoaderRoute: typeof AboutVisionMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/sexual-harassment': {
+      id: '/about/sexual-harassment'
+      path: '/about/sexual-harassment'
+      fullPath: '/about/sexual-harassment'
+      preLoaderRoute: typeof AboutSexualHarassmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/principal': {
+      id: '/about/principal'
+      path: '/about/principal'
+      fullPath: '/about/principal'
+      preLoaderRoute: typeof AboutPrincipalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/icar': {
+      id: '/about/icar'
+      path: '/about/icar'
+      fullPath: '/about/icar'
+      preLoaderRoute: typeof AboutIcarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/chairman': {
+      id: '/about/chairman'
+      path: '/about/chairman'
+      fullPath: '/about/chairman'
+      preLoaderRoute: typeof AboutChairmanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/board-of-studies': {
+      id: '/about/board-of-studies'
+      path: '/about/board-of-studies'
+      fullPath: '/about/board-of-studies'
+      preLoaderRoute: typeof AboutBoardOfStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/approvals': {
+      id: '/about/approvals'
+      path: '/about/approvals'
+      fullPath: '/about/approvals'
+      preLoaderRoute: typeof AboutApprovalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/anti-ragging': {
+      id: '/about/anti-ragging'
+      path: '/about/anti-ragging'
+      fullPath: '/about/anti-ragging'
+      preLoaderRoute: typeof AboutAntiRaggingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutAntiRaggingRoute: AboutAntiRaggingRoute,
+  AboutApprovalsRoute: AboutApprovalsRoute,
+  AboutBoardOfStudiesRoute: AboutBoardOfStudiesRoute,
+  AboutChairmanRoute: AboutChairmanRoute,
+  AboutIcarRoute: AboutIcarRoute,
+  AboutPrincipalRoute: AboutPrincipalRoute,
+  AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
+  AboutVisionMissionRoute: AboutVisionMissionRoute,
+  AboutIndexRoute: AboutIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

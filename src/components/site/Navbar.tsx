@@ -9,129 +9,126 @@ type MenuItem = {
 };
 
 const menu: MenuItem[] = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   {
     label: "About Us",
-    href: "#about",
+    href: "/about",
     groups: [
       {
         heading: "The Institute",
         links: [
-          { label: "About IIAT", href: "#about" },
-          { label: "Vision & Mission", href: "#about" },
-          { label: "Chairman's Message", href: "#about" },
-          { label: "Our Principal", href: "#about" },
+          { label: "About IIAT", href: "/about" },
+          { label: "Vision & Mission", href: "/about/vision-mission" },
+          { label: "Chairman's Message", href: "/about/chairman" },
+          { label: "Our Principal", href: "/about/principal" },
         ],
       },
       {
         heading: "Approvals",
         links: [
-          { label: "ICAR", href: "#about" },
-          { label: "Approval Letters", href: "#about" },
-          { label: "ICAR Accreditation", href: "#about" },
-          { label: "MOU", href: "#about" },
+          { label: "ICAR", href: "/about/icar" },
+          { label: "Approval Letters", href: "/about/approvals" },
         ],
       },
       {
         heading: "Governance",
         links: [
-          { label: "Governing Council", href: "#about" },
-          { label: "Board Of Studies", href: "#about" },
-          { label: "Anti-Ragging", href: "#about" },
-          { label: "Sexual Harassment", href: "#about" },
+          { label: "Board Of Studies", href: "/about/board-of-studies" },
+          { label: "Anti-Ragging", href: "/about/anti-ragging" },
+          { label: "Sexual Harassment", href: "/about/sexual-harassment" },
         ],
       },
     ],
   },
   {
     label: "Academics",
-    href: "#departments",
+    href: "/#departments",
     groups: [
       {
         heading: "Programmes",
         links: [
-          { label: "B.Sc Agriculture", href: "#departments" },
-          { label: "B.Tech Agri Engineering", href: "#departments" },
-          { label: "Horticulture", href: "#departments" },
-          { label: "Food Technology", href: "#departments" },
+          { label: "B.Sc Agriculture", href: "/#departments" },
+          { label: "B.Tech Agri Engineering", href: "/#departments" },
+          { label: "Horticulture", href: "/#departments" },
+          { label: "Food Technology", href: "/#departments" },
         ],
       },
       {
         heading: "Resources",
         links: [
-          { label: "E-Courses", href: "#departments" },
-          { label: "Curriculum", href: "#departments" },
-          { label: "Examinations", href: "#departments" },
-          { label: "Library", href: "#facilities" },
+          { label: "E-Courses", href: "/#departments" },
+          { label: "Curriculum", href: "/#departments" },
+          { label: "Examinations", href: "/#departments" },
+          { label: "Library", href: "/#facilities" },
         ],
       },
     ],
   },
   {
     label: "Divisions",
-    href: "#departments",
+    href: "/#departments",
     groups: [
       {
         heading: "Crop Sciences",
         links: [
-          { label: "Agronomy", href: "#departments" },
-          { label: "Plant Pathology", href: "#departments" },
-          { label: "Entomology", href: "#departments" },
-          { label: "Genetics & Breeding", href: "#departments" },
+          { label: "Agronomy", href: "/#departments" },
+          { label: "Plant Pathology", href: "/#departments" },
+          { label: "Entomology", href: "/#departments" },
+          { label: "Genetics & Breeding", href: "/#departments" },
         ],
       },
       {
         heading: "Natural Resources",
         links: [
-          { label: "Soil Science", href: "#departments" },
-          { label: "Agri Economics", href: "#departments" },
-          { label: "Extension", href: "#departments" },
-          { label: "Biotechnology", href: "#departments" },
+          { label: "Soil Science", href: "/#departments" },
+          { label: "Agri Economics", href: "/#departments" },
+          { label: "Extension", href: "/#departments" },
+          { label: "Biotechnology", href: "/#departments" },
         ],
       },
     ],
   },
   {
     label: "Farms",
-    href: "#facilities",
+    href: "/#facilities",
     groups: [
       {
         heading: "Our Farms",
         links: [
-          { label: "Instructional Farm", href: "#facilities" },
-          { label: "Horticulture Farm", href: "#facilities" },
-          { label: "Dairy & Livestock", href: "#facilities" },
-          { label: "Research Plots", href: "#facilities" },
+          { label: "Instructional Farm", href: "/#facilities" },
+          { label: "Horticulture Farm", href: "/#facilities" },
+          { label: "Dairy & Livestock", href: "/#facilities" },
+          { label: "Research Plots", href: "/#facilities" },
         ],
       },
     ],
   },
   {
     label: "Life @ IIAT",
-    href: "#gallery",
+    href: "/#gallery",
     groups: [
       {
         heading: "Campus Life",
         links: [
-          { label: "Hostels", href: "#facilities" },
-          { label: "Sports", href: "#facilities" },
-          { label: "Clubs & Events", href: "#gallery" },
-          { label: "NSS / NCC", href: "#gallery" },
+          { label: "Hostels", href: "/#facilities" },
+          { label: "Sports", href: "/#facilities" },
+          { label: "Clubs & Events", href: "/#gallery" },
+          { label: "NSS / NCC", href: "/#gallery" },
         ],
       },
       {
         heading: "Highlights",
         links: [
-          { label: "Gallery", href: "#gallery" },
-          { label: "Placements", href: "#admission" },
-          { label: "Testimonials", href: "#gallery" },
+          { label: "Gallery", href: "/#gallery" },
+          { label: "Placements", href: "/#admission" },
+          { label: "Testimonials", href: "/#gallery" },
         ],
       },
     ],
   },
-  { label: "Faculty", href: "#about" },
-  { label: "Our Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Faculty", href: "/#about" },
+  { label: "Our Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
