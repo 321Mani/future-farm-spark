@@ -9,36 +9,33 @@ type MenuItem = {
 };
 
 const menu: MenuItem[] = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   {
     label: "About Us",
-    href: "#about",
+    href: "/about",
     groups: [
       {
         heading: "The Institute",
         links: [
-          { label: "About IIAT", href: "#about" },
-          { label: "Vision & Mission", href: "#about" },
-          { label: "Chairman's Message", href: "#about" },
-          { label: "Our Principal", href: "#about" },
+          { label: "About IIAT", href: "/about" },
+          { label: "Vision & Mission", href: "/about/vision-mission" },
+          { label: "Chairman's Message", href: "/about/chairman" },
+          { label: "Our Principal", href: "/about/principal" },
         ],
       },
       {
         heading: "Approvals",
         links: [
-          { label: "ICAR", href: "#about" },
-          { label: "Approval Letters", href: "#about" },
-          { label: "ICAR Accreditation", href: "#about" },
-          { label: "MOU", href: "#about" },
+          { label: "ICAR", href: "/about/icar" },
+          { label: "Approval Letters", href: "/about/approvals" },
         ],
       },
       {
         heading: "Governance",
         links: [
-          { label: "Governing Council", href: "#about" },
-          { label: "Board Of Studies", href: "#about" },
-          { label: "Anti-Ragging", href: "#about" },
-          { label: "Sexual Harassment", href: "#about" },
+          { label: "Board Of Studies", href: "/about/board-of-studies" },
+          { label: "Anti-Ragging", href: "/about/anti-ragging" },
+          { label: "Sexual Harassment", href: "/about/sexual-harassment" },
         ],
       },
     ],
