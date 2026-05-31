@@ -21,13 +21,13 @@ export function PageShell({ eyebrow = "About Us", title, subtitle, breadcrumbs =
       <Navbar />
 
       {/* Page Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+      <section className="relative isolate overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+        <div className="pointer-events-none absolute inset-0 z-0">
           <img src={heroImg} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-background" />
         </div>
 
-        <div className="container mx-auto px-4">
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
