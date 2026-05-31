@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smart-class'
+import { Route as AcademicsPhysicalEducationRouteImport } from './routes/academics.physical-education'
 import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
 import { Route as AcademicsLibraryRouteImport } from './routes/academics.library'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
@@ -40,6 +41,12 @@ const AcademicsSmartClassRoute = AcademicsSmartClassRouteImport.update({
   path: '/academics/smart-class',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademicsPhysicalEducationRoute =
+  AcademicsPhysicalEducationRouteImport.update({
+    id: '/academics/physical-education',
+    path: '/academics/physical-education',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AcademicsNssRoute = AcademicsNssRouteImport.update({
   id: '/academics/nss',
   path: '/academics/nss',
@@ -115,6 +122,7 @@ export interface FileRoutesByFullPath {
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
+  '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/about/': typeof AboutIndexRoute
 }
@@ -132,6 +140,7 @@ export interface FileRoutesByTo {
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
+  '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/about': typeof AboutIndexRoute
 }
@@ -150,6 +159,7 @@ export interface FileRoutesById {
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
+  '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/about/': typeof AboutIndexRoute
 }
@@ -169,6 +179,7 @@ export interface FileRouteTypes {
     | '/academics/courses'
     | '/academics/library'
     | '/academics/nss'
+    | '/academics/physical-education'
     | '/academics/smart-class'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | '/academics/courses'
     | '/academics/library'
     | '/academics/nss'
+    | '/academics/physical-education'
     | '/academics/smart-class'
     | '/about'
   id:
@@ -203,6 +215,7 @@ export interface FileRouteTypes {
     | '/academics/courses'
     | '/academics/library'
     | '/academics/nss'
+    | '/academics/physical-education'
     | '/academics/smart-class'
     | '/about/'
   fileRoutesById: FileRoutesById
@@ -221,6 +234,7 @@ export interface RootRouteChildren {
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
   AcademicsLibraryRoute: typeof AcademicsLibraryRoute
   AcademicsNssRoute: typeof AcademicsNssRoute
+  AcademicsPhysicalEducationRoute: typeof AcademicsPhysicalEducationRoute
   AcademicsSmartClassRoute: typeof AcademicsSmartClassRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
@@ -246,6 +260,13 @@ declare module '@tanstack/react-router' {
       path: '/academics/smart-class'
       fullPath: '/academics/smart-class'
       preLoaderRoute: typeof AcademicsSmartClassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/physical-education': {
+      id: '/academics/physical-education'
+      path: '/academics/physical-education'
+      fullPath: '/academics/physical-education'
+      preLoaderRoute: typeof AcademicsPhysicalEducationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academics/nss': {
@@ -349,6 +370,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicsCoursesRoute: AcademicsCoursesRoute,
   AcademicsLibraryRoute: AcademicsLibraryRoute,
   AcademicsNssRoute: AcademicsNssRoute,
+  AcademicsPhysicalEducationRoute: AcademicsPhysicalEducationRoute,
   AcademicsSmartClassRoute: AcademicsSmartClassRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
