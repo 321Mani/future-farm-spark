@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
+import { Route as AcademicsLibraryRouteImport } from './routes/academics.library'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
 import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.computer-center'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
@@ -36,6 +37,11 @@ const AboutIndexRoute = AboutIndexRouteImport.update({
 const AcademicsNssRoute = AcademicsNssRouteImport.update({
   id: '/academics/nss',
   path: '/academics/nss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsLibraryRoute = AcademicsLibraryRouteImport.update({
+  id: '/academics/library',
+  path: '/academics/library',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcademicsCoursesRoute = AcademicsCoursesRouteImport.update({
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/about/': typeof AboutIndexRoute
 }
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/about': typeof AboutIndexRoute
 }
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/about/': typeof AboutIndexRoute
 }
@@ -149,6 +158,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
+    | '/academics/library'
     | '/academics/nss'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
@@ -164,6 +174,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
+    | '/academics/library'
     | '/academics/nss'
     | '/about'
   id:
@@ -179,6 +190,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
+    | '/academics/library'
     | '/academics/nss'
     | '/about/'
   fileRoutesById: FileRoutesById
@@ -195,6 +207,7 @@ export interface RootRouteChildren {
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
   AcademicsComputerCenterRoute: typeof AcademicsComputerCenterRoute
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
+  AcademicsLibraryRoute: typeof AcademicsLibraryRoute
   AcademicsNssRoute: typeof AcademicsNssRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
@@ -220,6 +233,13 @@ declare module '@tanstack/react-router' {
       path: '/academics/nss'
       fullPath: '/academics/nss'
       preLoaderRoute: typeof AcademicsNssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/library': {
+      id: '/academics/library'
+      path: '/academics/library'
+      fullPath: '/academics/library'
+      preLoaderRoute: typeof AcademicsLibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academics/courses': {
@@ -307,6 +327,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutVisionMissionRoute: AboutVisionMissionRoute,
   AcademicsComputerCenterRoute: AcademicsComputerCenterRoute,
   AcademicsCoursesRoute: AcademicsCoursesRoute,
+  AcademicsLibraryRoute: AcademicsLibraryRoute,
   AcademicsNssRoute: AcademicsNssRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
