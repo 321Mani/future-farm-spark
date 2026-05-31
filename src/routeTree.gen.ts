@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
+import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.computer-center'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
 import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
@@ -40,6 +41,11 @@ const AcademicsNssRoute = AcademicsNssRouteImport.update({
 const AcademicsCoursesRoute = AcademicsCoursesRouteImport.update({
   id: '/academics/courses',
   path: '/academics/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsComputerCenterRoute = AcademicsComputerCenterRouteImport.update({
+  id: '/academics/computer-center',
+  path: '/academics/computer-center',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/about/': typeof AboutIndexRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByTo {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/about': typeof AboutIndexRoute
@@ -122,6 +130,7 @@ export interface FileRoutesById {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/about/': typeof AboutIndexRoute
@@ -138,6 +147,7 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/computer-center'
     | '/academics/courses'
     | '/academics/nss'
     | '/about/'
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/computer-center'
     | '/academics/courses'
     | '/academics/nss'
     | '/about'
@@ -166,6 +177,7 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/computer-center'
     | '/academics/courses'
     | '/academics/nss'
     | '/about/'
@@ -181,6 +193,7 @@ export interface RootRouteChildren {
   AboutPrincipalRoute: typeof AboutPrincipalRoute
   AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
+  AcademicsComputerCenterRoute: typeof AcademicsComputerCenterRoute
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
   AcademicsNssRoute: typeof AcademicsNssRoute
   AboutIndexRoute: typeof AboutIndexRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/academics/courses'
       fullPath: '/academics/courses'
       preLoaderRoute: typeof AcademicsCoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/computer-center': {
+      id: '/academics/computer-center'
+      path: '/academics/computer-center'
+      fullPath: '/academics/computer-center'
+      preLoaderRoute: typeof AcademicsComputerCenterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/vision-mission': {
@@ -285,6 +305,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutPrincipalRoute: AboutPrincipalRoute,
   AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,
+  AcademicsComputerCenterRoute: AcademicsComputerCenterRoute,
   AcademicsCoursesRoute: AcademicsCoursesRoute,
   AcademicsNssRoute: AcademicsNssRoute,
   AboutIndexRoute: AboutIndexRoute,
