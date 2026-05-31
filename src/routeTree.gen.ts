@@ -16,6 +16,7 @@ import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smar
 import { Route as AcademicsPhysicalEducationRouteImport } from './routes/academics.physical-education'
 import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
 import { Route as AcademicsLibraryRouteImport } from './routes/academics.library'
+import { Route as AcademicsExamPatternRouteImport } from './routes/academics.exam-pattern'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
 import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.computer-center'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
@@ -61,6 +62,11 @@ const AcademicsNssRoute = AcademicsNssRouteImport.update({
 const AcademicsLibraryRoute = AcademicsLibraryRouteImport.update({
   id: '/academics/library',
   path: '/academics/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsExamPatternRoute = AcademicsExamPatternRouteImport.update({
+  id: '/academics/exam-pattern',
+  path: '/academics/exam-pattern',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcademicsCoursesRoute = AcademicsCoursesRouteImport.update({
@@ -126,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/exam-pattern': typeof AcademicsExamPatternRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByTo {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/exam-pattern': typeof AcademicsExamPatternRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
@@ -165,6 +173,7 @@ export interface FileRoutesById {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/exam-pattern': typeof AcademicsExamPatternRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
@@ -186,6 +195,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
+    | '/academics/exam-pattern'
     | '/academics/library'
     | '/academics/nss'
     | '/academics/physical-education'
@@ -205,6 +215,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
+    | '/academics/exam-pattern'
     | '/academics/library'
     | '/academics/nss'
     | '/academics/physical-education'
@@ -224,6 +235,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
+    | '/academics/exam-pattern'
     | '/academics/library'
     | '/academics/nss'
     | '/academics/physical-education'
@@ -244,6 +256,7 @@ export interface RootRouteChildren {
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
   AcademicsComputerCenterRoute: typeof AcademicsComputerCenterRoute
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
+  AcademicsExamPatternRoute: typeof AcademicsExamPatternRoute
   AcademicsLibraryRoute: typeof AcademicsLibraryRoute
   AcademicsNssRoute: typeof AcademicsNssRoute
   AcademicsPhysicalEducationRoute: typeof AcademicsPhysicalEducationRoute
@@ -301,6 +314,13 @@ declare module '@tanstack/react-router' {
       path: '/academics/library'
       fullPath: '/academics/library'
       preLoaderRoute: typeof AcademicsLibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/exam-pattern': {
+      id: '/academics/exam-pattern'
+      path: '/academics/exam-pattern'
+      fullPath: '/academics/exam-pattern'
+      preLoaderRoute: typeof AcademicsExamPatternRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academics/courses': {
@@ -388,6 +408,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutVisionMissionRoute: AboutVisionMissionRoute,
   AcademicsComputerCenterRoute: AcademicsComputerCenterRoute,
   AcademicsCoursesRoute: AcademicsCoursesRoute,
+  AcademicsExamPatternRoute: AcademicsExamPatternRoute,
   AcademicsLibraryRoute: AcademicsLibraryRoute,
   AcademicsNssRoute: AcademicsNssRoute,
   AcademicsPhysicalEducationRoute: AcademicsPhysicalEducationRoute,
