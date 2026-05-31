@@ -11,6 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AcademicsYogaRouteImport } from './routes/academics.yoga'
+import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smart-class'
+import { Route as AcademicsPhysicalEducationRouteImport } from './routes/academics.physical-education'
+import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
+import { Route as AcademicsLibraryRouteImport } from './routes/academics.library'
+import { Route as AcademicsExamPatternRouteImport } from './routes/academics.exam-pattern'
+import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
+import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.computer-center'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
 import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
@@ -28,6 +36,47 @@ const IndexRoute = IndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsYogaRoute = AcademicsYogaRouteImport.update({
+  id: '/academics/yoga',
+  path: '/academics/yoga',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsSmartClassRoute = AcademicsSmartClassRouteImport.update({
+  id: '/academics/smart-class',
+  path: '/academics/smart-class',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsPhysicalEducationRoute =
+  AcademicsPhysicalEducationRouteImport.update({
+    id: '/academics/physical-education',
+    path: '/academics/physical-education',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AcademicsNssRoute = AcademicsNssRouteImport.update({
+  id: '/academics/nss',
+  path: '/academics/nss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsLibraryRoute = AcademicsLibraryRouteImport.update({
+  id: '/academics/library',
+  path: '/academics/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsExamPatternRoute = AcademicsExamPatternRouteImport.update({
+  id: '/academics/exam-pattern',
+  path: '/academics/exam-pattern',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsCoursesRoute = AcademicsCoursesRouteImport.update({
+  id: '/academics/courses',
+  path: '/academics/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsComputerCenterRoute = AcademicsComputerCenterRouteImport.update({
+  id: '/academics/computer-center',
+  path: '/academics/computer-center',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
@@ -81,6 +130,14 @@ export interface FileRoutesByFullPath {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/computer-center': typeof AcademicsComputerCenterRoute
+  '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/exam-pattern': typeof AcademicsExamPatternRoute
+  '/academics/library': typeof AcademicsLibraryRoute
+  '/academics/nss': typeof AcademicsNssRoute
+  '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
+  '/academics/smart-class': typeof AcademicsSmartClassRoute
+  '/academics/yoga': typeof AcademicsYogaRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +150,14 @@ export interface FileRoutesByTo {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/computer-center': typeof AcademicsComputerCenterRoute
+  '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/exam-pattern': typeof AcademicsExamPatternRoute
+  '/academics/library': typeof AcademicsLibraryRoute
+  '/academics/nss': typeof AcademicsNssRoute
+  '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
+  '/academics/smart-class': typeof AcademicsSmartClassRoute
+  '/academics/yoga': typeof AcademicsYogaRoute
   '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
@@ -106,6 +171,14 @@ export interface FileRoutesById {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/computer-center': typeof AcademicsComputerCenterRoute
+  '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/exam-pattern': typeof AcademicsExamPatternRoute
+  '/academics/library': typeof AcademicsLibraryRoute
+  '/academics/nss': typeof AcademicsNssRoute
+  '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
+  '/academics/smart-class': typeof AcademicsSmartClassRoute
+  '/academics/yoga': typeof AcademicsYogaRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +193,14 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/computer-center'
+    | '/academics/courses'
+    | '/academics/exam-pattern'
+    | '/academics/library'
+    | '/academics/nss'
+    | '/academics/physical-education'
+    | '/academics/smart-class'
+    | '/academics/yoga'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +213,14 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/computer-center'
+    | '/academics/courses'
+    | '/academics/exam-pattern'
+    | '/academics/library'
+    | '/academics/nss'
+    | '/academics/physical-education'
+    | '/academics/smart-class'
+    | '/academics/yoga'
     | '/about'
   id:
     | '__root__'
@@ -144,6 +233,14 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/computer-center'
+    | '/academics/courses'
+    | '/academics/exam-pattern'
+    | '/academics/library'
+    | '/academics/nss'
+    | '/academics/physical-education'
+    | '/academics/smart-class'
+    | '/academics/yoga'
     | '/about/'
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +254,14 @@ export interface RootRouteChildren {
   AboutPrincipalRoute: typeof AboutPrincipalRoute
   AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
+  AcademicsComputerCenterRoute: typeof AcademicsComputerCenterRoute
+  AcademicsCoursesRoute: typeof AcademicsCoursesRoute
+  AcademicsExamPatternRoute: typeof AcademicsExamPatternRoute
+  AcademicsLibraryRoute: typeof AcademicsLibraryRoute
+  AcademicsNssRoute: typeof AcademicsNssRoute
+  AcademicsPhysicalEducationRoute: typeof AcademicsPhysicalEducationRoute
+  AcademicsSmartClassRoute: typeof AcademicsSmartClassRoute
+  AcademicsYogaRoute: typeof AcademicsYogaRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
@@ -174,6 +279,62 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/yoga': {
+      id: '/academics/yoga'
+      path: '/academics/yoga'
+      fullPath: '/academics/yoga'
+      preLoaderRoute: typeof AcademicsYogaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/smart-class': {
+      id: '/academics/smart-class'
+      path: '/academics/smart-class'
+      fullPath: '/academics/smart-class'
+      preLoaderRoute: typeof AcademicsSmartClassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/physical-education': {
+      id: '/academics/physical-education'
+      path: '/academics/physical-education'
+      fullPath: '/academics/physical-education'
+      preLoaderRoute: typeof AcademicsPhysicalEducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/nss': {
+      id: '/academics/nss'
+      path: '/academics/nss'
+      fullPath: '/academics/nss'
+      preLoaderRoute: typeof AcademicsNssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/library': {
+      id: '/academics/library'
+      path: '/academics/library'
+      fullPath: '/academics/library'
+      preLoaderRoute: typeof AcademicsLibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/exam-pattern': {
+      id: '/academics/exam-pattern'
+      path: '/academics/exam-pattern'
+      fullPath: '/academics/exam-pattern'
+      preLoaderRoute: typeof AcademicsExamPatternRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/courses': {
+      id: '/academics/courses'
+      path: '/academics/courses'
+      fullPath: '/academics/courses'
+      preLoaderRoute: typeof AcademicsCoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/computer-center': {
+      id: '/academics/computer-center'
+      path: '/academics/computer-center'
+      fullPath: '/academics/computer-center'
+      preLoaderRoute: typeof AcademicsComputerCenterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/vision-mission': {
@@ -245,18 +406,16 @@ const rootRouteChildren: RootRouteChildren = {
   AboutPrincipalRoute: AboutPrincipalRoute,
   AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,
+  AcademicsComputerCenterRoute: AcademicsComputerCenterRoute,
+  AcademicsCoursesRoute: AcademicsCoursesRoute,
+  AcademicsExamPatternRoute: AcademicsExamPatternRoute,
+  AcademicsLibraryRoute: AcademicsLibraryRoute,
+  AcademicsNssRoute: AcademicsNssRoute,
+  AcademicsPhysicalEducationRoute: AcademicsPhysicalEducationRoute,
+  AcademicsSmartClassRoute: AcademicsSmartClassRoute,
+  AcademicsYogaRoute: AcademicsYogaRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

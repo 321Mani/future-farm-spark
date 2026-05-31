@@ -42,24 +42,29 @@ const menu: MenuItem[] = [
   },
   {
     label: "Academics",
-    href: "/#departments",
+    href: "/academics/courses",
     groups: [
       {
         heading: "Programmes",
         links: [
-          { label: "B.Sc Agriculture", href: "/#departments" },
-          { label: "B.Tech Agri Engineering", href: "/#departments" },
-          { label: "Horticulture", href: "/#departments" },
-          { label: "Food Technology", href: "/#departments" },
+          { label: "Course Offered", href: "/academics/courses" },
+          { label: "Exam Pattern", href: "/academics/exam-pattern" },
         ],
       },
       {
-        heading: "Resources",
+        heading: "Facilities",
         links: [
-          { label: "E-Courses", href: "/#departments" },
-          { label: "Curriculum", href: "/#departments" },
-          { label: "Examinations", href: "/#departments" },
-          { label: "Library", href: "/#facilities" },
+          { label: "Library", href: "/academics/library" },
+          { label: "Computer Center", href: "/academics/computer-center" },
+          { label: "Smart Class", href: "/academics/smart-class" },
+        ],
+      },
+      {
+        heading: "Student Life",
+        links: [
+          { label: "NSS", href: "/academics/nss" },
+          { label: "Physical Education", href: "/academics/physical-education" },
+          { label: "Yoga", href: "/academics/yoga" },
         ],
       },
     ],
