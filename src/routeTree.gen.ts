@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
@@ -29,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsNssRoute = AcademicsNssRouteImport.update({
+  id: '/academics/nss',
+  path: '/academics/nss',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcademicsCoursesRoute = AcademicsCoursesRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/nss': typeof AcademicsNssRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/nss': typeof AcademicsNssRoute
   '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/courses': typeof AcademicsCoursesRoute
+  '/academics/nss': typeof AcademicsNssRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/about/sexual-harassment'
     | '/about/vision-mission'
     | '/academics/courses'
+    | '/academics/nss'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/about/sexual-harassment'
     | '/about/vision-mission'
     | '/academics/courses'
+    | '/academics/nss'
     | '/about'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/about/sexual-harassment'
     | '/about/vision-mission'
     | '/academics/courses'
+    | '/academics/nss'
     | '/about/'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
+  AcademicsNssRoute: typeof AcademicsNssRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
@@ -187,6 +200,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/nss': {
+      id: '/academics/nss'
+      path: '/academics/nss'
+      fullPath: '/academics/nss'
+      preLoaderRoute: typeof AcademicsNssRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academics/courses': {
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,
   AcademicsCoursesRoute: AcademicsCoursesRoute,
+  AcademicsNssRoute: AcademicsNssRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
 export const routeTree = rootRouteImport
