@@ -73,24 +73,26 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden">
       {/* Slider images */}
-      <AnimatePresence mode="sync">
-        <motion.img
-          key={index}
-          src={active.image}
-          alt={active.alt}
-          width={1920}
-          height={1080}
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ opacity: { duration: 1 }, scale: { duration: 7, ease: "linear" } }}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      </AnimatePresence>
+      <div className="absolute inset-0 overflow-hidden">
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={index}
+            src={active.image}
+            alt={active.alt}
+            width={1920}
+            height={1080}
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ opacity: { duration: 1.2 }, scale: { duration: 7, ease: "linear" } }}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </AnimatePresence>
+        {/* Lighter overlays — keep image clearly visible while preserving text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+      </div>
 
-      {/* Overlays tuned for strong text contrast while keeping pictures visible */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
 
 
       <div className="relative container mx-auto px-4 pt-40 pb-24 lg:pt-48 lg:pb-32">
