@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
 import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
@@ -28,6 +29,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsCoursesRoute = AcademicsCoursesRouteImport.update({
+  id: '/academics/courses',
+  path: '/academics/courses',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/courses': typeof AcademicsCoursesRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/courses': typeof AcademicsCoursesRoute
   '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/courses': typeof AcademicsCoursesRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/courses'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/courses'
     | '/about'
   id:
     | '__root__'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
+    | '/academics/courses'
     | '/about/'
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   AboutPrincipalRoute: typeof AboutPrincipalRoute
   AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
+  AcademicsCoursesRoute: typeof AcademicsCoursesRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
@@ -174,6 +187,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/courses': {
+      id: '/academics/courses'
+      path: '/academics/courses'
+      fullPath: '/academics/courses'
+      preLoaderRoute: typeof AcademicsCoursesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/vision-mission': {
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutPrincipalRoute: AboutPrincipalRoute,
   AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,
+  AcademicsCoursesRoute: AcademicsCoursesRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
 export const routeTree = rootRouteImport
