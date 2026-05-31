@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smart-class'
 import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
 import { Route as AcademicsLibraryRouteImport } from './routes/academics.library'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
@@ -32,6 +33,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsSmartClassRoute = AcademicsSmartClassRouteImport.update({
+  id: '/academics/smart-class',
+  path: '/academics/smart-class',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcademicsNssRoute = AcademicsNssRouteImport.update({
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
+  '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
+  '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
@@ -142,6 +150,7 @@ export interface FileRoutesById {
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
+  '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/academics/courses'
     | '/academics/library'
     | '/academics/nss'
+    | '/academics/smart-class'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/academics/courses'
     | '/academics/library'
     | '/academics/nss'
+    | '/academics/smart-class'
     | '/about'
   id:
     | '__root__'
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '/academics/courses'
     | '/academics/library'
     | '/academics/nss'
+    | '/academics/smart-class'
     | '/about/'
   fileRoutesById: FileRoutesById
 }
@@ -209,6 +221,7 @@ export interface RootRouteChildren {
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
   AcademicsLibraryRoute: typeof AcademicsLibraryRoute
   AcademicsNssRoute: typeof AcademicsNssRoute
+  AcademicsSmartClassRoute: typeof AcademicsSmartClassRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
@@ -226,6 +239,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/smart-class': {
+      id: '/academics/smart-class'
+      path: '/academics/smart-class'
+      fullPath: '/academics/smart-class'
+      preLoaderRoute: typeof AcademicsSmartClassRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academics/nss': {
@@ -329,6 +349,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicsCoursesRoute: AcademicsCoursesRoute,
   AcademicsLibraryRoute: AcademicsLibraryRoute,
   AcademicsNssRoute: AcademicsNssRoute,
+  AcademicsSmartClassRoute: AcademicsSmartClassRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
 export const routeTree = rootRouteImport
