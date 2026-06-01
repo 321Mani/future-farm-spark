@@ -11,12 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
-import { Route as DivisionsSocialScienceRouteImport } from './routes/divisions.social-science'
-import { Route as DivisionsPlantProtectionRouteImport } from './routes/divisions.plant-protection'
-import { Route as DivisionsHorticultureRouteImport } from './routes/divisions.horticulture'
-import { Route as DivisionsCropManagementRouteImport } from './routes/divisions.crop-management'
-import { Route as DivisionsCropImprovementRouteImport } from './routes/divisions.crop-improvement'
-import { Route as DivisionsAgricultureEngineeringRouteImport } from './routes/divisions.agriculture-engineering'
 import { Route as AcademicsYogaRouteImport } from './routes/academics.yoga'
 import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smart-class'
 import { Route as AcademicsPhysicalEducationRouteImport } from './routes/academics.physical-education'
@@ -33,6 +27,12 @@ import { Route as AboutChairmanRouteImport } from './routes/about.chairman'
 import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of-studies'
 import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
 import { Route as AboutAntiRaggingRouteImport } from './routes/about.anti-ragging'
+import { Route as DivisionsCropImprovementRouteImport } from './routes/divisions.crop-improvement'
+import { Route as DivisionsCropManagementRouteImport } from './routes/divisions.crop-management'
+import { Route as DivisionsPlantProtectionRouteImport } from './routes/divisions.plant-protection'
+import { Route as DivisionsHorticultureRouteImport } from './routes/divisions.horticulture'
+import { Route as DivisionsAgricultureEngineeringRouteImport } from './routes/divisions.agriculture-engineering'
+import { Route as DivisionsSocialScienceRouteImport } from './routes/divisions.social-science'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -44,39 +44,6 @@ const AboutIndexRoute = AboutIndexRouteImport.update({
   path: '/about/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DivisionsSocialScienceRoute = DivisionsSocialScienceRouteImport.update({
-  id: '/divisions/social-science',
-  path: '/divisions/social-science',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DivisionsPlantProtectionRoute =
-  DivisionsPlantProtectionRouteImport.update({
-    id: '/divisions/plant-protection',
-    path: '/divisions/plant-protection',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DivisionsHorticultureRoute = DivisionsHorticultureRouteImport.update({
-  id: '/divisions/horticulture',
-  path: '/divisions/horticulture',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DivisionsCropManagementRoute = DivisionsCropManagementRouteImport.update({
-  id: '/divisions/crop-management',
-  path: '/divisions/crop-management',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DivisionsCropImprovementRoute =
-  DivisionsCropImprovementRouteImport.update({
-    id: '/divisions/crop-improvement',
-    path: '/divisions/crop-improvement',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DivisionsAgricultureEngineeringRoute =
-  DivisionsAgricultureEngineeringRouteImport.update({
-    id: '/divisions/agriculture-engineering',
-    path: '/divisions/agriculture-engineering',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const AcademicsYogaRoute = AcademicsYogaRouteImport.update({
   id: '/academics/yoga',
   path: '/academics/yoga',
@@ -156,6 +123,36 @@ const AboutApprovalsRoute = AboutApprovalsRouteImport.update({
 const AboutAntiRaggingRoute = AboutAntiRaggingRouteImport.update({
   id: '/about/anti-ragging',
   path: '/about/anti-ragging',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivisionsCropImprovementRoute = DivisionsCropImprovementRouteImport.update({
+  id: '/divisions/crop-improvement',
+  path: '/divisions/crop-improvement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivisionsCropManagementRoute = DivisionsCropManagementRouteImport.update({
+  id: '/divisions/crop-management',
+  path: '/divisions/crop-management',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivisionsPlantProtectionRoute = DivisionsPlantProtectionRouteImport.update({
+  id: '/divisions/plant-protection',
+  path: '/divisions/plant-protection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivisionsHorticultureRoute = DivisionsHorticultureRouteImport.update({
+  id: '/divisions/horticulture',
+  path: '/divisions/horticulture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivisionsAgricultureEngineeringRoute = DivisionsAgricultureEngineeringRouteImport.update({
+  id: '/divisions/agriculture-engineering',
+  path: '/divisions/agriculture-engineering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DivisionsSocialScienceRoute = DivisionsSocialScienceRouteImport.update({
+  id: '/divisions/social-science',
+  path: '/divisions/social-science',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -362,48 +359,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/divisions/social-science': {
-      id: '/divisions/social-science'
-      path: '/divisions/social-science'
-      fullPath: '/divisions/social-science'
-      preLoaderRoute: typeof DivisionsSocialScienceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/divisions/plant-protection': {
-      id: '/divisions/plant-protection'
-      path: '/divisions/plant-protection'
-      fullPath: '/divisions/plant-protection'
-      preLoaderRoute: typeof DivisionsPlantProtectionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/divisions/horticulture': {
-      id: '/divisions/horticulture'
-      path: '/divisions/horticulture'
-      fullPath: '/divisions/horticulture'
-      preLoaderRoute: typeof DivisionsHorticultureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/divisions/crop-management': {
-      id: '/divisions/crop-management'
-      path: '/divisions/crop-management'
-      fullPath: '/divisions/crop-management'
-      preLoaderRoute: typeof DivisionsCropManagementRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/divisions/crop-improvement': {
-      id: '/divisions/crop-improvement'
-      path: '/divisions/crop-improvement'
-      fullPath: '/divisions/crop-improvement'
-      preLoaderRoute: typeof DivisionsCropImprovementRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/divisions/agriculture-engineering': {
-      id: '/divisions/agriculture-engineering'
-      path: '/divisions/agriculture-engineering'
-      fullPath: '/divisions/agriculture-engineering'
-      preLoaderRoute: typeof DivisionsAgricultureEngineeringRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/academics/yoga': {
       id: '/academics/yoga'
       path: '/academics/yoga'
@@ -516,6 +471,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutAntiRaggingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/divisions/crop-improvement': {
+      id: '/divisions/crop-improvement'
+      path: '/divisions/crop-improvement'
+      fullPath: '/divisions/crop-improvement'
+      preLoaderRoute: typeof DivisionsCropImprovementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/divisions/crop-management': {
+      id: '/divisions/crop-management'
+      path: '/divisions/crop-management'
+      fullPath: '/divisions/crop-management'
+      preLoaderRoute: typeof DivisionsCropManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/divisions/plant-protection': {
+      id: '/divisions/plant-protection'
+      path: '/divisions/plant-protection'
+      fullPath: '/divisions/plant-protection'
+      preLoaderRoute: typeof DivisionsPlantProtectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/divisions/horticulture': {
+      id: '/divisions/horticulture'
+      path: '/divisions/horticulture'
+      fullPath: '/divisions/horticulture'
+      preLoaderRoute: typeof DivisionsHorticultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/divisions/agriculture-engineering': {
+      id: '/divisions/agriculture-engineering'
+      path: '/divisions/agriculture-engineering'
+      fullPath: '/divisions/agriculture-engineering'
+      preLoaderRoute: typeof DivisionsAgricultureEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/divisions/social-science': {
+      id: '/divisions/social-science'
+      path: '/divisions/social-science'
+      fullPath: '/divisions/social-science'
+      preLoaderRoute: typeof DivisionsSocialScienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -548,3 +545,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
