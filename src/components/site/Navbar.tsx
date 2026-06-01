@@ -71,24 +71,22 @@ const menu: MenuItem[] = [
   },
   {
     label: "Divisions",
-    href: "/#departments",
+    href: "/divisions/crop-improvement",
     groups: [
       {
         heading: "Crop Sciences",
         links: [
-          { label: "Agronomy", href: "/#departments" },
-          { label: "Plant Pathology", href: "/#departments" },
-          { label: "Entomology", href: "/#departments" },
-          { label: "Genetics & Breeding", href: "/#departments" },
+          { label: "Crop Improvement", href: "/divisions/crop-improvement" },
+          { label: "Crop Management", href: "/divisions/crop-management" },
+          { label: "Plant Protection", href: "/divisions/plant-protection" },
         ],
       },
       {
-        heading: "Natural Resources",
+        heading: "Applied Sciences",
         links: [
-          { label: "Soil Science", href: "/#departments" },
-          { label: "Agri Economics", href: "/#departments" },
-          { label: "Extension", href: "/#departments" },
-          { label: "Biotechnology", href: "/#departments" },
+          { label: "Horticulture", href: "/divisions/horticulture" },
+          { label: "Agriculture Engineering", href: "/divisions/agriculture-engineering" },
+          { label: "Social Science", href: "/divisions/social-science" },
         ],
       },
     ],
