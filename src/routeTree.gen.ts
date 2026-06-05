@@ -39,6 +39,12 @@ import { Route as AboutChairmanRouteImport } from './routes/about.chairman'
 import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of-studies'
 import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
 import { Route as AboutAntiRaggingRouteImport } from './routes/about.anti-ragging'
+import { Route as LifeCulturalsRouteImport } from './routes/life.culturals'
+import { Route as LifeEventsRouteImport } from './routes/life.events'
+import { Route as LifeHostelRouteImport } from './routes/life.hostel'
+import { Route as LifePlacementRouteImport } from './routes/life.placement'
+import { Route as LifeNewsletterRouteImport } from './routes/life.newsletter'
+import { Route as LifeFeePaymentRouteImport } from './routes/life.fee-payment'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -192,6 +198,36 @@ const AboutApprovalsRoute = AboutApprovalsRouteImport.update({
 const AboutAntiRaggingRoute = AboutAntiRaggingRouteImport.update({
   id: '/about/anti-ragging',
   path: '/about/anti-ragging',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeCulturalsRoute = LifeCulturalsRouteImport.update({
+  id: '/life/culturals',
+  path: '/life/culturals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeEventsRoute = LifeEventsRouteImport.update({
+  id: '/life/events',
+  path: '/life/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeHostelRoute = LifeHostelRouteImport.update({
+  id: '/life/hostel',
+  path: '/life/hostel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifePlacementRoute = LifePlacementRouteImport.update({
+  id: '/life/placement',
+  path: '/life/placement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeNewsletterRoute = LifeNewsletterRouteImport.update({
+  id: '/life/newsletter',
+  path: '/life/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeFeePaymentRoute = LifeFeePaymentRouteImport.update({
+  id: '/life/fee-payment',
+  path: '/life/fee-payment',
   getParentRoute: () => rootRouteImport,
 } as any)
 
