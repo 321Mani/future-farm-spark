@@ -92,7 +92,7 @@ function ExamPattern() {
       <div className="mt-12 max-w-5xl">
         <h2 className="font-display text-2xl font-bold mb-2">Exam Pattern &amp; Duration</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          <strong>Regular:</strong> Mid Semester examination \u2014 Paper. Final Theory Examination \u2014 Paper.
+          <strong>Regular:</strong> Mid Semester examination — Paper. Final Theory Examination — Paper.
         </p>
         <p className="text-sm text-muted-foreground mb-6">
           <strong>Question pattern:</strong> The mid-semester and final theory consist of objective and descriptive type questions; reappearance consists of multiple choice questions. Comprehension-type questions, problem-based questions, practical theory portions, procedures, short notes and case studies are included in disciplines wherever possible in the final examinations.

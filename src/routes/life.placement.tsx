@@ -130,7 +130,7 @@ function PlacementPage() {
       </div>
 
       <div className="mt-12 max-w-5xl">
-        <h3 className="font-display text-xl font-bold mb-4">Placement Summary (2018 \u2013 2022)</h3>
+        <h3 className="font-display text-xl font-bold mb-4">Placement Summary (2018 – 2022)</h3>
         <div className="overflow-x-auto rounded-2xl border">
           <table className="w-full text-sm">
             <thead className="bg-secondary">
@@ -194,7 +194,7 @@ function PlacementPage() {
                 <tr key={f.id} className="border-t">
                   <td className="px-4 py-3 font-semibold text-primary">{f.id}</td>
                   <td className="px-4 py-3">{f.name}</td>
-                  <td className="px-4 py-3 text-muted-foreground">B.Sc \u2014 IIAT, Trichy</td>
+                  <td className="px-4 py-3 text-muted-foreground">B.Sc — IIAT, Trichy</td>
                 </tr>
               ))}
             </tbody>
