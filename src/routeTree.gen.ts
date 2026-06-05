@@ -11,6 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as LifePlacementRouteImport } from './routes/life.placement'
+import { Route as LifeNewsletterRouteImport } from './routes/life.newsletter'
+import { Route as LifeHostelRouteImport } from './routes/life.hostel'
+import { Route as LifeFeePaymentRouteImport } from './routes/life.fee-payment'
+import { Route as LifeEventsRouteImport } from './routes/life.events'
+import { Route as LifeCulturalsRouteImport } from './routes/life.culturals'
 import { Route as DivisionsSocialScienceRouteImport } from './routes/divisions.social-science'
 import { Route as DivisionsPlantProtectionRouteImport } from './routes/divisions.plant-protection'
 import { Route as DivisionsHorticultureRouteImport } from './routes/divisions.horticulture'
@@ -42,6 +48,36 @@ const IndexRoute = IndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifePlacementRoute = LifePlacementRouteImport.update({
+  id: '/life/placement',
+  path: '/life/placement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeNewsletterRoute = LifeNewsletterRouteImport.update({
+  id: '/life/newsletter',
+  path: '/life/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeHostelRoute = LifeHostelRouteImport.update({
+  id: '/life/hostel',
+  path: '/life/hostel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeFeePaymentRoute = LifeFeePaymentRouteImport.update({
+  id: '/life/fee-payment',
+  path: '/life/fee-payment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeEventsRoute = LifeEventsRouteImport.update({
+  id: '/life/events',
+  path: '/life/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeCulturalsRoute = LifeCulturalsRouteImport.update({
+  id: '/life/culturals',
+  path: '/life/culturals',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DivisionsSocialScienceRoute = DivisionsSocialScienceRouteImport.update({
@@ -183,6 +219,12 @@ export interface FileRoutesByFullPath {
   '/divisions/horticulture': typeof DivisionsHorticultureRoute
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
+  '/life/culturals': typeof LifeCulturalsRoute
+  '/life/events': typeof LifeEventsRoute
+  '/life/fee-payment': typeof LifeFeePaymentRoute
+  '/life/hostel': typeof LifeHostelRoute
+  '/life/newsletter': typeof LifeNewsletterRoute
+  '/life/placement': typeof LifePlacementRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
@@ -209,6 +251,12 @@ export interface FileRoutesByTo {
   '/divisions/horticulture': typeof DivisionsHorticultureRoute
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
+  '/life/culturals': typeof LifeCulturalsRoute
+  '/life/events': typeof LifeEventsRoute
+  '/life/fee-payment': typeof LifeFeePaymentRoute
+  '/life/hostel': typeof LifeHostelRoute
+  '/life/newsletter': typeof LifeNewsletterRoute
+  '/life/placement': typeof LifePlacementRoute
   '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
@@ -236,6 +284,12 @@ export interface FileRoutesById {
   '/divisions/horticulture': typeof DivisionsHorticultureRoute
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
+  '/life/culturals': typeof LifeCulturalsRoute
+  '/life/events': typeof LifeEventsRoute
+  '/life/fee-payment': typeof LifeFeePaymentRoute
+  '/life/hostel': typeof LifeHostelRoute
+  '/life/newsletter': typeof LifeNewsletterRoute
+  '/life/placement': typeof LifePlacementRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
@@ -264,6 +318,12 @@ export interface FileRouteTypes {
     | '/divisions/horticulture'
     | '/divisions/plant-protection'
     | '/divisions/social-science'
+    | '/life/culturals'
+    | '/life/events'
+    | '/life/fee-payment'
+    | '/life/hostel'
+    | '/life/newsletter'
+    | '/life/placement'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -290,6 +350,12 @@ export interface FileRouteTypes {
     | '/divisions/horticulture'
     | '/divisions/plant-protection'
     | '/divisions/social-science'
+    | '/life/culturals'
+    | '/life/events'
+    | '/life/fee-payment'
+    | '/life/hostel'
+    | '/life/newsletter'
+    | '/life/placement'
     | '/about'
   id:
     | '__root__'
@@ -316,6 +382,12 @@ export interface FileRouteTypes {
     | '/divisions/horticulture'
     | '/divisions/plant-protection'
     | '/divisions/social-science'
+    | '/life/culturals'
+    | '/life/events'
+    | '/life/fee-payment'
+    | '/life/hostel'
+    | '/life/newsletter'
+    | '/life/placement'
     | '/about/'
   fileRoutesById: FileRoutesById
 }
@@ -343,6 +415,12 @@ export interface RootRouteChildren {
   DivisionsHorticultureRoute: typeof DivisionsHorticultureRoute
   DivisionsPlantProtectionRoute: typeof DivisionsPlantProtectionRoute
   DivisionsSocialScienceRoute: typeof DivisionsSocialScienceRoute
+  LifeCulturalsRoute: typeof LifeCulturalsRoute
+  LifeEventsRoute: typeof LifeEventsRoute
+  LifeFeePaymentRoute: typeof LifeFeePaymentRoute
+  LifeHostelRoute: typeof LifeHostelRoute
+  LifeNewsletterRoute: typeof LifeNewsletterRoute
+  LifePlacementRoute: typeof LifePlacementRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
@@ -360,6 +438,48 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/placement': {
+      id: '/life/placement'
+      path: '/life/placement'
+      fullPath: '/life/placement'
+      preLoaderRoute: typeof LifePlacementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/newsletter': {
+      id: '/life/newsletter'
+      path: '/life/newsletter'
+      fullPath: '/life/newsletter'
+      preLoaderRoute: typeof LifeNewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/hostel': {
+      id: '/life/hostel'
+      path: '/life/hostel'
+      fullPath: '/life/hostel'
+      preLoaderRoute: typeof LifeHostelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/fee-payment': {
+      id: '/life/fee-payment'
+      path: '/life/fee-payment'
+      fullPath: '/life/fee-payment'
+      preLoaderRoute: typeof LifeFeePaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/events': {
+      id: '/life/events'
+      path: '/life/events'
+      fullPath: '/life/events'
+      preLoaderRoute: typeof LifeEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/culturals': {
+      id: '/life/culturals'
+      path: '/life/culturals'
+      fullPath: '/life/culturals'
+      preLoaderRoute: typeof LifeCulturalsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/divisions/social-science': {
@@ -543,6 +663,12 @@ const rootRouteChildren: RootRouteChildren = {
   DivisionsHorticultureRoute: DivisionsHorticultureRoute,
   DivisionsPlantProtectionRoute: DivisionsPlantProtectionRoute,
   DivisionsSocialScienceRoute: DivisionsSocialScienceRoute,
+  LifeCulturalsRoute: LifeCulturalsRoute,
+  LifeEventsRoute: LifeEventsRoute,
+  LifeFeePaymentRoute: LifeFeePaymentRoute,
+  LifeHostelRoute: LifeHostelRoute,
+  LifeNewsletterRoute: LifeNewsletterRoute,
+  LifePlacementRoute: LifePlacementRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
 export const routeTree = rootRouteImport

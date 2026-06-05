@@ -108,23 +108,22 @@ const menu: MenuItem[] = [
   },
   {
     label: "Life @ IIAT",
-    href: "/#gallery",
+    href: "/life/culturals",
     groups: [
       {
         heading: "Campus Life",
         links: [
-          { label: "Hostels", href: "/#facilities" },
-          { label: "Sports", href: "/#facilities" },
-          { label: "Clubs & Events", href: "/#gallery" },
-          { label: "NSS / NCC", href: "/#gallery" },
+          { label: "Culturals", href: "/life/culturals" },
+          { label: "Events", href: "/life/events" },
+          { label: "Hostel", href: "/life/hostel" },
         ],
       },
       {
-        heading: "Highlights",
+        heading: "Student Services",
         links: [
-          { label: "Gallery", href: "/#gallery" },
-          { label: "Placements", href: "/#admission" },
-          { label: "Testimonials", href: "/#gallery" },
+          { label: "Placement", href: "/life/placement" },
+          { label: "Newsletters", href: "/life/newsletter" },
+          { label: "Online Fee Payment", href: "/life/fee-payment" },
         ],
       },
     ],

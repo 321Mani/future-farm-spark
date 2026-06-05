@@ -1,51 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { Tractor, Cog, Zap, Factory } from "lucide-react";
+import { Cog, Utensils } from "lucide-react";
 
 export const Route = createFileRoute("/divisions/agriculture-engineering")({
   head: () => ({
     meta: [
-      { title: "Agriculture Engineering — IIAT" },
-      { name: "description", content: "Division of Agriculture Engineering — farm machinery, processing, renewable energy and structures." },
-      { property: "og:title", content: "Agriculture Engineering — IIAT" },
-      { property: "og:description", content: "Engineering solutions for modern, mechanised agriculture." },
+      { title: "Agriculture Engineering \u2014 IIAT" },
+      { name: "description", content: "Agricultural Engineering division at IIAT \u2014 Agricultural Engineering and Food Technology." },
+      { property: "og:title", content: "Agriculture Engineering \u2014 IIAT" },
+      { property: "og:description", content: "Sections under the Agricultural Engineering department at IIAT." },
     ],
   }),
-  component: AgriEngineeringPage,
+  component: AgEngPage,
 });
 
-const focus = [
-  { icon: Tractor, title: "Farm Machinery & Power", text: "Tractors, implements, precision equipment and ergonomics of mechanised field operations." },
-  { icon: Factory, title: "Processing & Food Engineering", text: "Post-harvest processing, storage, packaging and value addition of agricultural produce." },
-  { icon: Zap, title: "Renewable Energy in Agriculture", text: "Solar, biomass and bio-energy systems for farm applications and rural electrification." },
-  { icon: Cog, title: "Farm Structures & Irrigation", text: "Design of farm buildings, micro-irrigation systems and water lifting devices." },
+const sections = [
+  { icon: Cog, title: "Agricultural Engineering", text: "Engineering that deals with the design of farm machinery, the location and planning of farm structures, farm drainage, soil management and erosion control, water supply and irrigation, rural electrification, and the processing of farm products." },
+  { icon: Utensils, title: "Food Technology", text: "The Food Science laboratory can accommodate fifty students at a time and is well equipped with modernised lab equipment and good ventilation. It is attached with a staff room and a storage room used for storing instruments, glassware and chemicals." },
 ];
 
-function AgriEngineeringPage() {
+function AgEngPage() {
   return (
     <PageShell
       eyebrow="Divisions"
       title="Agriculture Engineering"
-      subtitle="Engineering tools, machines and structures that power modern, productive farming."
+      subtitle="About Agricultural Engineering and the sections that make up the department at IIAT."
       breadcrumbs={[{ label: "Divisions" }, { label: "Agriculture Engineering" }]}
     >
-      <div className="max-w-4xl text-foreground/80 leading-relaxed">
-        <p className="text-lg">
-          The Agriculture Engineering division bridges engineering and agriculture — designing and applying machinery, energy systems and
-          processing technology that reduce drudgery, improve efficiency and add value across the farm value chain.
+      <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
+        <h2 className="font-display text-2xl font-bold text-foreground">About Agricultural Engineering</h2>
+        <p>
+          <strong>Agricultural Engineering:</strong> Engineering that deals with the design of farm machinery,
+          the location and planning of farm structures, farm drainage, soil management and erosion control,
+          water supply and irrigation, rural electrification, and the processing of farm products.
+        </p>
+        <p>
+          <strong>Food Technology:</strong> The Food Science laboratory accommodates fifty students at a time
+          and is well equipped with modernised lab equipment and good ventilation. The laboratory is attached
+          with a staff room and a storage room used for storing instruments, glassware and chemicals.
         </p>
       </div>
 
-      <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-6xl">
-        {focus.map((f) => (
-          <div key={f.title} className="rounded-2xl border bg-card p-6 shadow-soft hover:shadow-glow transition-all">
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary mb-4">
-              <f.icon className="h-6 w-6" />
+      <div className="mt-12 max-w-5xl">
+        <h2 className="font-display text-2xl font-bold mb-2">Sections in Agricultural Engineering</h2>
+        <p className="text-muted-foreground mb-8">
+          The Agricultural Engineering department is divided into multiple sectors to utilise the maximum
+          potential of agricultural engineering techniques.
+        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {sections.map((s) => (
+            <div key={s.title} className="rounded-2xl border bg-card p-6 shadow-soft hover:shadow-glow transition-all">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary mb-4">
+                <s.icon className="h-6 w-6" />
+              </div>
+              <h3 className="font-display text-lg font-bold">{s.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
             </div>
-            <h3 className="font-display text-lg font-bold">{f.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </PageShell>
   );
