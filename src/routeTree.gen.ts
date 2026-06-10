@@ -17,6 +17,9 @@ import { Route as LifeHostelRouteImport } from './routes/life.hostel'
 import { Route as LifeFeePaymentRouteImport } from './routes/life.fee-payment'
 import { Route as LifeEventsRouteImport } from './routes/life.events'
 import { Route as LifeCulturalsRouteImport } from './routes/life.culturals'
+import { Route as FarmsWeatherRouteImport } from './routes/farms.weather'
+import { Route as FarmsSouthRouteImport } from './routes/farms.south'
+import { Route as FarmsNorthRouteImport } from './routes/farms.north'
 import { Route as DivisionsSocialScienceRouteImport } from './routes/divisions.social-science'
 import { Route as DivisionsPlantProtectionRouteImport } from './routes/divisions.plant-protection'
 import { Route as DivisionsHorticultureRouteImport } from './routes/divisions.horticulture'
@@ -78,6 +81,21 @@ const LifeEventsRoute = LifeEventsRouteImport.update({
 const LifeCulturalsRoute = LifeCulturalsRouteImport.update({
   id: '/life/culturals',
   path: '/life/culturals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FarmsWeatherRoute = FarmsWeatherRouteImport.update({
+  id: '/farms/weather',
+  path: '/farms/weather',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FarmsSouthRoute = FarmsSouthRouteImport.update({
+  id: '/farms/south',
+  path: '/farms/south',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FarmsNorthRoute = FarmsNorthRouteImport.update({
+  id: '/farms/north',
+  path: '/farms/north',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DivisionsSocialScienceRoute = DivisionsSocialScienceRouteImport.update({
@@ -219,6 +237,9 @@ export interface FileRoutesByFullPath {
   '/divisions/horticulture': typeof DivisionsHorticultureRoute
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
+  '/farms/north': typeof FarmsNorthRoute
+  '/farms/south': typeof FarmsSouthRoute
+  '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
@@ -251,6 +272,9 @@ export interface FileRoutesByTo {
   '/divisions/horticulture': typeof DivisionsHorticultureRoute
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
+  '/farms/north': typeof FarmsNorthRoute
+  '/farms/south': typeof FarmsSouthRoute
+  '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
@@ -284,6 +308,9 @@ export interface FileRoutesById {
   '/divisions/horticulture': typeof DivisionsHorticultureRoute
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
+  '/farms/north': typeof FarmsNorthRoute
+  '/farms/south': typeof FarmsSouthRoute
+  '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
@@ -318,6 +345,9 @@ export interface FileRouteTypes {
     | '/divisions/horticulture'
     | '/divisions/plant-protection'
     | '/divisions/social-science'
+    | '/farms/north'
+    | '/farms/south'
+    | '/farms/weather'
     | '/life/culturals'
     | '/life/events'
     | '/life/fee-payment'
@@ -350,6 +380,9 @@ export interface FileRouteTypes {
     | '/divisions/horticulture'
     | '/divisions/plant-protection'
     | '/divisions/social-science'
+    | '/farms/north'
+    | '/farms/south'
+    | '/farms/weather'
     | '/life/culturals'
     | '/life/events'
     | '/life/fee-payment'
@@ -382,6 +415,9 @@ export interface FileRouteTypes {
     | '/divisions/horticulture'
     | '/divisions/plant-protection'
     | '/divisions/social-science'
+    | '/farms/north'
+    | '/farms/south'
+    | '/farms/weather'
     | '/life/culturals'
     | '/life/events'
     | '/life/fee-payment'
@@ -415,6 +451,9 @@ export interface RootRouteChildren {
   DivisionsHorticultureRoute: typeof DivisionsHorticultureRoute
   DivisionsPlantProtectionRoute: typeof DivisionsPlantProtectionRoute
   DivisionsSocialScienceRoute: typeof DivisionsSocialScienceRoute
+  FarmsNorthRoute: typeof FarmsNorthRoute
+  FarmsSouthRoute: typeof FarmsSouthRoute
+  FarmsWeatherRoute: typeof FarmsWeatherRoute
   LifeCulturalsRoute: typeof LifeCulturalsRoute
   LifeEventsRoute: typeof LifeEventsRoute
   LifeFeePaymentRoute: typeof LifeFeePaymentRoute
@@ -480,6 +519,27 @@ declare module '@tanstack/react-router' {
       path: '/life/culturals'
       fullPath: '/life/culturals'
       preLoaderRoute: typeof LifeCulturalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/farms/weather': {
+      id: '/farms/weather'
+      path: '/farms/weather'
+      fullPath: '/farms/weather'
+      preLoaderRoute: typeof FarmsWeatherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/farms/south': {
+      id: '/farms/south'
+      path: '/farms/south'
+      fullPath: '/farms/south'
+      preLoaderRoute: typeof FarmsSouthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/farms/north': {
+      id: '/farms/north'
+      path: '/farms/north'
+      fullPath: '/farms/north'
+      preLoaderRoute: typeof FarmsNorthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/divisions/social-science': {
@@ -663,6 +723,9 @@ const rootRouteChildren: RootRouteChildren = {
   DivisionsHorticultureRoute: DivisionsHorticultureRoute,
   DivisionsPlantProtectionRoute: DivisionsPlantProtectionRoute,
   DivisionsSocialScienceRoute: DivisionsSocialScienceRoute,
+  FarmsNorthRoute: FarmsNorthRoute,
+  FarmsSouthRoute: FarmsSouthRoute,
+  FarmsWeatherRoute: FarmsWeatherRoute,
   LifeCulturalsRoute: LifeCulturalsRoute,
   LifeEventsRoute: LifeEventsRoute,
   LifeFeePaymentRoute: LifeFeePaymentRoute,

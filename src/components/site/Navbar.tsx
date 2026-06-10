@@ -93,15 +93,14 @@ const menu: MenuItem[] = [
   },
   {
     label: "Farms",
-    href: "/#facilities",
+    href: "/farms/south",
     groups: [
       {
         heading: "Our Farms",
         links: [
-          { label: "Instructional Farm", href: "/#facilities" },
-          { label: "Horticulture Farm", href: "/#facilities" },
-          { label: "Dairy & Livestock", href: "/#facilities" },
-          { label: "Research Plots", href: "/#facilities" },
+          { label: "South Farm", href: "/farms/south" },
+          { label: "North Farm", href: "/farms/north" },
+          { label: "Weather Data", href: "/farms/weather" },
         ],
       },
     ],
