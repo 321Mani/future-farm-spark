@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
+
 
 export const Route = createFileRoute("/faculty")({
   head: () => ({
@@ -14,7 +15,7 @@ export const Route = createFileRoute("/faculty")({
   component: FacultyPage,
 });
 
-type Member = { name: string; img: string };
+type Member = { name: string; img: string; href?: string };
 
 const departments: { title: string; members: Member[] }[] = [
   {
@@ -22,7 +23,7 @@ const departments: { title: string; members: Member[] }[] = [
     members: [
       { name: "Dr. P. Elamparithi", img: "https://imayamagri.org/images/staff-profile-pic/Elamparithi.jpg" },
       { name: "Dr. C. Vengatesan", img: "https://imayamagri.org/images/staff-profile-pic/vengatesan.jpg" },
-      { name: "Mrs. M. Rajakumari Malliga", img: "https://imayamagri.org/images/staff-profile-pic/Mrs.M.RAJAKUMARI%20MALLIGA.jpg" },
+      { name: "Mrs. M. Rajakumari Malliga", img: "https://imayamagri.org/images/staff-profile-pic/Mrs.M.RAJAKUMARI%20MALLIGA.jpg", href: "/faculty/rajakumari-malliga" },
       { name: "Mr. N. Purushothaman", img: "https://imayamagri.org/images/staff-profile-pic/Purushothaman.jpg" },
       { name: "Er. R. Maniyarasu", img: "https://imayamagri.org/images/staff-profile-pic/Maniyarasu.jpg" },
     ],
@@ -71,28 +72,34 @@ function FacultyPage() {
               {dept.title}
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-              {dept.members.map((m, i) => (
-                <motion.div
-                  key={m.name}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.04 }}
-                  className="rounded-2xl bg-card border shadow-soft overflow-hidden hover:shadow-glow transition-all"
-                >
-                  <div className="aspect-square overflow-hidden bg-muted">
-                    <img
-                      src={m.img}
-                      alt={m.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-3 text-center">
-                    <div className="text-sm font-semibold text-foreground">{m.name}</div>
-                  </div>
-                </motion.div>
-              ))}
+              {dept.members.map((m, i) => {
+                const Card = (
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.04 }}
+                    className="rounded-2xl bg-card border shadow-soft overflow-hidden hover:shadow-glow transition-all h-full"
+                  >
+                    <div className="aspect-square overflow-hidden bg-muted">
+                      <img
+                        src={m.img}
+                        alt={m.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-3 text-center">
+                      <div className="text-sm font-semibold text-foreground">{m.name}</div>
+                    </div>
+                  </motion.div>
+                );
+                return m.href ? (
+                  <Link key={m.name} to={m.href} className="block">{Card}</Link>
+                ) : (
+                  <div key={m.name}>{Card}</div>
+                );
+              })}
             </div>
           </div>
         ))}
