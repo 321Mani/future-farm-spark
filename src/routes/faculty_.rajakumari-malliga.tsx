@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Mail, Calendar, GraduationCap, Award, BookOpen, Briefcase } from "lucide-react";
 
-export const Route = createFileRoute("/faculty/rajakumari-malliga")({
+export const Route = createFileRoute("/faculty_/rajakumari-malliga")({
   head: () => ({
     meta: [
       { title: "Mrs. M. Rajakumari Malliga — Faculty Profile — IIAT" },

@@ -112,7 +112,7 @@ export function Hero() {
             <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.02] text-white [text-shadow:0_4px_24px_rgba(0,0,0,0.7)]">
               {active.titleTop}
               <br />
-              <span className="text-accent [text-shadow:0_4px_24px_rgba(0,0,0,0.85)]">
+              <span className="text-yellow-300 [text-shadow:0_4px_28px_rgba(0,0,0,0.95)]">
                 {active.titleBottom}
               </span>
             </h1>

@@ -23,7 +23,7 @@ import { Route as LifeCulturalsRouteImport } from './routes/life.culturals'
 import { Route as FarmsWeatherRouteImport } from './routes/farms.weather'
 import { Route as FarmsSouthRouteImport } from './routes/farms.south'
 import { Route as FarmsNorthRouteImport } from './routes/farms.north'
-import { Route as FacultyRajakumariMalligaRouteImport } from './routes/faculty.rajakumari-malliga'
+import { Route as FacultyRajakumariMalligaRouteImport } from './routes/faculty_.rajakumari-malliga'
 import { Route as DivisionsSocialScienceRouteImport } from './routes/divisions.social-science'
 import { Route as DivisionsPlantProtectionRouteImport } from './routes/divisions.plant-protection'
 import { Route as DivisionsHorticultureRouteImport } from './routes/divisions.horticulture'
@@ -119,9 +119,9 @@ const FarmsNorthRoute = FarmsNorthRouteImport.update({
 } as any)
 const FacultyRajakumariMalligaRoute =
   FacultyRajakumariMalligaRouteImport.update({
-    id: '/rajakumari-malliga',
-    path: '/rajakumari-malliga',
-    getParentRoute: () => FacultyRoute,
+    id: '/faculty_/rajakumari-malliga',
+    path: '/faculty/rajakumari-malliga',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const DivisionsSocialScienceRoute = DivisionsSocialScienceRouteImport.update({
   id: '/divisions/social-science',
@@ -241,7 +241,7 @@ const AboutAntiRaggingRoute = AboutAntiRaggingRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/faculty': typeof FacultyRouteWithChildren
+  '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
@@ -280,7 +280,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/faculty': typeof FacultyRouteWithChildren
+  '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
@@ -320,7 +320,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/faculty': typeof FacultyRouteWithChildren
+  '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
@@ -344,7 +344,7 @@ export interface FileRoutesById {
   '/divisions/horticulture': typeof DivisionsHorticultureRoute
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
-  '/faculty/rajakumari-malliga': typeof FacultyRajakumariMalligaRoute
+  '/faculty_/rajakumari-malliga': typeof FacultyRajakumariMalligaRoute
   '/farms/north': typeof FarmsNorthRoute
   '/farms/south': typeof FarmsSouthRoute
   '/farms/weather': typeof FarmsWeatherRoute
@@ -463,7 +463,7 @@ export interface FileRouteTypes {
     | '/divisions/horticulture'
     | '/divisions/plant-protection'
     | '/divisions/social-science'
-    | '/faculty/rajakumari-malliga'
+    | '/faculty_/rajakumari-malliga'
     | '/farms/north'
     | '/farms/south'
     | '/farms/weather'
@@ -479,7 +479,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  FacultyRoute: typeof FacultyRouteWithChildren
+  FacultyRoute: typeof FacultyRoute
   GalleryRoute: typeof GalleryRoute
   AboutAntiRaggingRoute: typeof AboutAntiRaggingRoute
   AboutApprovalsRoute: typeof AboutApprovalsRoute
@@ -503,6 +503,7 @@ export interface RootRouteChildren {
   DivisionsHorticultureRoute: typeof DivisionsHorticultureRoute
   DivisionsPlantProtectionRoute: typeof DivisionsPlantProtectionRoute
   DivisionsSocialScienceRoute: typeof DivisionsSocialScienceRoute
+  FacultyRajakumariMalligaRoute: typeof FacultyRajakumariMalligaRoute
   FarmsNorthRoute: typeof FarmsNorthRoute
   FarmsSouthRoute: typeof FarmsSouthRoute
   FarmsWeatherRoute: typeof FarmsWeatherRoute
@@ -615,12 +616,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FarmsNorthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/faculty/rajakumari-malliga': {
-      id: '/faculty/rajakumari-malliga'
-      path: '/rajakumari-malliga'
+    '/faculty_/rajakumari-malliga': {
+      id: '/faculty_/rajakumari-malliga'
+      path: '/faculty/rajakumari-malliga'
       fullPath: '/faculty/rajakumari-malliga'
       preLoaderRoute: typeof FacultyRajakumariMalligaRouteImport
-      parentRoute: typeof FacultyRoute
+      parentRoute: typeof rootRouteImport
     }
     '/divisions/social-science': {
       id: '/divisions/social-science'
@@ -779,21 +780,10 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface FacultyRouteChildren {
-  FacultyRajakumariMalligaRoute: typeof FacultyRajakumariMalligaRoute
-}
-
-const FacultyRouteChildren: FacultyRouteChildren = {
-  FacultyRajakumariMalligaRoute: FacultyRajakumariMalligaRoute,
-}
-
-const FacultyRouteWithChildren =
-  FacultyRoute._addFileChildren(FacultyRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  FacultyRoute: FacultyRouteWithChildren,
+  FacultyRoute: FacultyRoute,
   GalleryRoute: GalleryRoute,
   AboutAntiRaggingRoute: AboutAntiRaggingRoute,
   AboutApprovalsRoute: AboutApprovalsRoute,
@@ -817,6 +807,7 @@ const rootRouteChildren: RootRouteChildren = {
   DivisionsHorticultureRoute: DivisionsHorticultureRoute,
   DivisionsPlantProtectionRoute: DivisionsPlantProtectionRoute,
   DivisionsSocialScienceRoute: DivisionsSocialScienceRoute,
+  FacultyRajakumariMalligaRoute: FacultyRajakumariMalligaRoute,
   FarmsNorthRoute: FarmsNorthRoute,
   FarmsSouthRoute: FarmsSouthRoute,
   FarmsWeatherRoute: FarmsWeatherRoute,
