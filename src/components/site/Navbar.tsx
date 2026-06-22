@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, Sprout, ChevronDown } from "lucide-react";
+import { Menu, X, Sprout, ChevronDown, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type MenuItem = {
@@ -7,6 +7,15 @@ type MenuItem = {
   href: string;
   groups?: { heading?: string; links: { label: string; href: string }[] }[];
 };
+
+const pdfLinks: { label: string; href: string }[] = [
+  { label: "NIRF", href: "/pdfs/nirf.pdf" },
+  { label: "Affiliation", href: "/pdfs/affiliation.pdf" },
+  { label: "MOU", href: "/pdfs/mou.pdf" },
+  { label: "GO", href: "/pdfs/go.pdf" },
+  { label: "ICAR-Accreditation", href: "/pdfs/icar-accreditation.pdf" },
+  { label: "Governing Council", href: "/pdfs/governing-council.pdf" },
+];
 
 const menu: MenuItem[] = [
   { label: "Home", href: "/" },
