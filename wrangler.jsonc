@@ -1,7 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
+  "name": "future-farm-spark",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
+  "alias": {
+    "#tanstack-router-entry": "./node_modules/@tanstack/start-client-core/dist/esm/fake-entries/router.js",
+    "#tanstack-start-entry": "./node_modules/@tanstack/start-client-core/dist/esm/fake-entries/start.js",
+    "#tanstack-start-plugin-adapters": "./node_modules/@tanstack/start-client-core/dist/esm/empty-plugin-adapters.js",
+    "tanstack-start-manifest:v": "./dist/server/assets/_tanstack-start-manifest_v-DMYQf66j.js",
+    "tanstack-start-injected-head-scripts:v": "./dist/server/assets/start-DCIlBI6B.js"
+  }
 }
