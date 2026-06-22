@@ -178,9 +178,9 @@ export function Navbar() {
           }`}
           onMouseLeave={scheduleClose}
         >
-          <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-primary shadow-glow">
-              <Sprout className="h-5 w-5 text-primary-foreground" />
+          <a href="/" className="flex items-center gap-2.5 group">
+            <div className="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-soft ring-1 ring-black/5 overflow-hidden">
+              <img src={iiatLogo} alt="IIAT logo" width={44} height={44} className="h-9 w-9 object-contain" />
             </div>
             <div className="leading-tight">
               <div className={`font-display font-bold text-base ${scrolled || active ? "text-foreground" : "text-white"}`}>
