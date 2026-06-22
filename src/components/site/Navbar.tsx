@@ -283,6 +283,35 @@ export function Navbar() {
           </div>
         </nav>
 
+        {/* PDF quick-links sub-bar */}
+        <div
+          className={`mt-2 hidden lg:flex items-center justify-center gap-1 rounded-xl px-4 py-2 transition-all duration-500 ${
+            scrolled || active ? "glass shadow-soft" : "bg-black/25 backdrop-blur-md"
+          }`}
+        >
+          {pdfLinks.map((p, i) => (
+            <div key={p.label} className="flex items-center">
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noopener"
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-semibold transition-colors ${
+                  scrolled || active
+                    ? "text-primary hover:bg-primary/10"
+                    : "text-white hover:bg-white/15"
+                }`}
+              >
+                <FileText className="h-3.5 w-3.5 opacity-80" />
+                {p.label}
+              </a>
+              {i < pdfLinks.length - 1 && (
+                <span className={`mx-1 h-4 w-px ${scrolled || active ? "bg-border" : "bg-white/30"}`} />
+              )}
+            </div>
+          ))}
+        </div>
+
+
         <AnimatePresence>
           {open && (
             <motion.div
