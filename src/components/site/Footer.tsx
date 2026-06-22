@@ -1,4 +1,5 @@
-import { Sprout, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import iiatLogo from "@/assets/iiat-logo.png";
 
 export function Footer() {
   return (
