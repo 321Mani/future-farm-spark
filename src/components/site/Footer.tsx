@@ -8,8 +8,8 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2.5">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-primary">
-                <Sprout className="h-5 w-5 text-primary-foreground" />
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-white ring-1 ring-white/10 overflow-hidden">
+                <img src={iiatLogo} alt="IIAT logo" loading="lazy" width={44} height={44} className="h-9 w-9 object-contain" />
               </div>
               <div className="leading-tight">
                 <div className="font-display font-bold">Imayam</div>
