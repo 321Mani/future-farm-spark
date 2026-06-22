@@ -45,6 +45,7 @@ function Index() {
       <Contact />
       <Footer />
       <WhatsAppButton />
+      <ApplyNowSticky />
     </main>
   );
 }
