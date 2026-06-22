@@ -286,27 +286,27 @@ export function Navbar() {
 
         {/* PDF quick-links sub-bar */}
         <div
-          className={`mt-2 hidden lg:flex items-center justify-center gap-1 rounded-xl px-4 py-2 transition-all duration-500 ${
-            scrolled || active ? "glass shadow-soft" : "bg-black/25 backdrop-blur-md"
+          className={`mt-2 flex items-center gap-1 overflow-x-auto rounded-xl px-3 py-2 transition-all duration-500 lg:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+            scrolled || active ? "glass shadow-soft" : "bg-black/35 backdrop-blur-md"
           }`}
         >
           {pdfLinks.map((p, i) => (
-            <div key={p.label} className="flex items-center">
+            <div key={p.label} className="flex items-center shrink-0">
               <a
                 href={p.href}
                 target="_blank"
                 rel="noopener"
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-semibold transition-colors ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] sm:text-[13px] font-semibold whitespace-nowrap transition-colors ${
                   scrolled || active
                     ? "text-primary hover:bg-primary/10"
                     : "text-white hover:bg-white/15"
                 }`}
               >
-                <FileText className="h-3.5 w-3.5 opacity-80" />
+                <FileText className="h-3.5 w-3.5 opacity-80 shrink-0" />
                 {p.label}
               </a>
               {i < pdfLinks.length - 1 && (
-                <span className={`mx-1 h-4 w-px ${scrolled || active ? "bg-border" : "bg-white/30"}`} />
+                <span className={`mx-1 h-4 w-px shrink-0 ${scrolled || active ? "bg-border" : "bg-white/30"}`} />
               )}
             </div>
           ))}
