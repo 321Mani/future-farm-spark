@@ -11,6 +11,7 @@ import { AdmissionCTA } from "@/components/site/AdmissionCTA";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
 
 export const Route = createFileRoute("/")({
   head: () => ({
