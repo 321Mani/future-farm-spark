@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
 import heroImg from "@/assets/hero-campus.jpg";
