@@ -29,23 +29,27 @@ const menu: MenuItem[] = [
         heading: "The Institute",
         links: [
           { label: "About IIAT", href: "/about" },
+          { label: "Founder", href: "/founder" },
+          { label: "Location", href: "/location" },
           { label: "Vision & Mission", href: "/about/vision-mission" },
           { label: "Chairman's Message", href: "/about/chairman" },
           { label: "Our Principal", href: "/about/principal" },
         ],
       },
-      {
-        heading: "Approvals",
-        links: [
-          { label: "ICAR", href: "/about/icar" },
-          { label: "Approval Letters", href: "/about/approvals" },
-        ],
-      },
+      // {
+      //   heading: "Approvals",
+      //   links: [
+      //     { label: "ICAR", href: "/about/icar" },
+      //     { label: "Approval Letters", href: "/about/approvals" },
+      //   ],
+      // },
       {
         heading: "Governance",
         links: [
           { label: "Board Of Studies", href: "/about/board-of-studies" },
           { label: "Anti-Ragging", href: "/about/anti-ragging" },
+          { label: "Students Grievance", href: "/about/students-grievance" },
+          { label: "Hostel Executive", href: "/about/hostel-executive" },
           { label: "Sexual Harassment", href: "/about/sexual-harassment" },
         ],
       },
@@ -60,11 +64,14 @@ const menu: MenuItem[] = [
         links: [
           { label: "Course Offered", href: "/academics/courses" },
           { label: "Exam Pattern", href: "/academics/exam-pattern" },
+          { label: "Academic Calendar", href: "/academics/academic-calendar" },
+          { label: "Course & Syllabus", href: "/academics/course-syllabus" },
         ],
       },
       {
         heading: "Facilities",
         links: [
+          { label: "Faculty", href: "/academics/faculty" },
           { label: "Library", href: "/academics/library" },
           { label: "Computer Center", href: "/academics/computer-center" },
           { label: "Smart Class", href: "/academics/smart-class" },
@@ -73,19 +80,12 @@ const menu: MenuItem[] = [
       {
         heading: "Student Life",
         links: [
-          { label: "NSS", href: "/academics/nss" },
           { label: "Physical Education", href: "/academics/physical-education" },
           { label: "Yoga", href: "/academics/yoga" },
         ],
       },
-    ],
-  },
-  {
-    label: "Divisions",
-    href: "/divisions/crop-improvement",
-    groups: [
       {
-        heading: "Crop Sciences",
+        heading: "Divisions",
         links: [
           { label: "Crop Improvement", href: "/divisions/crop-improvement" },
           { label: "Crop Management", href: "/divisions/crop-management" },
@@ -109,9 +109,12 @@ const menu: MenuItem[] = [
       {
         heading: "Our Farms",
         links: [
-          { label: "South Farm", href: "/farms/south" },
-          { label: "North Farm", href: "/farms/north" },
+          { label: "Horticulture Farm", href: "/farms/south" },
+          { label: "Agriculture Farm", href: "/farms/north" },
+          { label: "Daily & Live Stock", href: "/farms/weather" },
+          { label: "Seed Production", href: "/farms/weather" },
           { label: "Weather Data", href: "/farms/weather" },
+          { label: "Forest Crops", href: "/farms/weather" },
         ],
       },
     ],
@@ -123,22 +126,28 @@ const menu: MenuItem[] = [
       {
         heading: "Campus Life",
         links: [
-          { label: "Culturals", href: "/life/culturals" },
-          { label: "Events", href: "/life/events" },
-          { label: "Hostel", href: "/life/hostel" },
-        ],
+          { label: "Newsletters", href: "/life/newsletter" },
+          { label: "Library", href: "/life/library" },
+          { label: "Smart Classroom", href: "/life/smart-classroom" },
+          ],
       },
       {
         heading: "Student Services",
         links: [
-          { label: "Placement", href: "/life/placement" },
-          { label: "Newsletters", href: "/life/newsletter" },
-          { label: "Online Fee Payment", href: "/life/fee-payment" },
+          { label: "Hostel", href: "/life/hostel" },
+          { label: "Sports", href: "/life/sports" },
+          { label: "Events", href: "/life/events" },
+          { label: "Culturals", href: "/life/culturals" },
+          { label: "Culturals", href: "/life/culturals" },
+          // { label: "Placement", href: "/life/placement" },
+          // { label: "Online Fee Payment", href: "/life/fee-payment" },
+          { label: "NSS", href: "/academics/nss" },
+          { label: "Laboratories", href: "/life/laboratories" },
         ],
       },
     ],
   },
-  { label: "Faculty", href: "/faculty" },
+  // { label: "Faculty", href: "/faculty" },
   { label: "Our Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
@@ -229,7 +238,7 @@ export function Navbar() {
                     >
                       <div
                         className="rounded-2xl border border-border/70 bg-card p-5 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)]"
-                        style={{ width: `${Math.min(item.groups.length, 3) * 220}px` }}
+                        style={{ width: `${Math.min(item.groups.length) * 220}px` }}
                       >
                         <div
                           className="grid gap-5"
