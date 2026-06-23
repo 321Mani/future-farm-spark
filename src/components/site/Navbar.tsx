@@ -228,7 +228,7 @@ export function Navbar() {
                       className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
                     >
                       <div
-                        className="rounded-2xl border border-border/70 bg-background/98 p-5 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+                        className="rounded-2xl border border-border/70 bg-card p-5 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)]"
                         style={{ width: `${Math.min(item.groups.length, 3) * 220}px` }}
                       >
                         <div
@@ -320,7 +320,7 @@ export function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="relative z-[90] lg:hidden mt-2 rounded-2xl border border-border/70 bg-background/95 p-3 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)] max-h-[68vh] overflow-y-auto backdrop-blur-xl"
+              className="relative z-[90] lg:hidden mt-2 rounded-2xl border border-border/70 bg-card p-3 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)] max-h-[62vh] overflow-y-auto"
             >
               <ul className="grid gap-1">
                 {menu.map((item) => (
