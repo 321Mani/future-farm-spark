@@ -77,7 +77,7 @@ export function PageShell({ eyebrow = "About Us", title, subtitle, breadcrumbs =
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
       <ApplyNowSticky />
     </main>
   );

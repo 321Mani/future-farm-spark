@@ -44,7 +44,7 @@ function Index() {
       <AdmissionCTA />
       <Contact />
       <Footer />
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
       <ApplyNowSticky />
     </main>
   );

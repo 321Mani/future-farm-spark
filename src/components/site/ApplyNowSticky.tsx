@@ -13,7 +13,8 @@ export function ApplyNowSticky() {
       whileHover={{ scale: 1.04, x: -6 }}
       whileTap={{ scale: 0.97 }}
       aria-label="Apply Now for Admissions 2025"
-      className="group fixed right-3 bottom-24 sm:right-5 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 z-50
+      style={{ "top": "85%" }}
+      className="group fixed right-3 bottom-24 sm:right-5 sm:bottom-auto sm:-translate-y-1/2 z-50
                  inline-flex items-center gap-2 sm:gap-2.5 overflow-hidden
                  rounded-2xl px-4 py-3 sm:px-5 sm:py-4
                  text-white font-display font-bold text-sm sm:text-[15px] tracking-wide

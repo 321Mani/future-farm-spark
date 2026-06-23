@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import iiatLogo from "@/assets/iiat-logo.png";
+import imayamLogo from "@/assets/images/logo.png";
 
 type MenuItem = {
   label: string;
@@ -179,17 +180,17 @@ export function Navbar() {
           onMouseLeave={scheduleClose}
         >
           <a href="/" className="flex items-center gap-2.5 group">
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-soft ring-1 ring-black/5 overflow-hidden">
-              <img src={iiatLogo} alt="IIAT logo" width={44} height={44} className="h-9 w-9 object-contain" />
+            <div className="rounded-xl bg-white shadow-soft" style={{"padding": "5px"}}>
+              <img src={imayamLogo} alt="Imayam logo" width={200} className="object-contain" />
             </div>
-            <div className="leading-tight">
+            {/* <div className="leading-tight">
               <div className={`font-display font-bold text-base ${scrolled || active ? "text-foreground" : "text-white"}`}>
                 Imayam
               </div>
               <div className={`text-[10px] tracking-widest uppercase ${scrolled || active ? "text-muted-foreground" : "text-white/80"}`}>
                 Agri & Tech
               </div>
-            </div>
+            </div> */}
           </a>
 
           <ul className="hidden lg:flex items-center gap-0.5">
