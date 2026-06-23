@@ -168,14 +168,14 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ${
         scrolled ? "py-2" : "py-4"
       }`}
     >
       <div className="container mx-auto px-4">
         <nav
           className={`relative flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
-            scrolled || active ? "glass shadow-soft" : "bg-transparent"
+            scrolled || active || open ? "glass shadow-soft" : "bg-black/35 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-0"
           }`}
           onMouseLeave={scheduleClose}
         >
@@ -228,7 +228,7 @@ export function Navbar() {
                       className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
                     >
                       <div
-                        className="glass rounded-2xl p-5 shadow-soft border border-border/50"
+                        className="rounded-2xl border border-border/70 bg-card p-5 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)]"
                         style={{ width: `${Math.min(item.groups.length, 3) * 220}px` }}
                       >
                         <div
@@ -277,7 +277,7 @@ export function Navbar() {
               aria-label="Toggle menu"
               onClick={() => setOpen((v) => !v)}
               className={`lg:hidden grid place-items-center h-10 w-10 rounded-xl ${
-                scrolled ? "bg-secondary text-foreground" : "bg-white/15 text-white"
+                scrolled || open ? "bg-secondary text-foreground" : "bg-white/20 text-white ring-1 ring-white/35"
               }`}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -320,7 +320,7 @@ export function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="lg:hidden mt-2 glass rounded-2xl p-3 shadow-soft max-h-[70vh] overflow-y-auto"
+              className="relative z-[90] lg:hidden mt-2 rounded-2xl border border-border/70 bg-card p-3 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)] max-h-[62vh] overflow-y-auto"
             >
               <ul className="grid gap-1">
                 {menu.map((item) => (
