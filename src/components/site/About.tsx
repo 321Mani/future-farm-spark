@@ -21,7 +21,7 @@ export function About() {
                 width={1280}
                 height={1280}
                 loading="lazy"
-                className="h-[520px] w-full object-cover"
+                className="h-[700px] w-full object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 glass rounded-2xl p-5 shadow-soft max-w-[220px] hidden sm:block">
@@ -40,16 +40,16 @@ export function About() {
             transition={{ duration: 0.7 }}
           >
             <div className="text-sm font-semibold text-primary tracking-widest uppercase">
-              About the Institute
+              About the IIAT
             </div>
             <h2 className="mt-3 font-display text-4xl lg:text-5xl font-bold leading-tight">
-              A living campus where{" "}
-              <span className="text-gradient">science meets soil.</span>
+              Imayam Institute of {" "}
+              <span className="text-gradient">Agriculture</span>
             </h2>
             <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-              Founded under the Imayam Educational Trust, our institute blends
-              field-first learning with research-grade laboratories. Students train across
-              100 acres of working farmland, polyhouses, and smart agriculture facilities.
+              Imayam Institute of Agriculture and Technology (IIAT) was affiliated to TamilNadu Agricultural University (TNAU) which is a premier and pioneer institute in agricultural education, research and extension. The university is well known for regional, national and International levels for the development of large number of improved varieties of food crops, horticultural crops and agricultural implements.
+              <br /><br />
+              Thus, IIAT is the fifth private self-financing agricultural college affiliated to TNAU. Initially, IIAThas started B.Sc. (Agriculture) programme (2013) with intake of 54 students and currently offering B.Sc. (Hons) Agriculture intake with 166 student’s.
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -57,16 +57,14 @@ export function About() {
                 <Target className="h-6 w-6 text-primary" />
                 <div className="mt-3 font-display font-bold text-lg">Our Vision</div>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  To be South India's reference institute for sustainable agriculture and
-                  agri-technology education.
+                  The vision as envisaged by the Founders of IIAT, Thuraiyur is to develop this institute as a national centre of global focus with a reputation of academic excellence in agricultural education and research that catalyses knowledge and technology based agricultural growth and development in the State.
                 </p>
               </div>
               <div className="rounded-2xl border bg-card p-6 shadow-soft">
                 <Compass className="h-6 w-6 text-primary" />
                 <div className="mt-3 font-display font-bold text-lg">Our Mission</div>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Empower rural youth with research, hands-on practice, and modern tools
-                  that transform Indian farms.
+                  IIAT, Thuraiyur is dedicated to impart quality education in agricultural science that inculcates expertise and talent for the development of the individual student. Agricultural education is the key to the prosperity of this region and the nation as a whole. The transformation that happens through the quality of agricultural education. shall lead to overall well being of the society.
                 </p>
               </div>
             </div>

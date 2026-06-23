@@ -37,9 +37,9 @@ function Index() {
       <Hero />
       <About />
       <Departments />
-      <Facilities />
+      {/* <Facilities /> */}
       <Gallery />
-      <Placements />
+      {/* <Placements /> */}
       <Testimonials />
       <AdmissionCTA />
       <Contact />

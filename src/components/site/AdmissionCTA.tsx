@@ -18,13 +18,13 @@ export function AdmissionCTA() {
           <div className="relative grid lg:grid-cols-[1fr_auto] gap-8 items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full glass-dark px-4 py-1.5 text-xs font-medium text-white">
-                Admissions 2025 · Now Open
+                Admissions 2026 · Now Open
               </div>
               <h2 className="mt-5 font-display text-4xl lg:text-6xl font-bold text-primary-foreground leading-tight">
                 Join the future of agriculture.
               </h2>
               <p className="mt-4 max-w-xl text-primary-foreground/85 text-lg">
-                Applications close 30 June 2025. Reserve your seat in India's most hands-on
+                Reserve your seat in India's most hands-on
                 agriculture programme.
               </p>
             </div>

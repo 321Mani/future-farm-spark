@@ -9,15 +9,15 @@ import g5 from "@/assets/gallery-5.jpg";
 import g6 from "@/assets/gallery-6.jpg";
 
 const items = [
-  { src: g1, cat: "Farm", title: "Paddy fields at dawn", h: "row-span-2" },
-  { src: g2, cat: "Labs", title: "Plant pathology lab", h: "" },
-  { src: g3, cat: "Farm", title: "Polyhouse training", h: "" },
-  { src: g4, cat: "Campus", title: "Mechanised harvest", h: "row-span-2" },
-  { src: g5, cat: "Events", title: "Graduation 2024", h: "" },
-  { src: g6, cat: "Farm", title: "From soil to sprout", h: "" },
+  { src: g1, cat: "Aerial", title: "Paddy fields at dawn", h: "row-span-2" },
+  { src: g2, cat: "Campus", title: "Plant pathology lab", h: "" },
+  { src: g3, cat: "Aerial", title: "Polyhouse training", h: "" },
+  { src: g4, cat: "Laboratory", title: "Mechanised harvest", h: "row-span-2" },
+  { src: g5, cat: "Sports", title: "Graduation 2024", h: "" },
+  { src: g6, cat: "Farms", title: "From soil to sprout", h: "" },
 ];
 
-const cats = ["All", "Farm", "Labs", "Campus", "Events"];
+const cats = ["All", "Aerial", "Campus", "Laboratory", "Farms", "Sports"];
 
 export function Gallery() {
   const [filter, setFilter] = useState("All");

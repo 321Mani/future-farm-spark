@@ -4,12 +4,12 @@ import {
 } from "lucide-react";
 
 const departments = [
-  { icon: Wheat, name: "Agronomy", desc: "Crop production systems, field experiments, and sustainable farming practices." },
-  { icon: Flower2, name: "Horticulture", desc: "Fruits, vegetables, floriculture and protected cultivation under polyhouse." },
-  { icon: Cog, name: "Agricultural Engineering", desc: "Farm mechanisation, irrigation systems and precision agri-technology." },
-  { icon: Bug, name: "Plant Protection", desc: "Entomology, pathology, IPM and biological control of crop diseases." },
-  { icon: TestTube2, name: "Soil Science", desc: "Soil chemistry, fertility management, and water resource conservation." },
-  { icon: LineChart, name: "Agricultural Economics", desc: "Farm management, agri-business, marketing and rural development." },
+  { icon: Wheat, name: "Crop Improvement", desc: "Plant Breeding Genetics, Biotechnology, Biochemistry and Seed Technology." },
+  { icon: Cog, name: "Crop Management", desc: "Agronomy, Organic farming, Meteorology, Crop Physiology and Veterinary" },
+  { icon: Flower2, name: "Plant Protection", desc: "Plant Pathology is one among the division under department of Plant Protection at IIAT." },
+  { icon: Bug, name: "Horticulture", desc: "Horticulture is the growing of flowers, fruits and vegetables, and of plants for ornament and fancy." },
+  { icon: TestTube2, name: "Agricultural Engineering", desc: "Attempting to solve agricultural problems concerning power supplies, the efficiency of machinery, etc,." },
+  { icon: LineChart, name: "Social Science", desc: "Social science plays a crucial role in agriculture, as it helps to understand the social, economic, and cultural aspects of agriculture." },
 ];
 
 export function Departments() {
@@ -19,10 +19,10 @@ export function Departments() {
         <div className="max-w-2xl">
           <div className="text-sm font-semibold text-primary tracking-widest uppercase">Departments</div>
           <h2 className="mt-3 font-display text-4xl lg:text-5xl font-bold">
-            Six disciplines. <span className="text-gradient">One mission.</span>
+            Organizational. <span className="text-gradient">structure.</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Each department combines classroom rigour with field, lab and farm-based learning.
+            We provide proper Facilites to students for attaining the knowledge in a proper way.
           </p>
         </div>
 
