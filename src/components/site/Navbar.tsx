@@ -11,12 +11,26 @@ type MenuItem = {
 };
 
 const pdfLinks: { label: string; href: string }[] = [
-  { label: "NIRF", href: "/pdfs/nirf.pdf" },
-  { label: "Affiliation", href: "/pdfs/affiliation.pdf" },
-  { label: "MOU", href: "/pdfs/mou.pdf" },
-  { label: "GO", href: "/pdfs/go.pdf" },
-  { label: "ICAR-Accreditation", href: "/pdfs/icar-accreditation.pdf" },
-  { label: "Governing Council", href: "/pdfs/governing-council.pdf" },
+  {
+    label: "NIRF",
+    href: new URL("../../assets/documents/NIRF_2025.pdf", import.meta.url).href,
+  },
+  {
+    label: "Affiliation",
+    href: new URL("../../assets/documents/Affilitation.pdf", import.meta.url).href,
+  },
+  {
+    label: "MOU",
+    href: new URL("../../assets/documents/MOU.pdf", import.meta.url).href,
+  },
+  {
+    label: "GO",
+    href: new URL("../../assets/documents/GO.pdf", import.meta.url).href,
+  },
+  {
+    label: "ICAR-Accreditation",
+    href: new URL("../../assets/documents/ICAR.pdf", import.meta.url).href,
+  },
 ];
 
 const menu: MenuItem[] = [
@@ -148,18 +162,12 @@ const menu: MenuItem[] = [
     ],
   },
   {
-    label: "Docuemnts",
+    label: "Documents",
     href: "#",
     groups: [
       {
         heading: "",
-        links: [
-          { label: "NIRF", href: "/life/newsletter" },
-          { label: "Affilitation", href: "/life/library" },
-          { label: "MOU", href: "/life/library" },
-          { label: "GO", href: "/life/library" },
-          { label: "ICAR- Accreditation ", href: "/life/library" },
-          ],
+        links: pdfLinks.map((p) => ({ label: p.label, href: p.href })),
       },
     ],
   },
@@ -273,6 +281,8 @@ export function Navbar() {
                                     <a
                                       href={link.href}
                                       onClick={() => setActive(null)}
+                                      target={/\.pdf$/i.test(link.href) ? "_blank" : undefined}
+                                      rel={/\.pdf$/i.test(link.href) ? "noopener noreferrer" : undefined}
                                       className="block rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-primary/10 hover:text-primary transition-colors"
                                     >
                                       {link.label}
@@ -381,6 +391,8 @@ export function Navbar() {
                                       key={link.label}
                                       href={link.href}
                                       onClick={() => setOpen(false)}
+                                      target={/\.pdf$/i.test(link.href) ? "_blank" : undefined}
+                                      rel={/\.pdf$/i.test(link.href) ? "noopener noreferrer" : undefined}
                                       className="block px-4 py-2 rounded-lg text-sm text-foreground/80 hover:bg-primary/10"
                                     >
                                       {link.label}
