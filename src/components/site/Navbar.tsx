@@ -228,7 +228,7 @@ export function Navbar() {
                       className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
                     >
                       <div
-                        className="glass rounded-2xl p-5 shadow-soft border border-border/50"
+                        className="rounded-2xl border border-border/70 bg-background/98 p-5 shadow-[0_24px_70px_-24px_rgba(0,0,0,0.45)] backdrop-blur-xl"
                         style={{ width: `${Math.min(item.groups.length, 3) * 220}px` }}
                       >
                         <div
