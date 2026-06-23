@@ -23,7 +23,7 @@ const menu: MenuItem[] = [
   { label: "Home", href: "/" },
   {
     label: "About Us",
-    href: "/about",
+    href: "#",
     groups: [
       {
         heading: "The Institute",
@@ -57,7 +57,7 @@ const menu: MenuItem[] = [
   },
   {
     label: "Academics",
-    href: "/academics/courses",
+    href: "#",
     groups: [
       {
         heading: "Programmes",
@@ -104,7 +104,7 @@ const menu: MenuItem[] = [
   },
   {
     label: "Farms",
-    href: "/farms/south",
+    href: "#",
     groups: [
       {
         heading: "Our Farms",
@@ -121,7 +121,7 @@ const menu: MenuItem[] = [
   },
   {
     label: "Life @ IIAT",
-    href: "/life/culturals",
+    href: "#",
     groups: [
       {
         heading: "Campus Life",
@@ -144,6 +144,22 @@ const menu: MenuItem[] = [
           { label: "NSS", href: "/academics/nss" },
           { label: "Laboratories", href: "/life/laboratories" },
         ],
+      },
+    ],
+  },
+  {
+    label: "Docuemnts",
+    href: "#",
+    groups: [
+      {
+        heading: "",
+        links: [
+          { label: "NIRF", href: "/life/newsletter" },
+          { label: "Affilitation", href: "/life/library" },
+          { label: "MOU", href: "/life/library" },
+          { label: "GO", href: "/life/library" },
+          { label: "ICAR- Accreditation ", href: "/life/library" },
+          ],
       },
     ],
   },
@@ -295,7 +311,7 @@ export function Navbar() {
         </nav>
 
         {/* PDF quick-links sub-bar */}
-        <div
+        {/* <div
           className={`mt-2 flex items-center gap-1 overflow-x-auto rounded-xl px-3 py-2 transition-all duration-500 lg:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
             scrolled || active ? "glass shadow-soft" : "bg-black/35 backdrop-blur-md"
           }`}
@@ -320,7 +336,7 @@ export function Navbar() {
               )}
             </div>
           ))}
-        </div>
+        </div> */}
 
 
         <AnimatePresence>
