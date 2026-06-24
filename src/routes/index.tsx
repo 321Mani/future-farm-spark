@@ -12,6 +12,7 @@ import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
+import { AdmissionPopup } from "@/components/site/AdmissionPopup";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,6 +47,7 @@ function Index() {
       <Footer />
       {/* <WhatsAppButton /> */}
       <ApplyNowSticky />
+      <AdmissionPopup />
     </main>
   );
 }
