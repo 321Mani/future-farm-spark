@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import imayamLogo from "@/assets/images/logo.png";
 
 export function ApplyNowSticky() {
   return (
     <motion.a
-      href={imayamLogo}
+      href={"https://forms.gle/sZDYU2U9T4HH8wdq5"}
       target="_blank"
       rel="noopener"
       initial={{ x: 120, opacity: 0 }}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, ArrowRight, GraduationCap } from "lucide-react";
 import iiatLogo from "@/assets/iiat-logo.png";
+import imayamLogo from "@/assets/images/logo.png";
 
 export function AdmissionPopup() {
   const [open, setOpen] = useState(false);
@@ -49,7 +50,7 @@ export function AdmissionPopup() {
                 <X className="h-4 w-4" />
               </button>
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 grid h-16 w-16 place-items-center rounded-2xl bg-white shadow-lg ring-4 ring-card">
-                <img src={iiatLogo} alt="IIAT" className="h-12 w-12 object-contain" />
+                <img src={imayamLogo} alt="Imayam" className="h-12 w-12 object-contain" />
               </div>
             </div>
 
