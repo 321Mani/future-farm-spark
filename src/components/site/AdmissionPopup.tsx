@@ -49,7 +49,7 @@ export function AdmissionPopup() {
               >
                 <X className="h-4 w-4" />
               </button>
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 grid h-16 w-16 place-items-center rounded-2xl bg-white shadow-lg ring-4 ring-card">
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 grid h-16 w-16 place-items-center rounded-2xl bg-white shadow-lg ring-4 ring-card" style={{ width: "200px"}}>
                 <img src={imayamLogo} alt="Imayam" className="h-12 w-12 object-contain" />
               </div>
             </div>
