@@ -5,7 +5,7 @@ import imayamLogo from "@/assets/images/logo.png";
 export function ApplyNowSticky() {
   return (
     <motion.a
-      href="https://forms.gle/sZDYU2U9T4HH8wdq5"
+      href={imayamLogo}
       target="_blank"
       rel="noopener"
       initial={{ x: 120, opacity: 0 }}
