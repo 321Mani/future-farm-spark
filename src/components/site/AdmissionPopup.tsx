@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, ArrowRight, GraduationCap } from "lucide-react";
 import iiatLogo from "@/assets/iiat-logo.png";
 import imayamLogo from "@/assets/images/logo.png";
+import imayaminstaLogo from "@/assets/images/imayam_logo.png";
 
 export function AdmissionPopup() {
   const [open, setOpen] = useState(false);
@@ -49,8 +50,8 @@ export function AdmissionPopup() {
               >
                 <X className="h-4 w-4" />
               </button>
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 grid h-16 w-16 place-items-center rounded-2xl bg-white shadow-lg ring-4 ring-card" style={{ width: "200px"}}>
-                <img src={imayamLogo} alt="Imayam" className="object-contain" />
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 grid place-items-center rounded-2xl bg-white shadow-lg ring-4 ring-card" style={{ width: "150px"}}>
+                <img src={imayaminstaLogo} alt="Imayam" className="object-contain" />
               </div>
             </div>
 
@@ -63,8 +64,8 @@ export function AdmissionPopup() {
                 Shape the Future of Agriculture
               </h2>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Apply now to B.Sc Agriculture, Horticulture & B.Tech Agri-Engineering
-                at our TNAU-affiliated 100-acre living campus.
+                Apply now to B.Sc Agriculture & Horticulture 
+                at our TNAU-affiliated 123-acre living campus.
               </p>
 
               <div className="mt-5 flex items-center justify-center gap-4 text-xs text-foreground/70">
@@ -73,7 +74,7 @@ export function AdmissionPopup() {
                   TNAU Affiliated
                 </span>
                 <span className="h-1 w-1 rounded-full bg-foreground/30" />
-                <span>100-Acre Campus</span>
+                <span>123-Acre Campus</span>
               </div>
 
               <a

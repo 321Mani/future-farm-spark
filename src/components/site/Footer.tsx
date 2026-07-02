@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
 import iiatLogo from "@/assets/iiat-logo.png";
+import imayamLogo from "@/assets/images/logo.png";
 
 export function Footer() {
   return (
@@ -8,13 +9,17 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2.5">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-white ring-1 ring-white/10 overflow-hidden">
+              {/* <div className="grid h-11 w-11 place-items-center rounded-xl bg-white ring-1 ring-white/10 overflow-hidden">
                 <img src={iiatLogo} alt="IIAT logo" loading="lazy" width={44} height={44} className="h-9 w-9 object-contain" />
+              </div> */}
+              <div className="bg-white shadow-soft" style={{"padding": "5px 20px", "borderRadius": "40px"}}>
+                <img src={imayamLogo} alt="Imayam logo" width={170} className="object-contain" />
               </div>
-              <div className="leading-tight">
+  
+              {/* <div className="leading-tight">
                 <div className="font-display font-bold">Imayam</div>
                 <div className="text-[10px] tracking-widest uppercase opacity-70">Agri & Tech</div>
-              </div>
+              </div> */}
             </div>
             <p className="mt-5 text-sm opacity-70 leading-relaxed">
               A TNAU-affiliated institute training the next generation of agriculture

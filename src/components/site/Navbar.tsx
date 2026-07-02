@@ -213,8 +213,8 @@ export function Navbar() {
           onMouseLeave={scheduleClose}
         >
           <a href="/" className="flex items-center gap-2.5 group">
-            <div className="rounded-xl bg-white shadow-soft" style={{"padding": "5px"}}>
-              <img src={imayamLogo} alt="Imayam logo" width={200} className="object-contain" />
+            <div className="bg-white shadow-soft" style={{"padding": "5px 20px", "borderRadius": "40px"}}>
+              <img src={imayamLogo} alt="Imayam logo" width={170} className="object-contain" />
             </div>
             {/* <div className="leading-tight">
               <div className={`font-display font-bold text-base ${scrolled || active ? "text-foreground" : "text-white"}`}>

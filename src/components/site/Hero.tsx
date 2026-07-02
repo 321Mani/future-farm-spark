@@ -51,10 +51,10 @@ const slides = [
 ];
 
 const stats = [
-  { icon: Users, value: "2,400+", label: "Students" },
-  { icon: Leaf, value: "100", label: "Acres of farmland" },
-  { icon: Award, value: "92%", label: "Placement rate" },
-  { icon: Leaf, value: "6", label: "Departments" },
+  { icon: Users, value: "500+", label: "Students" },
+  { icon: Leaf, value: "123", label: "Acres of farmland" },
+  { icon: Award, value: "90%", label: "Placement rate" },
+  { icon: Users, value: "5000+", label: "Alumini's" },
 ];
 
 export function Hero() {
