@@ -38,12 +38,13 @@ function Index() {
       <Navbar />
       <Hero />
       <About />
+      <AdmissionCTA />
+      <Events />
       <Departments />
       {/* <Facilities /> */}
       <Gallery />
       {/* <Placements /> */}
       <Testimonials />
-      <AdmissionCTA />
       <Contact />
       <Footer />
       {/* <WhatsAppButton /> */}
