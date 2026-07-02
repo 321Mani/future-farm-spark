@@ -110,8 +110,8 @@ export function AdmissionCTA() {
 
             <p className="mt-6 text-muted-foreground text-lg leading-relaxed max-w-xl">
               IIAT offers <span className="font-semibold text-foreground">B.Sc (Hons.) Agriculture</span>,{" "}
-              <span className="font-semibold text-foreground">B.Sc (Hons.) Horticulture</span>,{" "}
-              <span className="font-semibold text-foreground">B.Tech Agricultural Engineering</span> and
+              <span className="font-semibold text-foreground">B.Sc (Hons.) Horticulture</span> and {" "}
+              {/* <span className="font-semibold text-foreground">B.Tech Agricultural Engineering</span> and */}
               specialized diploma programmes — all affiliated to TNAU and accredited by ICAR. Full-time
               research (M.Sc / Ph.D.) opportunities in crop improvement, soil science, plant protection
               and agri-engineering are also open for the 2026 intake.
