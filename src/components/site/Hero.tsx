@@ -1,64 +1,117 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { motion, AnimatePresence, useInView, animate } from "framer-motion";
 import { ArrowRight, Play, Award, Users, Leaf, ChevronLeft, ChevronRight } from "lucide-react";
 import heroImg from "@/assets/hero-campus.jpg";
-import slide2 from "@/assets/about-campus.jpg";
-import slide3 from "@/assets/gallery-1.jpg";
-import slide4 from "@/assets/gallery-3.jpg";
-import slide5 from "@/assets/gallery-5.jpg";
+import slide2 from "@/assets/gallery-1.jpg";
+import slide3 from "@/assets/gallery-3.jpg";
+import slide4 from "@/assets/gallery-5.jpg";
 
 const slides = [
   {
     image: heroImg,
-    alt: "Aerial view of Imayam Institute campus surrounded by farmland",
-    badge: "Admissions Open 2025 · TNAU Affiliated",
-    titleTop: "Cultivating the",
-    titleBottom: "future of agriculture.",
-    text: "Imayam Institute of Agriculture and Technology trains the next generation of agronomists, scientists and innovators on a 100-acre living laboratory in Thuraiyur, Tamil Nadu.",
+    alt: "Imayam Institute of Agriculture & Technology campus",
+    badge: "Admissions Open 2026 · TNAU Affiliated",
+    titleTop: "Welcome to",
+    titleBottom: "Imayam College.",
+    text: "A 100-acre living campus in Thuraiyur, Tamil Nadu — home to India's next generation of agricultural leaders, scientists and innovators.",
   },
   {
     image: slide2,
-    alt: "Imayam Institute academic campus buildings",
-    badge: "A Living Campus",
-    titleTop: "Learn where",
-    titleBottom: "innovation grows.",
-    text: "World-class laboratories, smart farms and research stations designed to turn curious students into confident agricultural professionals.",
+    alt: "Students working in the agricultural fields at IIAT",
+    badge: "Fields of Learning",
+    titleTop: "Where every field",
+    titleBottom: "is a classroom.",
+    text: "Hands-on crop cultivation, soil study and precision-farming across our sprawling instructional farms and research plots.",
   },
   {
     image: slide3,
-    alt: "Students working in the agricultural research fields",
-    badge: "Hands-on Learning",
-    titleTop: "From classroom",
-    titleBottom: "to the open field.",
-    text: "Every program blends theory with real practice across our farmland, greenhouses and modern agri-tech facilities.",
+    alt: "Modern agriculture research laboratory at IIAT",
+    badge: "Research & Laboratory",
+    titleTop: "Advanced labs.",
+    titleBottom: "Real research.",
+    text: "State-of-the-art laboratories for plant pathology, biotechnology, soil and food sciences — powering student-led innovation.",
   },
   {
     image: slide4,
-    alt: "Modern agriculture laboratory at Imayam Institute",
-    badge: "Research & Technology",
-    titleTop: "Powering tomorrow's",
-    titleBottom: "agri-scientists.",
-    text: "Advanced laboratories and precision-farming tools give students the edge in a rapidly evolving industry.",
-  },
-  {
-    image: slide5,
-    alt: "Green fields and greenhouses on the Imayam campus",
-    badge: "100 Acres of Green",
-    titleTop: "A campus that",
-    titleBottom: "breathes nature.",
-    text: "Sustainable, eco-friendly and futuristic — our campus is a model of modern green agriculture education.",
+    alt: "Students at sports and cultural committee events",
+    badge: "Sports & Committees",
+    titleTop: "Beyond the",
+    titleBottom: "classroom.",
+    text: "Vibrant sports, cultural fests, NSS, YRC and student committees that build leaders, teamwork and lifelong friendships.",
   },
 ];
 
 const stats = [
-  { icon: Users, value: "500+", label: "Students" },
-  { icon: Leaf, value: "123", label: "Acres of farmland" },
-  { icon: Award, value: "90%", label: "Placement rate" },
-  { icon: Users, value: "5000+", label: "Alumini's" },
+  { icon: Users, value: 500, suffix: "+", label: "Students" },
+  { icon: Leaf, value: 123, suffix: "", label: "Acres of farmland" },
+  { icon: Award, value: 90, suffix: "%", label: "Placement rate" },
+  { icon: Users, value: 5000, suffix: "+", label: "Alumni" },
 ];
+
+const typingPhrases = [
+  "Cultivating tomorrow's agri-scientists.",
+  "Innovating on 100+ acres of green campus.",
+  "TNAU affiliated · ICAR accredited.",
+  "Where knowledge meets the soil.",
+];
+
+function useTypewriter(phrases: string[], typeSpeed = 55, pauseTime = 1800) {
+  const [text, setText] = useState("");
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = phrases[phraseIdx];
+    let timeout: ReturnType<typeof setTimeout>;
+    if (!deleting && text === current) {
+      timeout = setTimeout(() => setDeleting(true), pauseTime);
+    } else if (deleting && text === "") {
+      setDeleting(false);
+      setPhraseIdx((i) => (i + 1) % phrases.length);
+    } else {
+      timeout = setTimeout(
+        () => {
+          setText(
+            deleting
+              ? current.substring(0, text.length - 1)
+              : current.substring(0, text.length + 1),
+          );
+        },
+        deleting ? 30 : typeSpeed,
+      );
+    }
+    return () => clearTimeout(timeout);
+  }, [text, deleting, phraseIdx, phrases, typeSpeed, pauseTime]);
+
+  return text;
+}
+
+function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, value, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate: (v) => setDisplay(Math.floor(v)),
+    });
+    return () => controls.stop();
+  }, [inView, value]);
+
+  return (
+    <span ref={ref}>
+      {display.toLocaleString()}
+      {suffix}
+    </span>
+  );
+}
 
 export function Hero() {
   const [index, setIndex] = useState(0);
+  const typed = useTypewriter(typingPhrases);
 
   const next = useCallback(() => setIndex((i) => (i + 1) % slides.length), []);
   const prev = useCallback(() => setIndex((i) => (i - 1 + slides.length) % slides.length), []);
@@ -72,7 +125,6 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden">
-      {/* Slider images */}
       <div className="absolute inset-0 overflow-hidden">
         <AnimatePresence mode="sync">
           <motion.img
@@ -88,12 +140,9 @@ export function Hero() {
             className="absolute inset-0 h-full w-full object-cover"
           />
         </AnimatePresence>
-        {/* Lighter overlays — keep image clearly visible while preserving text contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
-
-
 
       <div className="relative container mx-auto px-4 pt-40 pb-24 lg:pt-48 lg:pb-32">
         <AnimatePresence mode="wait">
@@ -120,7 +169,6 @@ export function Hero() {
             <p className="mt-6 max-w-2xl text-lg text-white leading-relaxed font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.85)]">
               {active.text}
             </p>
-
           </motion.div>
         </AnimatePresence>
 
@@ -141,8 +189,17 @@ export function Hero() {
           </a>
         </div>
 
+        {/* Typing animation under buttons */}
+        <div className="mt-6 h-8 flex items-center">
+          <span className="inline-flex items-center gap-1 rounded-full glass-dark px-4 py-1.5 text-sm sm:text-base font-medium text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.85)]">
+            <span className="text-accent">›</span>
+            <span>{typed}</span>
+            <span className="ml-0.5 inline-block h-4 w-0.5 bg-accent animate-pulse" />
+          </span>
+        </div>
+
         {/* Slider controls */}
-        <div className="mt-10 flex items-center gap-4">
+        <div className="mt-8 flex items-center gap-4">
           <div className="flex gap-2">
             <button
               onClick={prev}
@@ -173,7 +230,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Floating stat cards */}
+        {/* Floating stat cards with count-up */}
         <div className="relative mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {stats.map((s, i) => (
             <motion.div
@@ -184,7 +241,9 @@ export function Hero() {
               className="glass rounded-2xl p-5 shadow-soft"
             >
               <s.icon className="h-5 w-5 text-primary" />
-              <div className="mt-3 font-display text-3xl font-bold text-foreground">{s.value}</div>
+              <div className="mt-3 font-display text-3xl font-bold text-foreground">
+                <CountUp value={s.value} suffix={s.suffix} />
+              </div>
               <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
             </motion.div>
           ))}

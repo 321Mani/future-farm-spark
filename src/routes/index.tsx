@@ -13,6 +13,7 @@ import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
 import { AdmissionPopup } from "@/components/site/AdmissionPopup";
+import { Events } from "@/components/site/Events";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,12 +38,13 @@ function Index() {
       <Navbar />
       <Hero />
       <About />
+      <AdmissionCTA />
+      <Events />
       <Departments />
       {/* <Facilities /> */}
       <Gallery />
       {/* <Placements /> */}
       <Testimonials />
-      <AdmissionCTA />
       <Contact />
       <Footer />
       {/* <WhatsAppButton /> */}
