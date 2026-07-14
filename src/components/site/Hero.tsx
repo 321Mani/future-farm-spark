@@ -6,10 +6,10 @@ import { ArrowRight, Play, Award, Users, Leaf, ChevronLeft, ChevronRight } from 
 // import slide3 from "@/assets/gallery-3.jpg";
 // import slide4 from "@/assets/gallery-5.jpg";
 
-import heroImg from "@/assets/images/campus.jpeg";
-import slide2 from "@/assets/images/farm.jpg";
-import slide3 from "@/assets/images/lab.jpg";
-import slide4 from "@/assets/images/sports.jpg";
+import heroImg from "@/assets/images/slide_1.png";
+import slide2 from "@/assets/images/slide_2.jpg";
+import slide3 from "@/assets/images/slide_3.jpg";
+import slide4 from "@/assets/images/slide_4.jpg";
 
 const slides = [
   {

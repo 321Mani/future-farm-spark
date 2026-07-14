@@ -1,20 +1,36 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+// import g1 from "@/assets/gallery-1.jpg";
+import g1 from "@/assets/gal_aerial_1.png";
+// import g2 from "@/assets/gallery-2.jpg";
+// import g3 from "@/assets/gallery-3.jpg";
+// import g4 from "@/assets/gallery-4.jpg";
+// import g5 from "@/assets/gallery-5.jpg";
+// import g6 from "@/assets/gallery-6.jpg";
+import s1 from "@/assets/gal_sports_1.jpg";
+import s2 from "@/assets/gal_sports_2.jpg";
+import s3 from "@/assets/gal_sports_3.jpg";
+import s4 from "@/assets/gal_sports_4.jpg";
+// import s5 from "@/assets/gal_sports_5.jpg";
+import s6 from "@/assets/gal_sports_6.jpg";
+import s7 from "@/assets/gal_sports_7.jpg";
 
 const items = [
-  { src: g1, cat: "Aerial", title: "Paddy fields at dawn", h: "row-span-2" },
-  { src: g2, cat: "Campus", title: "Plant pathology lab", h: "" },
-  { src: g3, cat: "Aerial", title: "Polyhouse training", h: "" },
-  { src: g4, cat: "Laboratory", title: "Mechanised harvest", h: "row-span-2" },
-  { src: g5, cat: "Sports", title: "Graduation 2024", h: "" },
-  { src: g6, cat: "Farms", title: "From soil to sprout", h: "" },
+  // { src: g1, cat: "Aerial", title: "Paddy fields at dawn", h: "row-span-2" },
+  { src: g1, cat: "Aerial", h: "row-span-2" },
+  // { src: g2, cat: "Campus", title: "Plant pathology lab", h: "" },
+  // { src: g3, cat: "Aerial", title: "Polyhouse training", h: "" },
+  // { src: g4, cat: "Laboratory", title: "Mechanised harvest", h: "row-span-2" },
+  // { src: g5, cat: "Sports", title: "Graduation 2024", h: "" },
+  { src: s1, cat: "Sports", h: "" },
+  { src: s2, cat: "Sports", h: "" },
+  { src: s3, cat: "Sports", h: "" },
+  { src: s4, cat: "Sports", h: "" },
+  // { src: s5, cat: "Sports", h: "" },
+  { src: s6, cat: "Sports", h: "" },
+  { src: s7, cat: "Sports", h: "" },
+  // { src: g6, cat: "Farms", title: "From soil to sprout", h: "" },
 ];
 
 const cats = ["All", "Aerial", "Campus", "Laboratory", "Farms", "Sports"];
@@ -61,14 +77,14 @@ export function Gallery() {
             >
               <img
                 src={img.src}
-                alt={img.title}
+                // alt={img.title}
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80" />
               <div className="absolute bottom-0 left-0 p-4 text-left">
                 <div className="text-[10px] uppercase tracking-widest text-accent">{img.cat}</div>
-                <div className="text-sm font-semibold text-white">{img.title}</div>
+                {/* <div className="text-sm font-semibold text-white">{img.title}</div> */}
               </div>
             </motion.button>
           ))}

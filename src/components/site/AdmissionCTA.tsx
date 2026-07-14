@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Sprout, FlaskConical } from "lucide-react";
-import img1 from "@/assets/gallery-1.jpg";
-import img2 from "@/assets/gallery-3.jpg";
-import img3 from "@/assets/gallery-5.jpg";
+// import img1 from "@/assets/gallery-1.jpg";
+// import img2 from "@/assets/gallery-3.jpg";
+// import img3 from "@/assets/gallery-5.jpg";
+
+import img1 from "@/assets/images/Admissions_1.jpeg";
+import img2 from "@/assets/images/Admissions_3.jpg";
+import img3 from "@/assets/images/Admissions_2.png";
 
 const programs = [
   { icon: GraduationCap, label: "Undergraduate", href: "/academics/ug" },

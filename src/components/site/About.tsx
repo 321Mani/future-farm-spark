@@ -22,7 +22,7 @@ export function About() {
                 width={1280}
                 height={1280}
                 loading="lazy"
-                className="h-[700px] w-full object-cover"
+                className="h-[400px] w-full object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 glass rounded-2xl p-5 shadow-soft max-w-[220px] hidden sm:block">
