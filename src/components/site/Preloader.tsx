@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/iiat-logo.webp";
+import logo from "@/assets/images/imayam_logo.webp";
 
 export function Preloader() {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +29,7 @@ export function Preloader() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative flex h-28 w-28 items-center justify-center rounded-3xl bg-card p-4 shadow-2xl ring-1 ring-primary/20">
+            <div className="relative flex h-38 w-38 items-center justify-center rounded-3xl bg-card p-4 shadow-2xl ring-1 ring-primary/20">
               <img
                 src={logo}
                 alt="IIAT Logo"
