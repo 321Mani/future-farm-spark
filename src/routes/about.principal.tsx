@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { GraduationCap, Award, BookOpen } from "lucide-react";
+import principal from "@/assets/images/principle.jpg";
 
 export const Route = createFileRoute("/about/principal")({
   head: () => ({
@@ -22,20 +23,18 @@ function Principal() {
       subtitle="Academic leadership grounded in research, teaching excellence and student mentorship."
       breadcrumbs={[{ label: "About", href: "/about" }, { label: "Our Principal" }]}
     >
-      <div className="grid lg:grid-cols-[340px_1fr] gap-12 items-start">
+      <div className="grid lg:grid-cols-[500px_1fr] gap-12 items-start">
         <div>
-          <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[3/4] grid place-items-center bg-gradient-soft">
+          <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[4/4] grid place-items-center bg-gradient-soft">
+            <img src={principal} alt="Principal" className="mx-auto h-full w-full object-cover" />
             <div className="text-center p-8">
-              <div className="mx-auto h-32 w-32 rounded-full bg-gradient-primary grid place-items-center text-primary-foreground font-display text-4xl font-bold shadow-glow">
-                P
-              </div>
-              <div className="mt-6 font-display text-xl font-bold">Dr. P. Kumar</div>
-              <div className="text-sm text-muted-foreground mt-1">Principal</div>
-              <div className="text-xs text-primary mt-1">Ph.D., Agricultural Sciences</div>
+              <div className="mt-6 font-display text-xl font-bold">Dr.S.Parthiban, M.Sc.(Hort.)., Ph.D.,</div>
+              <div className="text-sm text-muted-foreground mt-1">Mobile No.: 9597927311</div>
+              <div className="text-xs text-primary mt-1">Mail : deaniiat@tnau.ac.in</div>
             </div>
           </div>
 
-          <div className="mt-6 rounded-2xl border bg-card p-5 shadow-soft space-y-3 text-sm">
+          {/* <div className="mt-6 rounded-2xl border bg-card p-5 shadow-soft space-y-3 text-sm">
             <div className="flex items-start gap-3">
               <GraduationCap className="h-5 w-5 text-primary mt-0.5" />
               <span><strong>Ph.D.</strong> in Agronomy, TNAU Coimbatore</span>
@@ -48,7 +47,7 @@ function Principal() {
               <Award className="h-5 w-5 text-primary mt-0.5" />
               <span>Multiple state & national awards</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <article className="space-y-5 text-foreground/85 leading-relaxed text-lg">
@@ -77,11 +76,11 @@ function Principal() {
             I encourage every aspiring agriculturist to consider IIAT as their academic
             home — and our team will work alongside you, every step of the way.
           </p>
-          <p className="font-display text-xl text-primary pt-4">
+          {/* <p className="font-display text-xl text-primary pt-4">
             <span className="font-bold">Dr. P. Kumar</span>
             <br />
             <span className="text-sm text-muted-foreground font-sans">Principal, IIAT</span>
-          </p>
+          </p> */}
         </article>
       </div>
     </PageShell>

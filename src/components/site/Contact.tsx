@@ -32,7 +32,7 @@ export function Contact() {
             <div className="mt-6 rounded-2xl overflow-hidden border shadow-soft h-64">
               <iframe
                 title="Campus map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=78.55%2C11.10%2C78.65%2C11.20&amp;layer=mapnik"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1957.5656546261635!2d78.56513220782891!3d11.103590198025008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa54a040473625%3A0x90afcb83f7fd8d73!2sIIAT%20-%20Imayam%20Institute%20of%20Agriculture%20%26%20Technology!5e0!3m2!1sen!2sin!4v1573523956216!5m2!1sen!2sin"
                 className="h-full w-full"
                 loading="lazy"
               />

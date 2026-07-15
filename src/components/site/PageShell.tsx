@@ -6,7 +6,7 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
-import heroImg from "@/assets/hero-campus.jpg";
+import heroImg from "@/assets/images/slide_1.png";
 
 interface PageShellProps {
   eyebrow?: string;
