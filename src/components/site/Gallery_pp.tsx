@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/Plant Protection2.jpg";
-import g2 from "@/assets/images/Plant Protection3.jpg";
-import g3 from "@/assets/images/Plant Protection4.jpg";
-import g4 from "@/assets/images/Plant Protection.jpg";
+import g1 from "@/assets/images/Plant Protection2.webp";
+import g2 from "@/assets/images/Plant Protection3.webp";
+import g3 from "@/assets/images/Plant Protection4.webp";
+import g4 from "@/assets/images/Plant Protection.webp";
 
 const items = [
   { src: g1, cat: "Plant Protection", h: "" },

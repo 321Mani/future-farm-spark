@@ -42,6 +42,7 @@ import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
 import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
+import { Route as AboutMdirectorRouteImport } from './routes/about.mdirector'
 import { Route as AboutIcarRouteImport } from './routes/about.icar'
 import { Route as AboutChairmanRouteImport } from './routes/about.chairman'
 import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of-studies'
@@ -218,6 +219,11 @@ const AboutPrincipalRoute = AboutPrincipalRouteImport.update({
   path: '/about/principal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutMdirectorRoute = AboutMdirectorRouteImport.update({
+  id: '/about/mdirector',
+  path: '/about/mdirector',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutIcarRoute = AboutIcarRouteImport.update({
   id: '/about/icar',
   path: '/about/icar',
@@ -254,6 +260,7 @@ export interface FileRoutesByFullPath {
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
   '/about/chairman': typeof AboutChairmanRoute
   '/about/icar': typeof AboutIcarRoute
+  '/about/mdirector': typeof AboutMdirectorRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
@@ -294,6 +301,7 @@ export interface FileRoutesByTo {
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
   '/about/chairman': typeof AboutChairmanRoute
   '/about/icar': typeof AboutIcarRoute
+  '/about/mdirector': typeof AboutMdirectorRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
@@ -335,6 +343,7 @@ export interface FileRoutesById {
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
   '/about/chairman': typeof AboutChairmanRoute
   '/about/icar': typeof AboutIcarRoute
+  '/about/mdirector': typeof AboutMdirectorRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
@@ -377,6 +386,7 @@ export interface FileRouteTypes {
     | '/about/board-of-studies'
     | '/about/chairman'
     | '/about/icar'
+    | '/about/mdirector'
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
@@ -417,6 +427,7 @@ export interface FileRouteTypes {
     | '/about/board-of-studies'
     | '/about/chairman'
     | '/about/icar'
+    | '/about/mdirector'
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
@@ -457,6 +468,7 @@ export interface FileRouteTypes {
     | '/about/board-of-studies'
     | '/about/chairman'
     | '/about/icar'
+    | '/about/mdirector'
     | '/about/principal'
     | '/about/sexual-harassment'
     | '/about/vision-mission'
@@ -498,6 +510,7 @@ export interface RootRouteChildren {
   AboutBoardOfStudiesRoute: typeof AboutBoardOfStudiesRoute
   AboutChairmanRoute: typeof AboutChairmanRoute
   AboutIcarRoute: typeof AboutIcarRoute
+  AboutMdirectorRoute: typeof AboutMdirectorRoute
   AboutPrincipalRoute: typeof AboutPrincipalRoute
   AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
@@ -762,6 +775,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutPrincipalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/mdirector': {
+      id: '/about/mdirector'
+      path: '/about/mdirector'
+      fullPath: '/about/mdirector'
+      preLoaderRoute: typeof AboutMdirectorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/icar': {
       id: '/about/icar'
       path: '/about/icar'
@@ -810,6 +830,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutBoardOfStudiesRoute: AboutBoardOfStudiesRoute,
   AboutChairmanRoute: AboutChairmanRoute,
   AboutIcarRoute: AboutIcarRoute,
+  AboutMdirectorRoute: AboutMdirectorRoute,
   AboutPrincipalRoute: AboutPrincipalRoute,
   AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,

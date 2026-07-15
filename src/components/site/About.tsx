@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Target, Compass, BadgeCheck } from "lucide-react";
-import aboutImg from "@/assets/images/building.jpg";
+import aboutImg from "@/assets/images/building.webp";
 // import aboutImg from "@/assets/about-campus.jpg";
 
 export function About() {

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/Social Science.jpg";
-import g2 from "@/assets/images/Social Science 2.jpg";
-import g3 from "@/assets/images/Social Science3.jpg";
+import g1 from "@/assets/images/Social Science.webp";
+import g2 from "@/assets/images/Social Science 2.webp";
+import g3 from "@/assets/images/Social Science3.webp";
 
 const items = [
   { src: g1, cat: "Social Science", h: "" },

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/sports (1).jpg";
-import g2 from "@/assets/images/sports (2).jpg";
-import g3 from "@/assets/images/sports (3).jpg";
-import g4 from "@/assets/images/sports (4).jpg";
-import g5 from "@/assets/images/sports (5).jpg";
-import g6 from "@/assets/images/sports (6).jpg";
-import g7 from "@/assets/images/sports (7).jpg";
+import g1 from "@/assets/images/sports (1).webp";
+import g2 from "@/assets/images/sports (2).webp";
+import g3 from "@/assets/images/sports (3).webp";
+import g4 from "@/assets/images/sports (4).webp";
+import g5 from "@/assets/images/sports (5).webp";
+import g6 from "@/assets/images/sports (6).webp";
+import g7 from "@/assets/images/sports (7).webp";
 
 const items = [
   { src: g1, cat: "Library", h: "" },

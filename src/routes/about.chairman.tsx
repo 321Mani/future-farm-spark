@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Quote } from "lucide-react";
-import chairman from "@/assets/images/chairman.jpeg";
+import chairman from "@/assets/images/chairman.webp";
 
 export const Route = createFileRoute("/about/chairman")({
   head: () => ({
@@ -32,6 +32,12 @@ function Chairman() {
               <div className="text-sm text-muted-foreground mt-1">Chairman</div>
               <div className="text-xs text-primary mt-1">Imayam Educational Trust</div>
             </div> */}
+          </div>
+          <div className="rounded-2xl border bg-card p-5 shadow-soft space-y-3 text-sm">
+            <div className="text-center px-8 py-2">
+              <div className="mt-2 font-display text-xl font-bold">Rtn. A. Andi</div>
+              <div className="text-sm text-muted-foreground mt-1">Secretary</div>
+            </div>
           </div>
         </div>
 

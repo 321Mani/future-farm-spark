@@ -6,7 +6,8 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
-import heroImg from "@/assets/images/slide_1.png";
+import slide_1 from "@/assets/images/slide_1.webp";
+import slide_2 from "@/assets/gal_aerial_1.webp";
 
 interface PageShellProps {
   eyebrow?: string;
@@ -17,6 +18,7 @@ interface PageShellProps {
 }
 
 export function PageShell({ eyebrow = "About Us", title, subtitle, breadcrumbs = [], children }: PageShellProps) {
+  const heroImg = eyebrow === "About Us" ? slide_1 : slide_2;
   return (
     <main className="min-h-screen bg-background">
       <Navbar />

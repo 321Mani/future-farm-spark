@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-// import g1 from "@/assets/gallery-1.jpg";
-import g1 from "@/assets/gal_aerial_1.png";
-// import g2 from "@/assets/gallery-2.jpg";
-// import g3 from "@/assets/gallery-3.jpg";
-// import g4 from "@/assets/gallery-4.jpg";
-// import g5 from "@/assets/gallery-5.jpg";
-// import g6 from "@/assets/gallery-6.jpg";
-import s1 from "@/assets/gal_sports_1.jpg";
-import s2 from "@/assets/gal_sports_2.jpg";
-import s3 from "@/assets/gal_sports_3.jpg";
-import s4 from "@/assets/gal_sports_4.jpg";
-// import s5 from "@/assets/gal_sports_5.jpg";
-import s6 from "@/assets/gal_sports_6.jpg";
-import s7 from "@/assets/gal_sports_7.jpg";
+// import g1 from "@/assets/gallery-1.webp";
+import g1 from "@/assets/gal_aerial_1.webp";
+// import g2 from "@/assets/gallery-2.webp";
+// import g3 from "@/assets/gallery-3.webp";
+// import g4 from "@/assets/gallery-4.webp";
+// import g5 from "@/assets/gallery-5.webp";
+// import g6 from "@/assets/gallery-6.webp";
+import s1 from "@/assets/gal_sports_1.webp";
+import s2 from "@/assets/gal_sports_2.webp";
+import s3 from "@/assets/gal_sports_3.webp";
+import s4 from "@/assets/gal_sports_4.webp";
+// import s5 from "@/assets/gal_sports_5.webp";
+import s6 from "@/assets/gal_sports_6.webp";
+import s7 from "@/assets/gal_sports_7.webp";
 
 const items = [
   // { src: g1, cat: "Aerial", title: "Paddy fields at dawn", h: "row-span-2" },

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import iiatLogo from "@/assets/iiat-logo.png";
-import imayamLogo from "@/assets/images/logo.png";
+import iiatLogo from "@/assets/iiat-logo.webp";
+import imayamLogo from "@/assets/images/logo.webp";
 
 type MenuItem = {
   label: string;
@@ -43,9 +43,9 @@ const menu: MenuItem[] = [
         heading: "The Institute",
         links: [
           { label: "About IIAT", href: "/about" },
-          // { label: "Founder", href: "/founder" },
           { label: "Location", href: "/location" },
           { label: "Vision & Mission", href: "/about/vision-mission" },
+          { label: "MD's Message", href: "/about/mdirector" },
           { label: "Chairman's Message", href: "/about/chairman" },
           { label: "Our Principal", href: "/about/principal" },
         ],

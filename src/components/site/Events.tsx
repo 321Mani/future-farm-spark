@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
-import ev1 from "@/assets/gallery-2.jpg";
-import ev2 from "@/assets/gallery-4.jpg";
-import ev3 from "@/assets/gallery-6.jpg";
-import ev4 from "@/assets/gallery-1.jpg";
+import ev1 from "@/assets/gallery-2.webp";
+import ev2 from "@/assets/gallery-4.webp";
+import ev3 from "@/assets/gallery-6.webp";
+import ev4 from "@/assets/gallery-1.webp";
 
 const events = [
   {

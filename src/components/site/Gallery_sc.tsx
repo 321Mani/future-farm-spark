@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/smart class room.jpg";
-import g2 from "@/assets/images/smart class room2.jpg";
-import g3 from "@/assets/images/smart class room3.jpg";
+import g1 from "@/assets/images/smart class room.webp";
+import g2 from "@/assets/images/smart class room2.webp";
+import g3 from "@/assets/images/smart class room3.webp";
 
 const items = [
   { src: g1, cat: "Smart Class", h: "" },
