@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Monitor, Wifi, Cpu, Server } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_cc";
 
 export const Route = createFileRoute("/academics/computer-center")({
   head: () => ({
@@ -15,10 +16,14 @@ export const Route = createFileRoute("/academics/computer-center")({
 });
 
 const features = [
-  { icon: Monitor, title: "Modern Workstations", text: "60+ branded desktop systems with latest configurations for student use." },
-  { icon: Wifi, title: "High-Speed Internet", text: "Dedicated leased-line broadband and campus-wide Wi-Fi connectivity." },
-  { icon: Cpu, title: "Specialised Software", text: "GIS, statistical packages, remote sensing tools and agri-informatics applications." },
-  { icon: Server, title: "Server Room", text: "Centralised servers hosting student records, e-learning and library management systems." },
+  { icon: Monitor, title: "Computer(Dell & HP)", text: "40" },
+  { icon: Wifi, title: "Head phone", text: "18" },
+  { icon: Cpu, title: "Battery-10KVA", text: "20" },
+  { icon: Server, title: "Server M/C Dell", text: "1" },
+  { icon: Server, title: "External Hard disc 2 TP", text: "1" },
+  { icon: Server, title: "External LG USB Drive", text: "1" },
+  { icon: Server, title: "Web Camera", text: "4" },
+  { icon: Server, title: "Camera (Economics)", text: "1" },
 ];
 
 function ComputerCenter() {
@@ -31,21 +36,27 @@ function ComputerCenter() {
     >
       <div className="max-w-4xl">
         <p className="text-lg text-muted-foreground leading-relaxed">
-          The IIAT Computer Center supports academics, research and administration with reliable, well-maintained IT facilities. Students gain hands-on exposure to agri-informatics, GIS, remote sensing and statistical analysis tools that are integral to modern agriculture.
+          The campus has equipped computer laboratory with hardware and software to cater the requirements of the students, teachers and the curriculum.
+        </p>
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Computer Lab, faculty rooms, Library, Administration and Section Office are connected to the WIFI, through high speed Routers.
         </p>
       </div>
 
-      <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-6xl">
+      <h2 className="font-display text-2xl font-bold mt-8">Particulars</h2>
+      <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-10xl">
         {features.map((f) => (
           <div key={f.title} className="rounded-2xl border bg-card p-6 shadow-soft hover:shadow-glow transition-all">
             <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary mb-4">
               <f.icon className="h-6 w-6" />
             </div>
             <h3 className="font-display text-lg font-bold">{f.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>
+            <p className="mt-2 text-sm text-muted-foreground">Quantity: {f.text}</p>
           </div>
         ))}
       </div>
+      
+      <Gallery />
     </PageShell>
   );
 }

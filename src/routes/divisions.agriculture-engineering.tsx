@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { Cog, Utensils } from "lucide-react";
+import { ArrowDown, Cog, Utensils } from "lucide-react";
+import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
+import { Gallery } from "@/components/site/Gallery_ae";
 
 export const Route = createFileRoute("/divisions/agriculture-engineering")({
   head: () => ({
@@ -41,7 +43,7 @@ function AgEngPage() {
         </p>
       </div>
 
-      <div className="mt-12 max-w-5xl">
+      <div className="mt-12 max-w-8xl">
         <h2 className="font-display text-2xl font-bold mb-2">Sections in Agricultural Engineering</h2>
         <p className="text-muted-foreground mb-8">
           The Agricultural Engineering department is divided into multiple sectors to utilise the maximum
@@ -59,6 +61,15 @@ function AgEngPage() {
           ))}
         </div>
       </div>
+      <a
+        href={IIATBroucher}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-md mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        Download Brochure <ArrowDown className="h-4 w-4" />
+      </a>
+      <Gallery />
     </PageShell>
   );
 }

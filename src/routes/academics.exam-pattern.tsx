@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
+import { ArrowRight } from "lucide-react";
+import exam_pattern_pdf from "@/assets/documents/Exam-Rules-and-Pattern.pdf";
 
 export const Route = createFileRoute("/academics/exam-pattern")({
   head: () => ({
@@ -65,8 +67,8 @@ const examTable = [
   { exam: "Practical", a: "40 (2\u00BD hours)", b: "\u2013", c: "60 (2\u00BD hours)" },
   { exam: "Final Theory", a: "50 (2\u00BD hours)", b: "60", c: "\u2013" },
   { exam: "Total", a: "100", b: "100", c: "100" },
-];
 
+];
 const reappearTable = [
   { course: "Courses with Theory and Practical", pattern: "Multiple Choice Questions (MCQ) (60 \u00D7 1 = 60 marks)", mode: "OMR", dur: "75 minutes" },
   { course: "Courses with Theory alone", pattern: "Multiple Choice Questions (MCQ) (100 \u00D7 1 = 100 marks)", mode: "OMR", dur: "120 minutes" },
@@ -145,6 +147,15 @@ function ExamPattern() {
             </tbody>
           </table>
         </div>
+        <h2 className="font-display text-2xl font-bold mt-8">Examination Pattern of CoE</h2>
+        <a
+          href={exam_pattern_pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+        >
+          Examination Pattern - 2023 <ArrowRight className="h-4 w-4" />
+        </a>
       </div>
     </PageShell>
   );

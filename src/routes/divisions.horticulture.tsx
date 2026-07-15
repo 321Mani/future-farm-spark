@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
+import { ArrowDown } from "lucide-react";
+import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
+import { Gallery } from "@/components/site/Gallery_hc";
 
 export const Route = createFileRoute("/divisions/horticulture")({
   head: () => ({
@@ -35,6 +38,15 @@ function HorticulturePage() {
           horticulture. Some notable horticulturists include Luca Ghini, Luther Burbank, and Tony Avent.
         </p>
       </div>
+      <a
+        href={IIATBroucher}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-md mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        Download Brochure <ArrowDown className="h-4 w-4" />
+      </a>
+      <Gallery />
     </PageShell>
   );
 }

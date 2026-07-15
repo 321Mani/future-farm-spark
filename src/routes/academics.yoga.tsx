@@ -31,7 +31,7 @@ function Yoga() {
     >
       <div className="max-w-4xl">
         <p className="text-lg text-muted-foreground leading-relaxed">
-          IIAT integrates yoga into student life through dedicated sessions led by trained instructors. Regular practice helps students manage academic pressure, build resilience and develop discipline that carries into every aspect of their lives.
+          Yoga as exercise is a physical activity consisting largely of asanas, ,sometimes accompanied by the breathing exercises of pranayama, and usually ending with a period of relaxation or meditation this is part of curriculum.
         </p>
       </div>
 

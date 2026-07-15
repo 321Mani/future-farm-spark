@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tv, Projector, Wifi, Presentation } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_sc";
 
 export const Route = createFileRoute("/academics/smart-class")({
   head: () => ({
@@ -30,9 +31,29 @@ function SmartClass() {
       breadcrumbs={[{ label: "Academics" }, { label: "Smart Class" }]}
     >
       <div className="max-w-4xl">
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          Every classroom at IIAT is equipped with the latest audio-visual technology. Faculty use interactive boards, simulation software and multimedia content to teach complex agricultural concepts with clarity and impact.
-        </p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Sufficient number of class rooms is available with audio-visual aids for effective teaching.
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              All lecture halls are identical, very spacious and gallery type
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              All lecture halls are well equipped with public address system, LCD projector with screen, window   curtains, podium and good lighting facility.
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              The halls can accommodate 120 students easilyg.
+            </p>
+          </li>
+        </ul>
+        
       </div>
 
       <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-6xl">
@@ -46,6 +67,7 @@ function SmartClass() {
           </div>
         ))}
       </div>
+      <Gallery />
     </PageShell>
   );
 }

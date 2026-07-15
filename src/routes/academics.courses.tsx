@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { GraduationCap, BookOpen, CheckCircle2, Calendar } from "lucide-react";
+import { GraduationCap, BookOpen, ArrowRight, Calendar } from "lucide-react";
+
 
 export const Route = createFileRoute("/academics/courses")({
   head: () => ({
@@ -15,10 +16,10 @@ export const Route = createFileRoute("/academics/courses")({
 });
 
 const courses = [
-  { name: "B.Sc. (Hons.) Agriculture", duration: "4 Years", seats: "60", eligibility: "10+2 with Maths/Biology, Physics, Chemistry" },
-  { name: "B.Sc. (Hons.) Horticulture", duration: "4 Years", seats: "30", eligibility: "10+2 with Physics, Chemistry, Biology" },
-  { name: "B.Tech Agricultural Engineering", duration: "4 Years", seats: "30", eligibility: "10+2 with Physics, Chemistry, Maths" },
-  { name: "B.Sc. Food Technology", duration: "3 Years", seats: "30", eligibility: "10+2 with Science stream" },
+  { name: "Eligibility Criteria", duration: "Mathematics, Physics, Chemistry and Biology", seats: "Physics, Chemistry and Biology with a fourth (elective) subject of any relevant science having marks (not Grades).", eligibility: "Physics, Chemistry, Botany and Zoology." },
+  // { name: "B.Sc. (Hons.) Horticulture", duration: "4 Years", seats: "30", eligibility: "10+2 with Physics, Chemistry, Biology" },
+  // { name: "B.Tech Agricultural Engineering", duration: "4 Years", seats: "30", eligibility: "10+2 with Physics, Chemistry, Maths" },
+  // { name: "B.Sc. Food Technology", duration: "3 Years", seats: "30", eligibility: "10+2 with Science stream" },
 ];
 
 function Courses() {
@@ -29,7 +30,7 @@ function Courses() {
       subtitle="Industry-aligned undergraduate programmes affiliated to Tamil Nadu Agricultural University (TNAU)."
       breadcrumbs={[{ label: "Academics" }, { label: "Courses Offered" }]}
     >
-      <div className="grid md:grid-cols-2 gap-6 max-w-6xl">
+      <div className="grid md:grid-cols-1 gap-6 max-w-6xl">
         {courses.map((c) => (
           <div key={c.name} className="rounded-2xl border bg-card p-7 shadow-soft hover:shadow-glow transition-all">
             <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary mb-4">
@@ -37,10 +38,12 @@ function Courses() {
             </div>
             <h3 className="font-display text-xl font-bold">{c.name}</h3>
             <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-primary" /> Duration: <span className="font-semibold text-foreground">{c.duration}</span></div>
-              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Intake: <span className="font-semibold text-foreground">{c.seats} seats</span></div>
-              <div className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5" /> <span>{c.eligibility}</span></div>
+              <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-primary" /> Group I: <span className="font-semibold text-foreground">{c.duration}</span></div>
+              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Group II: <span className="font-semibold text-foreground">{c.seats} seats</span></div>
+              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Group II (A): <span className="font-semibold text-foreground">{c.seats} seats</span></div>
+              {/* <div className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5" /> <span>{c.eligibility}</span></div> */}
             </div>
+            <h3 className="font-display text-lg font-bold text-primary pt-8">B.Sc.,(Hons) Agriculture</h3>
           </div>
         ))}
       </div>
@@ -50,6 +53,12 @@ function Courses() {
         <p className="mt-3 text-muted-foreground max-w-3xl">
           Curriculum and Syllabi prescribed by Tamil Nadu Agricultural University (TNAU) is followed for the undergraduate programmes. Students admitted from 2017-18 onwards follow the revised ICAR Vth Deans' Committee syllabus.
         </p>
+        <a
+          href="#"
+          className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+        >
+          View Course Details <ArrowRight className="h-4 w-4" />
+        </a>
       </div>
     </PageShell>
   );

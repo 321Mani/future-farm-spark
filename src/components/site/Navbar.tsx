@@ -86,7 +86,7 @@ const menu: MenuItem[] = [
         heading: "Facilities",
         links: [
           { label: "Faculty", href: "/faculty" },
-          { label: "Library", href: "/academics/library" },
+          // { label: "Library", href: "/academics/library" },
           { label: "Computer Center", href: "/academics/computer-center" },
           { label: "Smart Class", href: "/academics/smart-class" },
         ],

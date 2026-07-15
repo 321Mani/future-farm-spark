@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { Wheat, Mountain, Microscope, Leaf, FlaskConical, Cog } from "lucide-react";
+import { Wheat, Mountain, Microscope, Leaf, FlaskConical, Cog, ArrowDown } from "lucide-react";
+import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
 
 export const Route = createFileRoute("/divisions/crop-management")({
   head: () => ({
@@ -44,7 +45,7 @@ function CropManagementPage() {
         </p>
       </div>
 
-      <div className="mt-12 max-w-6xl">
+      <div className="mt-12 max-w-10xl">
         <h2 className="font-display text-2xl font-bold mb-2">Sections in Crop Management</h2>
         <p className="text-muted-foreground mb-8">
           The Crop Management department is divided into multiple sectors to utilise the maximum potential of
@@ -62,6 +63,14 @@ function CropManagementPage() {
           ))}
         </div>
       </div>
+      <a
+        href={IIATBroucher}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-md mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        Download Brochure <ArrowDown className="h-4 w-4" />
+      </a>
     </PageShell>
   );
 }
