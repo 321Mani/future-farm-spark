@@ -31,6 +31,7 @@ import { Route as DivisionsCropManagementRouteImport } from './routes/divisions.
 import { Route as DivisionsCropImprovementRouteImport } from './routes/divisions.crop-improvement'
 import { Route as DivisionsAgricultureEngineeringRouteImport } from './routes/divisions.agriculture-engineering'
 import { Route as AcademicsYogaRouteImport } from './routes/academics.yoga'
+import { Route as AcademicsSportsRouteImport } from './routes/academics.sports'
 import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smart-class'
 import { Route as AcademicsPhysicalEducationRouteImport } from './routes/academics.physical-education'
 import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
@@ -161,6 +162,11 @@ const AcademicsYogaRoute = AcademicsYogaRouteImport.update({
   path: '/academics/yoga',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademicsSportsRoute = AcademicsSportsRouteImport.update({
+  id: '/academics/sports',
+  path: '/academics/sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AcademicsSmartClassRoute = AcademicsSmartClassRouteImport.update({
   id: '/academics/smart-class',
   path: '/academics/smart-class',
@@ -258,6 +264,7 @@ export interface FileRoutesByFullPath {
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
+  '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
   '/divisions/agriculture-engineering': typeof DivisionsAgricultureEngineeringRoute
   '/divisions/crop-improvement': typeof DivisionsCropImprovementRoute
@@ -297,6 +304,7 @@ export interface FileRoutesByTo {
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
+  '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
   '/divisions/agriculture-engineering': typeof DivisionsAgricultureEngineeringRoute
   '/divisions/crop-improvement': typeof DivisionsCropImprovementRoute
@@ -337,6 +345,7 @@ export interface FileRoutesById {
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
+  '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
   '/divisions/agriculture-engineering': typeof DivisionsAgricultureEngineeringRoute
   '/divisions/crop-improvement': typeof DivisionsCropImprovementRoute
@@ -378,6 +387,7 @@ export interface FileRouteTypes {
     | '/academics/nss'
     | '/academics/physical-education'
     | '/academics/smart-class'
+    | '/academics/sports'
     | '/academics/yoga'
     | '/divisions/agriculture-engineering'
     | '/divisions/crop-improvement'
@@ -417,6 +427,7 @@ export interface FileRouteTypes {
     | '/academics/nss'
     | '/academics/physical-education'
     | '/academics/smart-class'
+    | '/academics/sports'
     | '/academics/yoga'
     | '/divisions/agriculture-engineering'
     | '/divisions/crop-improvement'
@@ -456,6 +467,7 @@ export interface FileRouteTypes {
     | '/academics/nss'
     | '/academics/physical-education'
     | '/academics/smart-class'
+    | '/academics/sports'
     | '/academics/yoga'
     | '/divisions/agriculture-engineering'
     | '/divisions/crop-improvement'
@@ -496,6 +508,7 @@ export interface RootRouteChildren {
   AcademicsNssRoute: typeof AcademicsNssRoute
   AcademicsPhysicalEducationRoute: typeof AcademicsPhysicalEducationRoute
   AcademicsSmartClassRoute: typeof AcademicsSmartClassRoute
+  AcademicsSportsRoute: typeof AcademicsSportsRoute
   AcademicsYogaRoute: typeof AcademicsYogaRoute
   DivisionsAgricultureEngineeringRoute: typeof DivisionsAgricultureEngineeringRoute
   DivisionsCropImprovementRoute: typeof DivisionsCropImprovementRoute
@@ -672,6 +685,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademicsYogaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academics/sports': {
+      id: '/academics/sports'
+      path: '/academics/sports'
+      fullPath: '/academics/sports'
+      preLoaderRoute: typeof AcademicsSportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/academics/smart-class': {
       id: '/academics/smart-class'
       path: '/academics/smart-class'
@@ -800,6 +820,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicsNssRoute: AcademicsNssRoute,
   AcademicsPhysicalEducationRoute: AcademicsPhysicalEducationRoute,
   AcademicsSmartClassRoute: AcademicsSmartClassRoute,
+  AcademicsSportsRoute: AcademicsSportsRoute,
   AcademicsYogaRoute: AcademicsYogaRoute,
   DivisionsAgricultureEngineeringRoute: DivisionsAgricultureEngineeringRoute,
   DivisionsCropImprovementRoute: DivisionsCropImprovementRoute,

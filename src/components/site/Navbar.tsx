@@ -141,8 +141,8 @@ const menu: MenuItem[] = [
         heading: "Campus Life",
         links: [
           { label: "Newsletters", href: "/life/newsletter" },
-          { label: "Library", href: "/life/library" },
-          { label: "Smart Classroom", href: "/life/smart-classroom" },
+          { label: "Library", href: "/academics/library" },
+          { label: "Smart Classroom", href: "/academics/smart-class" },
           ],
       },
       {
@@ -152,7 +152,7 @@ const menu: MenuItem[] = [
           { label: "Sports", href: "/life/sports" },
           { label: "Events", href: "/life/events" },
           { label: "Culturals", href: "/life/culturals" },
-          { label: "Culturals", href: "/life/culturals" },
+          // { label: "Culturals", href: "/life/culturals" },
           // { label: "Placement", href: "/life/placement" },
           // { label: "Online Fee Payment", href: "/life/fee-payment" },
           { label: "NSS", href: "/academics/nss" },

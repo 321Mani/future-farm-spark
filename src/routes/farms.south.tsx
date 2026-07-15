@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Sprout, Wheat, Leaf, Apple, Landmark, Presentation, CloudSun, Recycle, Beef, Egg } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_south";
 
 export const Route = createFileRoute("/farms/south")({
   head: () => ({
@@ -31,7 +32,7 @@ function SouthFarmPage() {
       eyebrow="Farms"
       title="South Farm"
       subtitle="A complete instructional farm with crop fields, orchards, livestock and learning facilities."
-      breadcrumbs={[{ label: "Farms" }, { label: "South Farm" }]}
+      breadcrumbs={[{ label: "Farms" }, { label: "Horticulture" }]}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {units.map((u) => (
@@ -44,6 +45,7 @@ function SouthFarmPage() {
           </div>
         ))}
       </div>
+      <Gallery />
     </PageShell>
   );
 }
