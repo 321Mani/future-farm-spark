@@ -10,6 +10,7 @@ import heroImg from "@/assets/images/slide_1.webp";
 import slide2 from "@/assets/images/slide_2.webp";
 import slide3 from "@/assets/images/slide_3.webp";
 import slide4 from "@/assets/images/slide_4.webp";
+import hortiImg from "@/assets/images/Horticulture1.webp";
 
 const slides = [
   {
@@ -19,6 +20,14 @@ const slides = [
     titleTop: "Welcome to",
     titleBottom: "Imayam College.",
     text: "A 100-acre living campus in Thuraiyur, Tamil Nadu — home to India's next generation of agricultural leaders, scientists and innovators.",
+  },
+  {
+    image: hortiImg,
+    alt: "Horticulture orchards and gardens at IIAT",
+    badge: "Horticulture Division",
+    titleTop: "Fruits, flowers",
+    titleBottom: "and futures.",
+    text: "Orchards, nurseries, polyhouses and herbal gardens where students master fruit, vegetable, floriculture and landscape science hands-on.",
   },
   {
     image: slide2,
