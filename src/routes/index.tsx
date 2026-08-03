@@ -39,7 +39,9 @@ function Index() {
       <Navbar />
       <Hero />
       <About />
+      <ChairmanMessage />
       <AdmissionCTA />
+
       <Events />
       <Departments />
       {/* <Facilities /> */}
