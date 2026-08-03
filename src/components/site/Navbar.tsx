@@ -151,6 +151,7 @@ const menu: MenuItem[] = [
           { label: "Hostel", href: "/life/hostel" },
           { label: "Sports", href: "/life/sports" },
           { label: "Events", href: "/life/events" },
+          { label: "Events Photos & Videos", href: "/life/event-photos" },
           { label: "Culturals", href: "/life/culturals" },
           // { label: "Culturals", href: "/life/culturals" },
           // { label: "Placement", href: "/life/placement" },
