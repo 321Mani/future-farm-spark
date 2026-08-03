@@ -59,7 +59,7 @@ const stats = [
   { icon: Users, value: 500, suffix: "+", label: "Students" },
   { icon: Leaf, value: 123, suffix: "", label: "Acres of farmland" },
   { icon: Award, value: 90, suffix: "%", label: "Placement rate" },
-  { icon: Users, value: 5000, suffix: "+", label: "Alumni" },
+  { icon: Users, value: 120, suffix: "+", label: "Recruiting partners" },
 ];
 
 const typingPhrases = [
