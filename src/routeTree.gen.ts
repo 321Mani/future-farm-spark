@@ -19,6 +19,7 @@ import { Route as LifeNewsletterRouteImport } from './routes/life.newsletter'
 import { Route as LifeHostelRouteImport } from './routes/life.hostel'
 import { Route as LifeFeePaymentRouteImport } from './routes/life.fee-payment'
 import { Route as LifeEventsRouteImport } from './routes/life.events'
+import { Route as LifeEventPhotosRouteImport } from './routes/life.event-photos'
 import { Route as LifeCulturalsRouteImport } from './routes/life.culturals'
 import { Route as FarmsWeatherRouteImport } from './routes/farms.weather'
 import { Route as FarmsSouthRouteImport } from './routes/farms.south'
@@ -97,6 +98,11 @@ const LifeFeePaymentRoute = LifeFeePaymentRouteImport.update({
 const LifeEventsRoute = LifeEventsRouteImport.update({
   id: '/life/events',
   path: '/life/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeEventPhotosRoute = LifeEventPhotosRouteImport.update({
+  id: '/life/event-photos',
+  path: '/life/event-photos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LifeCulturalsRoute = LifeCulturalsRouteImport.update({
@@ -284,6 +290,7 @@ export interface FileRoutesByFullPath {
   '/farms/south': typeof FarmsSouthRoute
   '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
+  '/life/event-photos': typeof LifeEventPhotosRoute
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
@@ -325,6 +332,7 @@ export interface FileRoutesByTo {
   '/farms/south': typeof FarmsSouthRoute
   '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
+  '/life/event-photos': typeof LifeEventPhotosRoute
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
@@ -367,6 +375,7 @@ export interface FileRoutesById {
   '/farms/south': typeof FarmsSouthRoute
   '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
+  '/life/event-photos': typeof LifeEventPhotosRoute
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
@@ -410,6 +419,7 @@ export interface FileRouteTypes {
     | '/farms/south'
     | '/farms/weather'
     | '/life/culturals'
+    | '/life/event-photos'
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
@@ -451,6 +461,7 @@ export interface FileRouteTypes {
     | '/farms/south'
     | '/farms/weather'
     | '/life/culturals'
+    | '/life/event-photos'
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
@@ -492,6 +503,7 @@ export interface FileRouteTypes {
     | '/farms/south'
     | '/farms/weather'
     | '/life/culturals'
+    | '/life/event-photos'
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
@@ -534,6 +546,7 @@ export interface RootRouteChildren {
   FarmsSouthRoute: typeof FarmsSouthRoute
   FarmsWeatherRoute: typeof FarmsWeatherRoute
   LifeCulturalsRoute: typeof LifeCulturalsRoute
+  LifeEventPhotosRoute: typeof LifeEventPhotosRoute
   LifeEventsRoute: typeof LifeEventsRoute
   LifeFeePaymentRoute: typeof LifeFeePaymentRoute
   LifeHostelRoute: typeof LifeHostelRoute
@@ -612,6 +625,13 @@ declare module '@tanstack/react-router' {
       path: '/life/events'
       fullPath: '/life/events'
       preLoaderRoute: typeof LifeEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/event-photos': {
+      id: '/life/event-photos'
+      path: '/life/event-photos'
+      fullPath: '/life/event-photos'
+      preLoaderRoute: typeof LifeEventPhotosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/life/culturals': {
@@ -854,6 +874,7 @@ const rootRouteChildren: RootRouteChildren = {
   FarmsSouthRoute: FarmsSouthRoute,
   FarmsWeatherRoute: FarmsWeatherRoute,
   LifeCulturalsRoute: LifeCulturalsRoute,
+  LifeEventPhotosRoute: LifeEventPhotosRoute,
   LifeEventsRoute: LifeEventsRoute,
   LifeFeePaymentRoute: LifeFeePaymentRoute,
   LifeHostelRoute: LifeHostelRoute,
