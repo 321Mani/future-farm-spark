@@ -14,6 +14,7 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
 import { AdmissionPopup } from "@/components/site/AdmissionPopup";
 import { Events } from "@/components/site/Events";
+import { ChairmanMessage } from "@/components/site/ChairmanMessage";
 
 export const Route = createFileRoute("/")({
   head: () => ({
