@@ -52,12 +52,20 @@ export function Events() {
               Stay updated with our conferences, workshops, cultural fests and farmer outreach programs.
             </p>
           </div>
-          <a
-            href="/life/events"
-            className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
-          >
-            View all events <ArrowRight className="h-4 w-4" />
-          </a>
+          <div>
+            <a
+              href="/life/events"
+              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+            >
+              View all events <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="/life/event-photos"
+              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+            >
+              View event photos <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

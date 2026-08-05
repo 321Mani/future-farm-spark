@@ -24,10 +24,10 @@ const slides = [
   {
     image: hortiImg,
     alt: "Horticulture orchards and gardens at IIAT",
-    badge: "Horticulture Division",
-    titleTop: "Fruits, flowers",
+    badge: "Horticulture Department",
+    titleTop: "Growing Skills",
     titleBottom: "and futures.",
-    text: "Orchards, nurseries, polyhouses and herbal gardens where students master fruit, vegetable, floriculture and landscape science hands-on.",
+    text: "Experience modern horticulture through orchards, nurseries, polyhouses, herbal gardens, and protected cultivation. Learn practical techniques in fruit, vegetable, floriculture, and landscape production with hands-on field training.",
   },
   {
     image: slide2,

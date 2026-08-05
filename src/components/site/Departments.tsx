@@ -4,12 +4,12 @@ import {
 } from "lucide-react";
 
 const departments = [
-  { icon: Wheat, name: "Crop Improvement", desc: "Plant Breeding Genetics, Biotechnology, Biochemistry and Seed Technology." },
-  { icon: Cog, name: "Crop Management", desc: "Agronomy, Organic farming, Meteorology, Crop Physiology and Veterinary" },
-  { icon: Flower2, name: "Plant Protection", desc: "Plant Pathology is one among the division under department of Plant Protection at IIAT." },
-  { icon: Bug, name: "Horticulture", desc: "Horticulture is the growing of flowers, fruits and vegetables, and of plants for ornament and fancy." },
-  { icon: TestTube2, name: "Agricultural Engineering", desc: "Attempting to solve agricultural problems concerning power supplies, the efficiency of machinery, etc,." },
-  { icon: LineChart, name: "Social Science", desc: "Social science plays a crucial role in agriculture, as it helps to understand the social, economic, and cultural aspects of agriculture." },
+  { icon: Wheat, link: "/divisions/crop-improvement", name: "Crop Improvement", desc: "Plant Breeding Genetics, Biotechnology, Biochemistry and Seed Technology." },
+  { icon: Cog, link: "/divisions/crop-management", name: "Crop Management", desc: "Agronomy, Organic farming, Meteorology, Crop Physiology and Veterinary" },
+  { icon: Flower2, link: "/divisions/plant-protection", name: "Plant Protection", desc: "Plant Pathology is one among the division under department of Plant Protection at IIAT." },
+  { icon: Bug, link: "/divisions/horticulture", name: "Horticulture", desc: "Horticulture is the growing of flowers, fruits and vegetables, and of plants for ornament and fancy." },
+  { icon: TestTube2, link: "/divisions/agriculture-engineering", name: "Agricultural Engineering", desc: "Attempting to solve agricultural problems concerning power supplies, the efficiency of machinery, etc,." },
+  { icon: LineChart, link: "/divisions/social-science", name: "Social Science", desc: "Social science plays a crucial role in agriculture, as it helps to understand the social, economic, and cultural aspects of agriculture." },
 ];
 
 export function Departments() {
@@ -29,7 +29,7 @@ export function Departments() {
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {departments.map((d, i) => (
             <motion.a
-              href="#contact"
+              href={d.link}
               key={d.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

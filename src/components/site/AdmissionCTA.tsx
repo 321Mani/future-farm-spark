@@ -10,8 +10,8 @@ import img3 from "@/assets/images/Admissions_2.webp";
 
 const programs = [
   { icon: GraduationCap, label: "Undergraduate", href: "/academics/ug" },
-  { icon: Sprout, label: "Diploma", href: "/academics/diploma" },
-  { icon: FlaskConical, label: "Research", href: "/academics/research" },
+  // { icon: Sprout, label: "Diploma", href: "/academics/diploma" },
+  // { icon: FlaskConical, label: "Research", href: "/academics/research" },
 ];
 
 export function AdmissionCTA() {
