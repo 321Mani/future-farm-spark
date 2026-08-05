@@ -11,5 +11,11 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
+    router: {
+      // Keep route components in the main client bundle. The hosted preview can
+      // briefly retain an older HTML shell during an update; route-level chunks
+      // then have a new hash and the stale shell fails before React can recover.
+      codeSplittingOptions: { defaultBehavior: [] },
+    },
   },
 });
