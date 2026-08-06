@@ -102,15 +102,22 @@ function FacultyPage() {
                     className="rounded-2xl bg-card border shadow-soft overflow-hidden hover:shadow-glow transition-all h-full"
                   >
                     <div className="aspect-square overflow-hidden bg-muted">
-                      <img
-                        src={m.img}
-                        alt={m.name}
-                        loading="lazy"
-                        className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
+                      {m.img ? (
+                        <img
+                          src={m.img}
+                          alt={m.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="h-full w-full grid place-items-center bg-gradient-primary text-primary-foreground font-display text-3xl font-bold">
+                          {initials(m.name)}
+                        </div>
+                      )}
                     </div>
                     <div className="p-3 text-center">
                       <div className="text-sm font-semibold text-foreground">{m.name}</div>
+                      {m.role && <div className="text-xs text-muted-foreground mt-0.5">{m.role}</div>}
                     </div>
                   </motion.div>
                 );
