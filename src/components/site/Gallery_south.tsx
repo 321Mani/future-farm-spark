@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/s_farm (1).webp";
-import g2 from "@/assets/images/s_farm (2).webp";
-import g3 from "@/assets/images/s_farm (3).webp";
-import g4 from "@/assets/images/s_farm (4).webp";
-import g5 from "@/assets/images/s_farm (5).webp";
+import g1 from "@/assets/images/s_farm_1.webp";
+import g2 from "@/assets/images/s_farm_2.webp";
+import g3 from "@/assets/images/s_farm_3.webp";
+import g4 from "@/assets/images/s_farm_4.webp";
+import g5 from "@/assets/images/s_farm_5.webp";
 
 const items = [
   { src: g1, cat: "South Farm", h: "" },
