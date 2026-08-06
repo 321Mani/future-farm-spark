@@ -8,7 +8,7 @@ import building from "@/assets/images/building.webp";
 import farm from "@/assets/images/farm.webp";
 import lab from "@/assets/images/lab.webp";
 import classroom from "@/assets/images/calssroom.webp";
-import library from "@/assets/images/lib (1).webp";
+import library from "@/assets/images/lib_1.webp";
 
 const people = [
   {

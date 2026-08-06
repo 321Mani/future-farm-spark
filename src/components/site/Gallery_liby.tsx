@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/lib (1).webp";
-import g2 from "@/assets/images/lib (2).webp";
-import g3 from "@/assets/images/lib (3).webp";
-import g4 from "@/assets/images/lib (4).webp";
-import g5 from "@/assets/images/lib (5).webp";
+import g1 from "@/assets/images/lib_1.webp";
+import g2 from "@/assets/images/lib_2.webp";
+import g3 from "@/assets/images/lib_3.webp";
+import g4 from "@/assets/images/lib_4.webp";
+import g5 from "@/assets/images/lib_5.webp";
 
 const items = [
   { src: g1, cat: "Library", h: "" },
