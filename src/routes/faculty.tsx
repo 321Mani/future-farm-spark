@@ -15,47 +15,67 @@ export const Route = createFileRoute("/faculty")({
   component: FacultyPage,
 });
 
-type Member = { name: string; img: string; href?: string };
+type Member = { name: string; role?: string; img?: string; href?: string };
 
 const departments: { title: string; members: Member[] }[] = [
   {
     title: "Department of Crop Management",
     members: [
-      { name: "Dr. P. Elamparithi", img: "https://imayamagri.org/images/staff-profile-pic/Elamparithi.jpg" },
-      { name: "Dr. C. Vengatesan", img: "https://imayamagri.org/images/staff-profile-pic/vengatesan.jpg" },
-      { name: "Mrs. M. Rajakumari Malliga", img: "https://imayamagri.org/images/staff-profile-pic/Mrs.M.RAJAKUMARI%20MALLIGA.jpg", href: "/faculty/rajakumari-malliga" },
-      { name: "Mr. N. Purushothaman", img: "https://imayamagri.org/images/staff-profile-pic/Purushothaman.jpg" },
+      { name: "Dr. P. Elamparithi", role: "Assoc. Prof (AGM)", img: "https://imayamagri.org/images/staff-profile-pic/Elamparithi.jpg" },
+      { name: "Dr. M. Manimaran", role: "Assoc. Prof (SAC)" },
+      { name: "Mrs. M. Rajakumari Malliga", role: "Asst. Prof (SAC)", img: "https://imayamagri.org/images/staff-profile-pic/Mrs.M.RAJAKUMARI%20MALLIGA.jpg", href: "/faculty/rajakumari-malliga" },
+      { name: "Mr. R. Purushothaman", role: "Asst. Prof (AGR)", img: "https://imayamagri.org/images/staff-profile-pic/Purushothaman.jpg" },
+      { name: "Dr. C. Vengatesan", role: "Asst. Prof (AGR)", img: "https://imayamagri.org/images/staff-profile-pic/vengatesan.jpg" },
+      { name: "Dr. S. Bojaraj", role: "Asst. Prof (AGR)" },
+      { name: "Ms. S. Kaviya", role: "Asst. Prof (ENS)" },
+      { name: "Mrs. E. Kanmani", role: "Asst. Prof (CRP)" },
       { name: "Er. R. Maniyarasu", img: "https://imayamagri.org/images/staff-profile-pic/Maniyarasu.jpg" },
     ],
   },
   {
     title: "Department of Plant Protection",
     members: [
-      { name: "Dr. K. Ganeshan", img: "https://imayamagri.org/images/staff-profile-pic/Ganeshan.jpg" },
-      { name: "Dr. P. SaravanaKumar", img: "https://imayamagri.org/images/staff-profile-pic/Saravana%20Kumar.jpg" },
-      { name: "Dr. S. Palanivel", img: "https://imayamagri.org/images/staff-profile-pic/PALANIVEL.jpg" },
-      { name: "Dr. N. Shiva", img: "https://imayamagri.org/images/staff-profile-pic/SHIVA.jpeg" },
-      { name: "Ms. G. Ramalakshmi", img: "https://imayamagri.org/images/staff-profile-pic/Ramalakshmi.jpg" },
+      { name: "Dr. S. Palanivel", role: "Asst. Prof (ENTO)", img: "https://imayamagri.org/images/staff-profile-pic/PALANIVEL.jpg" },
+      { name: "Dr. P. SaravanaKumar", role: "Asst. Prof (ENTO)", img: "https://imayamagri.org/images/staff-profile-pic/Saravana%20Kumar.jpg" },
+      { name: "Dr. K. Ganeshan", role: "Asst. Prof (ANM)", img: "https://imayamagri.org/images/staff-profile-pic/Ganeshan.jpg" },
+      { name: "Mr. A. Arshath Khan", role: "Asst. Prof (PAT)" },
+      { name: "Dr. Bhuvaneswari", role: "Asst. Prof (PAT)" },
     ],
   },
   {
     title: "Department of Social Science",
     members: [
-      { name: "Er. P. Amutha", img: "https://imayamagri.org/images/staff-profile-pic/Amutha.jpg" },
-      { name: "P. Sanjith Kumar", img: "https://imayamagri.org/images/staff-profile-pic/Mr.P.%20SANJITH%20KUMAR.JPG" },
-      { name: "Dr. S. Raja", img: "https://imayamagri.org/images/staff-profile-pic/Raja.jpg" },
-      { name: "Saravanan G", img: "https://imayamagri.org/images/staff-profile-pic/Saravanan.jpg" },
-      { name: "Dr. T. Thangadurai", img: "https://imayamagri.org/images/staff-profile-pic/Thangadurai.jpg" },
-      { name: "Dr. V. Keerthana", img: "https://imayamagri.org/images/staff-profile-pic/Keerthana.jpg" },
+      { name: "Dr. V. Keerthana", role: "Asst. Prof (AEC)", img: "https://imayamagri.org/images/staff-profile-pic/Keerthana.jpg" },
+      { name: "Ms. R. Radha", role: "Asst. Prof (AEC)" },
+      { name: "Mr. P. Sanjith Kumar", role: "Asst. Prof (AEX)", img: "https://imayamagri.org/images/staff-profile-pic/Mr.P.%20SANJITH%20KUMAR.JPG" },
+      { name: "Dr. S. Raja", role: "DDPE", img: "https://imayamagri.org/images/staff-profile-pic/Raja.jpg" },
+      { name: "Mr. G. Saravanan", role: "Asst. Prof (ENG)", img: "https://imayamagri.org/images/staff-profile-pic/Saravanan.jpg" },
+      { name: "Ms. R. Kiruthiga", role: "Asst. Prof (AEX)" },
+      { name: "Ms. P. Kavitha", role: "Asst. Prof (MATHS)" },
+      { name: "Ms. V. Deepa", role: "Physical Director" },
     ],
   },
   {
     title: "Department of Horticulture",
     members: [
-      { name: "M. Muruganantham", img: "https://imayamagri.org/images/staff-profile-pic/Muruganantham.jpg" },
+      { name: "Mr. M. Muruganantham", role: "Asst. Prof (HORT)", img: "https://imayamagri.org/images/staff-profile-pic/Muruganantham.jpg" },
+      { name: "Dr. P. Jayasankar", role: "Asst. Prof (HORT)" },
+    ],
+  },
+  {
+    title: "Department of Crop Improvement",
+    members: [
+      { name: "Mrs. R. Suguna", role: "Asst. Prof (PBG)" },
+      { name: "Ms. S. Keerthana", role: "Asst. Prof (PBG)" },
+      { name: "Dr. R. Karthick", role: "Asst. Prof (ABT)" },
     ],
   },
 ];
+
+function initials(name: string) {
+  const parts = name.replace(/^(Dr|Mr|Mrs|Ms|Er)\.?\s*/i, "").split(/[\s.]+/).filter(Boolean);
+  return (parts[0]?.[0] ?? "") + (parts[parts.length - 1]?.[0] ?? "");
+}
 
 function FacultyPage() {
   return (
@@ -82,15 +102,22 @@ function FacultyPage() {
                     className="rounded-2xl bg-card border shadow-soft overflow-hidden hover:shadow-glow transition-all h-full"
                   >
                     <div className="aspect-square overflow-hidden bg-muted">
-                      <img
-                        src={m.img}
-                        alt={m.name}
-                        loading="lazy"
-                        className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
+                      {m.img ? (
+                        <img
+                          src={m.img}
+                          alt={m.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="h-full w-full grid place-items-center bg-gradient-primary text-primary-foreground font-display text-3xl font-bold">
+                          {initials(m.name)}
+                        </div>
+                      )}
                     </div>
                     <div className="p-3 text-center">
                       <div className="text-sm font-semibold text-foreground">{m.name}</div>
+                      {m.role && <div className="text-xs text-muted-foreground mt-0.5">{m.role}</div>}
                     </div>
                   </motion.div>
                 );
