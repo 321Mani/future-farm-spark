@@ -59,7 +59,7 @@ export function Events() {
             >
               <span className="relative z-10">View all events</span>
               <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-primary-glow/40 via-primary/30 to-transparent transition-transform duration-500 group-hover:translate-x-0" />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-primary-light/50 via-primary/30 to-transparent transition-transform duration-500 group-hover:translate-x-0" />
             </a>
             <a
               href="/life/event-photos"
