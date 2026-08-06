@@ -52,18 +52,21 @@ export function Events() {
               Stay updated with our conferences, workshops, cultural fests and farmer outreach programs.
             </p>
           </div>
-          <div>
+          <div className="flex flex-wrap gap-3 self-start lg:self-auto">
             <a
               href="/life/events"
-              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary to-primary/80 px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow transition-all duration-300 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.55)] hover:-translate-y-0.5"
             >
-              View all events <ArrowRight className="h-4 w-4" />
+              <span className="relative z-10">View all events</span>
+              <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-primary-glow/40 via-primary/30 to-transparent transition-transform duration-500 group-hover:translate-x-0" />
             </a>
             <a
               href="/life/event-photos"
-              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+              className="group inline-flex items-center gap-2 rounded-full border-2 border-primary/30 bg-card/80 px-6 py-3 text-sm font-bold text-primary shadow-soft backdrop-blur-sm transition-all duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:-translate-y-0.5"
             >
-              View event photos <ArrowRight className="h-4 w-4" />
+              <span>View event photos</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </div>
