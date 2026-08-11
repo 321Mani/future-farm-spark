@@ -62,7 +62,7 @@ const menu: MenuItem[] = [
         links: [
           { label: "Board Of Studies", href: "/about/board-of-studies" },
           { label: "Anti-Ragging", href: "/about/anti-ragging" },
-          { label: "Students Grievance", href: "/about/students-grievance" },
+          { label: "Students Grievance", href: "/about/student-grieviance" },
           { label: "Hostel Executive", href: "/about/hostel-executive" },
           { label: "Sexual Harassment", href: "/about/sexual-harassment" },
         ],

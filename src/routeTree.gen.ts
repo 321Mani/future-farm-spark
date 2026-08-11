@@ -41,10 +41,12 @@ import { Route as AcademicsExamPatternRouteImport } from './routes/academics.exa
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
 import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.computer-center'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
+import { Route as AboutStudentGrievianceRouteImport } from './routes/about.student-grieviance'
 import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
 import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
 import { Route as AboutMdirectorRouteImport } from './routes/about.mdirector'
 import { Route as AboutIcarRouteImport } from './routes/about.icar'
+import { Route as AboutHostelExecutiveRouteImport } from './routes/about.hostel-executive'
 import { Route as AboutChairmanRouteImport } from './routes/about.chairman'
 import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of-studies'
 import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
@@ -215,6 +217,11 @@ const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
   path: '/about/vision-mission',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutStudentGrievianceRoute = AboutStudentGrievianceRouteImport.update({
+  id: '/about/student-grieviance',
+  path: '/about/student-grieviance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutSexualHarassmentRoute = AboutSexualHarassmentRouteImport.update({
   id: '/about/sexual-harassment',
   path: '/about/sexual-harassment',
@@ -233,6 +240,11 @@ const AboutMdirectorRoute = AboutMdirectorRouteImport.update({
 const AboutIcarRoute = AboutIcarRouteImport.update({
   id: '/about/icar',
   path: '/about/icar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutHostelExecutiveRoute = AboutHostelExecutiveRouteImport.update({
+  id: '/about/hostel-executive',
+  path: '/about/hostel-executive',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutChairmanRoute = AboutChairmanRouteImport.update({
@@ -265,10 +277,12 @@ export interface FileRoutesByFullPath {
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
   '/about/chairman': typeof AboutChairmanRoute
+  '/about/hostel-executive': typeof AboutHostelExecutiveRoute
   '/about/icar': typeof AboutIcarRoute
   '/about/mdirector': typeof AboutMdirectorRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
+  '/about/student-grieviance': typeof AboutStudentGrievianceRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
@@ -307,10 +321,12 @@ export interface FileRoutesByTo {
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
   '/about/chairman': typeof AboutChairmanRoute
+  '/about/hostel-executive': typeof AboutHostelExecutiveRoute
   '/about/icar': typeof AboutIcarRoute
   '/about/mdirector': typeof AboutMdirectorRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
+  '/about/student-grieviance': typeof AboutStudentGrievianceRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
@@ -350,10 +366,12 @@ export interface FileRoutesById {
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
   '/about/chairman': typeof AboutChairmanRoute
+  '/about/hostel-executive': typeof AboutHostelExecutiveRoute
   '/about/icar': typeof AboutIcarRoute
   '/about/mdirector': typeof AboutMdirectorRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
+  '/about/student-grieviance': typeof AboutStudentGrievianceRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
@@ -394,10 +412,12 @@ export interface FileRouteTypes {
     | '/about/approvals'
     | '/about/board-of-studies'
     | '/about/chairman'
+    | '/about/hostel-executive'
     | '/about/icar'
     | '/about/mdirector'
     | '/about/principal'
     | '/about/sexual-harassment'
+    | '/about/student-grieviance'
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
@@ -436,10 +456,12 @@ export interface FileRouteTypes {
     | '/about/approvals'
     | '/about/board-of-studies'
     | '/about/chairman'
+    | '/about/hostel-executive'
     | '/about/icar'
     | '/about/mdirector'
     | '/about/principal'
     | '/about/sexual-harassment'
+    | '/about/student-grieviance'
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
@@ -478,10 +500,12 @@ export interface FileRouteTypes {
     | '/about/approvals'
     | '/about/board-of-studies'
     | '/about/chairman'
+    | '/about/hostel-executive'
     | '/about/icar'
     | '/about/mdirector'
     | '/about/principal'
     | '/about/sexual-harassment'
+    | '/about/student-grieviance'
     | '/about/vision-mission'
     | '/academics/computer-center'
     | '/academics/courses'
@@ -521,10 +545,12 @@ export interface RootRouteChildren {
   AboutApprovalsRoute: typeof AboutApprovalsRoute
   AboutBoardOfStudiesRoute: typeof AboutBoardOfStudiesRoute
   AboutChairmanRoute: typeof AboutChairmanRoute
+  AboutHostelExecutiveRoute: typeof AboutHostelExecutiveRoute
   AboutIcarRoute: typeof AboutIcarRoute
   AboutMdirectorRoute: typeof AboutMdirectorRoute
   AboutPrincipalRoute: typeof AboutPrincipalRoute
   AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
+  AboutStudentGrievianceRoute: typeof AboutStudentGrievianceRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
   AcademicsComputerCenterRoute: typeof AcademicsComputerCenterRoute
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
@@ -781,6 +807,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutVisionMissionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/student-grieviance': {
+      id: '/about/student-grieviance'
+      path: '/about/student-grieviance'
+      fullPath: '/about/student-grieviance'
+      preLoaderRoute: typeof AboutStudentGrievianceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/sexual-harassment': {
       id: '/about/sexual-harassment'
       path: '/about/sexual-harassment'
@@ -807,6 +840,13 @@ declare module '@tanstack/react-router' {
       path: '/about/icar'
       fullPath: '/about/icar'
       preLoaderRoute: typeof AboutIcarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/hostel-executive': {
+      id: '/about/hostel-executive'
+      path: '/about/hostel-executive'
+      fullPath: '/about/hostel-executive'
+      preLoaderRoute: typeof AboutHostelExecutiveRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/chairman': {
@@ -849,10 +889,12 @@ const rootRouteChildren: RootRouteChildren = {
   AboutApprovalsRoute: AboutApprovalsRoute,
   AboutBoardOfStudiesRoute: AboutBoardOfStudiesRoute,
   AboutChairmanRoute: AboutChairmanRoute,
+  AboutHostelExecutiveRoute: AboutHostelExecutiveRoute,
   AboutIcarRoute: AboutIcarRoute,
   AboutMdirectorRoute: AboutMdirectorRoute,
   AboutPrincipalRoute: AboutPrincipalRoute,
   AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
+  AboutStudentGrievianceRoute: AboutStudentGrievianceRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,
   AcademicsComputerCenterRoute: AcademicsComputerCenterRoute,
   AcademicsCoursesRoute: AcademicsCoursesRoute,
@@ -885,3 +927,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

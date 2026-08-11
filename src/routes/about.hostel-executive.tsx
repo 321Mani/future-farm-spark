@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Shield, Phone, Mail, Users, FileCheck2, Lock } from "lucide-react";
 
-export const Route = createFileRoute("/about/sexual-harassment")({
+export const Route = createFileRoute("/about/hostel-executive")({
   head: () => ({
     meta: [
-      { title: "Sexual Harassment Policy — IIAT" },
-      { name: "description", content: "IIAT's Internal Complaints Committee and policy on prevention of sexual harassment at the workplace." },
-      { property: "og:title", content: "Anti-Sexual Harassment — IIAT" },
-      { property: "og:description", content: "Internal Complaints Committee, POSH Act 2013 compliance." },
+      { title: "Hostel Executive Committee Policy — IIAT" },
+      { name: "description", content: "IIAT's Internal Complaints Committee and policy on prevention of Hostel Executive Committee at the workplace." },
+      { property: "og:title", content: "Hostel Executive Committee — IIAT" },
+      { property: "og:description", content: "Hostel Executive Committee — IIAT" },
     ],
   }),
-  component: SexualHarassment,
+  component: HostelExeCommittee,
 });
 
 const icc = [
@@ -20,13 +20,13 @@ const icc = [
   { name: "Mrs.S.Dhanamani", role: "Assistant. Professor (CS)"},
 ];
 
-function SexualHarassment() {
+function HostelExeCommittee() {
   return (
     <PageShell
       eyebrow="Governance"
-      title="Sexual Harassment — ICC"
+      title="Hostel Executive Committee — ICC"
       subtitle="A safe, respectful and dignified campus for every student, faculty and staff member."
-      breadcrumbs={[{ label: "About", href: "/about" }, { label: "Governance" }, { label: "Sexual Harassment" }]}
+      breadcrumbs={[{ label: "About", href: "/about" }, { label: "Governance" }, { label: "Hostel Executive Committee" }]}
     >
       {/* <div className="rounded-3xl bg-gradient-primary p-10 text-primary-foreground shadow-glow mb-12">
         <Shield className="h-12 w-12" />
@@ -40,24 +40,70 @@ function SexualHarassment() {
         </p>
       </div> */}
 
-      <div className="grid lg:grid-cols-3 gap-10 mb-12">
+      <div>
         <div className="lg:col-span-2 space-y-5 text-foreground/85 leading-relaxed text-lg">
           <p>
-            IIAT is committed to providing a safe, inclusive, and respectful environment for all students, faculty, staff, and visitors. The institute follows a zero-tolerance policy towards sexual harassment and is dedicated to preventing, prohibiting, and addressing all forms of sexual harassment.
+            The <strong>Hostel Executive Committee</strong> at IIAT is constituted to ensure the efficient administration of the institute's hostels and to promote a safe, disciplined, and student-friendly residential environment. The Committee oversees hostel management, addresses student concerns, and ensures the effective implementation of hostel rules and regulations.
           </p>
           <p>
-            In accordance with the <strong>Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013</strong> and the <strong>UGC (Prevention, Prohibition and Redressal of Sexual Harassment of Women Employees and Students in Higher Educational Institutions) Regulations, 2015</strong>, IIAT has established appropriate mechanisms to ensure the prevention and redressal of complaints in a fair, confidential, and time-bound manner.
-          </p>
-          <p>
-            Any act of sexual harassment is treated as a serious violation of the institute's code of conduct and may result in disciplinary action in accordance with applicable laws, UGC regulations, and institutional policies. IIAT encourages all members of the campus community to uphold dignity, equality, and mutual respect, thereby fostering a safe and supportive learning and working environment.
+            Working in close coordination with the Chief Warden, Wardens, and hostel staff, the Committee strives to maintain high standards of cleanliness, security, discipline, and student welfare. It also encourages active student participation in creating a harmonious and inclusive hostel community.
           </p>
         </div>
-        <div className="rounded-3xl bg-gradient-soft border p-8">
-          <Users className="h-10 w-10 text-primary" />
-          <div className="mt-4 font-display text-xl font-bold">Chairperson</div>
+        <div className="rounded-3xl bg-gradient-soft border p-8 mt-8">
+          <div className="mt-4 font-display text-xl font-bold">Objectives</div>
           <ul className="mt-3 text-sm text-foreground/80 space-y-1">
-            <div className="mt-3 font-display font-bold">Mrs. R. Suguna, Assistant. Professor (PBG)</div>
+            <li>· Ensure the smooth and efficient administration of hostel facilities.</li>
+            <li>· Promote discipline, safety, and a healthy residential environment.</li>
+            <li>· Address hostel-related grievances and resolve issues promptly.</li>
+            <li>· Monitor cleanliness, hygiene, maintenance, and security within the hostels.</li>
+            <li>· Encourage student participation in hostel activities and decision-making.</li>
+            <li>· Recommend improvements to enhance the quality of hostel life.</li>
           </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8 mt-8 mb-8">
+          <div className="mt-4 font-display text-xl font-bold">Functions</div>
+          <ul className="mt-3 text-sm text-foreground/80 space-y-1">
+            <li>· Review hostel administration and operational matters.</li>
+            <li>· Monitor compliance with hostel rules and code of conduct.</li>
+            <li>· Coordinate maintenance and infrastructure improvements.</li>
+            <li>· Address grievances related to accommodation and hostel services.</li>
+            <li>· Organize meetings to review student welfare and hostel facilities.</li>
+            <li>· Recommend measures for improving safety, comfort, and overall residential experience.</li>
+          </ul>
+        </div>
+
+        <p className="mb-8">
+          The Hostel Executive Committee is committed to providing a secure, comfortable, and supportive living environment that enables students to focus on their academic and personal development.
+        </p>
+
+        <div className="grid lg:grid-cols-[1fr_380px] gap-10">
+          <div className="rounded-3xl bg-gradient-soft border p-8">
+            <Users className="h-10 w-10 text-primary" />
+            <div className="mt-4 font-display text-xl font-bold">Chairperson</div>
+            <ul className="mt-3 text-sm text-foreground/80 space-y-1">
+              <div className="mt-3 font-display font-bold">Mrs. R. Suguna, Assistant. Professor (PBG)</div>
+            </ul>
+          </div>
+
+          <aside>
+            <div className="mt-8">
+              <div className="text-xs font-semibold uppercase tracking-widest text-primary">Internal Complaints Committee</div>
+              <h2 className="mt-2 font-display text-2xl font-bold">ICC Members</h2>
+              <div className="mt-5 grid gap-3">
+                {icc.map((c) => (
+                  <div key={c.name} className="flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-soft">
+                    <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center text-primary-foreground">
+                      <Users className="h-4 w-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-display font-bold text-sm truncate">{c.name}</div>
+                      <div className="text-xs text-muted-foreground truncate">{c.role}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
 
@@ -88,25 +134,9 @@ function SexualHarassment() {
         </div>
       </div> */}
 
-      <div className="grid lg:grid-cols-[1fr_380px] gap-10">
-        
-        <aside>
-          <div className="text-xs font-semibold uppercase tracking-widest text-primary">Internal Complaints Committee</div>
-          <h2 className="mt-2 font-display text-2xl font-bold">ICC Members</h2>
-          <div className="mt-5 grid gap-3">
-            {icc.map((c) => (
-              <div key={c.name} className="flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-soft">
-                <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center text-primary-foreground">
-                  <Users className="h-4 w-4" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="font-display font-bold text-sm truncate">{c.name}</div>
-                  <div className="text-xs text-muted-foreground truncate">{c.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </aside>
+      {/* <div className="grid lg:grid-cols-[1fr_380px] gap-10"> */}
+      {/* <div>
+
         
         <div>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary">How to File a Complaint</div>
@@ -139,7 +169,7 @@ function SexualHarassment() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </PageShell>
   );
 }

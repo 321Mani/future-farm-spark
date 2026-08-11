@@ -15,14 +15,11 @@ export const Route = createFileRoute("/about/board-of-studies")({
 });
 
 const members = [
-  { name: "Dr. P. Kumar", role: "Chairperson", affil: "Principal, IIAT" },
-  { name: "Dr. S. Ramesh", role: "Member — Agronomy", affil: "Professor, TNAU" },
-  { name: "Dr. V. Lakshmi", role: "Member — Horticulture", affil: "Sr. Scientist, ICAR" },
-  { name: "Dr. K. Senthil", role: "Member — Plant Pathology", affil: "Subject Expert" },
-  { name: "Dr. R. Anitha", role: "Member — Soil Science", affil: "Subject Expert" },
-  { name: "Mr. M. Velmurugan", role: "Industry Member", affil: "Agribusiness Leader" },
-  { name: "Mrs. K. Priya", role: "Alumni Representative", affil: "IIAT Alumni" },
-  { name: "Dr. T. Bharathi", role: "Member Secretary", affil: "Dean of Academics, IIAT" },
+  { name: "Dr. M. Manimaran", role: "Associate", affil: "Prof (SS&AC)" },
+  { name: "Dr. P. Elamparithi", role: "Associate", affil: "Professor (AGM)" },
+  { name: "Dr. V. Keerthana", role: "Assistant", affil: "Professor (AEC)" },
+  { name: "Mrs.M.RajakumariMalliga", role: "Assistant", affil: "Professor (SS&AC)" },
+  { name: "Dr.P.Saravanakumar", role: "Assistant", affil: "Professor (AEN)" },
 ];
 
 function BoardOfStudies() {
@@ -36,29 +33,18 @@ function BoardOfStudies() {
       <div className="grid lg:grid-cols-3 gap-10 mb-12">
         <div className="lg:col-span-2 space-y-5 text-foreground/85 leading-relaxed text-lg">
           <p>
-            The <strong>Board of Studies (BoS)</strong> is the principal academic body
-            of IIAT, responsible for designing curricula, recommending textbooks,
-            framing examination patterns and continuously upgrading the academic
-            offering of the institute in line with TNAU and ICAR norms.
+            The <strong>Board of Studies (BoS)</strong> is the principal academic body of IIAT, entrusted with the responsibility of ensuring academic excellence and relevance across all programmes. It plays a pivotal role in designing and periodically revising curricula, recommending textbooks and reference materials, framing examination patterns, and continuously enhancing the institute's academic offerings in alignment with the guidelines of TNAU and ICAR.
           </p>
           <p>
-            The Board comprises senior faculty, subject experts from peer
-            universities, scientists from ICAR institutes, industry representatives
-            and an alumni member — together ensuring that every student receives an
-            education that is academically rigorous, industry-relevant and
-            future-ready.
+            The Board comprises distinguished senior faculty members, subject experts from leading universities, scientists from ICAR institutes, industry professionals, and an alumni representative. This diverse composition ensures that the curriculum remains academically rigorous, industry-oriented, and responsive to emerging developments, equipping students with the knowledge, skills, and competencies needed for successful careers and lifelong learning.
           </p>
         </div>
         <div className="rounded-3xl bg-gradient-soft border p-8">
           <Users className="h-10 w-10 text-primary" />
-          <div className="mt-4 font-display text-xl font-bold">Composition</div>
+          <div className="mt-4 font-display text-xl font-bold">Chairperson</div>
           <ul className="mt-3 text-sm text-foreground/80 space-y-1">
-            <li>· Chairperson — Principal</li>
-            <li>· Subject Experts (Internal)</li>
-            <li>· Subject Experts (External)</li>
-            <li>· Industry Representative</li>
-            <li>· Alumni Representative</li>
-            <li>· Member Secretary</li>
+            <div className="mt-3 font-display font-bold">Dr. Dr. S. PARTHIBAN, M.Sc. (Hort.)., Ph.D.,</div>
+            <div className="text-sm text-primary mt-0.5">Principal</div>
           </ul>
         </div>
       </div>

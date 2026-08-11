@@ -2,31 +2,30 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Shield, Phone, Mail, Users, FileCheck2, Lock } from "lucide-react";
 
-export const Route = createFileRoute("/about/sexual-harassment")({
+export const Route = createFileRoute("/about/student-grieviance")({
   head: () => ({
     meta: [
-      { title: "Sexual Harassment Policy — IIAT" },
-      { name: "description", content: "IIAT's Internal Complaints Committee and policy on prevention of sexual harassment at the workplace." },
-      { property: "og:title", content: "Anti-Sexual Harassment — IIAT" },
-      { property: "og:description", content: "Internal Complaints Committee, POSH Act 2013 compliance." },
+      { title: "Student Grievance Policy — IIAT" },
+      { name: "description", content: "IIAT's Internal Complaints Committee and policy on prevention of Student Grievance at the workplace." },
+      { property: "og:title", content: "Student Grievance — IIAT" },
+      { property: "og:description", content: "Internal Complaints Committee." },
     ],
   }),
-  component: SexualHarassment,
+  component: StudentGrievance,
 });
 
 const icc = [
-  { name: "Mr. E.Rahamathullah", role: "Advisior (IEI)"},
   { name: "Dr. V. Keerthana", role: "Assistant. Professor (AEC)"},
-  { name: "Mrs.S.Dhanamani", role: "Assistant. Professor (CS)"},
+  { name: "Mrs.M.Rajakumari Malliga", role: "Assistant. Professor (SS&AC)"},
 ];
 
-function SexualHarassment() {
+function StudentGrievance() {
   return (
     <PageShell
       eyebrow="Governance"
-      title="Sexual Harassment — ICC"
+      title="Students Grievances Redressal"
       subtitle="A safe, respectful and dignified campus for every student, faculty and staff member."
-      breadcrumbs={[{ label: "About", href: "/about" }, { label: "Governance" }, { label: "Sexual Harassment" }]}
+      breadcrumbs={[{ label: "About", href: "/about" }, { label: "Governance" }, { label: "Student Grievance" }]}
     >
       {/* <div className="rounded-3xl bg-gradient-primary p-10 text-primary-foreground shadow-glow mb-12">
         <Shield className="h-12 w-12" />
@@ -43,20 +42,24 @@ function SexualHarassment() {
       <div className="grid lg:grid-cols-3 gap-10 mb-12">
         <div className="lg:col-span-2 space-y-5 text-foreground/85 leading-relaxed text-lg">
           <p>
-            IIAT is committed to providing a safe, inclusive, and respectful environment for all students, faculty, staff, and visitors. The institute follows a zero-tolerance policy towards sexual harassment and is dedicated to preventing, prohibiting, and addressing all forms of sexual harassment.
+            IIAT is committed to fostering a fair, transparent, and student-friendly environment by providing an effective <strong>Students Grievance Redressal Mechanism</strong>. The institute encourages students to voice their academic, administrative, and personal concerns without fear of discrimination or retaliation.
           </p>
           <p>
-            In accordance with the <strong>Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013</strong> and the <strong>UGC (Prevention, Prohibition and Redressal of Sexual Harassment of Women Employees and Students in Higher Educational Institutions) Regulations, 2015</strong>, IIAT has established appropriate mechanisms to ensure the prevention and redressal of complaints in a fair, confidential, and time-bound manner.
+            The Students Grievance Redressal Committee (SGRC) addresses grievances related to academic matters, examinations, admissions, infrastructure, student services, scholarships, and other issues affecting student welfare. All complaints are handled promptly, impartially, and confidentially, in accordance with the guidelines of the <strong>University Grants Commission (UGC)</strong> and the institute's policies.
           </p>
           <p>
-            Any act of sexual harassment is treated as a serious violation of the institute's code of conduct and may result in disciplinary action in accordance with applicable laws, UGC regulations, and institutional policies. IIAT encourages all members of the campus community to uphold dignity, equality, and mutual respect, thereby fostering a safe and supportive learning and working environment.
+            Students may submit their grievances through the prescribed online or offline channels. The Committee reviews each complaint carefully, conducts necessary inquiries where required, and recommends appropriate corrective measures to ensure timely and satisfactory resolution.
+          </p>
+          <p>
+            IIAT remains dedicated to creating a supportive campus environment where every student's concerns are heard, respected, and resolved in a fair and transparent manner.
           </p>
         </div>
         <div className="rounded-3xl bg-gradient-soft border p-8">
           <Users className="h-10 w-10 text-primary" />
           <div className="mt-4 font-display text-xl font-bold">Chairperson</div>
           <ul className="mt-3 text-sm text-foreground/80 space-y-1">
-            <div className="mt-3 font-display font-bold">Mrs. R. Suguna, Assistant. Professor (PBG)</div>
+            <div className="mt-3 font-display font-bold">Dr. Dr. S. PARTHIBAN, M.Sc. (Hort.)., Ph.D.,</div>
+            <div className="text-sm text-primary mt-0.5">Principal</div>
           </ul>
         </div>
       </div>
@@ -108,7 +111,7 @@ function SexualHarassment() {
           </div>
         </aside>
         
-        <div>
+        {/* <div>
           <div className="text-xs font-semibold uppercase tracking-widest text-primary">How to File a Complaint</div>
           <h2 className="mt-2 font-display text-3xl font-bold">Reporting Procedure</h2>
           <ol className="mt-6 space-y-4 text-foreground/85">
@@ -138,7 +141,7 @@ function SexualHarassment() {
               <Phone className="h-4 w-4" /> +91 63745 85926
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </PageShell>
   );
