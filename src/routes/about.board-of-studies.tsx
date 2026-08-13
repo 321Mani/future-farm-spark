@@ -18,7 +18,7 @@ const members = [
   { name: "Dr. M. Manimaran", role: "Associate", affil: "Prof (SS&AC)" },
   { name: "Dr. P. Elamparithi", role: "Associate", affil: "Professor (AGM)" },
   { name: "Dr. V. Keerthana", role: "Assistant", affil: "Professor (AEC)" },
-  { name: "Mrs.M.RajakumariMalliga", role: "Assistant", affil: "Professor (SS&AC)" },
+  { name: "Mrs.M.Rajakumari Malliga", role: "Assistant", affil: "Professor (SS&AC)" },
   { name: "Dr.P.Saravanakumar", role: "Assistant", affil: "Professor (AEN)" },
 ];
 

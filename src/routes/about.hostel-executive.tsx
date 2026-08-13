@@ -14,10 +14,18 @@ export const Route = createFileRoute("/about/hostel-executive")({
   component: HostelExeCommittee,
 });
 
-const icc = [
-  { name: "Mr. E.Rahamathullah", role: "Advisior (IEI)"},
+const dep_wardens = [
+  { name: "Dr. S. Raja", role: "Deputy Director of Physical Education"},
+  { name: "Ms. Deepa", role: "PED"},
+];
+
+const faculty_mem = [
+  { name: "Dr. M. Manimaran", role: "Assoc. Prof (SS&AC)"},
   { name: "Dr. V. Keerthana", role: "Assistant. Professor (AEC)"},
-  { name: "Mrs.S.Dhanamani", role: "Assistant. Professor (CS)"},
+];
+
+const tutors = [
+  { name: "Mr. Jayaprakash", role: ""},
 ];
 
 function HostelExeCommittee() {
@@ -79,18 +87,49 @@ function HostelExeCommittee() {
         <div className="grid lg:grid-cols-[1fr_380px] gap-10">
           <div className="rounded-3xl bg-gradient-soft border p-8">
             <Users className="h-10 w-10 text-primary" />
-            <div className="mt-4 font-display text-xl font-bold">Chairperson</div>
+            <div className="mt-4 font-display text-xl font-bold">Chief Warden</div>
             <ul className="mt-3 text-sm text-foreground/80 space-y-1">
-              <div className="mt-3 font-display font-bold">Mrs. R. Suguna, Assistant. Professor (PBG)</div>
+              <div className="mt-3 font-display font-bold">Dr. Dr. S. PARTHIBAN, M.Sc. (Hort.)., Ph.D.,</div>
             </ul>
           </div>
 
           <aside>
             <div className="mt-8">
-              <div className="text-xs font-semibold uppercase tracking-widest text-primary">Internal Complaints Committee</div>
-              <h2 className="mt-2 font-display text-2xl font-bold">ICC Members</h2>
+              <div className="text-xs font-semibold uppercase tracking-widest text-primary">Deputy Wardens</div>
               <div className="mt-5 grid gap-3">
-                {icc.map((c) => (
+                {dep_wardens.map((c) => (
+                  <div key={c.name} className="flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-soft">
+                    <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center text-primary-foreground">
+                      <Users className="h-4 w-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-display font-bold text-sm truncate">{c.name}</div>
+                      <div className="text-xs text-muted-foreground truncate">{c.role}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-8">
+              <div className="text-xs font-semibold uppercase tracking-widest text-primary">Faculty Members</div>
+              <div className="mt-5 grid gap-3">
+                {faculty_mem.map((c) => (
+                  <div key={c.name} className="flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-soft">
+                    <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center text-primary-foreground">
+                      <Users className="h-4 w-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-display font-bold text-sm truncate">{c.name}</div>
+                      <div className="text-xs text-muted-foreground truncate">{c.role}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-8">
+              <div className="text-xs font-semibold uppercase tracking-widest text-primary">Resident Tutors</div>
+              <div className="mt-5 grid gap-3">
+                {tutors.map((c) => (
                   <div key={c.name} className="flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-soft">
                     <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center text-primary-foreground">
                       <Users className="h-4 w-4" />

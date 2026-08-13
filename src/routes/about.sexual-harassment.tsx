@@ -91,8 +91,7 @@ function SexualHarassment() {
       <div className="grid lg:grid-cols-[1fr_380px] gap-10">
         
         <aside>
-          <div className="text-xs font-semibold uppercase tracking-widest text-primary">Internal Complaints Committee</div>
-          <h2 className="mt-2 font-display text-2xl font-bold">ICC Members</h2>
+          <div className="text-xs font-semibold uppercase tracking-widest text-primary">Members</div>
           <div className="mt-5 grid gap-3">
             {icc.map((c) => (
               <div key={c.name} className="flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-soft">
