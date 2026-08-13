@@ -125,19 +125,19 @@ function FacultyPage() {
                     transition={{ delay: i * 0.04 }}
                     className="rounded-2xl bg-card border shadow-soft overflow-hidden hover:shadow-glow transition-all h-full"
                   >
-                    <div className="aspect-square overflow-hidden bg-muted group">
+                    <div className="aspect-square relative overflow-hidden bg-muted group">
                       {m.img ? (
                         <>
                           <img
                             src={m.img}
                             alt={m.name}
                             loading="lazy"
-                            className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1 group-hover:brightness-110"
+                            className="h-full w-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105 group-hover:brightness-110"
                           />
                           <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-all duration-700 ease-out group-hover:translate-x-full group-hover:opacity-100" />
                         </>
                       ) : (
-                        <div className="h-full w-full grid place-items-center bg-gradient-primary text-primary-foreground font-display text-3xl font-bold transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+                        <div className="h-full w-full grid place-items-center bg-gradient-primary text-primary-foreground font-display text-3xl font-bold transition-transform duration-500 will-change-transform group-hover:scale-105 group-hover:brightness-110">
                           {initials(m.name)}
                         </div>
                       )}
