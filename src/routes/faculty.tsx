@@ -9,7 +9,7 @@ import faculty_5 from "@/assets/faculty/5.jpeg.webp";
 import faculty_6 from "@/assets/faculty/6.jpeg.webp";
 import faculty_7 from "@/assets/faculty/7.jpeg.webp";
 import faculty_8 from "@/assets/faculty/8.jpeg.webp";
-// import faculty_9 from "@/assets/faculty/9.jpeg.webp";
+import faculty_9 from "@/assets/faculty/9.webp";
 import faculty_10 from "@/assets/faculty/10.jpeg.webp";
 import faculty_11 from "@/assets/faculty/11.jpeg.webp";
 import faculty_12 from "@/assets/faculty/12.jpeg.webp";
@@ -25,7 +25,7 @@ import faculty_21 from "@/assets/faculty/21.jpeg.webp";
 import faculty_22 from "@/assets/faculty/22.jpeg.webp";
 import faculty_23 from "@/assets/faculty/23.jpeg.webp";
 import faculty_24 from "@/assets/faculty/24.jpeg.webp";
-// import faculty_25 from "@/assets/faculty/25.jpeg.webp";
+import faculty_25 from "@/assets/faculty/25.webp";
 import faculty_26 from "@/assets/faculty/26.jpeg.webp";
 import faculty_27 from "@/assets/faculty/27.jpeg.webp";
 
@@ -55,7 +55,7 @@ const departments: { title: string; members: Member[] }[] = [
       { name: "Dr. S. Bojaraj", role: "Asst. Prof (AGR)", img: faculty_6 },
       { name: "Ms. S. Kaviya", role: "Asst. Prof (ENS)", img: faculty_7 },
       { name: "Mrs. E. Kanmani", role: "Asst. Prof (CRP)", img: faculty_8 },
-      { name: "Er. R. Maniyarasu", img: "" },
+      { name: "Er. R. Maniyarasu", img: faculty_9 },
     ],
   },
   {
@@ -91,7 +91,7 @@ const departments: { title: string; members: Member[] }[] = [
   {
     title: "Department of Crop Improvement",
     members: [
-      { name: "Mrs. R. Suguna", role: "Asst. Prof (PBG)", img: "" },
+      { name: "Mrs. R. Suguna", role: "Asst. Prof (PBG)", img: faculty_25 },
       { name: "Ms. S. Keerthana", role: "Asst. Prof (PBG)", img: faculty_26 },
       { name: "Dr. R. Karthick", role: "Asst. Prof (ABT)", img: faculty_27 },
     ],
