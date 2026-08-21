@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TimelineRouteImport } from './routes/timeline'
+import { Route as LocationRouteImport } from './routes/location'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FacultyRouteImport } from './routes/faculty'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -16,6 +18,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as LifePlacementRouteImport } from './routes/life.placement'
 import { Route as LifeNewsletterRouteImport } from './routes/life.newsletter'
+import { Route as LifeLaboratoriesRouteImport } from './routes/life.laboratories'
 import { Route as LifeHostelRouteImport } from './routes/life.hostel'
 import { Route as LifeFeePaymentRouteImport } from './routes/life.fee-payment'
 import { Route as LifeEventsRouteImport } from './routes/life.events'
@@ -52,6 +55,16 @@ import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of
 import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
 import { Route as AboutAntiRaggingRouteImport } from './routes/about.anti-ragging'
 
+const TimelineRoute = TimelineRouteImport.update({
+  id: '/timeline',
+  path: '/timeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationRoute = LocationRouteImport.update({
+  id: '/location',
+  path: '/location',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -85,6 +98,11 @@ const LifePlacementRoute = LifePlacementRouteImport.update({
 const LifeNewsletterRoute = LifeNewsletterRouteImport.update({
   id: '/life/newsletter',
   path: '/life/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeLaboratoriesRoute = LifeLaboratoriesRouteImport.update({
+  id: '/life/laboratories',
+  path: '/life/laboratories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LifeHostelRoute = LifeHostelRouteImport.update({
@@ -273,6 +291,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
+  '/timeline': typeof TimelineRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -308,6 +328,7 @@ export interface FileRoutesByFullPath {
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
+  '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
   '/about/': typeof AboutIndexRoute
@@ -317,6 +338,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
+  '/timeline': typeof TimelineRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -352,6 +375,7 @@ export interface FileRoutesByTo {
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
+  '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
   '/about': typeof AboutIndexRoute
@@ -362,6 +386,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
+  '/timeline': typeof TimelineRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -397,6 +423,7 @@ export interface FileRoutesById {
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
+  '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
   '/about/': typeof AboutIndexRoute
@@ -408,6 +435,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faculty'
     | '/gallery'
+    | '/location'
+    | '/timeline'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -443,6 +472,7 @@ export interface FileRouteTypes {
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
+    | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
     | '/about/'
@@ -452,6 +482,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faculty'
     | '/gallery'
+    | '/location'
+    | '/timeline'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -487,6 +519,7 @@ export interface FileRouteTypes {
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
+    | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
     | '/about'
@@ -496,6 +529,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faculty'
     | '/gallery'
+    | '/location'
+    | '/timeline'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -531,6 +566,7 @@ export interface FileRouteTypes {
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
+    | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
     | '/about/'
@@ -541,6 +577,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FacultyRoute: typeof FacultyRoute
   GalleryRoute: typeof GalleryRoute
+  LocationRoute: typeof LocationRoute
+  TimelineRoute: typeof TimelineRoute
   AboutAntiRaggingRoute: typeof AboutAntiRaggingRoute
   AboutApprovalsRoute: typeof AboutApprovalsRoute
   AboutBoardOfStudiesRoute: typeof AboutBoardOfStudiesRoute
@@ -576,6 +614,7 @@ export interface RootRouteChildren {
   LifeEventsRoute: typeof LifeEventsRoute
   LifeFeePaymentRoute: typeof LifeFeePaymentRoute
   LifeHostelRoute: typeof LifeHostelRoute
+  LifeLaboratoriesRoute: typeof LifeLaboratoriesRoute
   LifeNewsletterRoute: typeof LifeNewsletterRoute
   LifePlacementRoute: typeof LifePlacementRoute
   AboutIndexRoute: typeof AboutIndexRoute
@@ -583,6 +622,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/timeline': {
+      id: '/timeline'
+      path: '/timeline'
+      fullPath: '/timeline'
+      preLoaderRoute: typeof TimelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/location': {
+      id: '/location'
+      path: '/location'
+      fullPath: '/location'
+      preLoaderRoute: typeof LocationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -630,6 +683,13 @@ declare module '@tanstack/react-router' {
       path: '/life/newsletter'
       fullPath: '/life/newsletter'
       preLoaderRoute: typeof LifeNewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/laboratories': {
+      id: '/life/laboratories'
+      path: '/life/laboratories'
+      fullPath: '/life/laboratories'
+      preLoaderRoute: typeof LifeLaboratoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/life/hostel': {
@@ -885,6 +945,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FacultyRoute: FacultyRoute,
   GalleryRoute: GalleryRoute,
+  LocationRoute: LocationRoute,
+  TimelineRoute: TimelineRoute,
   AboutAntiRaggingRoute: AboutAntiRaggingRoute,
   AboutApprovalsRoute: AboutApprovalsRoute,
   AboutBoardOfStudiesRoute: AboutBoardOfStudiesRoute,
@@ -920,6 +982,7 @@ const rootRouteChildren: RootRouteChildren = {
   LifeEventsRoute: LifeEventsRoute,
   LifeFeePaymentRoute: LifeFeePaymentRoute,
   LifeHostelRoute: LifeHostelRoute,
+  LifeLaboratoriesRoute: LifeLaboratoriesRoute,
   LifeNewsletterRoute: LifeNewsletterRoute,
   LifePlacementRoute: LifePlacementRoute,
   AboutIndexRoute: AboutIndexRoute,

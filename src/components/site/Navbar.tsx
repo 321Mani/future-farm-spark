@@ -43,6 +43,7 @@ const menu: MenuItem[] = [
         heading: "The Institute",
         links: [
           { label: "About IIAT", href: "/about" },
+          { label: "Our Timeline", href: "/timeline" },
           { label: "Location", href: "/location" },
           { label: "Vision & Mission", href: "/about/vision-mission" },
           { label: "Chairman's Message", href: "/about/chairman" },
