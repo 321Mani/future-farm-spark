@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LocationRouteImport } from './routes/location'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FacultyRouteImport } from './routes/faculty'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -53,6 +54,11 @@ import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of
 import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
 import { Route as AboutAntiRaggingRouteImport } from './routes/about.anti-ragging'
 
+const LocationRoute = LocationRouteImport.update({
+  id: '/location',
+  path: '/location',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -279,6 +285,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -324,6 +331,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -370,6 +378,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -417,6 +426,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faculty'
     | '/gallery'
+    | '/location'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -462,6 +472,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faculty'
     | '/gallery'
+    | '/location'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -507,6 +518,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faculty'
     | '/gallery'
+    | '/location'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -553,6 +565,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FacultyRoute: typeof FacultyRoute
   GalleryRoute: typeof GalleryRoute
+  LocationRoute: typeof LocationRoute
   AboutAntiRaggingRoute: typeof AboutAntiRaggingRoute
   AboutApprovalsRoute: typeof AboutApprovalsRoute
   AboutBoardOfStudiesRoute: typeof AboutBoardOfStudiesRoute
@@ -596,6 +609,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/location': {
+      id: '/location'
+      path: '/location'
+      fullPath: '/location'
+      preLoaderRoute: typeof LocationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -905,6 +925,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FacultyRoute: FacultyRoute,
   GalleryRoute: GalleryRoute,
+  LocationRoute: LocationRoute,
   AboutAntiRaggingRoute: AboutAntiRaggingRoute,
   AboutApprovalsRoute: AboutApprovalsRoute,
   AboutBoardOfStudiesRoute: AboutBoardOfStudiesRoute,
