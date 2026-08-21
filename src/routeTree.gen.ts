@@ -16,6 +16,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as LifePlacementRouteImport } from './routes/life.placement'
 import { Route as LifeNewsletterRouteImport } from './routes/life.newsletter'
+import { Route as LifeLaboratoriesRouteImport } from './routes/life.laboratories'
 import { Route as LifeHostelRouteImport } from './routes/life.hostel'
 import { Route as LifeFeePaymentRouteImport } from './routes/life.fee-payment'
 import { Route as LifeEventsRouteImport } from './routes/life.events'
@@ -85,6 +86,11 @@ const LifePlacementRoute = LifePlacementRouteImport.update({
 const LifeNewsletterRoute = LifeNewsletterRouteImport.update({
   id: '/life/newsletter',
   path: '/life/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeLaboratoriesRoute = LifeLaboratoriesRouteImport.update({
+  id: '/life/laboratories',
+  path: '/life/laboratories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LifeHostelRoute = LifeHostelRouteImport.update({
@@ -308,6 +314,7 @@ export interface FileRoutesByFullPath {
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
+  '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
   '/about/': typeof AboutIndexRoute
@@ -352,6 +359,7 @@ export interface FileRoutesByTo {
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
+  '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
   '/about': typeof AboutIndexRoute
@@ -397,6 +405,7 @@ export interface FileRoutesById {
   '/life/events': typeof LifeEventsRoute
   '/life/fee-payment': typeof LifeFeePaymentRoute
   '/life/hostel': typeof LifeHostelRoute
+  '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
   '/about/': typeof AboutIndexRoute
@@ -443,6 +452,7 @@ export interface FileRouteTypes {
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
+    | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
     | '/about/'
@@ -487,6 +497,7 @@ export interface FileRouteTypes {
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
+    | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
     | '/about'
@@ -531,6 +542,7 @@ export interface FileRouteTypes {
     | '/life/events'
     | '/life/fee-payment'
     | '/life/hostel'
+    | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
     | '/about/'
@@ -576,6 +588,7 @@ export interface RootRouteChildren {
   LifeEventsRoute: typeof LifeEventsRoute
   LifeFeePaymentRoute: typeof LifeFeePaymentRoute
   LifeHostelRoute: typeof LifeHostelRoute
+  LifeLaboratoriesRoute: typeof LifeLaboratoriesRoute
   LifeNewsletterRoute: typeof LifeNewsletterRoute
   LifePlacementRoute: typeof LifePlacementRoute
   AboutIndexRoute: typeof AboutIndexRoute
@@ -630,6 +643,13 @@ declare module '@tanstack/react-router' {
       path: '/life/newsletter'
       fullPath: '/life/newsletter'
       preLoaderRoute: typeof LifeNewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/laboratories': {
+      id: '/life/laboratories'
+      path: '/life/laboratories'
+      fullPath: '/life/laboratories'
+      preLoaderRoute: typeof LifeLaboratoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/life/hostel': {
@@ -920,6 +940,7 @@ const rootRouteChildren: RootRouteChildren = {
   LifeEventsRoute: LifeEventsRoute,
   LifeFeePaymentRoute: LifeFeePaymentRoute,
   LifeHostelRoute: LifeHostelRoute,
+  LifeLaboratoriesRoute: LifeLaboratoriesRoute,
   LifeNewsletterRoute: LifeNewsletterRoute,
   LifePlacementRoute: LifePlacementRoute,
   AboutIndexRoute: AboutIndexRoute,
