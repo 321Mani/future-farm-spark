@@ -26,7 +26,10 @@ import { Route as LifeEventPhotosRouteImport } from './routes/life.event-photos'
 import { Route as LifeCulturalsRouteImport } from './routes/life.culturals'
 import { Route as FarmsWeatherRouteImport } from './routes/farms.weather'
 import { Route as FarmsSouthRouteImport } from './routes/farms.south'
+import { Route as FarmsSeedProductionRouteImport } from './routes/farms.seed-production'
 import { Route as FarmsNorthRouteImport } from './routes/farms.north'
+import { Route as FarmsLivestockRouteImport } from './routes/farms.livestock'
+import { Route as FarmsForestCropsRouteImport } from './routes/farms.forest-crops'
 import { Route as FacultyRajakumariMalligaRouteImport } from './routes/faculty_.rajakumari-malliga'
 import { Route as DivisionsSocialScienceRouteImport } from './routes/divisions.social-science'
 import { Route as DivisionsPlantProtectionRouteImport } from './routes/divisions.plant-protection'
@@ -140,9 +143,24 @@ const FarmsSouthRoute = FarmsSouthRouteImport.update({
   path: '/farms/south',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FarmsSeedProductionRoute = FarmsSeedProductionRouteImport.update({
+  id: '/farms/seed-production',
+  path: '/farms/seed-production',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FarmsNorthRoute = FarmsNorthRouteImport.update({
   id: '/farms/north',
   path: '/farms/north',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FarmsLivestockRoute = FarmsLivestockRouteImport.update({
+  id: '/farms/livestock',
+  path: '/farms/livestock',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FarmsForestCropsRoute = FarmsForestCropsRouteImport.update({
+  id: '/farms/forest-crops',
+  path: '/farms/forest-crops',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FacultyRajakumariMalligaRoute =
@@ -320,7 +338,10 @@ export interface FileRoutesByFullPath {
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
   '/faculty/rajakumari-malliga': typeof FacultyRajakumariMalligaRoute
+  '/farms/forest-crops': typeof FarmsForestCropsRoute
+  '/farms/livestock': typeof FarmsLivestockRoute
   '/farms/north': typeof FarmsNorthRoute
+  '/farms/seed-production': typeof FarmsSeedProductionRoute
   '/farms/south': typeof FarmsSouthRoute
   '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
@@ -367,7 +388,10 @@ export interface FileRoutesByTo {
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
   '/faculty/rajakumari-malliga': typeof FacultyRajakumariMalligaRoute
+  '/farms/forest-crops': typeof FarmsForestCropsRoute
+  '/farms/livestock': typeof FarmsLivestockRoute
   '/farms/north': typeof FarmsNorthRoute
+  '/farms/seed-production': typeof FarmsSeedProductionRoute
   '/farms/south': typeof FarmsSouthRoute
   '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
@@ -415,7 +439,10 @@ export interface FileRoutesById {
   '/divisions/plant-protection': typeof DivisionsPlantProtectionRoute
   '/divisions/social-science': typeof DivisionsSocialScienceRoute
   '/faculty_/rajakumari-malliga': typeof FacultyRajakumariMalligaRoute
+  '/farms/forest-crops': typeof FarmsForestCropsRoute
+  '/farms/livestock': typeof FarmsLivestockRoute
   '/farms/north': typeof FarmsNorthRoute
+  '/farms/seed-production': typeof FarmsSeedProductionRoute
   '/farms/south': typeof FarmsSouthRoute
   '/farms/weather': typeof FarmsWeatherRoute
   '/life/culturals': typeof LifeCulturalsRoute
@@ -464,7 +491,10 @@ export interface FileRouteTypes {
     | '/divisions/plant-protection'
     | '/divisions/social-science'
     | '/faculty/rajakumari-malliga'
+    | '/farms/forest-crops'
+    | '/farms/livestock'
     | '/farms/north'
+    | '/farms/seed-production'
     | '/farms/south'
     | '/farms/weather'
     | '/life/culturals'
@@ -511,7 +541,10 @@ export interface FileRouteTypes {
     | '/divisions/plant-protection'
     | '/divisions/social-science'
     | '/faculty/rajakumari-malliga'
+    | '/farms/forest-crops'
+    | '/farms/livestock'
     | '/farms/north'
+    | '/farms/seed-production'
     | '/farms/south'
     | '/farms/weather'
     | '/life/culturals'
@@ -558,7 +591,10 @@ export interface FileRouteTypes {
     | '/divisions/plant-protection'
     | '/divisions/social-science'
     | '/faculty_/rajakumari-malliga'
+    | '/farms/forest-crops'
+    | '/farms/livestock'
     | '/farms/north'
+    | '/farms/seed-production'
     | '/farms/south'
     | '/farms/weather'
     | '/life/culturals'
@@ -606,7 +642,10 @@ export interface RootRouteChildren {
   DivisionsPlantProtectionRoute: typeof DivisionsPlantProtectionRoute
   DivisionsSocialScienceRoute: typeof DivisionsSocialScienceRoute
   FacultyRajakumariMalligaRoute: typeof FacultyRajakumariMalligaRoute
+  FarmsForestCropsRoute: typeof FarmsForestCropsRoute
+  FarmsLivestockRoute: typeof FarmsLivestockRoute
   FarmsNorthRoute: typeof FarmsNorthRoute
+  FarmsSeedProductionRoute: typeof FarmsSeedProductionRoute
   FarmsSouthRoute: typeof FarmsSouthRoute
   FarmsWeatherRoute: typeof FarmsWeatherRoute
   LifeCulturalsRoute: typeof LifeCulturalsRoute
@@ -741,11 +780,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FarmsSouthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/farms/seed-production': {
+      id: '/farms/seed-production'
+      path: '/farms/seed-production'
+      fullPath: '/farms/seed-production'
+      preLoaderRoute: typeof FarmsSeedProductionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/farms/north': {
       id: '/farms/north'
       path: '/farms/north'
       fullPath: '/farms/north'
       preLoaderRoute: typeof FarmsNorthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/farms/livestock': {
+      id: '/farms/livestock'
+      path: '/farms/livestock'
+      fullPath: '/farms/livestock'
+      preLoaderRoute: typeof FarmsLivestockRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/farms/forest-crops': {
+      id: '/farms/forest-crops'
+      path: '/farms/forest-crops'
+      fullPath: '/farms/forest-crops'
+      preLoaderRoute: typeof FarmsForestCropsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faculty_/rajakumari-malliga': {
@@ -974,7 +1034,10 @@ const rootRouteChildren: RootRouteChildren = {
   DivisionsPlantProtectionRoute: DivisionsPlantProtectionRoute,
   DivisionsSocialScienceRoute: DivisionsSocialScienceRoute,
   FacultyRajakumariMalligaRoute: FacultyRajakumariMalligaRoute,
+  FarmsForestCropsRoute: FarmsForestCropsRoute,
+  FarmsLivestockRoute: FarmsLivestockRoute,
   FarmsNorthRoute: FarmsNorthRoute,
+  FarmsSeedProductionRoute: FarmsSeedProductionRoute,
   FarmsSouthRoute: FarmsSouthRoute,
   FarmsWeatherRoute: FarmsWeatherRoute,
   LifeCulturalsRoute: LifeCulturalsRoute,
