@@ -124,15 +124,14 @@ const menu: MenuItem[] = [
       {
         heading: "Our Farms",
         links: [
-          { label: "Horticulture Farm", href: "/farms/horticulture" },
+          { label: "Horticulture Farm", href: "/farms/south" },
           { label: "Agriculture Farm", href: "/farms/north" },
-          { label: "Daily & Live Stock", href: "/farms/livestock" },
-          { label: "Seed Production", href: "/farms/seed-production" },
+          { label: "Daily & Live Stock", href: "/farms/weather" },
+          { label: "Seed Production", href: "/farms/weather" },
           { label: "Weather Data", href: "/farms/weather" },
-          { label: "Forest Crops", href: "/farms/forest-crops" },
+          { label: "Forest Crops", href: "/farms/weather" },
         ],
       },
-
     ],
   },
   {

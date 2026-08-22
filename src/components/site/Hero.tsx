@@ -194,15 +194,13 @@ export function Hero() {
             Apply Now
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </a>
-          <button
-            type="button"
-            onClick={() => setVideoOpen(true)}
+          <a
+            href="#about"
             className="inline-flex items-center gap-2 rounded-2xl glass-dark px-7 py-4 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
           >
             <Play className="h-4 w-4" />
             Explore Campus
-          </button>
-
+          </a>
         </div>
 
         {/* Typing animation under buttons */}
