@@ -6,8 +6,8 @@ import { Gallery } from "@/components/site/Gallery_south";
 export const Route = createFileRoute("/farms/south")({
   head: () => ({
     meta: [
-      { title: "South Farm — IIAT" },
-      { name: "description", content: "South Farm at IIAT — central farm, crop cafeteria, forage unit, orchard, field museum, observatory, vermi-composting, animal husbandry and poultry." },
+      { title: "Agriculture — IIAT" },
+      { name: "description", content: "Agriculture at IIAT — central farm, crop cafeteria, forage unit, orchard, field museum, observatory, vermi-composting, animal husbandry and poultry." },
     ],
   }),
   component: SouthFarmPage,
@@ -30,9 +30,9 @@ function SouthFarmPage() {
   return (
     <PageShell
       eyebrow="Farms"
-      title="South Farm"
+      title="Agriculture"
       subtitle="A complete instructional farm with crop fields, orchards, livestock and learning facilities."
-      breadcrumbs={[{ label: "Farms" }, { label: "Horticulture" }]}
+      breadcrumbs={[{ label: "Farms" }, { label: "Agriculture" }]}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {units.map((u) => (
