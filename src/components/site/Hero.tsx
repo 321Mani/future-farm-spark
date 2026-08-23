@@ -125,6 +125,7 @@ function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
 
 export function Hero() {
   const [index, setIndex] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
   const typed = useTypewriter(typingPhrases);
 
   const next = useCallback(() => setIndex((i) => (i + 1) % slides.length), []);
@@ -265,6 +266,44 @@ export function Hero() {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {videoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] grid place-items-center bg-black/80 p-4"
+            onClick={() => setVideoOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-4xl overflow-hidden rounded-2xl shadow-2xl"
+            >
+              <button
+                type="button"
+                onClick={() => setVideoOpen(false)}
+                aria-label="Close video"
+                className="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full glass-dark text-white hover:bg-white/25 transition-colors"
+              >
+                ✕
+              </button>
+              <div className="aspect-video w-full bg-black">
+                <iframe
+                  src="https://www.youtube.com/embed/U5jMCu3Gq-s?autoplay=1"
+                  title="Explore the IIAT campus"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
