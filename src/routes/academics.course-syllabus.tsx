@@ -1,145 +1,712 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { ArrowRight } from "lucide-react";
-import exam_pattern_pdf from "@/assets/documents/Exam-Rules-and-Pattern.pdf";
+import pdf_1 from "@/assets/documents/2017 Syllabus - pdf.pdf";
+import pdf_2 from "@/assets/documents/B.Sc (Hons) Agri - English   II Semester 2025 Syllabus.pdf";
+import pdf_3 from "@/assets/documents/B.Sc Hons Agri III Sem Syllabus (1).pdf";
+import pdf_4 from "@/assets/documents/I semester B.Sc(Hons)Agri 2025 syllabus (4).pdf";
+import pdf_5 from "@/assets/documents/Skill Enhancement Course Syllabus (1).pdf";
 
 export const Route = createFileRoute("/academics/course-syllabus")({
   head: () => ({
     meta: [
-      { title: "Exam Pattern — IIAT" },
-      { name: "description", content: "Examination pattern, duration, question pattern and reappearance / improvement rules for the B.Sc (Hons) Agriculture programme at IIAT." },
-      { property: "og:title", content: "Exam Pattern — IIAT" },
+      { title: "Course & Syllabus — IIAT" },
+      { name: "description", content: "Course & Syllabus for the B.Sc (Hons) Agriculture programme at IIAT." },
+      { property: "og:title", content: "Course & Syllabus — IIAT" },
       { property: "og:description", content: "TNAU-prescribed examination and evaluation system at IIAT." },
     ],
   }),
   component: ExamPattern,
 });
 
-const sections: { title: string; body: string }[] = [
+const semester1Courses = [
   {
-    title: "Mid Semester Examination",
-    body: "The mid-semester examinations are conducted in the regular classes. The mid-semester mark list shall reach the office of the Controller of Examinations within fifteen days from the date of conduct of the mid-semester examination.",
+    sno: 1,
+    code: "AGR 101",
+    title: "Fundamentals of Agronomy and Agricultural Heritage",
+    creditLoad: "1+1",
   },
   {
-    title: "Missing Examination",
-    body: "There will be no missing tests for mid-semester examinations from the ensuing semester onwards. If absent for the mid-semester examination, the student will be awarded \u201C0\u201D marks for mid-semester. However, the student is permitted to continue attending the classes and write the final practical and final theory examinations.",
+    sno: 2,
+    code: "BIC 101",
+    title: "Fundamental of Plant Biochemistry",
+    creditLoad: "2+1",
   },
   {
-    title: "Theory Examination",
-    body: "The final theory examinations are conducted outside the working days of the semester. An examination schedule approved by the Dean and the Controller of Examinations for the mid-semester and final examinations, respectively, shall be final. Mess dues should be cleared before final theory exams and a clearance certificate must be produced for receiving hall tickets.",
+    sno: 3,
+    code: "SAC 101",
+    title: "Fundamentals of Soil Science",
+    creditLoad: "2+1",
   },
   {
-    title: "Practical Examination",
-    body: "The practical examination is conducted on the last practical class. The Dean of Colleges announces the schedule of final practical examinations. The Controller of Examinations, based on the proposal sent by the Deans concerned, will nominate and approve the external examiner and the course teacher shall be the internal examiner. For affiliated colleges, external examiners are nominated by the Controller of Examinations. Submission of bona fide practical records certified by the Course Teacher is a pre-requisite for appearing in the practical examination, failing which an \u2018F\u2019 grade will be awarded. The duration of the practical examination shall be two and a half hours and marks must be communicated to the Controller of Examinations within 10 days of the last working day of the semester.",
+    sno: 4,
+    code: "FOR 111",
+    title: "Introduction to Forestry",
+    creditLoad: "1+1",
   },
   {
-    title: "Guidelines",
-    body: "Wherever experiments, identification or case studies are not possible as per course curricula, the question pattern may be modified by the Course Teacher (Internal examiner) and the pattern shall be well informed to students in advance before the exam. The same will be informed to the External Examiner before the start of the practical examination. If a student fails to write the Practical Examination, an \u2018F\u2019 grade is awarded and the student has to appear for the reappearance practical examination.",
+    sno: 5,
+    code: "ENG 101",
+    title: "Comprehension & Communication Skills in English",
+    creditLoad: "1+1",
   },
   {
-    title: "Postponement of Final Examination",
-    body: "Whenever the Government declares holidays on the dates of final examinations or under exigencies, the examination that falls on the particular date will be postponed to the date after the last examination of the original schedule. Changes, if any, will be notified by the Controller of Examinations, TNAU.",
+    sno: 6,
+    code: "HOR 111",
+    title: "Fundamentals of Horticulture",
+    creditLoad: "1+1",
   },
   {
-    title: "Re-Appearance and Improvement",
-    body: "Students are permitted to write the re-appearance examination as and when conducted with the permission of the Deans of Colleges. A re-appearance fee of Rs. 500/- per exam is to be paid online on or before the prescribed date.",
+    sno: 7,
+    code: "MAT 111",
+    title: "Elementary Mathematics",
+    creditLoad: "1+1",
   },
   {
-    title: "Reappearance Exam",
-    body: "A student may write either theory or practical examination alone or both in the reappearance examination for failed subjects. Reappearance may be attempted any number of times within n+4 years duration excluding the regular final examination. Registration is done on the date specified by the Controller of Examinations and each registration is considered an attempt even if the student is absent. Marks obtained in the latest theory / practical examination will be retained for processing of results. Re-appearance exams are conducted only with Multiple Choice Questions (MCQ) in OMR mode. Reappearance is applicable to industry and institutional educational tours, RAWE, agro-industrial tie-up programmes, crop production and non-gradial compulsory courses if the student has hundred percent attendance.",
+    sno: 8,
+    code: "PBG 101",
+    title: "Introduction to Agricultural Botany",
+    creditLoad: "1+1",
   },
   {
-    title: "Improvement Exam",
-    body: "A student with an OGPA of less than 6.50 is eligible to write the improvement examination. It is permitted for both final theory and practical and the student must write both. The original marks secured in the mid-term exam are retained. The Improvement Examination is taken along with the final semester exams of junior batches. If a student fails to secure a higher grade point, the higher grade point secured in the regular examination is taken for grading. Improvement examination is not applicable to industry and institutional educational tours, RAWE, agro-industrial tie-up programmes and crop production. Students opting for improvement must also take up the concerned reappearance examination by registering and paying the applicable fee.",
+    sno: 9,
+    code: "AEX101",
+    title: "Rural Sociology & Educational Psychology",
+    creditLoad: "2+0",
   },
   {
-    title: "Skipping of Course(s) and Semester",
-    body: "Skipping of course(s) and semester is not permitted in any case. If the student fails to accomplish the residential requirement of course(s) in a semester, he/she is not permitted to continue the subsequent semester(s). However, if a student is awarded \u201CE\u201D grade only in one course (1+1/2+1/1+0/2+0/1+2) in the preceding semester, he/she may be permitted to register the course in the next/subsequent semester when offered for the juniors, along with other courses, provided the maximum permissible credit load of 27 is not exceeded. This pattern is permitted till the end of fourth semester, after which all pending courses must be completed before proceeding. Students with pending courses of fifth and sixth semester may be permitted to continue seventh semester (subject to no change in RAWE, tour, and project work) and register pending courses in the VIII semester not exceeding 27 credits, following the 105 working days pattern.",
+    sno: 10,
+    code: "TAM101/ENG103",
+    title: "Development Education",
+    creditLoad: "0+1",
   },
   {
-    title: "Pass Requirements & Revaluation",
-    body: "The minimum Grade Point to be secured for a pass in a course is 6.00 out of 10.00, a total of 60 marks out of 100. Students who fail and want to apply for revaluation are permitted only if the required mark falls within 10% of the final theory mark (4 marks for 2+1/1+1 courses and 6 marks for 2+0/1+0 courses); if more than 10%, they may apply only for retotalling with the same fee. Only failed students are eligible for revaluation of the final theory answer script. A maximum grace mark of 1.0, applicable to both theory and practical, is awarded if required to pass an examination, provided the student secured 50% in both theory and practical separately. A student must maintain a minimum OGPA of 6.50 out of 10.00 and pass all courses and complete credit requirements as per the applicable syllabus at the end of the final year (8th semester) to become eligible for the award of degree.",
+    sno: 11,
+    code: "NSS/NCC 101",
+    title: "NSS/NCC",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: 12,
+    code: "PED 101",
+    title: "Physical Education",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: 13,
+    code: "PED102",
+    title: "Yoga for human excellence",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "*Non-gradial courses compulsory courses",
+    creditLoad: "12+9=21",
   },
 ];
 
-const withPractical = [
+const semester2Courses = [
   {
-    mid: "20 Marks (Objectives) (OMR/MCQ)\n40 × 0.5 = 20 Marks",
-    theory: "40 Marks (Descriptive)\nPART A: 1 Mark (10/12 Questions)\nPART B: 2 Marks (5/6 Questions)\nPART C: 5 Marks (4/5 Questions)",
-    split: "10 × 1 = 10\n5 × 2 = 10\n4 × 5 = 20",
-    prac: "40",
-    total: "100",
+    sno: 1,
+    code: "SWE 112",
+    title: "Soil and Water Conservation Engineering",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 2,
+    code: "CRP 101",
+    title: "Fundamentals of crop Physiology",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 3,
+    code: "AEC 102",
+    title: "Fundamentals of Agricultural Economics",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 4,
+    code: "AGM 101",
+    title: "Fundamentals of Microbiology",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 5,
+    code: "AEX 102",
+    title: "Fundamentals of Agricultural Extension Education",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 6,
+    code: "FSN 111",
+    title: "Principles of Food Science and Nutrition",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 7,
+    code: "AGR 102",
+    title: "Introductory Agro-meteorology & Climate Change",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 8,
+    code: "HOR 112",
+    title: "Production Technology for Fruit and Plantation Crops",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 9,
+    code: "RSG 101",
+    title: "Geo-informatics for Precision Farming",
+    creditLoad: "1+0",
+  },
+  {
+    sno: 10,
+    code: "NSS/NCC 101",
+    title: "NSS/NCC",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: 11,
+    code: "PED 101",
+    title: "Physical Education",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "Total",
+    creditLoad: "12+8=20",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "*Non-gradial courses compulsory courses",
+    creditLoad: "",
   },
 ];
-const withoutPractical = [
+
+const semester3Courses = [
   {
-    mid: "20 Marks (Objectives) (45 minutes) (OMR/MCQ)\n40 × 0.5 = 20 Marks",
-    theory: "80 Marks (Descriptive) (3 hours)\nPART A: 2 Marks (11/13 Questions)\nPART B: 4 Marks (7/9 Questions)\nPART C: 6 Marks (5/6 Questions)",
-    split: "11 × 2 = 22\n7 × 4 = 28\n5 × 6 = 30",
-    prac: "\u2013",
-    total: "100",
+    sno: 1,
+    code: "PAT 201",
+    title: "Fundamentals of Plant Pathology",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 2,
+    code: "AEN 201",
+    title: "Fundamentals of Entomology",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 3,
+    code: "SST 201",
+    title: "Principles of Seed Technology",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 4,
+    code: "AGR 201",
+    title: "Crop Production Technology – I (Kharif crops)",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 5,
+    code: "HOR 211",
+    title: "Production Technology for Vegetables and Spices",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 6,
+    code: "ENS 201",
+    title: "Environmental Studies & Disaster Management",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 7,
+    code: "AMP 201",
+    title: "Livestock and Poultry Management",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 8,
+    code: "AEC 201",
+    title: "Farm Management, Production & Resource Economics",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 9,
+    code: "SAC 201",
+    title: "Soil Resource Inventory",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 10,
+    code: "FMP 211",
+    title: "Farm Machinery and Power",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 11,
+    code: "AGR 202",
+    title: "Study tour",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: 12,
+    code: "NSS/NCC 101",
+    title: "NSS/NCC",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: 13,
+    code: "PED 101",
+    title: "Physical Education",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "Total",
+    creditLoad: "15+10=25",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "*Non-gradial courses compulsory courses",
+    creditLoad: "",
   },
 ];
 
-const cropMidTerm = [
-  { p: "Crop stand and population", m: "5" },
-  { p: "Field / Observation note book", m: "5" },
-  { p: "Assignment (1 No.)", m: "5" },
-  { p: "Viva-voce", m: "5" },
-  { p: "Total", m: "20" },
+const semester4Courses = [
+  {
+    sno: 1,
+    code: "PBG 201",
+    title: "Fundamentals of Genetics",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 2,
+    code: "AEX 201",
+    title: "Communication Skills and Personality Development",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 3,
+    code: "STA 211",
+    title: "Statistical Methods",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 4,
+    code: "PAT 202",
+    title: "Principles of integrated plant disease management",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 5,
+    code: "AEN 202",
+    title: "Management of beneficial and harmful insects",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 6,
+    code: "AGR 203",
+    title: "Crop Production Technology – II (Rabi crops)",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 7,
+    code: "AGR 204",
+    title: "Farming System & Sustainable Agriculture",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 8,
+    code: "SAC 202",
+    title: "Problematic soils and their management",
+    creditLoad: "2+0",
+  },
+  {
+    sno: 9,
+    code: "HOR 212",
+    title: "Production Technology for Ornamental Crops, MAP and Landscaping",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 10,
+    code: "ANM 201",
+    title: "Introductory Nematology",
+    creditLoad: "0+1",
+  },
+  {
+    sno: 11,
+    code: "NST 201",
+    title: "Fundamentals and Applications of nanotechnology",
+    creditLoad: "1+0",
+  },
+  {
+    sno: 12,
+    code: "ERG 211",
+    title: "Renewable Energy and green technology",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 12,
+    code: "NSS/NCC 101",
+    title: "NSS/NCC",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: 13,
+    code: "PED 101",
+    title: "Physical Education",
+    creditLoad: "0+1*",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "Total",
+    creditLoad: "14+10=24",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "*Non-gradial courses compulsory courses",
+    creditLoad: "",
+  },
 ];
 
-const cropFinal = [
-  { no: "1.", p: "Attendance", r: "Minimum of 80%", m: "Pre-requisite for writing the final practical examination" },
-  { no: "2.", p: "Record (Evaluated by course teacher)", r: "Continuous evaluation", m: "5 marks" },
-  { no: "3.", p: "Field Evaluation \u2013 45 marks (Evaluated by Course Teacher)", r: "If crop NOT harvested: Cropping Area (min. 5 cents) \u2013 5; Population \u2013 10; Insect, Disease and Weed control \u2013 10; Crop stand at harvest stage \u2013 20. (or) If crop harvested: Cropping Area (min. 5 cents) \u2013 5; Population maintenance \u2013 15; Yield \u2013 25", m: "45 marks" },
-  { no: "4.", p: "Written test (Evaluated by external examiner)", r: "i. Short notes \u2013 10 marks; ii. Calculation \u2013 10 marks", m: "20 marks" },
-  { no: "5.", p: "Viva-voce (Evaluated by external examiner)", r: "Minimum of 10 questions", m: "10 marks" },
-  { no: "", p: "Total", r: "", m: "80 marks" },
+const semester5Courses = [
+  {
+    sno: 1,
+    code: "PBG 301",
+    title: "Fundamentals of Plant Breeding",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 2,
+    code: "AEC 301",
+    title: "Agricultural Marketing Trade & Prices",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 3,
+    code: "AGM 301",
+    title: "Agricultural Microbiology",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 4,
+    code: "PAT 301",
+    title: "Diseases of Field and Horticultural crops and their management - I",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 5,
+    code: "ARM 301",
+    title: "Entrepreneurship Development and Business Communication Management",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 6,
+    code: "AGR 301",
+    title: "Practical Crop Production - I (Kharif crops)",
+    creditLoad: "0+2",
+  },
+  {
+    sno: 7,
+    code: "HOR 311",
+    title: "Post harvest management and value addition of fruits and vegetable crops",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 8,
+    code: "SAC 301",
+    title: "Manures, Fertilizers and Soil Fertility Management",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 9,
+    code: "APE 311",
+    title: "Protected Cultivation and Secondary Agriculture",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 10,
+    code: "AGR 302",
+    title: "Rainfed Agriculture & Watershed Management",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 11,
+    code: "AEN 301",
+    title: "Pests of Field crops and stored produces and their management",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 11,
+    code: "NCC 101",
+    title: "NCC*",
+    creditLoad: "",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "Total",
+    creditLoad: "13+12=25",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "*Non-gradial courses compulsory courses",
+    creditLoad: "",
+  },
 ];
 
-const fieldMidTerm = [
-  { p: "Field Evaluation (Identification, specimen collection etc.)", m: "10 (internal examiner)" },
-  { p: "Assignment (1 No.)", m: "5 (internal examiner)" },
-  { p: "Viva-voce", m: "5" },
-  { p: "Total", m: "20" },
+const semester6Courses = [
+  {
+    sno: 1,
+    code: "AEC 302",
+    title: "Agricultural Finance and Co-Operation",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 2,
+    code: "PAT 302",
+    title: "Diseases of Field and Horticultural crops and their management -II",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 3,
+    code: "COM 311",
+    title: "Agro Informatics",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 4,
+    code: "ENS 301",
+    title: "Environmental Pollution and Management",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 5,
+    code: "AEN 301",
+    title: "Pests of Crops and Stored grain and their Management",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 6,
+    code: "AGR 303",
+    title: "Practical Crop Production - II (Rabi crops)",
+    creditLoad: "0+2",
+  },
+  {
+    sno: 7,
+    code: "AGR 304",
+    title: "Principles of organic Farming",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 8,
+    code: "ABT 301",
+    title: "Plant Bio technology",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 9,
+    code: "PBG 302",
+    title: "Crop Improvement",
+    creditLoad: "2+1",
+  },
+  {
+    sno: 10,
+    code: "OPT 301",
+    title: "Optional course",
+    creditLoad: "1+1",
+  },
+  {
+    sno: 11,
+    code: "NCC 101",
+    title: "NCC*",
+    creditLoad: "",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "Total",
+    creditLoad: "13+11=24",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "*Non-gradial courses compulsory courses",
+    creditLoad: "",
+  },
 ];
 
-const fieldFinal = [
-  { no: "1.", p: "Attendance", r: "Minimum of 80% separately in theory and practical", m: "Pre-requisite for the final practical examination (internal examiner)" },
-  { no: "2.", p: "Record", r: "Continuous evaluation", m: "5 marks (internal examiner)" },
-  { no: "3.", p: "Assignment (2 Nos.)", r: "A. Presentation / comprehension; B. Written part (no web page copying, hand written, min. two book references); C. Answering the questions", m: "5 + 10 marks (internal) and 5 marks (external)" },
-  { no: "4.", p: "Written Part / Field Evaluation", r: "i. Identification / spotter \u2013 5 (external); ii. Specimen collection \u2013 5 (external); iii. Experiments / field / lab work / calculation \u2013 10 (external); iv. Short notes / critical analysis \u2013 5 (external); v. Case study \u2013 10 (internal); vi. Questions from CD show / guest lecture / short tour \u2013 10 (internal)", m: "45 marks" },
-  { no: "5.", p: "Viva-voce", r: "Minimum of 10 questions", m: "10 marks (external examiner)" },
-  { no: "", p: "Total", r: "", m: "80 marks" },
+const semester7Courses = [
+  {
+    sno: 1,
+    code: "AEX 401",
+    title: "Student READY programme (Rural Agricultural Work Experience and Agro-industrial Attachment)",
+    creditLoad: "0+20",
+  },
+  {
+    sno: 2,
+    code: "AGR 401",
+    title: "Project Report Preparation, presentation and Evaluation",
+    creditLoad: "0+1",
+  },
+  {
+    sno: 3,
+    code: "AEX 402",
+    title: "All India Study Tour*",
+    creditLoad: "0+1",
+  },
+  {
+    sno: "",
+    code: "",
+    title: "Non gradial compulsory",
+    creditLoad: "",
+  },
 ];
 
-const classFinal = [
-  { no: "1.", p: "Attendance", r: "Minimum of 80% in practical class", m: "Pre-requisite for the final practical examination (internal examiner)" },
-  { no: "2.", p: "Record", r: "Continuous evaluation", m: "10 marks (internal examiner)" },
-  { no: "3.", p: "Assignment (2 Nos.)", r: "A. Presentation / comprehension \u2013 10 (internal); B. Written part (no web page copying, hand written, min. two book references) \u2013 5 (internal); C. Answering the questions \u2013 5 (external)", m: "20 marks" },
-  { no: "4.", p: "Written test", r: "i. Data interpretation / group discussion / brain storming \u2013 5 (external); ii. Short notes \u2013 5 (external); iii. Critical analysis / case study \u2013 10 (internal); iv. Objective type questions \u2013 5 (external); v. Essay type questions \u2013 5 (external); vi. Questions from CD show / guest lecture / short tour \u2013 10 (internal)", m: "40 marks" },
-  { no: "5.", p: "Viva-voce", r: "Minimum of 10 questions", m: "10 marks (external examiner)" },
-  { no: "", p: "Total", r: "", m: "80 marks" },
+const experientialLearningModules = [
+  {
+    sno: 1,
+    code: "AGM 451",
+    title: "Bio-inoculant production technology",
+    credits: "0+10",
+  },
+  {
+    sno: 2,
+    code: "HOR 451",
+    title: "Hybrid Seed Production in Vegetable Crops",
+    credits: "0+10",
+  },
+  {
+    sno: 3,
+    code: "SAC 451",
+    title: "On Farm Advisory for Soil Health, Water Quality & Plant Nutrition",
+    credits: "0+10",
+  },
+  {
+    sno: 4,
+    code: "AEN 451",
+    title: "Commercial Beekeeping",
+    credits: "0+10",
+  },
+  {
+    sno: 5,
+    code: "SER 451",
+    title: "Commercial Cocoon Production",
+    credits: "0+10",
+  },
+  {
+    sno: 6,
+    code: "ABT 451",
+    title: "Commercial Plant Tissue Culture",
+    credits: "0+10",
+  },
+  {
+    sno: 7,
+    code: "HOR 452",
+    title: "Commercial Nursery Technology of Horticultural Crops",
+    credits: "0+10",
+  },
+  {
+    sno: 8,
+    code: "HOR 453",
+    title: "Commercial Landscape Gardening",
+    credits: "0+10",
+  },
+  {
+    sno: 9,
+    code: "PAT 451",
+    title: "Commercial production of Bio-control agents",
+    credits: "0+10",
+  },
+  {
+    sno: 10,
+    code: "PAT 452",
+    title: "Commercial mushroom production",
+    credits: "0+10",
+  },
+  {
+    sno: 11,
+    code: "AMP 451",
+    title: "Commercial broiler and layer production",
+    credits: "0+10",
+  },
+  {
+    sno: 12,
+    code: "SST 451",
+    title: "Commercial seed production",
+    credits: "0+10",
+  },
+  {
+    sno: 13,
+    code: "PBG 451",
+    title: "Hybrid pearl millet seed production",
+    credits: "0+10",
+  },
+  {
+    sno: 14,
+    code: "PBG 452",
+    title: "Hybrid rice parental line seed production",
+    credits: "0+10",
+  },
+  {
+    sno: 15,
+    code: "ARM 451",
+    title: "Managerial skills for Agribusiness",
+    credits: "0+10",
+  },
+  {
+    sno: 16,
+    code: "AGR 451",
+    title: "Development of Integrated Farming system Model",
+    credits: "0+10",
+  },
+  {
+    sno: 17,
+    code: "HOR 454",
+    title: "Protected cultivation of Vegetable crops",
+    credits: "0+10",
+  },
+  {
+    sno: 18,
+    code: "ENS 451",
+    title: "Composting technology",
+    credits: "0+10",
+  },
+  {
+    sno: 19,
+    code: "AGR 452",
+    title: "Organic Agriculture",
+    credits: "0+10",
+  },
 ];
 
-const labMidTerm = [
-  { p: "Field evaluation (Identification, specimen collection etc.)", m: "10" },
-  { p: "Assignment (1 No.)", m: "5" },
-  { p: "Viva-voce", m: "5" },
-  { p: "Total", m: "20" },
-];
-
-const classMidTerm = [
-  { p: "Written test", m: "10" },
-  { p: "Assignment (1 No.)", m: "5" },
-  { p: "Viva-voce", m: "5" },
-  { p: "Total", m: "20" },
-];
-
-const reappearTable = [
-  { course: "Courses with Theory and Practical", pattern: "Multiple Choice Questions (MCQ) (60 \u00D7 1 = 60 marks)", mode: "OMR", dur: "75 minutes" },
-  { course: "Courses with Theory alone", pattern: "Multiple Choice Questions (MCQ) (100 \u00D7 1 = 100 marks)", mode: "OMR", dur: "120 minutes" },
+const experientialLearningSummary = [
+  {
+    sno: "1",
+    module: "Module-I",
+    creditHours: "0+10",
+  },
+  {
+    sno: "2",
+    module: "Module-II",
+    creditHours: "0+10",
+  },
+  {
+    sno: "3",
+    module: "Total",
+    creditHours: "0+20",
+  },
 ];
 
 function Cell({ text }: { text: string }) {
@@ -152,68 +719,18 @@ function Cell({ text }: { text: string }) {
   );
 }
 
-function MarkTable({ rows }: { rows: { p: string; m: string }[] }) {
-  return (
-    <div className="overflow-x-auto rounded-2xl border">
-      <table className="w-full text-sm">
-        <thead className="bg-secondary">
-          <tr>
-            <th className="px-4 py-3 text-left font-semibold">Particulars</th>
-            <th className="px-4 py-3 text-left font-semibold">Marks</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.p} className="border-t">
-              <td className="px-4 py-3 font-semibold">{r.p}</td>
-              <td className="px-4 py-3 text-muted-foreground">{r.m}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-function DetailTable({ rows }: { rows: { no: string; p: string; r: string; m: string }[] }) {
-  return (
-    <div className="overflow-x-auto rounded-2xl border">
-      <table className="w-full text-sm">
-        <thead className="bg-secondary">
-          <tr>
-            <th className="px-4 py-3 text-left font-semibold">S. No.</th>
-            <th className="px-4 py-3 text-left font-semibold">Particulars</th>
-            <th className="px-4 py-3 text-left font-semibold">Requirements</th>
-            <th className="px-4 py-3 text-left font-semibold">Allotted marks</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.p} className="border-t align-top">
-              <td className="px-4 py-3 font-semibold">{r.no}</td>
-              <td className="px-4 py-3 font-semibold">{r.p}</td>
-              <td className="px-4 py-3 text-muted-foreground">{r.r}</td>
-              <td className="px-4 py-3 text-muted-foreground">{r.m}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
 function ExamPattern() {
   return (
     <PageShell
       eyebrow="Academics"
-      title="Exam Pattern"
+      title="Course & Syllabus"
       subtitle="The Examination pattern for the B.Sc (Hons) Agriculture programme at IIAT."
-      breadcrumbs={[{ label: "Academics" }, { label: "Exam Pattern" }]}
+      breadcrumbs={[{ label: "Academics" }, { label: "Course & Syllabus" }]}
     >
 
       <div className="mt-12 max-w-5xl">
-        <h2 className="font-display text-2xl font-bold mb-4">Annexure I &mdash; Examination Pattern</h2>
-        <h3 className="font-display text-lg font-bold text-primary mb-3">Courses with Practical (1+1, 2+1)</h3>
+        <h2 className="font-display text-2xl text-primary font-bold mb-4">B.Sc (Hons.) Agriculture  - 2017 SYLLABUS</h2>
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">I SEMESTER</h3>
         <div className="overflow-x-auto rounded-2xl border">
           <table className="w-full text-sm">
             <thead className="bg-secondary">
@@ -225,20 +742,19 @@ function ExamPattern() {
               </tr>
             </thead>
             <tbody>
-              {withPractical.map((r) => (
-                <tr key={r.mid} className="border-t align-top">
-                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.mid} /></td>
-                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.theory} /></td>
-                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.split} /></td>
-                  <td className="px-4 py-3 font-semibold">{r.prac}</td>
-                  <td className="px-4 py-3 font-semibold">{r.total}</td>
+              {semester1Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <h3 className="font-display text-lg font-bold text-primary mt-8 mb-3">Courses without Practical (1+0, 2+0 etc.)</h3>
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">II SEMESTER</h3>
         <div className="overflow-x-auto rounded-2xl border">
           <table className="w-full text-sm">
             <thead className="bg-secondary">
@@ -250,94 +766,246 @@ function ExamPattern() {
               </tr>
             </thead>
             <tbody>
-              {withoutPractical.map((r) => (
-                <tr key={r.mid} className="border-t align-top">
-                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.mid} /></td>
-                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.theory} /></td>
-                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.split} /></td>
-                  <td className="px-4 py-3 font-semibold">{r.prac}</td>
-                  <td className="px-4 py-3 font-semibold">{r.total}</td>
+              {semester2Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
 
-      <div className="mt-12 max-w-5xl space-y-6">
-        <h2 className="font-display text-2xl font-bold">Practical Only Courses (0+1 / 0+2) &mdash; 100 Marks</h2>
-        <h3 className="font-display text-lg font-bold text-primary">Evaluation pattern for Crop Production Course</h3>
-        <p className="text-sm text-muted-foreground">Mid-term evaluation: 20 Marks (Internal examiner)</p>
-        <MarkTable rows={cropMidTerm} />
-        <p className="text-sm text-muted-foreground">Final practical evaluation: 80 Marks</p>
-        <DetailTable rows={cropFinal} />
-      </div>
-
-      <div className="mt-12 max-w-5xl space-y-6">
-        <h2 className="font-display text-2xl font-bold">Practical Involving Field Work</h2>
-        <p className="text-sm text-muted-foreground">Mid-term Practical: 20 Marks</p>
-        <MarkTable rows={fieldMidTerm} />
-        <p className="text-sm text-muted-foreground">Final Practical: 80 Marks</p>
-        <DetailTable rows={fieldFinal} />
-      </div>
-
-      <div className="mt-12 max-w-5xl space-y-6">
-        <h2 className="font-display text-2xl font-bold">Practical Involving Class Room Activities (Without Field)</h2>
-        <p className="text-sm text-muted-foreground">Mid-term: 20 marks (MCQ &mdash; OMR mode) 40 &times; 0.5 = 20</p>
-        <p className="text-sm text-muted-foreground">Final Practical: 80 marks</p>
-        <DetailTable rows={classFinal} />
-      </div>
-
-      <div className="mt-12 max-w-5xl space-y-6">
-        <h2 className="font-display text-2xl font-bold">Mid-term Practical Patterns (0+1 / 0+2)</h2>
-        <p className="text-sm text-muted-foreground">Practical involving field work / lab work / workshop &mdash; 20 Marks (Evaluated by internal examiner)</p>
-        <MarkTable rows={labMidTerm} />
-        <p className="text-sm text-muted-foreground">Practical involving class room activities (without field) &mdash; 20 Marks (Evaluated by internal examiner)</p>
-        <MarkTable rows={classMidTerm} />
-      </div>
-
-      <div className="mt-12 max-w-5xl">
-        <h2 className="font-display text-2xl font-bold mb-4">Reappearance Exam</h2>
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">III SEMESTER</h3>
         <div className="overflow-x-auto rounded-2xl border">
           <table className="w-full text-sm">
             <thead className="bg-secondary">
               <tr>
-                <th className="px-4 py-3 text-left font-semibold">Course details</th>
-                <th className="px-4 py-3 text-left font-semibold">Question pattern &amp; marks</th>
-                <th className="px-4 py-3 text-left font-semibold">Mode of exam</th>
-                <th className="px-4 py-3 text-left font-semibold">Duration</th>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
               </tr>
             </thead>
             <tbody>
-              {reappearTable.map((r) => (
-                <tr key={r.course} className="border-t">
-                  <td className="px-4 py-3 font-semibold">{r.course}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{r.pattern}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{r.mode}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{r.dur}</td>
+              {semester3Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">IV SEMESTER</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {semester4Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">V SEMESTER</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {semester5Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">VI SEMESTER</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {semester6Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">VI SEMESTER</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {semester6Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">VII SEMESTER</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {semester7Courses.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditLoad}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-display text-lg font-bold mt-4 text-foreground mb-3">Experiential Learning Programme/ HOT</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Sno</th>
+                <th className="px-4 py-3 text-left font-semibold">Module</th>
+                <th className="px-4 py-3 text-left font-semibold">Credit Hrs.</th>
+              </tr>
+            </thead>
+            <tbody>
+              {experientialLearningSummary.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.module} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.creditHours}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <table className="w-full text-sm mt-6">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {experientialLearningModules.map((r) => (
+                <tr key={r.sno} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground">{r.sno}</td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.code} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.title} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.credits}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
       </div>
-      <h2 className="font-display text-2xl font-bold mt-8 mb-4">About Examination</h2>
-      <div className="grid md:grid-cols-3 gap-6">
-        {sections.map((s) => (
-          <div key={s.title} className="rounded-2xl border bg-card p-6 shadow-soft">
-            <h3 className="font-display text-lg font-bold text-primary">{s.title}</h3>
-            <p className="mt-2 text-sm text-foreground/80 leading-relaxed">{s.body}</p>
-          </div>
-        ))}
-      </div>
-      <h2 className="font-display text-2xl font-bold mt-8">Examination Pattern of CoE</h2>
+      
+      <h2 className="font-display text-2xl font-bold mt-8">Course & Syllabus Documents</h2>
       <a
-        href={exam_pattern_pdf}
+        href={pdf_1}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
       >
-        Examination Pattern - 2023 <ArrowRight className="h-4 w-4" />
+        2017 Syllabus - pdf <ArrowRight className="h-4 w-4" />
+      </a>
+      <a
+        href={pdf_2}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        B.Sc (Hons) Agri - English   II Semester 2025 Syllabus <ArrowRight className="h-4 w-4" />
+      </a>
+      <a
+        href={pdf_3}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        B.Sc Hons Agri III Sem Syllabus (1) <ArrowRight className="h-4 w-4" />
+      </a>
+      <a
+        href={pdf_4}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        I semester B.Sc(Hons)Agri 2025 syllabus (4) <ArrowRight className="h-4 w-4" />
+      </a>
+      <a
+        href={pdf_5}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        Skill Enhancement Course Syllabus (1) <ArrowRight className="h-4 w-4" />
       </a>
     </PageShell>
   );
