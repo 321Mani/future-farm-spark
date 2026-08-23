@@ -3,7 +3,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { ArrowRight } from "lucide-react";
 import exam_pattern_pdf from "@/assets/documents/Exam-Rules-and-Pattern.pdf";
 
-export const Route = createFileRoute("/academics/exam-pattern")({
+export const Route = createFileRoute("/academics/course-syllabus")({
   head: () => ({
     meta: [
       { title: "Exam Pattern — IIAT" },

@@ -47,6 +47,7 @@ import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
 import { Route as AcademicsLibraryRouteImport } from './routes/academics.library'
 import { Route as AcademicsExamPatternRouteImport } from './routes/academics.exam-pattern'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
+import { Route as AcademicsCourseSyllabusRouteImport } from './routes/academics.course-syllabus'
 import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.computer-center'
 import { Route as AcademicsAcademicCalendarRouteImport } from './routes/academics.academic-calendar'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
@@ -257,6 +258,11 @@ const AcademicsCoursesRoute = AcademicsCoursesRouteImport.update({
   path: '/academics/courses',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademicsCourseSyllabusRoute = AcademicsCourseSyllabusRouteImport.update({
+  id: '/academics/course-syllabus',
+  path: '/academics/course-syllabus',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AcademicsComputerCenterRoute = AcademicsComputerCenterRouteImport.update({
   id: '/academics/computer-center',
   path: '/academics/computer-center',
@@ -344,6 +350,7 @@ export interface FileRoutesByFullPath {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/academic-calendar': typeof AcademicsAcademicCalendarRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
+  '/academics/course-syllabus': typeof AcademicsCourseSyllabusRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/exam-pattern': typeof AcademicsExamPatternRoute
   '/academics/library': typeof AcademicsLibraryRoute
@@ -397,6 +404,7 @@ export interface FileRoutesByTo {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/academic-calendar': typeof AcademicsAcademicCalendarRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
+  '/academics/course-syllabus': typeof AcademicsCourseSyllabusRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/exam-pattern': typeof AcademicsExamPatternRoute
   '/academics/library': typeof AcademicsLibraryRoute
@@ -451,6 +459,7 @@ export interface FileRoutesById {
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/academics/academic-calendar': typeof AcademicsAcademicCalendarRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
+  '/academics/course-syllabus': typeof AcademicsCourseSyllabusRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/exam-pattern': typeof AcademicsExamPatternRoute
   '/academics/library': typeof AcademicsLibraryRoute
@@ -506,6 +515,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/academic-calendar'
     | '/academics/computer-center'
+    | '/academics/course-syllabus'
     | '/academics/courses'
     | '/academics/exam-pattern'
     | '/academics/library'
@@ -559,6 +569,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/academic-calendar'
     | '/academics/computer-center'
+    | '/academics/course-syllabus'
     | '/academics/courses'
     | '/academics/exam-pattern'
     | '/academics/library'
@@ -612,6 +623,7 @@ export interface FileRouteTypes {
     | '/about/vision-mission'
     | '/academics/academic-calendar'
     | '/academics/computer-center'
+    | '/academics/course-syllabus'
     | '/academics/courses'
     | '/academics/exam-pattern'
     | '/academics/library'
@@ -666,6 +678,7 @@ export interface RootRouteChildren {
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
   AcademicsAcademicCalendarRoute: typeof AcademicsAcademicCalendarRoute
   AcademicsComputerCenterRoute: typeof AcademicsComputerCenterRoute
+  AcademicsCourseSyllabusRoute: typeof AcademicsCourseSyllabusRoute
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
   AcademicsExamPatternRoute: typeof AcademicsExamPatternRoute
   AcademicsLibraryRoute: typeof AcademicsLibraryRoute
@@ -968,6 +981,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademicsCoursesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academics/course-syllabus': {
+      id: '/academics/course-syllabus'
+      path: '/academics/course-syllabus'
+      fullPath: '/academics/course-syllabus'
+      preLoaderRoute: typeof AcademicsCourseSyllabusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/academics/computer-center': {
       id: '/academics/computer-center'
       path: '/academics/computer-center'
@@ -1082,6 +1102,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutVisionMissionRoute: AboutVisionMissionRoute,
   AcademicsAcademicCalendarRoute: AcademicsAcademicCalendarRoute,
   AcademicsComputerCenterRoute: AcademicsComputerCenterRoute,
+  AcademicsCourseSyllabusRoute: AcademicsCourseSyllabusRoute,
   AcademicsCoursesRoute: AcademicsCoursesRoute,
   AcademicsExamPatternRoute: AcademicsExamPatternRoute,
   AcademicsLibraryRoute: AcademicsLibraryRoute,
