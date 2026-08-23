@@ -62,17 +62,145 @@ const sections: { title: string; body: string }[] = [
   },
 ];
 
-const examTable = [
-  { exam: "Mid Semester", a: "10 (20 marks converted to 10) (1 hour)", b: "40 (1\u00BD hours)", c: "40 (1\u00BD hours)" },
-  { exam: "Practical", a: "40 (2\u00BD hours)", b: "\u2013", c: "60 (2\u00BD hours)" },
-  { exam: "Final Theory", a: "50 (2\u00BD hours)", b: "60", c: "\u2013" },
-  { exam: "Total", a: "100", b: "100", c: "100" },
-
+const withPractical = [
+  {
+    mid: "20 Marks (Objectives) (OMR/MCQ)\n40 × 0.5 = 20 Marks",
+    theory: "40 Marks (Descriptive)\nPART A: 1 Mark (10/12 Questions)\nPART B: 2 Marks (5/6 Questions)\nPART C: 5 Marks (4/5 Questions)",
+    split: "10 × 1 = 10\n5 × 2 = 10\n4 × 5 = 20",
+    prac: "40",
+    total: "100",
+  },
 ];
+const withoutPractical = [
+  {
+    mid: "20 Marks (Objectives) (45 minutes) (OMR/MCQ)\n40 × 0.5 = 20 Marks",
+    theory: "80 Marks (Descriptive) (3 hours)\nPART A: 2 Marks (11/13 Questions)\nPART B: 4 Marks (7/9 Questions)\nPART C: 6 Marks (5/6 Questions)",
+    split: "11 × 2 = 22\n7 × 4 = 28\n5 × 6 = 30",
+    prac: "\u2013",
+    total: "100",
+  },
+];
+
+const cropMidTerm = [
+  { p: "Crop stand and population", m: "5" },
+  { p: "Field / Observation note book", m: "5" },
+  { p: "Assignment (1 No.)", m: "5" },
+  { p: "Viva-voce", m: "5" },
+  { p: "Total", m: "20" },
+];
+
+const cropFinal = [
+  { no: "1.", p: "Attendance", r: "Minimum of 80%", m: "Pre-requisite for writing the final practical examination" },
+  { no: "2.", p: "Record (Evaluated by course teacher)", r: "Continuous evaluation", m: "5 marks" },
+  { no: "3.", p: "Field Evaluation \u2013 45 marks (Evaluated by Course Teacher)", r: "If crop NOT harvested: Cropping Area (min. 5 cents) \u2013 5; Population \u2013 10; Insect, Disease and Weed control \u2013 10; Crop stand at harvest stage \u2013 20. (or) If crop harvested: Cropping Area (min. 5 cents) \u2013 5; Population maintenance \u2013 15; Yield \u2013 25", m: "45 marks" },
+  { no: "4.", p: "Written test (Evaluated by external examiner)", r: "i. Short notes \u2013 10 marks; ii. Calculation \u2013 10 marks", m: "20 marks" },
+  { no: "5.", p: "Viva-voce (Evaluated by external examiner)", r: "Minimum of 10 questions", m: "10 marks" },
+  { no: "", p: "Total", r: "", m: "80 marks" },
+];
+
+const fieldMidTerm = [
+  { p: "Field Evaluation (Identification, specimen collection etc.)", m: "10 (internal examiner)" },
+  { p: "Assignment (1 No.)", m: "5 (internal examiner)" },
+  { p: "Viva-voce", m: "5" },
+  { p: "Total", m: "20" },
+];
+
+const fieldFinal = [
+  { no: "1.", p: "Attendance", r: "Minimum of 80% separately in theory and practical", m: "Pre-requisite for the final practical examination (internal examiner)" },
+  { no: "2.", p: "Record", r: "Continuous evaluation", m: "5 marks (internal examiner)" },
+  { no: "3.", p: "Assignment (2 Nos.)", r: "A. Presentation / comprehension; B. Written part (no web page copying, hand written, min. two book references); C. Answering the questions", m: "5 + 10 marks (internal) and 5 marks (external)" },
+  { no: "4.", p: "Written Part / Field Evaluation", r: "i. Identification / spotter \u2013 5 (external); ii. Specimen collection \u2013 5 (external); iii. Experiments / field / lab work / calculation \u2013 10 (external); iv. Short notes / critical analysis \u2013 5 (external); v. Case study \u2013 10 (internal); vi. Questions from CD show / guest lecture / short tour \u2013 10 (internal)", m: "45 marks" },
+  { no: "5.", p: "Viva-voce", r: "Minimum of 10 questions", m: "10 marks (external examiner)" },
+  { no: "", p: "Total", r: "", m: "80 marks" },
+];
+
+const classFinal = [
+  { no: "1.", p: "Attendance", r: "Minimum of 80% in practical class", m: "Pre-requisite for the final practical examination (internal examiner)" },
+  { no: "2.", p: "Record", r: "Continuous evaluation", m: "10 marks (internal examiner)" },
+  { no: "3.", p: "Assignment (2 Nos.)", r: "A. Presentation / comprehension \u2013 10 (internal); B. Written part (no web page copying, hand written, min. two book references) \u2013 5 (internal); C. Answering the questions \u2013 5 (external)", m: "20 marks" },
+  { no: "4.", p: "Written test", r: "i. Data interpretation / group discussion / brain storming \u2013 5 (external); ii. Short notes \u2013 5 (external); iii. Critical analysis / case study \u2013 10 (internal); iv. Objective type questions \u2013 5 (external); v. Essay type questions \u2013 5 (external); vi. Questions from CD show / guest lecture / short tour \u2013 10 (internal)", m: "40 marks" },
+  { no: "5.", p: "Viva-voce", r: "Minimum of 10 questions", m: "10 marks (external examiner)" },
+  { no: "", p: "Total", r: "", m: "80 marks" },
+];
+
+const labMidTerm = [
+  { p: "Field evaluation (Identification, specimen collection etc.)", m: "10" },
+  { p: "Assignment (1 No.)", m: "5" },
+  { p: "Viva-voce", m: "5" },
+  { p: "Total", m: "20" },
+];
+
+const classMidTerm = [
+  { p: "Written test", m: "10" },
+  { p: "Assignment (1 No.)", m: "5" },
+  { p: "Viva-voce", m: "5" },
+  { p: "Total", m: "20" },
+];
+
 const reappearTable = [
   { course: "Courses with Theory and Practical", pattern: "Multiple Choice Questions (MCQ) (60 \u00D7 1 = 60 marks)", mode: "OMR", dur: "75 minutes" },
   { course: "Courses with Theory alone", pattern: "Multiple Choice Questions (MCQ) (100 \u00D7 1 = 100 marks)", mode: "OMR", dur: "120 minutes" },
 ];
+
+function Cell({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("\n").map((line, i) => (
+        <span key={i} className="block">{line}</span>
+      ))}
+    </>
+  );
+}
+
+function MarkTable({ rows }: { rows: { p: string; m: string }[] }) {
+  return (
+    <div className="overflow-x-auto rounded-2xl border">
+      <table className="w-full text-sm">
+        <thead className="bg-secondary">
+          <tr>
+            <th className="px-4 py-3 text-left font-semibold">Particulars</th>
+            <th className="px-4 py-3 text-left font-semibold">Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.p} className="border-t">
+              <td className="px-4 py-3 font-semibold">{r.p}</td>
+              <td className="px-4 py-3 text-muted-foreground">{r.m}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function DetailTable({ rows }: { rows: { no: string; p: string; r: string; m: string }[] }) {
+  return (
+    <div className="overflow-x-auto rounded-2xl border">
+      <table className="w-full text-sm">
+        <thead className="bg-secondary">
+          <tr>
+            <th className="px-4 py-3 text-left font-semibold">S. No.</th>
+            <th className="px-4 py-3 text-left font-semibold">Particulars</th>
+            <th className="px-4 py-3 text-left font-semibold">Requirements</th>
+            <th className="px-4 py-3 text-left font-semibold">Allotted marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.p} className="border-t align-top">
+              <td className="px-4 py-3 font-semibold">{r.no}</td>
+              <td className="px-4 py-3 font-semibold">{r.p}</td>
+              <td className="px-4 py-3 text-muted-foreground">{r.r}</td>
+              <td className="px-4 py-3 text-muted-foreground">{r.m}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 function ExamPattern() {
   return (
@@ -92,35 +220,88 @@ function ExamPattern() {
       </div>
 
       <div className="mt-12 max-w-5xl">
-        <h2 className="font-display text-2xl font-bold mb-2">Exam Pattern &amp; Duration</h2>
-        <p className="text-sm text-muted-foreground mb-4">
-          <strong>Regular:</strong> Mid Semester examination — Paper. Final Theory Examination — Paper.
-        </p>
-        <p className="text-sm text-muted-foreground mb-6">
-          <strong>Question pattern:</strong> The mid-semester and final theory consist of objective and descriptive type questions; reappearance consists of multiple choice questions. Comprehension-type questions, problem-based questions, practical theory portions, procedures, short notes and case studies are included in disciplines wherever possible in the final examinations.
-        </p>
+        <h2 className="font-display text-2xl font-bold mb-4">Annexure I &mdash; Examination Pattern</h2>
+        <h3 className="font-display text-lg font-bold text-primary mb-3">Courses with Practical (1+1, 2+1)</h3>
         <div className="overflow-x-auto rounded-2xl border">
           <table className="w-full text-sm">
             <thead className="bg-secondary">
               <tr>
-                <th className="px-4 py-3 text-left font-semibold">Exam</th>
-                <th className="px-4 py-3 text-left font-semibold">1+1 / 2+1 courses</th>
-                <th className="px-4 py-3 text-left font-semibold">1+0 / 2+0 courses</th>
-                <th className="px-4 py-3 text-left font-semibold">0+1 / 0+2 courses</th>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
               </tr>
             </thead>
             <tbody>
-              {examTable.map((r) => (
-                <tr key={r.exam} className="border-t">
-                  <td className="px-4 py-3 font-semibold">{r.exam}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{r.a}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{r.b}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{r.c}</td>
+              {withPractical.map((r) => (
+                <tr key={r.mid} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.mid} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.theory} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.split} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.prac}</td>
+                  <td className="px-4 py-3 font-semibold">{r.total}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        <h3 className="font-display text-lg font-bold text-primary mt-8 mb-3">Courses without Practical (1+0, 2+0 etc.)</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {withoutPractical.map((r) => (
+                <tr key={r.mid} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.mid} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.theory} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.split} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.prac}</td>
+                  <td className="px-4 py-3 font-semibold">{r.total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Practical Only Courses (0+1 / 0+2) &mdash; 100 Marks</h2>
+        <h3 className="font-display text-lg font-bold text-primary">Evaluation pattern for Crop Production Course</h3>
+        <p className="text-sm text-muted-foreground">Mid-term evaluation: 20 Marks (Internal examiner)</p>
+        <MarkTable rows={cropMidTerm} />
+        <p className="text-sm text-muted-foreground">Final practical evaluation: 80 Marks</p>
+        <DetailTable rows={cropFinal} />
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Practical Involving Field Work</h2>
+        <p className="text-sm text-muted-foreground">Mid-term Practical: 20 Marks</p>
+        <MarkTable rows={fieldMidTerm} />
+        <p className="text-sm text-muted-foreground">Final Practical: 80 Marks</p>
+        <DetailTable rows={fieldFinal} />
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Practical Involving Class Room Activities (Without Field)</h2>
+        <p className="text-sm text-muted-foreground">Mid-term: 20 marks (MCQ &mdash; OMR mode) 40 &times; 0.5 = 20</p>
+        <p className="text-sm text-muted-foreground">Final Practical: 80 marks</p>
+        <DetailTable rows={classFinal} />
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Mid-term Practical Patterns (0+1 / 0+2)</h2>
+        <p className="text-sm text-muted-foreground">Practical involving field work / lab work / workshop &mdash; 20 Marks (Evaluated by internal examiner)</p>
+        <MarkTable rows={labMidTerm} />
+        <p className="text-sm text-muted-foreground">Practical involving class room activities (without field) &mdash; 20 Marks (Evaluated by internal examiner)</p>
+        <MarkTable rows={classMidTerm} />
       </div>
 
       <div className="mt-12 max-w-5xl">
