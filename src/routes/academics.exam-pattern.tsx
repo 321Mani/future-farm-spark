@@ -137,6 +137,172 @@ const classMidTerm = [
   { p: "Total", m: "20" },
 ];
 
+const reappearTable = [
+  { course: "Courses with Theory and Practical", pattern: "Multiple Choice Questions (MCQ) (60 \u00D7 1 = 60 marks)", mode: "OMR", dur: "75 minutes" },
+  { course: "Courses with Theory alone", pattern: "Multiple Choice Questions (MCQ) (100 \u00D7 1 = 100 marks)", mode: "OMR", dur: "120 minutes" },
+];
+
+function Cell({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("\n").map((line, i) => (
+        <span key={i} className="block">{line}</span>
+      ))}
+    </>
+  );
+}
+
+function MarkTable({ rows }: { rows: { p: string; m: string }[] }) {
+  return (
+    <div className="overflow-x-auto rounded-2xl border">
+      <table className="w-full text-sm">
+        <thead className="bg-secondary">
+          <tr>
+            <th className="px-4 py-3 text-left font-semibold">Particulars</th>
+            <th className="px-4 py-3 text-left font-semibold">Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.p} className="border-t">
+              <td className="px-4 py-3 font-semibold">{r.p}</td>
+              <td className="px-4 py-3 text-muted-foreground">{r.m}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function DetailTable({ rows }: { rows: { no: string; p: string; r: string; m: string }[] }) {
+  return (
+    <div className="overflow-x-auto rounded-2xl border">
+      <table className="w-full text-sm">
+        <thead className="bg-secondary">
+          <tr>
+            <th className="px-4 py-3 text-left font-semibold">S. No.</th>
+            <th className="px-4 py-3 text-left font-semibold">Particulars</th>
+            <th className="px-4 py-3 text-left font-semibold">Requirements</th>
+            <th className="px-4 py-3 text-left font-semibold">Allotted marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.p} className="border-t align-top">
+              <td className="px-4 py-3 font-semibold">{r.no}</td>
+              <td className="px-4 py-3 font-semibold">{r.p}</td>
+              <td className="px-4 py-3 text-muted-foreground">{r.r}</td>
+              <td className="px-4 py-3 text-muted-foreground">{r.m}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function ExamPattern() {
+  return (
+    <PageShell
+      eyebrow="Academics"
+      title="Exam Pattern"
+      subtitle="The Examination pattern for the B.Sc (Hons) Agriculture programme at IIAT."
+      breadcrumbs={[{ label: "Academics" }, { label: "Exam Pattern" }]}
+    >
+      <div className="max-w-4xl space-y-6">
+        {sections.map((s) => (
+          <div key={s.title} className="rounded-2xl border bg-card p-6 shadow-soft">
+            <h3 className="font-display text-lg font-bold text-primary">{s.title}</h3>
+            <p className="mt-2 text-sm text-foreground/80 leading-relaxed">{s.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 max-w-5xl">
+        <h2 className="font-display text-2xl font-bold mb-4">Annexure I &mdash; Examination Pattern</h2>
+        <h3 className="font-display text-lg font-bold text-primary mb-3">Courses with Practical (1+1, 2+1)</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {withPractical.map((r) => (
+                <tr key={r.mid} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.mid} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.theory} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.split} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.prac}</td>
+                  <td className="px-4 py-3 font-semibold">{r.total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-display text-lg font-bold text-primary mt-8 mb-3">Courses without Practical (1+0, 2+0 etc.)</h3>
+        <div className="overflow-x-auto rounded-2xl border">
+          <table className="w-full text-sm">
+            <thead className="bg-secondary">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Mid Semester</th>
+                <th className="px-4 py-3 text-left font-semibold" colSpan={2}>Final Theory</th>
+                <th className="px-4 py-3 text-left font-semibold">Practical</th>
+                <th className="px-4 py-3 text-left font-semibold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {withoutPractical.map((r) => (
+                <tr key={r.mid} className="border-t align-top">
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.mid} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.theory} /></td>
+                  <td className="px-4 py-3 text-muted-foreground"><Cell text={r.split} /></td>
+                  <td className="px-4 py-3 font-semibold">{r.prac}</td>
+                  <td className="px-4 py-3 font-semibold">{r.total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Practical Only Courses (0+1 / 0+2) &mdash; 100 Marks</h2>
+        <h3 className="font-display text-lg font-bold text-primary">Evaluation pattern for Crop Production Course</h3>
+        <p className="text-sm text-muted-foreground">Mid-term evaluation: 20 Marks (Internal examiner)</p>
+        <MarkTable rows={cropMidTerm} />
+        <p className="text-sm text-muted-foreground">Final practical evaluation: 80 Marks</p>
+        <DetailTable rows={cropFinal} />
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Practical Involving Field Work</h2>
+        <p className="text-sm text-muted-foreground">Mid-term Practical: 20 Marks</p>
+        <MarkTable rows={fieldMidTerm} />
+        <p className="text-sm text-muted-foreground">Final Practical: 80 Marks</p>
+        <DetailTable rows={fieldFinal} />
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Practical Involving Class Room Activities (Without Field)</h2>
+        <p className="text-sm text-muted-foreground">Mid-term: 20 marks (MCQ &mdash; OMR mode) 40 &times; 0.5 = 20</p>
+        <p className="text-sm text-muted-foreground">Final Practical: 80 marks</p>
+        <DetailTable rows={classFinal} />
+      </div>
+
+      <div className="mt-12 max-w-5xl space-y-6">
+        <h2 className="font-display text-2xl font-bold">Mid-term Practical Patterns (0+1 / 0+2)</h2>
+        <p className="text-sm text-muted-foreground">Practical involving field work / lab work / workshop &mdash; 20 Marks (Evaluated by internal examiner)</p>
+        <MarkTable rows={labMidTerm} />
+        <p className="text-sm text-muted-foreground">Practical involving class room activities (without field) &mdash; 20 Marks (Evaluated by internal examiner)</p>
+        <MarkTable rows={classMidTerm} />
+      </div>
 
       <div className="mt-12 max-w-5xl">
         <h2 className="font-display text-2xl font-bold mb-4">Reappearance Exam</h2>
