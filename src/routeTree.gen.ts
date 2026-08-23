@@ -48,6 +48,7 @@ import { Route as AcademicsLibraryRouteImport } from './routes/academics.library
 import { Route as AcademicsExamPatternRouteImport } from './routes/academics.exam-pattern'
 import { Route as AcademicsCoursesRouteImport } from './routes/academics.courses'
 import { Route as AcademicsComputerCenterRouteImport } from './routes/academics.computer-center'
+import { Route as AcademicsAcademicCalendarRouteImport } from './routes/academics.academic-calendar'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as AboutStudentGrievianceRouteImport } from './routes/about.student-grieviance'
 import { Route as AboutSexualHarassmentRouteImport } from './routes/about.sexual-harassment'
@@ -261,6 +262,12 @@ const AcademicsComputerCenterRoute = AcademicsComputerCenterRouteImport.update({
   path: '/academics/computer-center',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademicsAcademicCalendarRoute =
+  AcademicsAcademicCalendarRouteImport.update({
+    id: '/academics/academic-calendar',
+    path: '/academics/academic-calendar',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
   id: '/about/vision-mission',
   path: '/about/vision-mission',
@@ -335,6 +342,7 @@ export interface FileRoutesByFullPath {
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/student-grieviance': typeof AboutStudentGrievianceRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/academic-calendar': typeof AcademicsAcademicCalendarRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/exam-pattern': typeof AcademicsExamPatternRoute
@@ -387,6 +395,7 @@ export interface FileRoutesByTo {
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/student-grieviance': typeof AboutStudentGrievianceRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/academic-calendar': typeof AcademicsAcademicCalendarRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/exam-pattern': typeof AcademicsExamPatternRoute
@@ -440,6 +449,7 @@ export interface FileRoutesById {
   '/about/sexual-harassment': typeof AboutSexualHarassmentRoute
   '/about/student-grieviance': typeof AboutStudentGrievianceRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/academics/academic-calendar': typeof AcademicsAcademicCalendarRoute
   '/academics/computer-center': typeof AcademicsComputerCenterRoute
   '/academics/courses': typeof AcademicsCoursesRoute
   '/academics/exam-pattern': typeof AcademicsExamPatternRoute
@@ -494,6 +504,7 @@ export interface FileRouteTypes {
     | '/about/sexual-harassment'
     | '/about/student-grieviance'
     | '/about/vision-mission'
+    | '/academics/academic-calendar'
     | '/academics/computer-center'
     | '/academics/courses'
     | '/academics/exam-pattern'
@@ -546,6 +557,7 @@ export interface FileRouteTypes {
     | '/about/sexual-harassment'
     | '/about/student-grieviance'
     | '/about/vision-mission'
+    | '/academics/academic-calendar'
     | '/academics/computer-center'
     | '/academics/courses'
     | '/academics/exam-pattern'
@@ -598,6 +610,7 @@ export interface FileRouteTypes {
     | '/about/sexual-harassment'
     | '/about/student-grieviance'
     | '/about/vision-mission'
+    | '/academics/academic-calendar'
     | '/academics/computer-center'
     | '/academics/courses'
     | '/academics/exam-pattern'
@@ -651,6 +664,7 @@ export interface RootRouteChildren {
   AboutSexualHarassmentRoute: typeof AboutSexualHarassmentRoute
   AboutStudentGrievianceRoute: typeof AboutStudentGrievianceRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
+  AcademicsAcademicCalendarRoute: typeof AcademicsAcademicCalendarRoute
   AcademicsComputerCenterRoute: typeof AcademicsComputerCenterRoute
   AcademicsCoursesRoute: typeof AcademicsCoursesRoute
   AcademicsExamPatternRoute: typeof AcademicsExamPatternRoute
@@ -961,6 +975,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademicsComputerCenterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academics/academic-calendar': {
+      id: '/academics/academic-calendar'
+      path: '/academics/academic-calendar'
+      fullPath: '/academics/academic-calendar'
+      preLoaderRoute: typeof AcademicsAcademicCalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/vision-mission': {
       id: '/about/vision-mission'
       path: '/about/vision-mission'
@@ -1059,6 +1080,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutSexualHarassmentRoute: AboutSexualHarassmentRoute,
   AboutStudentGrievianceRoute: AboutStudentGrievianceRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,
+  AcademicsAcademicCalendarRoute: AcademicsAcademicCalendarRoute,
   AcademicsComputerCenterRoute: AcademicsComputerCenterRoute,
   AcademicsCoursesRoute: AcademicsCoursesRoute,
   AcademicsExamPatternRoute: AcademicsExamPatternRoute,
