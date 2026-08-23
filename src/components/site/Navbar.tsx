@@ -125,7 +125,7 @@ const menu: MenuItem[] = [
         heading: "Our Farms",
         links: [
           { label: "Horticulture Farm", href: "/farms/horticulture" },
-          { label: "Agriculture Farm", href: "/farms/north" },
+          { label: "Agriculture Farm", href: "/farms/south" },
           { label: "Daily & Live Stock", href: "/farms/livestock" },
           { label: "Seed Production", href: "/farms/seed-production" },
           { label: "Weather Data", href: "/farms/weather" },
