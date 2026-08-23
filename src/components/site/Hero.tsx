@@ -125,6 +125,7 @@ function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
 
 export function Hero() {
   const [index, setIndex] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
   const typed = useTypewriter(typingPhrases);
 
   const next = useCallback(() => setIndex((i) => (i + 1) % slides.length), []);
