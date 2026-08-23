@@ -27,17 +27,134 @@ function HorticulturePage() {
       <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
         <h2 className="font-display text-2xl font-bold text-foreground">About Horticulture</h2>
         <p>
-          Horticulture is the art of cultivating plants in gardens to produce food and medicinal ingredients,
-          or for comfort and ornamental purposes. Horticulturists grow flowers, fruits and nuts, vegetables and
-          herbs, as well as ornamental trees and lawns.
-        </p>
-        <p>
-          Horticulture is divided into several categories which focus on the cultivation and processing of
-          different types of plants and food items for specific purposes. In order to conserve the science of
-          horticulture, multiple organisations worldwide educate, encourage, and promote the advancement of
-          horticulture. Some notable horticulturists include Luca Ghini, Luther Burbank, and Tony Avent.
+          Department of Horticulture and Food Science imparts education on technologies involved in the cultivation of fruits, vegetables, flowers, medicinal plants, spices & condiments, landscaping, food science along with value addition in agricultural crops and Agro Forestry.
         </p>
       </div>
+      <div className="grid md:grid-cols-3 gap-6 mt-12">
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 mb-4 font-display text-xl font-bold">
+            Disciplines
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Horticulture
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Food Science &amp; Technology
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 mb-4 font-display text-xl font-bold">
+            Instructional Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Model Orchard
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Roof Garden
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Polyhouse Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Trellis
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Botanical Garden
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Kitchen Garden
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Shade Net
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 mb-4 font-display text-xl font-bold">
+            Production Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Nursery Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Food Processing and Value Addition
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Fruits &amp; Vegetables Sales Outlet
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Flower Production Unit
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="rounded-3xl bg-gradient-soft border p-8 mt-12">
+        <div className="mt-4 mb-4 font-display text-xl font-bold">
+          Hands-on Training
+        </div>
+
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Layout and planting of fruit trees and other horticultural crops
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Practicing asexual methods of propagation such as cutting, layering, budding and grafting
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Nursery management, dry flower arrangement, bonsai, terrarium and herbarium making
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Sensory evaluation of food samples, nutritional analysis of foods and microbial study of foods
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Food safety issues and food plant sanitation
+            </p>
+          </li>
+        </ul>
+      </div>
+
       <a
         href={IIATBroucher}
         target="_blank"

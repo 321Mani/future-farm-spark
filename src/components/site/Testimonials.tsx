@@ -4,19 +4,14 @@ import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Priya Mohan",
-    role: "B.Sc Agriculture · 2023 · Agronomist at ITC",
-    text: "Four years on a working farm taught me more than any textbook could. Imayam gave me both the science and the soil under my fingernails.",
+    name: "D.Sathiya",
+    role: "B.Sc. (Hons.) Agriculture",
+    text: "I am D. Sathiya, and I completed my B.Sc. (Hons.) Agriculture at Imayam Institute of Agriculture and Technology, Kannanur, Thuraiyur, during 2013–2017. I am very proud and happy to share that I am currently working as an Agriculture Field Officer, having been selected through the TNPSC examination. I sincerely thank the college management, teaching staff, and my family for their valuable guidance, encouragement, and support in helping me achieve my career goal.",
   },
   {
-    name: "Karthik Raja",
-    role: "B.Tech Agri-Engineering · 2022 · Founder, AgriDrone Labs",
-    text: "The mechanisation labs and TNAU-aligned curriculum gave me the confidence to launch my own precision-farming startup straight out of college.",
-  },
-  {
-    name: "Anitha Selvam",
-    role: "B.Sc Horticulture · 2024 · Research Associate, ICAR",
-    text: "Our polyhouse training is hands-on from day one. The faculty treats every student like a future researcher.",
+    name: "Priyadharshini E",
+    role: "B.Sc. (Hons.) Agriculture",
+    text: "I am Priyadharshini E, and I completed my B.Sc. (Hons.) Agriculture at Imayam Institute of Agriculture and Technology (IIAT) during 2018–2021. I am very happy and proud to share that I was selected for postgraduate higher studies at Tamil Nadu Agricultural University (TNAU). The education, practical training, and guidance I received at IIAT helped me build confidence and achieve my academic goals. I sincerely thank the college management, teaching staff, and my family for their constant encouragement, guidance, and support throughout my journey.",
   },
 ];
 

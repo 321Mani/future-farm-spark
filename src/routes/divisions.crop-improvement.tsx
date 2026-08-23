@@ -32,17 +32,7 @@ function CropImprovementPage() {
       <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
         <h2 className="font-display text-2xl font-bold text-foreground">About Crop Improvement</h2>
         <p>
-          Crop improvement refers to the genetic alteration of plants to satisfy human needs. In prehistory, human
-          forebears in various parts of the world brought into cultivation a few hundred species from the hundreds
-          of thousands available. In the process they transformed elements of these species into crops through
-          genetic alterations that involved conscious and unconscious selection, the differential reproduction of
-          variants.
-        </p>
-        <p>
-          Through a long history of trial and error, a relatively few plant species have become the mainstay of
-          agriculture and thus the world\u2019s food supply. This process of domestication involved the identification
-          of certain useful wild species combined with a process of selection that brought about changes in
-          appearance, quality, and productivity.
+          Department of Crop Improvement involves in teaching plant breeding and genetics of crops, developing new plant cultivars through hybridization and tissue culture, seed physiology, biology and pathology related to seed dormancy, germination, development, maturation, quality and deterioration and biochemical processes involved in plant growth and regulation.
         </p>
       </div>
 
@@ -52,17 +42,95 @@ function CropImprovementPage() {
           The Crop Improvement department is divided into multiple sectors to utilise the maximum potential of
           crop improvement techniques.
         </p>
-        <div className="grid md:grid-cols-3 gap-6">
-          {sections.map((s) => (
-            <div key={s.title} className="rounded-2xl border bg-card p-6 shadow-soft hover:shadow-glow transition-all">
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary mb-4">
-                <s.icon className="h-6 w-6" />
-              </div>
-              <h3 className="font-display text-lg font-bold">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
-            </div>
-          ))}
+      </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 font-display mb-4 text-xl font-bold">
+            Disciplines
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Plant Breeding &amp; Genetics
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agricultural Biotechnology
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Seed Science and Technology
+              </p>
+            </li>
+          </ul>
         </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 font-display mb-4 text-xl font-bold">
+            Instructional Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Tissue Culture Unit
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 font-display mb-4 text-xl font-bold">
+            Production Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Seed Production Unit
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="rounded-3xl bg-gradient-soft border p-8 mt-12">
+        <div className="mt-4 font-display mb-4 text-xl font-bold">
+          Hands-on Training
+        </div>
+
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Dissection and evaluation of floral parts in various crops and breeding techniques
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Emasculation, crossing and selfing techniques for agricultural and horticultural crops
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              DNA isolation and MAS (Marker Assisted Selection)
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Seed germination, seed treatment methods, dormancy breaking methods, vigour &amp; viability test
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Estimation of photosynthetic pigments and identification of nutritional deficiencies
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Assessment of abiotic stress-related parameters
+            </p>
+          </li>
+        </ul>
       </div>
 
       <a

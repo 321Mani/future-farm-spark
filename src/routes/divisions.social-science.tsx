@@ -40,11 +40,7 @@ function SocialSciencePage() {
       <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
         <h2 className="font-display text-2xl font-bold text-foreground">About Social Science</h2>
         <p>
-          In the Social Science department, students develop expertise in group discussion, analysis using
-          software, communication technology and exposure visits (markets, banks, FPCs, SHGs, RAWE, training,
-          capacity building, national and international institutes, All India tours, etc.). An audio-visual
-          laboratory equipped with an LCD projector, advanced audio and video systems, public address system,
-          DVD player and television accommodates 60\u201370 students at a time.
+          Department of Social Sciences instructs about the cost economics of crop production, marketing and finance, transfer of technology, rural communication models, use of extension aids, entrepreneurial skills in agribusiness, descriptive and inferential statistics, mathematical applications, IT applications, soft skills, heritage concepts and physical education.
         </p>
       </div>
 
@@ -54,20 +50,138 @@ function SocialSciencePage() {
           The Social Science department is divided into multiple sectors to utilise the maximum potential of
           social science techniques.
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {socialSections.map((s) => (
-            <div key={s.title} className="rounded-2xl border bg-card p-6 shadow-soft hover:shadow-glow transition-all">
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary mb-4">
-                <s.icon className="h-6 w-6" />
-              </div>
-              <h3 className="font-display text-lg font-bold">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
-            </div>
-          ))}
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 mb-4 font-display text-xl font-bold">
+            Disciplines
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agricultural Economics
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agri Business Management
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agricultural Extension
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agricultural Statistics
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                English
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Computer Science
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Tamil
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Library
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Physical Education
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Yoga
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 mb-4 font-display text-xl font-bold">
+            Instructional Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Audio Visual Aids &amp; Entrepreneurship Development
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 mb-4 font-display text-xl font-bold">
+            Production Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agri Business Incubation Center
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
+      <div className="rounded-3xl bg-gradient-soft border p-8 mt-12">
+        <div className="mt-4 mb-4 font-display text-xl font-bold">
+          Hands-on Training
+        </div>
 
-      <div className="mt-12 max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Identifying and analyzing problems faced by farmers
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Conducting group discussions and brainstorming sessions to improve leadership qualities among students
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Assessment of demand and supply and price determination of agricultural commodities through market arrivals using software
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              SWOC analysis of opportunities available in agri-business
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Training on statistical software such as SPSS, SYSTAT and R Programmes
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Using internet facilities to collect assignment resources, study materials, project review materials, general knowledge and other academic resources
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Focusing on skill-oriented programmes such as listening, speaking, reading, writing and comprehension
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      {/* <div className="mt-12 max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
         <h2 className="font-display text-2xl font-bold text-foreground">About Physical Science</h2>
         <p>
           <strong>Computer Science:</strong> The campus has one richly equipped computer laboratory accessible
@@ -94,7 +208,7 @@ function SocialSciencePage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
       <a
         href={IIATBroucher}
         target="_blank"

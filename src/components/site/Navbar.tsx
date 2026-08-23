@@ -105,17 +105,17 @@ const menu: MenuItem[] = [
         links: [
           { label: "Crop Improvement", href: "/divisions/crop-improvement" },
           { label: "Crop Management", href: "/divisions/crop-management" },
-          { label: "Plant Protection", href: "/divisions/plant-protection" },
-        ],
-      },
-      {
-        heading: "Applied Sciences",
-        links: [
+          { label: "Crop Protection", href: "/divisions/plant-protection" },
           { label: "Horticulture", href: "/divisions/horticulture" },
-          { label: "Agriculture Engineering", href: "/divisions/agriculture-engineering" },
           { label: "Social Science", href: "/divisions/social-science" },
         ],
       },
+      // {
+      //   heading: "Applied Sciences",
+      //   links: [
+      //     { label: "Agriculture Engineering", href: "/divisions/agriculture-engineering" },
+      //   ],
+      // },
     ],
   },
   {

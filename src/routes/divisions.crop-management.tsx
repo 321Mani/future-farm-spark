@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { Wheat, Mountain, Microscope, Leaf, FlaskConical, Cog, ArrowDown } from "lucide-react";
+import { Wheat, Mountain, Microscope, Leaf, FlaskConical, Cog, ArrowDown, Users } from "lucide-react";
 import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
 
 export const Route = createFileRoute("/divisions/crop-management")({
@@ -15,15 +15,6 @@ export const Route = createFileRoute("/divisions/crop-management")({
   component: CropManagementPage,
 });
 
-const sections = [
-  { icon: Wheat, title: "Agronomy", text: "Study of crops and the soils in which they grow. Agronomists work to develop methods that improve the use of soil and increase the production of food and fibre crops." },
-  { icon: Mountain, title: "Soil Science", text: "Soil fertility, classification, conservation and nutrient management for sustainable agricultural production." },
-  { icon: Microscope, title: "Agricultural Microbiology", text: "Study of microorganisms important to agriculture \u2014 soil microbes, biofertilizers, biopesticides and microbial processes that support crop health." },
-  { icon: Leaf, title: "Crop Physiology", text: "Plant functions and responses of crops grown in various environments. Understanding how crop plants react to their field environment is essential for crop improvement, solving crop management problems, and making good management decisions." },
-  { icon: FlaskConical, title: "Biochemistry", text: "Biochemical processes within plants \u2014 metabolism, nutrient uptake, and the chemistry that underpins growth, yield and quality of agricultural produce." },
-  { icon: Cog, title: "Agricultural Engineering", text: "Engineering principles applied to farm operations \u2014 machinery, soil-water engineering and processing technology supporting modern crop management." },
-];
-
 function CropManagementPage() {
   return (
     <PageShell
@@ -35,17 +26,205 @@ function CropManagementPage() {
       <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
         <h2 className="font-display text-2xl font-bold text-foreground">About Crop Management</h2>
         <p>
-          <strong>Agronomy:</strong> Study of crops and the soils in which they grow. Agronomists work to develop
-          methods that will improve the use of soil and increase the production of food and fibre crops.
+          Department of Crop Management is functioning with multidisciplinary activities viz., teaching on soil testing and nutrient management, field and crop management, water stress, nutritional deficiency, role of microbes in eco system, soil and water pollution management, technology in the management of livestock, poultry, goat and piggery.
         </p>
-        <p>
-          <strong>Crop Physiology:</strong> Plant functions and responses of crops grown in various environments.
-          Knowing why and how crop plants react to their field environment is essential for crop improvement,
-          solving crop management problems, and making good management decisions.
-        </p>
+
+      </div>
+      <div className="grid lg:grid-cols-3 gap-10 mb-12 mt-12">
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 font-display text-xl font-bold mb-4">Disciplines</div>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agronomy
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Soil Science & Agricultural Chemistry
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agricultural Microbiology
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Environmental Science
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agro forestry
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Agricultural Engineering
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Biochemistry 
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Crop Physiology  
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Animal Husbandry 
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 font-display text-xl font-bold mb-4">
+            Instructional Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Crop Cafeteria Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Irrigation Cafeteria Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Vermicomposting Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Farm Waste Compost Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Sewage Treatment Plant
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                IFS Unit (Farm Pond) – Wet Land Based
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                IFS Unit – Garden Land Based
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-3xl bg-gradient-soft border p-8">
+          <div className="mt-4 font-display text-xl font-bold mb-4">
+            Production Units
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Azolla Production Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Dairy Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Piggery Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Dairy Products Outlet
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Biofertilizer Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Poultry Unit
+              </p>
+            </li>
+            <li>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Goat Unit
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="rounded-3xl bg-gradient-soft border p-8">
+        <div className="mt-4 font-display text-xl font-bold mb-4">
+          Hands-on Training
+        </div>
+
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Sowing and maintenance of Crop Cafeteria
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Cultivation of wetland and garden land crops under Crop Production Course
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Soil sampling, soil profile study, land utilization plan and soil quality assessment
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Isolation, characterization and identification of different microorganisms
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Biofertilizer and Azolla production
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Assessment of wastewater quality, biodiversity index and air quality
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Recording readings of different instruments and interpretation of weather data
+              collected from the B-Class meteorological observatory
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Technical identification of external parts of dairy cattle and birds, study of
+              dentition and determination of the age of farm animals
+            </p>
+          </li>
+          <li>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Restraining methods and appliances used for farm animals
+            </p>
+          </li>
+        </ul>
       </div>
 
-      <div className="mt-12 max-w-10xl">
+      {/* <div className="mt-12 max-w-10xl">
         <h2 className="font-display text-2xl font-bold mb-2">Sections in Crop Management</h2>
         <p className="text-muted-foreground mb-8">
           The Crop Management department is divided into multiple sectors to utilise the maximum potential of
@@ -62,7 +241,7 @@ function CropManagementPage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
       <a
         href={IIATBroucher}
         target="_blank"
