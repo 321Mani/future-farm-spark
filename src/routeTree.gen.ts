@@ -41,6 +41,7 @@ import { Route as DivisionsAgricultureEngineeringRouteImport } from './routes/di
 import { Route as AcademicsYogaRouteImport } from './routes/academics.yoga'
 import { Route as AcademicsSportsRouteImport } from './routes/academics.sports'
 import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smart-class'
+import { Route as AcademicsRulesRegulationRouteImport } from './routes/academics.rules-regulation'
 import { Route as AcademicsPhysicalEducationRouteImport } from './routes/academics.physical-education'
 import { Route as AcademicsNssRouteImport } from './routes/academics.nss'
 import { Route as AcademicsLibraryRouteImport } from './routes/academics.library'
@@ -223,6 +224,12 @@ const AcademicsSmartClassRoute = AcademicsSmartClassRouteImport.update({
   path: '/academics/smart-class',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademicsRulesRegulationRoute =
+  AcademicsRulesRegulationRouteImport.update({
+    id: '/academics/rules-regulation',
+    path: '/academics/rules-regulation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AcademicsPhysicalEducationRoute =
   AcademicsPhysicalEducationRouteImport.update({
     id: '/academics/physical-education',
@@ -334,6 +341,7 @@ export interface FileRoutesByFullPath {
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
+  '/academics/rules-regulation': typeof AcademicsRulesRegulationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
@@ -385,6 +393,7 @@ export interface FileRoutesByTo {
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
+  '/academics/rules-regulation': typeof AcademicsRulesRegulationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
@@ -437,6 +446,7 @@ export interface FileRoutesById {
   '/academics/library': typeof AcademicsLibraryRoute
   '/academics/nss': typeof AcademicsNssRoute
   '/academics/physical-education': typeof AcademicsPhysicalEducationRoute
+  '/academics/rules-regulation': typeof AcademicsRulesRegulationRoute
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
@@ -490,6 +500,7 @@ export interface FileRouteTypes {
     | '/academics/library'
     | '/academics/nss'
     | '/academics/physical-education'
+    | '/academics/rules-regulation'
     | '/academics/smart-class'
     | '/academics/sports'
     | '/academics/yoga'
@@ -541,6 +552,7 @@ export interface FileRouteTypes {
     | '/academics/library'
     | '/academics/nss'
     | '/academics/physical-education'
+    | '/academics/rules-regulation'
     | '/academics/smart-class'
     | '/academics/sports'
     | '/academics/yoga'
@@ -592,6 +604,7 @@ export interface FileRouteTypes {
     | '/academics/library'
     | '/academics/nss'
     | '/academics/physical-education'
+    | '/academics/rules-regulation'
     | '/academics/smart-class'
     | '/academics/sports'
     | '/academics/yoga'
@@ -644,6 +657,7 @@ export interface RootRouteChildren {
   AcademicsLibraryRoute: typeof AcademicsLibraryRoute
   AcademicsNssRoute: typeof AcademicsNssRoute
   AcademicsPhysicalEducationRoute: typeof AcademicsPhysicalEducationRoute
+  AcademicsRulesRegulationRoute: typeof AcademicsRulesRegulationRoute
   AcademicsSmartClassRoute: typeof AcademicsSmartClassRoute
   AcademicsSportsRoute: typeof AcademicsSportsRoute
   AcademicsYogaRoute: typeof AcademicsYogaRoute
@@ -898,6 +912,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademicsSmartClassRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academics/rules-regulation': {
+      id: '/academics/rules-regulation'
+      path: '/academics/rules-regulation'
+      fullPath: '/academics/rules-regulation'
+      preLoaderRoute: typeof AcademicsRulesRegulationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/academics/physical-education': {
       id: '/academics/physical-education'
       path: '/academics/physical-education'
@@ -1044,6 +1065,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicsLibraryRoute: AcademicsLibraryRoute,
   AcademicsNssRoute: AcademicsNssRoute,
   AcademicsPhysicalEducationRoute: AcademicsPhysicalEducationRoute,
+  AcademicsRulesRegulationRoute: AcademicsRulesRegulationRoute,
   AcademicsSmartClassRoute: AcademicsSmartClassRoute,
   AcademicsSportsRoute: AcademicsSportsRoute,
   AcademicsYogaRoute: AcademicsYogaRoute,

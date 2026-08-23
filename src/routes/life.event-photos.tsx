@@ -20,30 +20,116 @@ export const Route = createFileRoute("/life/event-photos")({
   component: EventPhotosPage,
 });
 
-const rows: { name: string; links: { label: string; href: string }[] }[] = [
-  { name: "Zumba \u2013 LH", links: [{ label: "View Photos", href: "/gallery" }] },
+// const rows: { name: string; links: { label: string; href: string }[] }[] = [
+//   { name: "Zumba \u2013 LH", links: [{ label: "View Photos", href: "/gallery" }] },
+//   {
+//     name: "Nasha Mukta Yuva for Viksit Bharat Sankalp Abhiyaan Launch",
+//     links: [{ label: "View Photos", href: "/gallery" }],
+//   },
+//   {
+//     name: "Academia Industrial Conclave",
+//     links: [
+//       { label: "Inaugural Photos", href: "/gallery" },
+//       { label: "Valedictory Photos", href: "/gallery" },
+//     ],
+//   },
+//   { name: "All India Study Tour", links: [{ label: "View Photos", href: "/gallery" }] },
+//   { name: "RAWE Exhibition", links: [{ label: "View Photos", href: "/gallery" }] },
+//   {
+//     name: "Annual Sports Meet",
+//     links: [
+//       { label: "View Photos", href: "/gallery" },
+//       { label: "View Videos", href: "/gallery" },
+//     ],
+//   },
+//   { name: "Independence Day Celebration", links: [{ label: "View Photos", href: "/gallery" }] },
+//   { name: "NSS Special Camp", links: [{ label: "View Photos", href: "/gallery" }] },
+// ];
+const rows: {
+  name: string;
+  date: string;
+  links: { label: string; href: string }[];
+}[] = [
   {
-    name: "Nasha Mukta Yuva for Viksit Bharat Sankalp Abhiyaan Launch",
+    name: "International Day for Biological Diversity",
+    date: "22 May 2026",
     links: [{ label: "View Photos", href: "/gallery" }],
   },
   {
-    name: "Academia Industrial Conclave",
-    links: [
-      { label: "Inaugural Photos", href: "/gallery" },
-      { label: "Valedictory Photos", href: "/gallery" },
-    ],
+    name: "World Environment Day",
+    date: "05 June 2026",
+    links: [{ label: "View Photos", href: "/gallery" }],
   },
-  { name: "All India Study Tour", links: [{ label: "View Photos", href: "/gallery" }] },
-  { name: "RAWE Exhibition", links: [{ label: "View Photos", href: "/gallery" }] },
   {
-    name: "Annual Sports Meet",
-    links: [
-      { label: "View Photos", href: "/gallery" },
-      { label: "View Videos", href: "/gallery" },
-    ],
+    name: "Diverse Opportunities for Higher Studies Abroad",
+    date: "30 May 2025",
+    links: [{ label: "View Photos", href: "/gallery" }],
   },
-  { name: "Independence Day Celebration", links: [{ label: "View Photos", href: "/gallery" }] },
-  { name: "NSS Special Camp", links: [{ label: "View Photos", href: "/gallery" }] },
+  {
+    name: "Third Graduation Day",
+    date: "23 March 2025",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "Fresher’s Day",
+    date: "12 May 2025",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "12th Club Day",
+    date: "2025",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "12th Club Day",
+    date: "2025",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "12th Sports Day",
+    date: "2025",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "Mupperum Vizha",
+    date: "27 July 2024",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "Pongal Vizha",
+    date: "08 January 2024",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "Fresher’s Day",
+    date: "2023",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "9th Club Day",
+    date: "2022",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "Velicham Veliyae Illai",
+    date: "24 April 2025",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "13th Sports Day",
+    date: "2026",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "13th Club Day",
+    date: "2026",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
+  {
+    name: "Muthamizh Vizha",
+    date: "2026",
+    links: [{ label: "View Photos", href: "/gallery" }],
+  },
 ];
 
 function EventPhotosPage() {
@@ -59,6 +145,7 @@ function EventPhotosPage() {
           <thead>
             <tr className="bg-foreground text-background">
               <th className="px-6 py-4 font-display text-base font-bold text-center">Event Name</th>
+              <th className="px-6 py-4 font-display text-base font-bold text-center">Event Date</th>
               <th className="px-6 py-4 font-display text-base font-bold text-center w-64">Link</th>
             </tr>
           </thead>
@@ -66,6 +153,7 @@ function EventPhotosPage() {
             {rows.map((r, i) => (
               <tr key={r.name} className={i % 2 === 0 ? "bg-muted/40" : "bg-card"}>
                 <td className="px-6 py-4 align-top border-t text-foreground">{r.name}</td>
+                <td className="px-6 py-4 align-top border-t text-foreground">{r.date}</td>
                 <td className="px-6 py-4 align-top border-t border-l">
                   <div className="flex flex-col gap-1">
                     {r.links.map((l) => (

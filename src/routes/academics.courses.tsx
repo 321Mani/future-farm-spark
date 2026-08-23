@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { GraduationCap, BookOpen, ArrowRight, Calendar } from "lucide-react";
+import { GraduationCap, BookOpen, ArrowRight, Calendar, CheckCircle2 } from "lucide-react";
 
 
 export const Route = createFileRoute("/academics/courses")({
@@ -14,12 +14,11 @@ export const Route = createFileRoute("/academics/courses")({
   }),
   component: Courses,
 });
-
+// Eligibility Criteria
 const courses = [
-  { name: "Eligibility Criteria", duration: "Mathematics, Physics, Chemistry and Biology", seats: "Physics, Chemistry and Biology with a fourth (elective) subject of any relevant science having marks (not Grades).", eligibility: "Physics, Chemistry, Botany and Zoology." },
-  // { name: "B.Sc. (Hons.) Horticulture", duration: "4 Years", seats: "30", eligibility: "10+2 with Physics, Chemistry, Biology" },
-  // { name: "B.Tech Agricultural Engineering", duration: "4 Years", seats: "30", eligibility: "10+2 with Physics, Chemistry, Maths" },
-  // { name: "B.Sc. Food Technology", duration: "3 Years", seats: "30", eligibility: "10+2 with Science stream" },
+  { name: "B.Sc. (Hons.) Agriculture", duration: "4 Years", eligibility: "B.Sc. (Hons.) Agriculture involves study of agriculture sciences and use of modern scientific equipment and techniques in agriculture, land surveying, soil science, water resource management, animal and poultry management, basic of biotechnology etc." },
+
+  { name: "B.Sc. (Hons.) Horticulture", duration: "4 Years", eligibility: "B.Sc. (Hons.) Horticulture is a course focused mainly on the science and technology of growing fruits, vegetables, flowers, spices, plantation crops, and ornamental plants." },
 ];
 
 function Courses() {
@@ -38,17 +37,19 @@ function Courses() {
             </div>
             <h3 className="font-display text-xl font-bold">{c.name}</h3>
             <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-primary" /> Group I: <span className="font-semibold text-foreground">{c.duration}</span></div>
-              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Group II: <span className="font-semibold text-foreground">{c.seats} seats</span></div>
-              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Group II (A): <span className="font-semibold text-foreground">{c.seats} seats</span></div>
-              {/* <div className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5" /> <span>{c.eligibility}</span></div> */}
+              <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-primary" /> Duration: <span className="font-semibold text-foreground">{c.duration}</span></div>
+              <h4 className="font-display text-lg font-bold text-primary pt-8">Eligibility Criteria</h4>
+              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Group I: <span className="font-semibold text-foreground">Mathematics, Physics, Chemistry and Biology</span></div>
+              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Group II: <span className="font-semibold text-foreground">Physics, Chemistry and Biology with a fourth (elective) subject of any relevant science having marks (not Grades).</span></div>
+              <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> Group II (A): <span className="font-semibold text-foreground">Physics, Chemistry, Botany and Zoology.</span></div>
+              <h4 className="font-display text-lg font-bold text-primary pt-8">Course Offered</h4>
+              <div className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5" /> <span>{c.eligibility}</span></div>
             </div>
-            <h3 className="font-display text-lg font-bold text-primary pt-8">B.Sc.,(Hons) Agriculture</h3>
           </div>
         ))}
       </div>
 
-      <div className="mt-12 rounded-2xl border bg-secondary/40 p-8 max-w-6xl">
+      {/* <div className="mt-12 rounded-2xl border bg-secondary/40 p-8 max-w-6xl">
         <h2 className="font-display text-2xl font-bold">Curriculum & Syllabi</h2>
         <p className="mt-3 text-muted-foreground max-w-3xl">
           Curriculum and Syllabi prescribed by Tamil Nadu Agricultural University (TNAU) is followed for the undergraduate programmes. Students admitted from 2017-18 onwards follow the revised ICAR Vth Deans' Committee syllabus.
@@ -59,7 +60,7 @@ function Courses() {
         >
           View Course Details <ArrowRight className="h-4 w-4" />
         </a>
-      </div>
+      </div> */}
     </PageShell>
   );
 }

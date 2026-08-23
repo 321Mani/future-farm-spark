@@ -79,8 +79,9 @@ const menu: MenuItem[] = [
         links: [
           { label: "Course Offered", href: "/academics/courses" },
           { label: "Exam Pattern", href: "/academics/exam-pattern" },
-          { label: "Academic Calendar", href: "/academics/academic-calendar" },
-          { label: "Course & Syllabus", href: "/academics/course-syllabus" },
+          // { label: "Academic Calendar", href: "/academics/academic-calendar" },
+          // { label: "Course & Syllabus", href: "/academics/course-syllabus" },
+          { label: "Rules & Regulations", href: "/academics/rules-regulation" },
         ],
       },
       {
