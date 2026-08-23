@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { Trophy, Medal } from "lucide-react";
+import { Trophy, Medal, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/life/newsletter")({
   head: () => ({
@@ -31,53 +31,33 @@ function NewsletterPage() {
     >
       <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed">
         <h2 className="font-display text-2xl font-bold text-foreground inline-flex items-center gap-2">
-          <Trophy className="h-6 w-6 text-accent" />
-          Inter Collegiate Tournament & All India Inter Agri Tournament
+          News Letter
         </h2>
-        <p>
-          Tamil Nadu Agricultural University organised the Inter Collegiate Tournament 2022, a state-level
-          Agri sports meet held from 01.12.2022 to 06.12.2022 at HC&RI, Periyakulam (zone level) and from
-          11.12.2022 to 16.12.2022 at TNAU, Coimbatore. A total of 41 agricultural colleges participated;
-          89 students from IIAT, Thuraiyur participated and won medals in various games.
-        </p>
-        <p>
-          The 21st All India Inter Agri Tournament was held at Chaudhary Charan Singh Haryana Agricultural
-          University, Hisar, Haryana, where TNAU won the overall athletics runners-up trophy. IIAT student
-          M. S. Logeshwaran (2021 batch) won an individual Silver Medal in the 4\u00D7100 Relay.
-        </p>
-      </div>
-
-      <div className="mt-12 max-w-5xl">
-        <h2 className="font-display text-2xl font-bold text-foreground inline-flex items-center gap-2 mb-4">
-          <Medal className="h-6 w-6 text-accent" />
-          ICT Events \u2014 November 2023
-        </h2>
-        <p className="text-foreground/80 leading-relaxed mb-6">
-          Imayam Institute of Agriculture and Technology (IIAT) participated in ICT \u2014 Madurai, B-Zone. In the
-          Games (Men) category, IIAT secured Runners-up in Volleyball and Badminton. In Athletics, IIAT students
-          secured four Gold, three Silver and four Bronze medals.
-        </p>
-        <div className="overflow-x-auto rounded-2xl border">
-          <table className="w-full text-sm">
-            <thead className="bg-secondary">
-              <tr>
-                <th className="px-4 py-3 text-left font-semibold">Gold</th>
-                <th className="px-4 py-3 text-left font-semibold">Silver</th>
-                <th className="px-4 py-3 text-left font-semibold">Bronze</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ictRows.map((r, i) => (
-                <tr key={i} className="border-t">
-                  <td className="px-4 py-3">{r.gold}</td>
-                  <td className="px-4 py-3">{r.silver}</td>
-                  <td className="px-4 py-3">{r.bronze}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="rounded-2xl border bg-secondary mb-6 p-10">
+          <ul className="list-disc list-inside space-y-2">
+            <li>Pongal Celebrations </li>
+            <li>National Voters Day</li>
+            <li>Republic Day celebration</li>
+            <li>TNAU Standing Committee Visits</li>
+            <li>Cybercrime awareness program</li>
+            <li>All-India Study Tour</li>
+            <li>Agripreneurship Stall</li>
+            <li>Celebration of International Women’s Day</li>
+            <li>Students Club and Sport Inaugural Celebration</li>
+            <li>RAWE Exhibition</li>
+            <li>Farmers meeting</li>
+          </ul>
         </div>
       </div>
+
+      <a
+        href="https://imayamnaturopathy.com/docs/news%20letter%205%20copy.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        Skill Enhancement Course Syllabus (1) <ArrowRight className="h-4 w-4" />
+      </a>
     </PageShell>
   );
 }

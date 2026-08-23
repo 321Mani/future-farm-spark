@@ -79,8 +79,8 @@ const menu: MenuItem[] = [
         links: [
           { label: "Course Offered", href: "/academics/courses" },
           { label: "Exam Pattern", href: "/academics/exam-pattern" },
-          // { label: "Academic Calendar", href: "/academics/academic-calendar" },
-          // { label: "Course & Syllabus", href: "/academics/course-syllabus" },
+          { label: "Academic Calendar", href: "/academics/academic-calendar" },
+          { label: "Course & Syllabus", href: "/academics/course-syllabus" },
           { label: "Rules & Regulations", href: "/academics/rules-regulation" },
         ],
       },
@@ -90,7 +90,7 @@ const menu: MenuItem[] = [
           { label: "Faculty", href: "/faculty" },
           // { label: "Library", href: "/academics/library" },
           { label: "Computer Center", href: "/academics/computer-center" },
-          { label: "Smart Class", href: "/academics/smart-class" },
+          // { label: "Smart Class", href: "/academics/smart-class" },
         ],
       },
       {

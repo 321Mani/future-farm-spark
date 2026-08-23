@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, ArrowRight } from "lucide-react";
+import pdf_1 from "@/assets/documents/Academic Calendar.pdf";
+
 
 export const Route = createFileRoute("/academics/academic-calendar")({
   head: () => ({
@@ -79,24 +81,27 @@ function AcademicCalendar() {
       breadcrumbs={[{ label: "Academics" }, { label: "Academic Calendar" }]}
     >
       <div className="max-w-5xl space-y-12">
-        <Table title="Odd Semester (I, III, V, VII)" rows={oddSemester} />
-        <Table title="Even Semester (II, IV, VI, VIII)" rows={evenSemester} />
+        {/* <Table title="Odd Semester (I, III, V, VII)" rows={oddSemester} />
+        <Table title="Even Semester (II, IV, VI, VIII)" rows={evenSemester} /> */}
 
         <div className="rounded-2xl border bg-secondary/40 p-8">
           <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary mb-4">
             <CalendarDays className="h-6 w-6" />
           </div>
           <h2 className="font-display text-2xl font-bold">Important Notes</h2>
-          <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-            {notes.map((n) => (
-              <li key={n} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span>{n}</span>
-              </li>
-            ))}
-          </ul>
+          <p>
+            The Academic Calendar outlines the academic activities and schedule for the IV Year VII Semester of the 2023 batch of undergraduate programmes at Tamil Nadu Agricultural University. It provides a structured timeline for semester commencement, regular academic and instructional activities, examinations, practical components, evaluation periods, holidays, and other important academic events. The calendar is communicated by the Dean (Agriculture) for implementation by the constituent and affiliated colleges, academic coordinators, counsellors, and concerned departments, ensuring that teaching, examinations, and related academic activities are conducted according to the prescribed schedule.
+          </p>
         </div>
       </div>
+      <a
+        href={pdf_1}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm mt-8 font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow self-start lg:self-auto"
+      >
+        Academic Calendar <ArrowRight className="h-4 w-4" />
+      </a>
     </PageShell>
   );
 }
