@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
-import ev1 from "@/assets/gallery-2.webp";
-import ev2 from "@/assets/gallery-4.webp";
-import ev3 from "@/assets/gallery-6.webp";
-import ev4 from "@/assets/gallery-1.webp";
+import ev1 from "@/assets/events/1 (1).jpg";
+import ev2 from "@/assets/events/1 (2).jpg";
+import ev3 from "@/assets/events/1 (3).jpg";
+import ev4 from "@/assets/events/1 (4).jpg";
+import ev5 from "@/assets/events/1 (5).jpg";
 
 const events = [
   {
@@ -12,6 +13,7 @@ const events = [
     title: "AgriTech Summit 2026 — Precision Farming & AI",
     date: "12 Aug 2026",
     place: "IIAT Main Auditorium",
+    link: "https://www.instagram.com/p/DcDmM1JkzbJ/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA%3D%3D",
   },
   {
     image: ev2,
@@ -19,20 +21,30 @@ const events = [
     title: "Hands-on Workshop on Hydroponics & Vertical Farming",
     date: "24 Aug 2026",
     place: "Horticulture Division",
+    link: "https://www.instagram.com/p/DbfsP-gEzPk/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA%3D%3D"
   },
-  {
-    image: ev3,
-    tag: "Cultural",
-    title: "IMAYOTSAV — Annual Cultural & Sports Fest",
-    date: "05 Sep 2026",
-    place: "IIAT Sports Ground",
-  },
+  // {
+  //   image: ev3,
+  //   tag: "Cultural",
+  //   title: "IMAYOTSAV — Annual Cultural & Sports Fest",
+  //   date: "05 Sep 2026",
+  //   place: "IIAT Sports Ground",
+  // },
   {
     image: ev4,
     tag: "Seminar",
     title: "National Seminar on Sustainable Crop Management",
     date: "18 Sep 2026",
     place: "Seminar Hall, Block A",
+    link: "https://www.instagram.com/p/DbS_Aotk27M/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA%3D%3D"
+  },
+  {
+    image: ev5,
+    tag: "Seminar",
+    title: "National Seminar on Sustainable Crop Management",
+    date: "18 Sep 2026",
+    place: "Seminar Hall, Block A",
+    link: "https://www.instagram.com/p/DbxqZRAEzyf/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA%3D%3D"
   },
 ];
 
@@ -42,9 +54,9 @@ export function Events() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest">
+            {/* <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest">
               Upcoming Events
-            </div>
+            </div> */}
             <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-foreground max-w-2xl leading-tight">
               What&apos;s happening at <span className="text-primary">IIAT</span>
             </h2>
@@ -81,17 +93,18 @@ export function Events() {
               transition={{ delay: i * 0.08, duration: 0.5 }}
               className="group rounded-3xl overflow-hidden bg-card border shadow-soft hover:shadow-glow transition-all hover:-translate-y-1"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <a href={e.link} className="relative aspect-[4/3] overflow-hidden" target="_blank" rel="noopener noreferrer">
                 <img
                   src={e.image}
                   alt={e.title}
-                  className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  style={{height: "full", width: "91%", margin: "auto"}}
                 />
-                <div className="absolute top-3 left-3 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-accent-foreground shadow-soft">
+                {/* <div className="absolute top-3 left-3 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-accent-foreground shadow-soft">
                   {e.tag}
-                </div>
-              </div>
-              <div className="p-5">
+                </div> */}
+              </a>
+              {/* <div className="p-5">
                 <h3 className="font-display font-bold text-base leading-snug text-foreground line-clamp-2 min-h-[3rem]">
                   {e.title}
                 </h3>
@@ -103,7 +116,7 @@ export function Events() {
                     <MapPin className="h-3.5 w-3.5 text-primary" /> {e.place}
                   </div>
                 </div>
-              </div>
+              </div> */}
             </motion.article>
           ))}
         </div>

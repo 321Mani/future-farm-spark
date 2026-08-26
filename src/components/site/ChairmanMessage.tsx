@@ -8,7 +8,21 @@ import building from "@/assets/images/building.webp";
 import farm from "@/assets/images/farm.webp";
 import lab from "@/assets/images/lab.webp";
 import classroom from "@/assets/images/calssroom.webp";
-import library from "@/assets/images/lib_1.webp";
+import celebrity_1 from "@/assets/celebrity/1.png.webp";
+import celebrity_2 from "@/assets/celebrity/2.png.webp";
+import celebrity_3 from "@/assets/celebrity/3.png.webp";
+import celebrity_4 from "@/assets/celebrity/4.png.webp";
+import celebrity_5 from "@/assets/celebrity/5.png.webp";
+import celebrity_6 from "@/assets/celebrity/6.png.webp";
+import celebrity_7 from "@/assets/celebrity/7.png.webp";
+import celebrity_8 from "@/assets/celebrity/8.png.webp";
+import celebrity_9 from "@/assets/celebrity/9.png.webp";
+import celebrity_10 from "@/assets/celebrity/10.png.webp";
+import celebrity_11 from "@/assets/celebrity/11.png.webp";
+import celebrity_12 from "@/assets/celebrity/12.png.webp";
+import celebrity_13 from "@/assets/celebrity/13.png.webp";
+import celebrity_14 from "@/assets/celebrity/14.png.webp";
+import celebrity_15 from "@/assets/celebrity/15.png.webp";
 
 const people = [
   {
@@ -38,12 +52,21 @@ const people = [
 ];
 
 const campusImages = [
-  { src: campus, alt: "IIAT campus view" },
-  { src: building, alt: "Academic block at IIAT" },
-  { src: farm, alt: "Instructional farm" },
-  { src: lab, alt: "Research laboratory" },
-  { src: classroom, alt: "Classroom session" },
-  { src: library, alt: "Central library" },
+  { src: celebrity_1, alt: "celebrity_1" },
+  { src: celebrity_2, alt: "celebrity_2" },
+  { src: celebrity_3, alt: "celebrity_3" },
+  { src: celebrity_4, alt: "celebrity_4" },
+  { src: celebrity_5, alt: "celebrity_5" },
+  { src: celebrity_6, alt: "celebrity_6" },
+  { src: celebrity_7, alt: "celebrity_7" },
+  { src: celebrity_8, alt: "celebrity_8" },
+  { src: celebrity_9, alt: "celebrity_9" },
+  { src: celebrity_10, alt: "celebrity_10" },
+  { src: celebrity_11, alt: "celebrity_11" },
+  { src: celebrity_12, alt: "celebrity_12" },
+  { src: celebrity_13, alt: "celebrity_13" },
+  { src: celebrity_14, alt: "celebrity_14" },
+  { src: celebrity_15, alt: "celebrity_15" },
 ];
 
 export function ChairmanMessage() {
@@ -141,12 +164,12 @@ export function ChairmanMessage() {
         <div className="mt-16 lg:mt-20">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <div className="text-sm font-semibold text-primary tracking-widest uppercase">
-                Glimpses of IIAT
-              </div>
-              <h3 className="mt-2 font-display text-2xl lg:text-3xl font-bold">
-                Life on our 100-acre campus
+              <h3 className="text-2xl font-semibold text-primary tracking-widest uppercase">
+                Moments of Leadership
               </h3>
+              {/* <h3 className="mt-2 font-display text-2xl lg:text-3xl font-bold">
+                Life on our 100-acre campus
+              </h3> */}
             </div>
           </div>
           <div className="mt-6 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-none">
@@ -162,9 +185,9 @@ export function ChairmanMessage() {
                   loading="lazy"
                   className="h-[210px] sm:h-[240px] w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <figcaption className="px-5 py-3 text-sm font-medium text-foreground/80">
+                {/* <figcaption className="px-5 py-3 text-sm font-medium text-foreground/80">
                   {img.alt}
-                </figcaption>
+                </figcaption> */}
               </motion.figure>
             ))}
           </div>

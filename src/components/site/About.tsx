@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Target, Compass, BadgeCheck } from "lucide-react";
-import aboutImg from "@/assets/images/building.webp";
+import aboutImg from "@/assets/Imayam Institute of Agriculture.jpeg";
 // import aboutImg from "@/assets/about-campus.jpg";
 
 export function About() {

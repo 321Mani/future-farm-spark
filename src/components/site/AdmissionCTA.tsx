@@ -4,8 +4,8 @@ import { ArrowRight, GraduationCap, Sprout, FlaskConical } from "lucide-react";
 // import img2 from "@/assets/gallery-3.jpg";
 // import img3 from "@/assets/gallery-5.jpg";
 
-import img1 from "@/assets/images/Admissions_1.webp";
-import img2 from "@/assets/images/Admissions_3.webp";
+import img1 from "@/assets/admission_new (1).webp";
+import img2 from "@/assets/admission_new (2).webp";
 import img3 from "@/assets/images/Admissions_2.webp";
 
 const programs = [

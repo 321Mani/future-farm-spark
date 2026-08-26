@@ -47,7 +47,7 @@ export function Testimonials() {
                     <Star key={k} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <p className="mt-5 font-display text-xl lg:text-2xl leading-relaxed text-foreground">
+                <p className="mt-5 font-display text-sm lg:text-sm leading-relaxed text-foreground">
                   "{reviews[i].text}"
                 </p>
                 <div className="mt-6">
