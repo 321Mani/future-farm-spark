@@ -98,7 +98,7 @@ export function Events() {
                   src={e.image}
                   alt={e.title}
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  style={{height: "full", width: "91%", margin: "auto"}}
+                  style={{height: "full", width: "100%", margin: "auto"}}
                 />
                 {/* <div className="absolute top-3 left-3 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-accent-foreground shadow-soft">
                   {e.tag}
