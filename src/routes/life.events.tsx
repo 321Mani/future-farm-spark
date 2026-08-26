@@ -10,6 +10,10 @@ import ev5 from "@/assets/gallery-3.webp";
 import ev6 from "@/assets/gallery-5.webp";
 import World_Environment_Day from "@/assets/World Environment Day.jpg";
 import International_Day_for_Biological_Diversity from "@/assets/International Day for Biological Diversity.jpg";
+import new_ev1 from "@/assets/events/1 (1).jpg";
+import new_ev2 from "@/assets/events/1 (2).jpg";
+import new_ev4 from "@/assets/events/1 (4).jpg";
+import new_ev5 from "@/assets/events/1 (5).jpg";
 
 export const Route = createFileRoute("/life/events")({
   head: () => ({
@@ -41,38 +45,38 @@ type EventItem = {
 
 const events: EventItem[] = [
   {
-    image: ev1,
-    tag: "Conference",
-    title: "AgriTech Summit 2026 \u2014 Precision Farming & AI",
-    date: "12 Aug 2026",
-    place: "IIAT Main Auditorium",
+    image: new_ev1,
+    tag: "",
+    title: "",
+    date: "",
+    place: "",
     status: "Upcoming",
     chiefGuest : ''
   },
   {
-    image: ev2,
-    tag: "Workshop",
-    title: "Hands-on Workshop on Hydroponics & Vertical Farming",
-    date: "24 Aug 2026",
-    place: "Horticulture Division",
+    image: new_ev2,
+    tag: "",
+    title: "",
+    date: "",
+    place: "",
     status: "Upcoming",
     chiefGuest : ''
   },
   {
-    image: ev3,
-    tag: "Cultural",
-    title: "IMAYOTSAV \u2014 Annual Cultural & Sports Fest",
-    date: "05 Sep 2026",
-    place: "IIAT Sports Ground",
+    image: new_ev4,
+    tag: "",
+    title: "",
+    date: "",
+    place: "",
     status: "Upcoming",
     chiefGuest : ''
   },
   {
-    image: ev4,
-    tag: "Seminar",
-    title: "National Seminar on Sustainable Crop Management",
-    date: "18 Sep 2026",
-    place: "Seminar Hall, Block A",
+    image: new_ev5,
+    tag: "",
+    title: "",
+    date: "",
+    place: "",
     status: "Upcoming",
     chiefGuest : ''
   },
