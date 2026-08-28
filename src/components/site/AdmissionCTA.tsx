@@ -7,6 +7,7 @@ import { ArrowRight, GraduationCap, Sprout, FlaskConical } from "lucide-react";
 import img1 from "@/assets/admission_new (1).webp";
 import img2 from "@/assets/admission_new (2).webp";
 import img3 from "@/assets/images/Admissions_2.webp";
+import Broucher from "@/assets/documents/IIATBroucher.pdf";
 
 const programs = [
   { icon: GraduationCap, label: "Undergraduate", href: "/academics/ug" },
@@ -146,7 +147,7 @@ export function AdmissionCTA() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
+              {/* <a
                 href="https://imayamagri.org/apply"
                 target="_blank"
                 rel="noreferrer"
@@ -154,12 +155,12 @@ export function AdmissionCTA() {
               >
                 Explore More
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </a> */}
               <a
-                href="/academics/exam-pattern"
+                href={Broucher}
                 className="inline-flex items-center gap-2 rounded-2xl bg-card border-2 border-border px-7 py-4 text-sm font-semibold text-foreground hover:border-primary transition-colors"
               >
-                Academic Info
+                Download Broucher
               </a>
             </div>
           </motion.div>

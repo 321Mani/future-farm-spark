@@ -8,7 +8,7 @@ const departments = [
   { icon: Cog, link: "/divisions/crop-management", name: "Crop Management", desc: "Agronomy, Organic farming, Meteorology, Crop Physiology and Veterinary" },
   { icon: Flower2, link: "/divisions/plant-protection", name: "Crop Protection", desc: "Plant Pathology is one among the division under department of Plant Protection at IIAT." },
   { icon: Bug, link: "/divisions/horticulture", name: "Horticulture", desc: "Horticulture is the growing of flowers, fruits and vegetables, and of plants for ornament and fancy." },
-  // { icon: TestTube2, link: "/divisions/agriculture-engineering", name: "Agricultural Engineering", desc: "Attempting to solve agricultural problems concerning power supplies, the efficiency of machinery, etc,." },
+  { icon: TestTube2, link: "/divisions/agriculture-engineering", name: "Agricultural", desc: "Attempting to solve agricultural problems concerning power supplies, the efficiency of machinery, etc,." },
   { icon: LineChart, link: "/divisions/social-science", name: "Social Science", desc: "Social science plays a crucial role in agriculture, as it helps to understand the social, economic, and cultural aspects of agriculture." },
 ];
 

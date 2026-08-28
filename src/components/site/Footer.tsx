@@ -40,7 +40,7 @@ export function Footer() {
           </div>
 
           <FooterCol title="Quick Links" links={["Home", "About", "Departments", "Facilities", "Gallery", "Contact"]} />
-          <FooterCol title="Courses" links={["B.Sc Agriculture", "B.Sc Horticulture", "B.Tech Agri-Engineering", "M.Sc Agronomy", "M.Sc Soil Science"]} />
+          <FooterCol title="Courses" links={["Crop Improvement", "Crop Management", "Crop Protection", "Horticulture", "Agricultural"]} />
 
           <div>
             <div className="font-display font-bold mb-5">Newsletter</div>
