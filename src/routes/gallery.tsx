@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 
+import { Gallery } from "@/components/site/Gallery";
+
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
@@ -54,7 +56,7 @@ function GalleryPage() {
       subtitle="Aerial, campus, laboratory, farms, sports and placement moments."
       breadcrumbs={[{ label: "Gallery" }]}
     >
-      <div className="flex flex-wrap gap-2 mb-10">
+      {/* <div className="flex flex-wrap gap-2 mb-10">
         {cats.map((c) => (
           <button
             key={c}
@@ -121,7 +123,9 @@ function GalleryPage() {
             </button>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+      <Gallery />
     </PageShell>
   );
 }
