@@ -2,6 +2,18 @@ import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
 import iiatLogo from "@/assets/iiat-logo.png";
 import imayamLogo from "@/assets/images/logo.png";
 
+const programs = [
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61590780057309" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/imayam_official/" },
+  { icon: Youtube, label: "Youtube", href: "https://www.youtube.com/@imayaminstituteofagricultu6556" },
+  { icon: Linkedin, label: "Linkedin", href: "#" },
+];
+
+function getSocialLink(Icon: typeof Facebook) {
+  const program = programs.find((p) => p.icon === Icon);
+  return program ? program.href : "#";
+}
+
 export function Footer() {
   return (
     <footer className="bg-foreground text-background pt-20 pb-8">
@@ -29,7 +41,7 @@ export function Footer() {
               {[Facebook, Instagram, Youtube, Linkedin].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={getSocialLink(Icon)}
                   className="grid h-10 w-10 place-items-center rounded-xl bg-background/10 hover:bg-primary transition-colors"
                   aria-label="Social link"
                 >
@@ -40,7 +52,7 @@ export function Footer() {
           </div>
 
           <FooterCol title="Quick Links" links={["Home", "About", "Departments", "Facilities", "Gallery", "Contact"]} />
-          <FooterCol title="Courses" links={["Crop Improvement", "Crop Management", "Crop Protection", "Horticulture", "Agricultural"]} />
+          <FooterCol title="Department" links={["Crop Improvement", "Crop Management", "Crop Protection", "Horticulture", "Agricultural"]} />
 
           <div>
             <div className="font-display font-bold mb-5">Newsletter</div>
@@ -48,7 +60,7 @@ export function Footer() {
             <form onSubmit={(e) => e.preventDefault()} className="mt-4 flex gap-2">
               <input
                 type="email"
-                placeholder="you@email.com"
+                placeholder="deaniiat@tnau.ac.in"
                 className="flex-1 rounded-xl bg-background/10 border border-background/20 px-4 py-3 text-sm outline-none focus:border-primary-light"
               />
               <button className="rounded-xl bg-accent px-4 text-sm font-semibold text-accent-foreground">

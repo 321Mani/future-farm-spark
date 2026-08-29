@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ArrowRight, GraduationCap, Sprout, FlaskConical } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, GraduationCap, Sprout, FlaskConical, X } from "lucide-react";
 // import img1 from "@/assets/gallery-1.jpg";
 // import img2 from "@/assets/gallery-3.jpg";
 // import img3 from "@/assets/gallery-5.jpg";
@@ -10,12 +11,14 @@ import img3 from "@/assets/images/Admissions_2.webp";
 import Broucher from "@/assets/documents/IIATBroucher.pdf";
 
 const programs = [
-  { icon: GraduationCap, label: "Undergraduate", href: "/academics/ug" },
+  { icon: GraduationCap, label: "Download Brochure", href: Broucher },
   // { icon: Sprout, label: "Diploma", href: "/academics/diploma" },
   // { icon: FlaskConical, label: "Research", href: "/academics/research" },
 ];
 
 export function AdmissionCTA() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <section id="admission" className="py-24 lg:py-32 bg-gradient-soft">
       <div className="container mx-auto px-4">
@@ -45,6 +48,7 @@ export function AdmissionCTA() {
                 src={img1}
                 alt="IIAT students on campus"
                 className="h-full w-full object-cover"
+                style={{ transform  : "scale(1.2)", marginLeft: "-10px" }}
               />
               {/* Accent pin */}
               <div className="absolute -top-3 -right-3 h-10 w-10 rounded-full bg-accent shadow-soft" />
@@ -132,6 +136,7 @@ export function AdmissionCTA() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="group inline-flex items-center gap-2 rounded-full bg-card border-2 border-primary/20 px-5 py-2.5 text-sm font-semibold text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-soft"
+                  target="_blank"
                 >
                   <span className="grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                     <ArrowRight className="h-3 w-3" />
@@ -139,6 +144,19 @@ export function AdmissionCTA() {
                   {p.label}
                 </motion.a>
               ))}
+              <motion.a
+                  onClick={() => setVideoOpen(true)}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="group inline-flex items-center gap-2 rounded-full bg-card border-2 border-primary/20 px-5 py-2.5 text-sm font-semibold text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-soft"
+                  target="_blank"
+                >
+                  <span className="grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                    <FlaskConical className="h-3 w-3" />
+                  </span>
+                  Explore More
+                </motion.a>
             </div>
 
             <p className="mt-8 text-sm text-muted-foreground max-w-lg">
@@ -146,26 +164,64 @@ export function AdmissionCTA() {
               programme selected to pursue.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              {/* <a
-                href="https://imayamagri.org/apply"
-                target="_blank"
-                rel="noreferrer"
+            {/* <div className="mt-8 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => setVideoOpen(true)}
                 className="group inline-flex items-center gap-2 rounded-2xl bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground shadow-glow hover:scale-[1.03] transition-transform"
               >
                 Explore More
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </a> */}
+              </button>
               <a
                 href={Broucher}
                 className="inline-flex items-center gap-2 rounded-2xl bg-card border-2 border-border px-7 py-4 text-sm font-semibold text-foreground hover:border-primary transition-colors"
               >
                 Download Broucher
               </a>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {videoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] grid place-items-center bg-black/80 p-4"
+            onClick={() => setVideoOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-4xl overflow-hidden rounded-2xl shadow-2xl"
+            >
+              <button
+                type="button"
+                onClick={() => setVideoOpen(false)}
+                aria-label="Close video"
+                className="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+
+              <div className="aspect-video w-full bg-black">
+                <iframe
+                  src="https://www.youtube.com/embed/U5jMCu3Gq-s?autoplay=1"
+                  title="IIAT campus video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

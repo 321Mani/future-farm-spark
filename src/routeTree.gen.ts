@@ -16,6 +16,7 @@ import { Route as FacultyRouteImport } from './routes/faculty'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as LifeSportsRouteImport } from './routes/life.sports'
 import { Route as LifePlacementRouteImport } from './routes/life.placement'
 import { Route as LifeNewsletterRouteImport } from './routes/life.newsletter'
 import { Route as LifeLaboratoriesRouteImport } from './routes/life.laboratories'
@@ -95,6 +96,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeSportsRoute = LifeSportsRouteImport.update({
+  id: '/life/sports',
+  path: '/life/sports',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LifePlacementRoute = LifePlacementRouteImport.update({
@@ -382,6 +388,7 @@ export interface FileRoutesByFullPath {
   '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
+  '/life/sports': typeof LifeSportsRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
@@ -436,6 +443,7 @@ export interface FileRoutesByTo {
   '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
+  '/life/sports': typeof LifeSportsRoute
   '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
@@ -491,6 +499,7 @@ export interface FileRoutesById {
   '/life/laboratories': typeof LifeLaboratoriesRoute
   '/life/newsletter': typeof LifeNewsletterRoute
   '/life/placement': typeof LifePlacementRoute
+  '/life/sports': typeof LifeSportsRoute
   '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
@@ -547,6 +556,7 @@ export interface FileRouteTypes {
     | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
+    | '/life/sports'
     | '/about/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -601,6 +611,7 @@ export interface FileRouteTypes {
     | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
+    | '/life/sports'
     | '/about'
   id:
     | '__root__'
@@ -655,6 +666,7 @@ export interface FileRouteTypes {
     | '/life/laboratories'
     | '/life/newsletter'
     | '/life/placement'
+    | '/life/sports'
     | '/about/'
   fileRoutesById: FileRoutesById
 }
@@ -710,6 +722,7 @@ export interface RootRouteChildren {
   LifeLaboratoriesRoute: typeof LifeLaboratoriesRoute
   LifeNewsletterRoute: typeof LifeNewsletterRoute
   LifePlacementRoute: typeof LifePlacementRoute
+  LifeSportsRoute: typeof LifeSportsRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
@@ -762,6 +775,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/life/sports': {
+      id: '/life/sports'
+      path: '/life/sports'
+      fullPath: '/life/sports'
+      preLoaderRoute: typeof LifeSportsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/life/placement': {
@@ -1134,6 +1154,7 @@ const rootRouteChildren: RootRouteChildren = {
   LifeLaboratoriesRoute: LifeLaboratoriesRoute,
   LifeNewsletterRoute: LifeNewsletterRoute,
   LifePlacementRoute: LifePlacementRoute,
+  LifeSportsRoute: LifeSportsRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
 export const routeTree = rootRouteImport

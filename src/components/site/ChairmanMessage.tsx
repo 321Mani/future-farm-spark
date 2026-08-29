@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import chairman from "@/assets/images/chairman.webp";
@@ -71,9 +71,25 @@ const campusImages = [
 
 export function ChairmanMessage() {
   const [index, setIndex] = useState(0);
+  const [campusImageIndex, setCampusImageIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const next = useCallback(() => setIndex((i) => (i + 1) % people.length), []);
   const prev = useCallback(() => setIndex((i) => (i - 1 + people.length) % people.length), []);
+
+  const nextCampusImage = useCallback(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 340, behavior: "smooth" });
+    }
+    setCampusImageIndex((i) => (i + 1) % campusImages.length);
+  }, []);
+  
+  const prevCampusImage = useCallback(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -340, behavior: "smooth" });
+    }
+    setCampusImageIndex((i) => (i - 1 + campusImages.length) % campusImages.length);
+  }, []);
 
   useEffect(() => {
     const t = setInterval(next, 7000);
@@ -167,12 +183,25 @@ export function ChairmanMessage() {
               <h3 className="text-2xl font-semibold text-primary tracking-widest uppercase">
                 Moments of Leadership
               </h3>
-              {/* <h3 className="mt-2 font-display text-2xl lg:text-3xl font-bold">
-                Life on our 100-acre campus
-              </h3> */}
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={prevCampusImage}
+                aria-label="Previous"
+                className="grid h-10 w-10 place-items-center rounded-full border bg-card text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button
+                onClick={nextCampusImage}
+                aria-label="Next"
+                className="grid h-10 w-10 place-items-center rounded-full border bg-card text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
             </div>
           </div>
-          <div className="mt-6 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-none">
+          <div ref={carouselRef} className="mt-6 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-none">
             {campusImages.map((img) => (
               <motion.figure
                 key={img.alt}
@@ -185,10 +214,17 @@ export function ChairmanMessage() {
                   loading="lazy"
                   className="h-[210px] sm:h-[240px] w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                {/* <figcaption className="px-5 py-3 text-sm font-medium text-foreground/80">
-                  {img.alt}
-                </figcaption> */}
               </motion.figure>
+            ))}
+          </div>
+          <div className="mt-4 flex gap-2 justify-center">
+            {campusImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCampusImageIndex(i)}
+                aria-label={`Show image ${i + 1}`}
+                className={`h-2 rounded-full transition-all ${i === campusImageIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30"}`}
+              />
             ))}
           </div>
         </div>
