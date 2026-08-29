@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Trophy, Dumbbell, Activity, Users, HeartPulse, Medal } from "lucide-react";
 
-import sports_19 from "@/src/assets/images/19-sports.jpg";
-import sports_20 from "@/src/assets/images/20-sports.jpg";
-import sports_21 from "@/src/assets/images/21-sports.png";
+import sports_19 from "@/assets/images/19-sports.jpg";
+import sports_20 from "@/assets/images/20-sports.jpg";
+import sports_21 from "@/assets/images/21-sports.png";
+// import g4 from "@/assets/images/ae_4.webp";
 
 export const Route = createFileRoute("/life/sports")({
   head: () => ({
@@ -105,6 +106,12 @@ const students_20 = [
     year: "III",
     game: "4X100 M - Relay",
   },
+];
+
+const achievementImages = [
+  { src: sports_19, alt: "19th All India Inter Agricultural Universities Sports and Games Meet 2018-2019" },
+  { src: sports_20, alt: "20th All India Inter Agricultural Universities Sports and Games Meet 2019-2020" },
+  // { src: sports_21, alt: "21st All India Inter Agricultural Universities Sports and Games Meet 2023" },
 ];
 
 function SportsPage() {
@@ -208,7 +215,7 @@ function SportsPage() {
           </thead>
 
           <tbody>
-            {students.map((student) => (
+            {students_20.map((student) => (
               <tr
                 key={student.no}
                 className="border-t align-top"
@@ -236,7 +243,6 @@ function SportsPage() {
             ))}
           </tbody>
         </table>
-        <img src={sports_19} alt="Sports 19" />
       </div>
 
       <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed mt-12">
@@ -279,7 +285,7 @@ function SportsPage() {
           </thead>
 
           <tbody>
-            {students.map((student) => (
+            {students_20.map((student) => (
               <tr
                 key={student.no}
                 className="border-t align-top"
@@ -307,7 +313,6 @@ function SportsPage() {
             ))}
           </tbody>
         </table>
-          <img src={sports_20} alt="Sports 20" />
       </div>
 
       <div className="max-w-4xl space-y-4 text-foreground/80 leading-relaxed mt-12">
@@ -377,7 +382,21 @@ function SportsPage() {
             ))}
           </tbody>
         </table>
-        <img src={sports_21} alt="Sports 21" />
+      </div>
+
+      <div className="mt-12">
+        <h3 className="font-display text-2xl font-bold text-primary mb-6">Achievement Gallery</h3>
+        <div className="grid gap-6 md:grid-cols-3">
+          {achievementImages.map((image) => (
+            <div key={image.alt} className="overflow-hidden rounded-3xl border bg-card p-3 shadow-soft">
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-72 w-full rounded-2xl object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
     </PageShell>
