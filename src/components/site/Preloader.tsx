@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/images/imayam_logo.webp";
+import logo from "@/assets/images/imayam_logo.jpg";
 
 export function Preloader() {
   const [isLoading, setIsLoading] = useState(false);

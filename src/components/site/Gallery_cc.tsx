@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/cc.webp";
-import g2 from "@/assets/images/cc_2.webp";
-import g3 from "@/assets/images/cc_3.webp";
+import g1 from "@/assets/images/cc.jpg";
+import g2 from "@/assets/images/cc_2.jpg";
+import g3 from "@/assets/images/cc_3.jpg";
 
 const items = [
   { src: g1, cat: "Computer Center", h: "" },

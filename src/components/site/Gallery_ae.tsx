@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import g1 from "@/assets/images/ae_1.webp";
-import g2 from "@/assets/images/ae_2.webp";
-import g3 from "@/assets/images/ae_3.webp";
-import g4 from "@/assets/images/ae_4.webp";
+import g1 from "@/assets/images/ae_1.jpg";
+import g2 from "@/assets/images/ae_2.jpg";
+import g3 from "@/assets/images/ae_3.jpg";
+import g4 from "@/assets/images/ae_4.jpg";
 
 const items = [
   { src: g1, cat: "Agriculture", h: "" },

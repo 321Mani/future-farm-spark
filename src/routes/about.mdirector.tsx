@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { GraduationCap, Award, BookOpen } from "lucide-react";
-import principal from "@/assets/images/md_msg.webp";
+import principal from "@/assets/images/md_msg.jpg";
 
 export const Route = createFileRoute("/about/mdirector")({
   head: () => ({

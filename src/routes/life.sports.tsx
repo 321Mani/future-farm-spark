@@ -5,7 +5,7 @@ import { Trophy, Dumbbell, Activity, Users, HeartPulse, Medal } from "lucide-rea
 import sports_19 from "@/assets/images/19-sports.jpg";
 import sports_20 from "@/assets/images/20-sports.jpg";
 import sports_21 from "@/assets/images/21-sports.png";
-// import g4 from "@/assets/images/ae_4.webp";
+// import g4 from "@/assets/images/ae_4.jpg";
 
 export const Route = createFileRoute("/life/sports")({
   head: () => ({

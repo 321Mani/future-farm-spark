@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Quote } from "lucide-react";
-import chairman from "@/assets/images/chairman.webp";
+import chairman from "@/assets/images/chairman.jpg";
 
 export const Route = createFileRoute("/about/chairman")({
   head: () => ({

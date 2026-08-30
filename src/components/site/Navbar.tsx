@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import iiatLogo from "@/assets/iiat-logo.webp";
-import imayamLogo from "@/assets/images/logo.webp";
+import iiatLogo from "@/assets/iiat-logo.jpg";
+import imayamLogo from "@/assets/images/logo.png";
 
 type MenuItem = {
   label: string;

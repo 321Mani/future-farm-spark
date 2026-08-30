@@ -15,6 +15,7 @@ import {
   CloudSun,
   Wrench,
 } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_labro";
 
 export const Route = createFileRoute("/life/laboratories")({
   head: () => ({
@@ -157,6 +158,7 @@ function Laboratories() {
           </article>
         ))}
       </div>
+      <Gallery />
     </PageShell>
   );
 }

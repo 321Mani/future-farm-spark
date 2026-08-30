@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, ArrowRight, GraduationCap } from "lucide-react";
-import iiatLogo from "@/assets/iiat-logo.webp";
-import imayamLogo from "@/assets/images/logo.webp";
-import imayaminstaLogo from "@/assets/images/imayam_logo.webp";
+import iiatLogo from "@/assets/iiat-logo.jpg";
+import imayamLogo from "@/assets/images/logo.png";
+import imayaminstaLogo from "@/assets/images/imayam_logo.jpg";
 
 export function AdmissionPopup() {
   const [open, setOpen] = useState(false);

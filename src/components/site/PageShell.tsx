@@ -6,8 +6,8 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { ApplyNowSticky } from "@/components/site/ApplyNowSticky";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
-import slide_1 from "@/assets/images/slide_1.webp";
-import slide_2 from "@/assets/gal_aerial_1.webp";
+import slide_1 from "@/assets/images/slide_1.jpg";
+import slide_2 from "@/assets/gal_aerial_1.jpg";
 
 interface PageShellProps {
   eyebrow?: string;
