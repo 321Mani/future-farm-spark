@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Milk, Wheat, Beef, Recycle } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_live";
 
 export const Route = createFileRoute("/farms/livestock")({
   head: () => ({
@@ -120,6 +121,7 @@ function LivestockPage() {
           </p>
         </Section>
       </div>
+      <Gallery />
     </PageShell>
   );
 }

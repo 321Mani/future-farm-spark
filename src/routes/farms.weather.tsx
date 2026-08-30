@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { CloudSun } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_wether";
 
 export const Route = createFileRoute("/farms/weather")({
   head: () => ({
@@ -76,6 +77,7 @@ function WeatherDataPage() {
           </table>
         </div>
       </div>
+      <Gallery />
     </PageShell>
   );
 }

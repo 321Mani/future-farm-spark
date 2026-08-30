@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Apple, Tent, Droplets, Flower2, Salad, Trees, Leaf } from "lucide-react";
-import { Gallery } from "@/components/site/Gallery_south";
+import { Gallery } from "@/components/site/Gallery_horti";
 
 export const Route = createFileRoute("/farms/horticulture")({
   head: () => ({

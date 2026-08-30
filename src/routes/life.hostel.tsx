@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Home, Droplet, Utensils, BookOpen, Wifi, Building2, Power, Stethoscope, Dumbbell, HeartPulse, Store,
 } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_hostel";
 
 export const Route = createFileRoute("/life/hostel")({
   head: () => ({
@@ -114,6 +115,7 @@ function HostelPage() {
           </div>
         ))}
       </div>
+      <Gallery />
     </PageShell>
   );
 }

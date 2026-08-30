@@ -173,10 +173,24 @@ const items = [
   { src: g65, cat: "Soil Science and Agricultural Chemistry Lab", h: "" },
 ];
 
-const cats = ["All"];
+const cats = [
+  "Agricultural Biotechnology Lab",
+  "Agricultural Microbiology Lab",
+  "Agrometeorology Observatory",
+  "Agronomy",
+  "Biochemistry Lab",
+  "Computer Lab",
+  "Entomology Lab",
+  "Environmental Science",
+  "Machinery and Equipment in Workshop",
+  "Plant Breeding and Genetics Lab",
+  "Plant Pathology",
+  "Seed Science & Technology Lab",
+  "Soil Science and Agricultural Chemistry Lab",
+];
 
 export function Gallery() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("Agricultural Biotechnology Lab");
   const [active, setActive] = useState<string | null>(null);
   const filtered = items.filter((i) => filter === "All" || i.cat === filter);
 
@@ -185,7 +199,7 @@ export function Gallery() {
       <div className="container mx-auto px-4">
         <div className="text-sm font-semibold text-primary tracking-widest uppercase">Gallery</div>
         <h2 className="mt-3 font-display text-4xl lg:text-5xl font-bold">
-          Agriculture <span className="text-gradient">Gallery.</span>
+          Labratory <span className="text-gradient">Gallery.</span>
         </h2>
 
         <div className="mt-8 flex flex-wrap gap-2">

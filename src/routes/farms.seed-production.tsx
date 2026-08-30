@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Sprout } from "lucide-react";
+import { Gallery } from "@/components/site/Gallery_seed";
 
 export const Route = createFileRoute("/farms/seed-production")({
   head: () => ({
@@ -100,6 +101,7 @@ function SeedProductionPage() {
           </table>
         </div>
       </div>
+      <Gallery />
     </PageShell>
   );
 }
