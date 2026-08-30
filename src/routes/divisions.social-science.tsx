@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { LineChart, Users, Monitor, Calculator, Dumbbell, ArrowDown } from "lucide-react";
 import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
-import { Gallery } from "@/components/site/Gallery_science";
+import { Gallery } from "@/components/site/Gallery_div_improve";
 
 export const Route = createFileRoute("/divisions/social-science")({
   head: () => ({

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { ArrowDown } from "lucide-react";
 import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
-import { Gallery } from "@/components/site/Gallery_hc";
+import { Gallery } from "@/components/site/Gallery_div_horti";
 
 export const Route = createFileRoute("/divisions/horticulture")({
   head: () => ({

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Sprout, Dna, FlaskConical, ArrowDown } from "lucide-react";
 import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
+import { Gallery } from "@/components/site/Gallery_div_improve";
 
 export const Route = createFileRoute("/divisions/crop-improvement")({
   head: () => ({
@@ -141,6 +142,7 @@ function CropImprovementPage() {
       >
         Download Brochure <ArrowDown className="h-4 w-4" />
       </a>
+      <Gallery />
     </PageShell>
   );
 }

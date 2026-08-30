@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { ArrowDown, Bug, Microscope } from "lucide-react";
-import { Gallery } from "@/components/site/Gallery_pp";
+import { Gallery } from "@/components/site/Gallery_div_plant";
 import IIATBroucher from "@/assets/documents/IIATBroucher.pdf";
 
 export const Route = createFileRoute("/divisions/plant-protection")({
