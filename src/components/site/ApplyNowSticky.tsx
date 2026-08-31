@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 export function ApplyNowSticky() {
   return (
     <motion.a
-      href={"https://forms.gle/sZDYU2U9T4HH8wdq5"}
+      href={"https://application.imayamagri.org/admission-form.html"}
       target="_blank"
       rel="noopener"
       initial={{ x: 120, opacity: 0 }}

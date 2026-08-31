@@ -422,8 +422,10 @@ export function Navbar() {
                 ))}
                 <li>
                   <a
-                    href="#admission"
+                    href="https://application.imayamagri.org/admission-form.html"
                     onClick={() => setOpen(false)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block text-center mt-2 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground"
                   >
                     Apply Now

@@ -195,7 +195,9 @@ export function Hero() {
 
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href="#admission"
+            href="https://application.imayamagri.org/admission-form.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-2xl bg-accent px-7 py-4 text-sm font-semibold text-accent-foreground shadow-glow hover:scale-[1.03] transition-transform"
           >
             Apply Now

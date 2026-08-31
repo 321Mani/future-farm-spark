@@ -148,7 +148,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 // Point this at wherever contact_submit.php is hosted.
-const API_URL = "https://yourdomain.com/contact_submit.php"; // <-- change this
+const API_URL = "https://application.imayamagri.org/contact_submit.php"; // <-- change this
 
 type FormState = {
   name: string;
