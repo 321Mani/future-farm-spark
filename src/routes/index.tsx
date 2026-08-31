@@ -19,14 +19,14 @@ import { ChairmanMessage } from "@/components/site/ChairmanMessage";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Imayam Institute of Agriculture & Technology · Admissions 2025" },
+      { title: "Imayam Institute of Agriculture & Technology · Admissions 2026" },
       {
         name: "description",
         content:
           "TNAU-affiliated agriculture institute in Thuraiyur, Tamil Nadu. B.Sc Agriculture, Horticulture, B.Tech Agri-Engineering on a 100-acre living campus.",
       },
       { property: "og:title", content: "Imayam Institute of Agriculture & Technology" },
-      { property: "og:description", content: "Premium agriculture university in Tamil Nadu. Admissions 2025 open." },
+      { property: "og:description", content: "Premium agriculture university in Tamil Nadu. Admissions 2026 open." },
       { property: "og:type", content: "website" },
     ],
   }),

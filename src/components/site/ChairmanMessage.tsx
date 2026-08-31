@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Quote, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight, ArrowRight, X } from "lucide-react";
 import chairman from "@/assets/images/chairman.jpg";
 import mdMsg from "@/assets/images/md_msg.jpg";
 import campus from "@/assets/images/campus.jpg";
@@ -72,24 +72,23 @@ const campusImages = [
 export function ChairmanMessage() {
   const [index, setIndex] = useState(0);
   const [campusImageIndex, setCampusImageIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const [isHoveringGallery, setIsHoveringGallery] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const next = useCallback(() => setIndex((i) => (i + 1) % people.length), []);
   const prev = useCallback(() => setIndex((i) => (i - 1 + people.length) % people.length), []);
 
+  const goToCampusImage = useCallback((direction: number) => {
+    setCampusImageIndex((current) => (current + direction + campusImages.length) % campusImages.length);
+  }, []);
+
   const nextCampusImage = useCallback(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 340, behavior: "smooth" });
-    }
-    setCampusImageIndex((i) => (i + 1) % campusImages.length);
-  }, []);
-  
+    goToCampusImage(1);
+  }, [goToCampusImage]);
+
   const prevCampusImage = useCallback(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -340, behavior: "smooth" });
-    }
-    setCampusImageIndex((i) => (i - 1 + campusImages.length) % campusImages.length);
-  }, []);
+    goToCampusImage(-1);
+  }, [goToCampusImage]);
 
   useEffect(() => {
     const t = setInterval(next, 7000);
@@ -97,6 +96,7 @@ export function ChairmanMessage() {
   }, [next, index]);
 
   const active = people[index];
+  const marqueeImages = [...campusImages, ...campusImages];
 
   return (
     <section id="chairman" className="py-24 lg:py-32">
@@ -177,14 +177,18 @@ export function ChairmanMessage() {
         </div>
 
         {/* Campus image carousel */}
-        <div className="mt-16 lg:mt-20">
+        <div
+          className="mt-16 lg:mt-20"
+          onMouseEnter={() => setIsHoveringGallery(true)}
+          onMouseLeave={() => setIsHoveringGallery(false)}
+        >
           <div className="flex items-end justify-between gap-4">
             <div>
               <h3 className="text-2xl font-semibold text-primary tracking-widest uppercase">
                 Moments of Leadership
               </h3>
             </div>
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <button
                 onClick={prevCampusImage}
                 aria-label="Previous"
@@ -199,25 +203,37 @@ export function ChairmanMessage() {
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
+            </div> */}
+          </div>
+          <div className="mt-6 overflow-hidden -mx-4 px-4">
+            <div
+              className="flex w-max gap-5"
+              style={{
+                animation: "marquee 75s linear infinite",
+                animationPlayState: isHoveringGallery ? "paused" : "running",
+              }}
+              onMouseEnter={() => setIsHoveringGallery(true)}
+              onMouseLeave={() => setIsHoveringGallery(false)}
+            >
+              {marqueeImages.map((img, i) => (
+                <motion.button
+                  key={`${img.alt}-${i}`}
+                  type="button"
+                  onClick={() => setSelectedImage(img.src)}
+                  whileHover={{ y: -6 }}
+                  className={`shrink-0 w-[280px] sm:w-[340px] overflow-hidden rounded-3xl border bg-card shadow-soft ${i % campusImages.length === campusImageIndex ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : ""}`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="h-[210px] sm:h-[240px] w-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </motion.button>
+              ))}
             </div>
           </div>
-          <div ref={carouselRef} className="mt-6 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-none">
-            {campusImages.map((img) => (
-              <motion.figure
-                key={img.alt}
-                whileHover={{ y: -6 }}
-                className="snap-start shrink-0 w-[280px] sm:w-[340px] overflow-hidden rounded-3xl border bg-card shadow-soft"
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="h-[210px] sm:h-[240px] w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </motion.figure>
-            ))}
-          </div>
-          <div className="mt-4 flex gap-2 justify-center">
+          {/* <div className="mt-4 flex gap-2 justify-center">
             {campusImages.map((_, i) => (
               <button
                 key={i}
@@ -226,8 +242,37 @@ export function ChairmanMessage() {
                 className={`h-2 rounded-full transition-all ${i === campusImageIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30"}`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
+
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+              className="fixed inset-0 z-50 grid place-items-center bg-black/85 p-4 backdrop-blur-sm"
+            >
+              <motion.img
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.9 }}
+                src={selectedImage}
+                alt="Leadership moments"
+                className="max-h-[90vh] max-w-[95vw] rounded-2xl shadow-glow"
+                onClick={(event) => event.stopPropagation()}
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute right-6 top-6 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm"
+                aria-label="Close"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

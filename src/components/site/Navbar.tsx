@@ -43,7 +43,7 @@ const menu: MenuItem[] = [
         heading: "The Institute",
         links: [
           { label: "About IIAT", href: "/about" },
-          { label: "Our Timeline", href: "/timeline" },
+          // { label: "Our Timeline", href: "/timeline" },
           { label: "Location", href: "/location" },
           { label: "Vision & Mission", href: "/about/vision-mission" },
           { label: "Chairman's Message", href: "/about/chairman" },
@@ -165,18 +165,19 @@ const menu: MenuItem[] = [
       },
     ],
   },
-  {
-    label: "Documents",
-    href: "#",
-    groups: [
-      {
-        heading: "",
-        links: pdfLinks.map((p) => ({ label: p.label, href: p.href })),
-      },
-    ],
-  },
+  // {
+  //   label: "Documents",
+  //   href: "#",
+  //   groups: [
+  //     {
+  //       heading: "",
+  //       links: pdfLinks.map((p) => ({ label: p.label, href: p.href })),
+  //     },
+  //   ],
+  // },
   // { label: "Faculty", href: "/faculty" },
   { label: "Our Gallery", href: "/gallery" },
+  { label: "Our Timeline", href: "/timeline" },
   { label: "Contact", href: "/contact" },
 ];
 

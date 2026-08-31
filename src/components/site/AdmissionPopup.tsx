@@ -33,7 +33,7 @@ export function AdmissionPopup() {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-label="Admissions 2025 Newsletter"
+            aria-label="Admissions 2026 Newsletter"
             initial={{ scale: 0.9, y: 30, opacity: 0 }}
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.95, y: 20, opacity: 0 }}
@@ -51,14 +51,14 @@ export function AdmissionPopup() {
                 <X className="h-4 w-4" />
               </button>
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 grid place-items-center rounded-2xl bg-white shadow-lg ring-4 ring-card" style={{ width: "150px"}}>
-                <img src={imayaminstaLogo} alt="Imayam" className="object-contain" />
+                <img src={imayaminstaLogo} alt="Imayam" className="object-contain" style={{ borderRadius: "50%" }} />
               </div>
             </div>
 
             <div className="px-6 pt-12 pb-6 text-center">
               <div className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-accent">
                 <Sparkles className="h-3 w-3" />
-                Admissions 2025 Open
+                Admissions 2026 Open
               </div>
               <h2 className="mt-3 font-display text-2xl font-bold text-foreground">
                 Shape the Future of Agriculture

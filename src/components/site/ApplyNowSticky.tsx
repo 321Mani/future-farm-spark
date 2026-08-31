@@ -12,7 +12,7 @@ export function ApplyNowSticky() {
       transition={{ delay: 0.7, type: "spring", stiffness: 110, damping: 14 }}
       whileHover={{ scale: 1.04, x: -6 }}
       whileTap={{ scale: 0.97 }}
-      aria-label="Apply Now for Admissions 2025"
+      aria-label="Apply Now for Admissions 2026"
       className="group fixed right-3 bottom-24 sm:right-5 sm:top-[72%] sm:bottom-auto sm:-translate-y-1/2 z-50
                  inline-flex items-center gap-2 sm:gap-2.5 overflow-hidden
                  rounded-2xl px-4 py-2.5 sm:px-5 sm:py-4

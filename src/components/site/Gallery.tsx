@@ -16,9 +16,77 @@ import s4 from "@/assets/gal_sports_4.jpg";
 import s6 from "@/assets/gal_sports_6.jpg";
 import s7 from "@/assets/gal_sports_7.jpg";
 
+import aerial_1 from "@/assets/images/aerial/1 (1).jpg";
+import aerial_2 from "@/assets/images/aerial/1 (2).jpg";
+import aerial_3 from "@/assets/images/aerial/1 (3).jpg";
+import aerial_4 from "@/assets/images/aerial/1 (4).jpg";
+
+import campus_1 from "@/assets/images/campus/1 (1).jpg";
+import campus_2 from "@/assets/images/campus/1 (2).jpg";
+import campus_3 from "@/assets/images/campus/1 (3).jpg";
+import campus_4 from "@/assets/images/campus/1 (4).jpg";
+import campus_5 from "@/assets/images/campus/1 (5).jpg";
+import campus_6 from "@/assets/images/campus/1 (6).jpg";
+import campus_7 from "@/assets/images/campus/1 (7).jpg";
+import campus_8 from "@/assets/images/campus/1 (8).jpg";
+
+import labJNP_6309 from "@/assets/images/Laboratories/Agricultural Biotechnology Lab/JNP_6309.jpg";
+import lab314A1197 from "@/assets/images/Laboratories/Agricultural Microbiology Lab/314A1197.jpg";
+import lab314A1559 from "@/assets/images/Laboratories/Agrometeorology Observatory/314A1559.jpg";
+import lab314A1213 from "@/assets/images/Laboratories/Agronomy/314A1213.jpg";
+import lab314A1512 from "@/assets/images/Laboratories/Biochemistry Lab/314A1512.jpg";
+import lab2 from "@/assets/images/Laboratories/Computer Lab/cc 2.jpg";
+import lab314A1360 from "@/assets/images/Laboratories/Entomology Lab/314A1360.jpg";
+import labIMG_8747 from "@/assets/images/Laboratories/Environmental Science/IMG_8747.jpg";
+import labEngineering from "@/assets/images/Laboratories/Machinery and Equipment in Workshop/Agricultural Engineering.jpg";
+import lab314A1956 from "@/assets/images/Laboratories/Plant Breeding and Genetics Lab/314A1956.jpg";
+import labJNP_6417 from "@/assets/images/Laboratories/Plant Pathology/JNP_6417.jpg";
+import lab314A1963 from "@/assets/images/Laboratories/Seed Science & Technology Lab/314A1963.jpg";
+import labJNP_5260 from "@/assets/images/Laboratories/Soil Science and Agricultural Chemistry Lab/JNP_5260.jpg";
+
+import Farms_314A1559 from "@/assets/images/Farms/Weather Data/314A1559.jpg";
+import Farms_314A1961 from "@/assets/images/Farms/Seed Production/314A1961.jpg";
+import Farms_314A1797 from "@/assets/images/Farms/Daily & Live Stock/314A1797.jpg";
+import Farms_314A1197 from "@/assets/images/Farms/Agriculture Farm/314A1197.jpg";
+import Farms_314A1293 from "@/assets/images/Farms/Horticulture Farm/314A1293.jpg";
+
 const items = [
   // { src: g1, cat: "Aerial", title: "Paddy fields at dawn", h: "row-span-2" },
-  { src: g1, cat: "Aerial", h: "row-span-2" },
+  // { src: g1, cat: "Aerial", h: "row-span-2" },
+  { src: aerial_1, cat: "Aerial", h: "row-span-2" },
+  { src: aerial_2, cat: "Aerial", h: "row-span-2" },
+  { src: aerial_3, cat: "Aerial", h: "row-span-2" },
+  { src: aerial_4, cat: "Aerial", h: "row-span-2" },
+
+  { src: campus_1, cat: "Campus", h: "row-span-2" },
+  { src: campus_2, cat: "Campus", h: "row-span-2" },
+  { src: campus_3, cat: "Campus", h: "row-span-2" },
+  { src: campus_4, cat: "Campus", h: "row-span-2" },
+  { src: campus_5, cat: "Campus", h: "row-span-2" },
+  { src: campus_6, cat: "Campus", h: "row-span-2" },
+  { src: campus_7, cat: "Campus", h: "row-span-2" },
+  { src: campus_8, cat: "Campus", h: "row-span-2" },
+
+  { src: labJNP_6309, cat: "Laboratory", h: "row-span-2" },
+  { src: lab314A1197, cat: "Laboratory", h: "row-span-2" },
+  { src: lab314A1559, cat: "Laboratory", h: "row-span-2" },
+  { src: lab314A1213, cat: "Laboratory", h: "row-span-2" },
+  { src: lab314A1512, cat: "Laboratory", h: "row-span-2" },
+  { src: lab2, cat: "Laboratory", h: "row-span-2" },
+  { src: lab314A1360, cat: "Laboratory", h: "row-span-2" },
+  { src: labIMG_8747, cat: "Laboratory", h: "row-span-2" },
+  { src: labEngineering, cat: "Laboratory", h: "row-span-2" },
+  { src: lab314A1956, cat: "Laboratory", h: "row-span-2" },
+  { src: labJNP_6417, cat: "Laboratory", h: "row-span-2" },
+  { src: lab314A1963, cat: "Laboratory", h: "row-span-2" },
+  { src: labJNP_5260, cat: "Laboratory", h: "row-span-2" },
+
+  { src: Farms_314A1559, cat: "Farms", h: "row-span-2" },
+  { src: Farms_314A1961, cat: "Farms", h: "row-span-2" },
+  { src: Farms_314A1797, cat: "Farms", h: "row-span-2" },
+  { src: Farms_314A1197, cat: "Farms", h: "row-span-2" },
+  { src: Farms_314A1293, cat: "Farms", h: "row-span-2" },
+
   // { src: g2, cat: "Campus", title: "Plant pathology lab", h: "" },
   // { src: g3, cat: "Aerial", title: "Polyhouse training", h: "" },
   // { src: g4, cat: "Laboratory", title: "Mechanised harvest", h: "row-span-2" },
@@ -36,7 +104,7 @@ const items = [
 const cats = ["All", "Aerial", "Campus", "Laboratory", "Farms", "Sports"];
 
 export function Gallery() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("Aerial");
   const [active, setActive] = useState<string | null>(null);
   const filtered = items.filter((i) => filter === "All" || i.cat === filter);
 
