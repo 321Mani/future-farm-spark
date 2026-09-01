@@ -1,19 +1,39 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, ArrowRight, GraduationCap } from "lucide-react";
-import iiatLogo from "@/assets/iiat-logo.jpg";
-import imayamLogo from "@/assets/images/logo.png";
 import imayaminstaLogo from "@/assets/images/imayam_logo.jpg";
+import admission1 from "@/assets/images/Admissions_1.jpg";
+import admission2 from "@/assets/images/Admissions_2.jpg";
+import admission3 from "@/assets/images/Admissions_3.jpg";
+
+const bannerImages = [admission1, admission2, admission3];
+const STORAGE_KEY = "iiat:admission-popup-index";
 
 export function AdmissionPopup() {
   const [open, setOpen] = useState(false);
+  const [imgIndex, setImgIndex] = useState(0);
 
   useEffect(() => {
+    try {
+      const stored = Number(localStorage.getItem(STORAGE_KEY) ?? "-1");
+      const nextIndex = (Number.isFinite(stored) ? stored + 1 : 0) % bannerImages.length;
+      setImgIndex(nextIndex);
+      localStorage.setItem(STORAGE_KEY, String(nextIndex));
+    } catch {
+      setImgIndex(0);
+    }
     const t = setTimeout(() => setOpen(true), 1200);
     return () => clearTimeout(t);
   }, []);
 
-  const close = () => setOpen(false);
+  const close = () => {
+    setOpen(false);
+    if (typeof window !== "undefined") {
+      (window as any).__iiatPopupClosed = true;
+      window.dispatchEvent(new Event("iiat:popup-closed"));
+    }
+  };
+
 
   return (
     <AnimatePresence>
