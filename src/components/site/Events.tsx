@@ -101,11 +101,6 @@ export function Events() {
                   className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-700"
                 />
               </a>
-
-                {/* <div className="absolute top-3 left-3 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-accent-foreground shadow-soft">
-                  {e.tag}
-                </div> */}
-              </a>
               {/* <div className="p-5">
                 <h3 className="font-display font-bold text-base leading-snug text-foreground line-clamp-2 min-h-[3rem]">
                   {e.title}
