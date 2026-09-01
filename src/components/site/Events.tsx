@@ -218,12 +218,12 @@ export function Events() {
               >
                 <a
                   href="/life/events"
-                  className="relative aspect-[4/3] overflow-hidden block"
+                  className="relative aspect-[4/3] overflow-visible block"
                 >
                   <img
                     src={e.image}
                     alt={e.title || "Event"}
-                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="h-auto w-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div
                     className={`absolute top-3 right-3 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider shadow-soft ${

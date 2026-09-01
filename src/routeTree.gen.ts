@@ -40,6 +40,7 @@ import { Route as DivisionsHorticultureRouteImport } from './routes/divisions.ho
 import { Route as DivisionsCropManagementRouteImport } from './routes/divisions.crop-management'
 import { Route as DivisionsCropImprovementRouteImport } from './routes/divisions.crop-improvement'
 import { Route as DivisionsAgricultureEngineeringRouteImport } from './routes/divisions.agriculture-engineering'
+import { Route as BlogDetailsSlugRouteImport } from './routes/blog-details.$slug'
 import { Route as AcademicsYogaRouteImport } from './routes/academics.yoga'
 import { Route as AcademicsSportsRouteImport } from './routes/academics.sports'
 import { Route as AcademicsSmartClassRouteImport } from './routes/academics.smart-class'
@@ -63,7 +64,6 @@ import { Route as AboutChairmanRouteImport } from './routes/about.chairman'
 import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of-studies'
 import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
 import { Route as AboutAntiRaggingRouteImport } from './routes/about.anti-ragging'
-import { Route as BlogDetailsRouteImport } from './routes/blog-details.'
 
 const TimelineRoute = TimelineRouteImport.update({
   id: '/timeline',
@@ -224,6 +224,11 @@ const DivisionsAgricultureEngineeringRoute =
     path: '/divisions/agriculture-engineering',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogDetailsSlugRoute = BlogDetailsSlugRouteImport.update({
+  id: '/blog-details/$slug',
+  path: '/blog-details/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AcademicsYogaRoute = AcademicsYogaRouteImport.update({
   id: '/academics/yoga',
   path: '/academics/yoga',
@@ -342,11 +347,6 @@ const AboutAntiRaggingRoute = AboutAntiRaggingRouteImport.update({
   path: '/about/anti-ragging',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogDetailsRoute = BlogDetailsRouteImport.update({
-  id: '/blog-details/',
-  path: '/blog-details/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -356,7 +356,6 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/location': typeof LocationRoute
   '/timeline': typeof TimelineRoute
-  '/blog-details/': typeof BlogDetailsRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -380,6 +379,7 @@ export interface FileRoutesByFullPath {
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
+  '/blog-details/$slug': typeof BlogDetailsSlugRoute
   '/divisions/agriculture-engineering': typeof DivisionsAgricultureEngineeringRoute
   '/divisions/crop-improvement': typeof DivisionsCropImprovementRoute
   '/divisions/crop-management': typeof DivisionsCropManagementRoute
@@ -413,7 +413,6 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/location': typeof LocationRoute
   '/timeline': typeof TimelineRoute
-  '/blog-details': typeof BlogDetailsRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -437,6 +436,7 @@ export interface FileRoutesByTo {
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
+  '/blog-details/$slug': typeof BlogDetailsSlugRoute
   '/divisions/agriculture-engineering': typeof DivisionsAgricultureEngineeringRoute
   '/divisions/crop-improvement': typeof DivisionsCropImprovementRoute
   '/divisions/crop-management': typeof DivisionsCropManagementRoute
@@ -471,7 +471,6 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/location': typeof LocationRoute
   '/timeline': typeof TimelineRoute
-  '/blog-details/': typeof BlogDetailsRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -495,6 +494,7 @@ export interface FileRoutesById {
   '/academics/smart-class': typeof AcademicsSmartClassRoute
   '/academics/sports': typeof AcademicsSportsRoute
   '/academics/yoga': typeof AcademicsYogaRoute
+  '/blog-details/$slug': typeof BlogDetailsSlugRoute
   '/divisions/agriculture-engineering': typeof DivisionsAgricultureEngineeringRoute
   '/divisions/crop-improvement': typeof DivisionsCropImprovementRoute
   '/divisions/crop-management': typeof DivisionsCropManagementRoute
@@ -530,7 +530,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/location'
     | '/timeline'
-    | '/blog-details/'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -554,6 +553,7 @@ export interface FileRouteTypes {
     | '/academics/smart-class'
     | '/academics/sports'
     | '/academics/yoga'
+    | '/blog-details/$slug'
     | '/divisions/agriculture-engineering'
     | '/divisions/crop-improvement'
     | '/divisions/crop-management'
@@ -587,7 +587,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/location'
     | '/timeline'
-    | '/blog-details'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -611,6 +610,7 @@ export interface FileRouteTypes {
     | '/academics/smart-class'
     | '/academics/sports'
     | '/academics/yoga'
+    | '/blog-details/$slug'
     | '/divisions/agriculture-engineering'
     | '/divisions/crop-improvement'
     | '/divisions/crop-management'
@@ -644,7 +644,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/location'
     | '/timeline'
-    | '/blog-details/'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -668,6 +667,7 @@ export interface FileRouteTypes {
     | '/academics/smart-class'
     | '/academics/sports'
     | '/academics/yoga'
+    | '/blog-details/$slug'
     | '/divisions/agriculture-engineering'
     | '/divisions/crop-improvement'
     | '/divisions/crop-management'
@@ -702,7 +702,6 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   LocationRoute: typeof LocationRoute
   TimelineRoute: typeof TimelineRoute
-  BlogDetailsRoute: typeof BlogDetailsRoute
   AboutAntiRaggingRoute: typeof AboutAntiRaggingRoute
   AboutApprovalsRoute: typeof AboutApprovalsRoute
   AboutBoardOfStudiesRoute: typeof AboutBoardOfStudiesRoute
@@ -726,6 +725,7 @@ export interface RootRouteChildren {
   AcademicsSmartClassRoute: typeof AcademicsSmartClassRoute
   AcademicsSportsRoute: typeof AcademicsSportsRoute
   AcademicsYogaRoute: typeof AcademicsYogaRoute
+  BlogDetailsSlugRoute: typeof BlogDetailsSlugRoute
   DivisionsAgricultureEngineeringRoute: typeof DivisionsAgricultureEngineeringRoute
   DivisionsCropImprovementRoute: typeof DivisionsCropImprovementRoute
   DivisionsCropManagementRoute: typeof DivisionsCropManagementRoute
@@ -971,6 +971,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DivisionsAgricultureEngineeringRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog-details/$slug': {
+      id: '/blog-details/$slug'
+      path: '/blog-details/$slug'
+      fullPath: '/blog-details/$slug'
+      preLoaderRoute: typeof BlogDetailsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/academics/yoga': {
       id: '/academics/yoga'
       path: '/academics/yoga'
@@ -1132,13 +1139,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutAntiRaggingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog-details/': {
-      id: '/blog-details/'
-      path: '/blog-details'
-      fullPath: '/blog-details/'
-      preLoaderRoute: typeof BlogDetailsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -1150,7 +1150,6 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   LocationRoute: LocationRoute,
   TimelineRoute: TimelineRoute,
-  BlogDetailsRoute: BlogDetailsRoute,
   AboutAntiRaggingRoute: AboutAntiRaggingRoute,
   AboutApprovalsRoute: AboutApprovalsRoute,
   AboutBoardOfStudiesRoute: AboutBoardOfStudiesRoute,
@@ -1174,6 +1173,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicsSmartClassRoute: AcademicsSmartClassRoute,
   AcademicsSportsRoute: AcademicsSportsRoute,
   AcademicsYogaRoute: AcademicsYogaRoute,
+  BlogDetailsSlugRoute: BlogDetailsSlugRoute,
   DivisionsAgricultureEngineeringRoute: DivisionsAgricultureEngineeringRoute,
   DivisionsCropImprovementRoute: DivisionsCropImprovementRoute,
   DivisionsCropManagementRoute: DivisionsCropManagementRoute,

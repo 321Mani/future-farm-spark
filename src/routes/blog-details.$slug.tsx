@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 
-export const Route = createFileRoute("/blog-details/")({
+export const Route = createFileRoute("/blog-details/$slug")({
   head: () => ({
     meta: [
       { title: "Blog — IIAT Agriculture Insights" },
