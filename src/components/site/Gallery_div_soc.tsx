@@ -78,7 +78,7 @@ export function Gallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActive(null)}
-            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm grid place-items-center p-4"
+            className="fixed inset-0 z-[120] bg-black/85 backdrop-blur-sm grid place-items-center p-4"
           >
             <motion.img
               initial={{ scale: 0.9 }}
@@ -90,7 +90,7 @@ export function Gallery() {
             />
             <button
               onClick={() => setActive(null)}
-              className="absolute top-6 right-6 grid h-11 w-11 place-items-center rounded-full glass text-foreground"
+              className="fixed top-4 right-4 z-[130] grid h-12 w-12 place-items-center rounded-full bg-white/90 text-black shadow-lg hover:bg-white"
               aria-label="Close"
             >
               <X className="h-5 w-5" />
