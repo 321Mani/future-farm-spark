@@ -286,7 +286,7 @@ export function Hero() {
             >
               <s.icon className="h-5 w-5 text-primary" />
               <div className="mt-3 font-display text-3xl font-bold text-foreground">
-                <CountUp value={s.value} suffix={s.suffix} />
+                <CountUp value={s.value} suffix={s.suffix} start={countStart} delay={i * 0.5} />
               </div>
               <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
             </motion.div>
