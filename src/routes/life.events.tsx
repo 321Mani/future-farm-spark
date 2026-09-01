@@ -242,13 +242,14 @@ function EventCard({ e, i }: { e: EventItem; i: number }) {
       transition={{ delay: i * 0.08, duration: 0.5 }}
       className="group rounded-3xl overflow-hidden bg-card border shadow-soft hover:shadow-glow transition-all hover:-translate-y-1"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative overflow-hidden bg-muted">
         <img
           src={e.image}
           alt={e.title}
           loading="lazy"
-          className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+          className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-700"
         />
+
         <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-accent-foreground shadow-soft">
           <Calendar className="h-3 w-3" />
           {e.date}
