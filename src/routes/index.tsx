@@ -46,6 +46,8 @@ function Index() {
       <Departments />
       {/* <Facilities /> */}
       <Gallery />
+      <FollowUs />
+
       {/* <Placements /> */}
       <Testimonials />
       <Contact />
