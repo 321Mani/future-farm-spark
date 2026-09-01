@@ -63,6 +63,7 @@ import { Route as AboutChairmanRouteImport } from './routes/about.chairman'
 import { Route as AboutBoardOfStudiesRouteImport } from './routes/about.board-of-studies'
 import { Route as AboutApprovalsRouteImport } from './routes/about.approvals'
 import { Route as AboutAntiRaggingRouteImport } from './routes/about.anti-ragging'
+import { Route as BlogDetailsRouteImport } from './routes/blog-details.'
 
 const TimelineRoute = TimelineRouteImport.update({
   id: '/timeline',
@@ -341,6 +342,11 @@ const AboutAntiRaggingRoute = AboutAntiRaggingRouteImport.update({
   path: '/about/anti-ragging',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogDetailsRoute = BlogDetailsRouteImport.update({
+  id: '/blog-details/',
+  path: '/blog-details/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -350,6 +356,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/location': typeof LocationRoute
   '/timeline': typeof TimelineRoute
+  '/blog-details/': typeof BlogDetailsRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -406,6 +413,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/location': typeof LocationRoute
   '/timeline': typeof TimelineRoute
+  '/blog-details': typeof BlogDetailsRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -463,6 +471,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/location': typeof LocationRoute
   '/timeline': typeof TimelineRoute
+  '/blog-details/': typeof BlogDetailsRoute
   '/about/anti-ragging': typeof AboutAntiRaggingRoute
   '/about/approvals': typeof AboutApprovalsRoute
   '/about/board-of-studies': typeof AboutBoardOfStudiesRoute
@@ -521,6 +530,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/location'
     | '/timeline'
+    | '/blog-details/'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -577,6 +587,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/location'
     | '/timeline'
+    | '/blog-details'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -633,6 +644,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/location'
     | '/timeline'
+    | '/blog-details/'
     | '/about/anti-ragging'
     | '/about/approvals'
     | '/about/board-of-studies'
@@ -690,6 +702,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   LocationRoute: typeof LocationRoute
   TimelineRoute: typeof TimelineRoute
+  BlogDetailsRoute: typeof BlogDetailsRoute
   AboutAntiRaggingRoute: typeof AboutAntiRaggingRoute
   AboutApprovalsRoute: typeof AboutApprovalsRoute
   AboutBoardOfStudiesRoute: typeof AboutBoardOfStudiesRoute
@@ -1119,6 +1132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutAntiRaggingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog-details/': {
+      id: '/blog-details/'
+      path: '/blog-details'
+      fullPath: '/blog-details/'
+      preLoaderRoute: typeof BlogDetailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -1130,6 +1150,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   LocationRoute: LocationRoute,
   TimelineRoute: TimelineRoute,
+  BlogDetailsRoute: BlogDetailsRoute,
   AboutAntiRaggingRoute: AboutAntiRaggingRoute,
   AboutApprovalsRoute: AboutApprovalsRoute,
   AboutBoardOfStudiesRoute: AboutBoardOfStudiesRoute,
