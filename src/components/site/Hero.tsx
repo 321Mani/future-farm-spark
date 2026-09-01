@@ -106,20 +106,21 @@ function useTypewriter(phrases: string[], typeSpeed = 55, pauseTime = 1800) {
   return text;
 }
 
-function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
+function CountUp({ value, suffix = "", start = true, delay = 0 }: { value: number; suffix?: string; start?: boolean; delay?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || !start) return;
     const controls = animate(0, value, {
       duration: 2,
+      delay,
       ease: "easeOut",
       onUpdate: (v) => setDisplay(Math.floor(v)),
     });
     return () => controls.stop();
-  }, [inView, value]);
+  }, [inView, value, start, delay]);
 
   return (
     <span ref={ref}>
@@ -132,7 +133,25 @@ function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
 export function Hero() {
   const [index, setIndex] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [countStart, setCountStart] = useState(false);
   const typed = useTypewriter(typingPhrases);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if ((window as any).__iiatPopupClosed) {
+      setCountStart(true);
+      return;
+    }
+    const onClosed = () => setCountStart(true);
+    window.addEventListener("iiat:popup-closed", onClosed);
+    // fallback in case the popup never shows
+    const t = setTimeout(() => setCountStart(true), 9000);
+    return () => {
+      window.removeEventListener("iiat:popup-closed", onClosed);
+      clearTimeout(t);
+    };
+  }, []);
+
 
   const next = useCallback(() => setIndex((i) => (i + 1) % slides.length), []);
   const prev = useCallback(() => setIndex((i) => (i - 1 + slides.length) % slides.length), []);
@@ -267,7 +286,7 @@ export function Hero() {
             >
               <s.icon className="h-5 w-5 text-primary" />
               <div className="mt-3 font-display text-3xl font-bold text-foreground">
-                <CountUp value={s.value} suffix={s.suffix} />
+                <CountUp value={s.value} suffix={s.suffix} start={countStart} delay={i * 0.5} />
               </div>
               <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
             </motion.div>

@@ -252,7 +252,7 @@ export function ChairmanMessage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
-              className="fixed inset-0 z-50 grid place-items-center bg-black/85 p-4 backdrop-blur-sm"
+              className="fixed inset-0 z-[120] grid place-items-center bg-black/85 p-4 backdrop-blur-sm"
             >
               <motion.img
                 initial={{ scale: 0.9 }}
@@ -264,12 +264,16 @@ export function ChairmanMessage() {
                 onClick={(event) => event.stopPropagation()}
               />
               <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute right-6 top-6 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setSelectedImage(null);
+                }}
+                className="fixed right-4 top-4 z-[130] grid h-12 w-12 place-items-center rounded-full bg-white/90 text-black shadow-lg hover:bg-white"
                 aria-label="Close"
               >
                 <X className="h-5 w-5" />
               </button>
+
             </motion.div>
           )}
         </AnimatePresence>
