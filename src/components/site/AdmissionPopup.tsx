@@ -60,9 +60,15 @@ export function AdmissionPopup() {
             transition={{ type: "spring", stiffness: 180, damping: 20 }}
             className="relative w-full max-w-md overflow-hidden rounded-3xl bg-card shadow-2xl ring-1 ring-white/10"
           >
-            {/* gradient banner */}
-            <div className="relative h-32 bg-[linear-gradient(135deg,#15803d_0%,#16a34a_45%,#facc15_120%)]">
-              <div className="absolute inset-0 bg-[radial-gradient(120%_60%_at_50%_0%,rgba(255,255,255,0.35),transparent_60%)]" />
+            {/* rotating admission banner */}
+            <div className="relative h-40 bg-[linear-gradient(135deg,#15803d_0%,#16a34a_45%,#facc15_120%)]">
+              <img
+                src={bannerImages[imgIndex]}
+                alt="Admissions at Imayam Institute of Agriculture and Technology"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
               <button
                 onClick={close}
                 aria-label="Close"
