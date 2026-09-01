@@ -14,6 +14,7 @@ import { Route as LocationRouteImport } from './routes/location'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FacultyRouteImport } from './routes/faculty'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as LifeSportsRouteImport } from './routes/life.sports'
@@ -86,6 +87,11 @@ const FacultyRoute = FacultyRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -338,6 +344,7 @@ const AboutAntiRaggingRoute = AboutAntiRaggingRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
@@ -393,6 +400,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
@@ -449,6 +457,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/faculty': typeof FacultyRoute
   '/gallery': typeof GalleryRoute
@@ -506,6 +515,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/blog'
     | '/contact'
     | '/faculty'
     | '/gallery'
@@ -561,6 +571,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/blog'
     | '/contact'
     | '/faculty'
     | '/gallery'
@@ -616,6 +627,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/blog'
     | '/contact'
     | '/faculty'
     | '/gallery'
@@ -672,6 +684,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   FacultyRoute: typeof FacultyRoute
   GalleryRoute: typeof GalleryRoute
@@ -761,6 +774,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -1104,6 +1124,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   FacultyRoute: FacultyRoute,
   GalleryRoute: GalleryRoute,
