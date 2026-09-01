@@ -93,13 +93,15 @@ export function Events() {
               transition={{ delay: i * 0.08, duration: 0.5 }}
               className="group rounded-3xl overflow-hidden bg-card border shadow-soft hover:shadow-glow transition-all hover:-translate-y-1"
             >
-              <a href={e.link} className="relative aspect-[4/3] overflow-hidden" target="_blank" rel="noopener noreferrer">
+              <a href={e.link} className="block overflow-hidden bg-muted" target="_blank" rel="noopener noreferrer">
                 <img
                   src={e.image}
                   alt={e.title}
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  style={{height: "full", width: "100%", margin: "auto"}}
+                  loading="lazy"
+                  className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-700"
                 />
+              </a>
+
                 {/* <div className="absolute top-3 left-3 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-accent-foreground shadow-soft">
                   {e.tag}
                 </div> */}
