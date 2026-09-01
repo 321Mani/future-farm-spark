@@ -178,7 +178,9 @@ const menu: MenuItem[] = [
   // { label: "Faculty", href: "/faculty" },
   { label: "Our Gallery", href: "/gallery" },
   { label: "Our Timeline", href: "/timeline" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+
 ];
 
 export function Navbar() {
