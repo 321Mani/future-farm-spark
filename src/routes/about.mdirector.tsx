@@ -23,22 +23,15 @@ function Principal() {
       subtitle="Academic leadership grounded in research, teaching excellence and student mentorship."
       breadcrumbs={[{ label: "About", href: "/about" }, { label: "Our Managing Director" }]}
     >
-      <div className="grid grid-cols-[38%_1fr] gap-4 sm:gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[500px_1fr] gap-8 lg:gap-12 items-start">
         <div>
-          <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[4/4] grid place-items-center bg-gradient-soft">
+          <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[4/4] sm:aspect-[3/4] lg:aspect-[4/4] grid place-items-center bg-gradient-soft">
             <img src={principal} alt="Managing Director" className="mx-auto h-full w-full object-cover" />
-            {/* <div className="text-center p-8">
-              <div className="mt-6 font-display text-xl font-bold">Dr.S.Parthiban, M.Sc.(Hort.)., Ph.D.,</div>
-              <div className="text-sm text-muted-foreground mt-1">Mobile No.: 9597927311</div>
-              <div className="text-xs text-primary mt-1">Mail : deaniiat@tnau.ac.in</div>
-            </div> */}
           </div>
 
-          <div className="rounded-2xl border bg-card p-5 shadow-soft space-y-3 text-sm">
-            <div className="text-center px-8 py-2">
-              <div className="mt-2 font-display text-xl font-bold">A. Janarthanan</div>
-              <div className="text-sm text-muted-foreground mt-1">B.Tech (IT), MBA</div>
-            </div>
+          <div className="mt-4 rounded-2xl border bg-card p-5 shadow-soft text-center">
+            <div className="font-display text-xl font-bold text-foreground">A. Janarthanan</div>
+            <div className="text-sm text-muted-foreground mt-1">Managing Director, B.Tech (IT), MBA</div>
           </div>
         </div>
 
