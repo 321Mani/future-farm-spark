@@ -35,18 +35,18 @@ export function Departments() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.5 }}
-              className="group relative rounded-3xl border bg-card p-7 shadow-soft hover:shadow-glow transition-all hover:-translate-y-1 overflow-hidden"
+              className="group relative rounded-2xl sm:rounded-3xl border bg-card p-4 sm:p-7 shadow-soft hover:shadow-glow transition-all hover:-translate-y-1 overflow-hidden"
             >
-              <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-primary/10 blur-2xl group-hover:bg-primary/20 transition-colors" />
+              <div className="absolute -top-12 -right-12 sm:-top-16 sm:-right-16 h-28 w-28 sm:h-40 sm:w-40 rounded-full bg-primary/10 blur-2xl group-hover:bg-primary/20 transition-colors" />
               <div className="relative">
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft">
-                  <d.icon className="h-6 w-6" />
+                <div className="grid h-11 w-11 sm:h-14 sm:w-14 place-items-center rounded-xl sm:rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft">
+                  <d.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold">{d.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
-                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                  Explore programme
-                  <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <h3 className="mt-3 sm:mt-5 font-display text-base sm:text-xl font-bold">{d.name}</h3>
+                <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">{d.desc}</p>
+                <div className="mt-3 sm:mt-5 inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary">
+                  Explore
+                  <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </div>
             </motion.a>
