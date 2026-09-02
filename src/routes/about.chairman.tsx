@@ -23,7 +23,7 @@ function Chairman() {
       subtitle="Leadership rooted in values, vision and an unwavering belief in agricultural India."
       breadcrumbs={[{ label: "About", href: "/about" }, { label: "Chairman's Message" }]}
     >
-      <div className="grid lg:grid-cols-[500px_1fr] gap-12 items-start">
+      <div className="grid grid-cols-[38%_1fr] gap-4 sm:gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 items-start">
         <div className="lg:sticky lg:top-28">
           <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[4/4] grid place-items-center bg-gradient-soft">
             <img src={chairman} alt="Chairman" className="mx-auto h-full w-full object-cover" />

@@ -23,7 +23,7 @@ function Principal() {
       subtitle="Academic leadership grounded in research, teaching excellence and student mentorship."
       breadcrumbs={[{ label: "About", href: "/about" }, { label: "Our Managing Director" }]}
     >
-      <div className="grid lg:grid-cols-[500px_1fr] gap-12 items-start">
+      <div className="grid grid-cols-[38%_1fr] gap-4 sm:gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 items-start">
         <div>
           <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[4/4] grid place-items-center bg-gradient-soft">
             <img src={principal} alt="Managing Director" className="mx-auto h-full w-full object-cover" />

@@ -101,7 +101,7 @@ export function ChairmanMessage() {
   return (
     <section id="chairman" className="py-24 lg:py-32">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-[460px_1fr] gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-[40%_1fr] gap-4 sm:gap-6 lg:grid-cols-[460px_1fr] lg:gap-16 items-center">
           {/* Carousel */}
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border shadow-glow bg-gradient-soft">
