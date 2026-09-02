@@ -354,6 +354,7 @@ type EventItem = {
   place: string;
   chiefGuest: string;
   status: "Upcoming" | "Past";
+  instaLink?: string;
 };
 
 function EventCard({ e, i }: { e: EventItem; i: number }) {
@@ -400,6 +401,16 @@ function EventCard({ e, i }: { e: EventItem; i: number }) {
           <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
             <MapPin className="h-3.5 w-3.5 text-primary" /> {e.place}
           </div>
+        )}
+        {e.instaLink && (
+          <a
+            href={e.instaLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+          >
+            View post →
+          </a>
         )}
       </div>
     </motion.article>

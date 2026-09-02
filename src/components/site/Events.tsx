@@ -138,6 +138,7 @@ type EventItem = {
   place: string;
   status: "Upcoming" | "Past";
   chiefGuest: string;
+  instaLink?: string;
 };
 
 export function Events() {
@@ -217,8 +218,10 @@ export function Events() {
                 className="group rounded-3xl overflow-hidden bg-card border shadow-soft hover:shadow-glow transition-all hover:-translate-y-1"
               >
                 <a
-                  href="/life/events"
-                  className="relative aspect-[4/3] overflow-visible block"
+                  href={e.instaLink || "/life/events"}
+                  target={e.instaLink ? "_blank" : undefined}
+                  rel={e.instaLink ? "noopener noreferrer" : undefined}
+                  className="relative aspect-[4/3] overflow-hidden block"
                 >
                   <img
                     src={e.image}
