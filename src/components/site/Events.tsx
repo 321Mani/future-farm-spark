@@ -221,7 +221,7 @@ export function Events() {
                   href={e.instaLink || "/life/events"}
                   target={e.instaLink ? "_blank" : undefined}
                   rel={e.instaLink ? "noopener noreferrer" : undefined}
-                  className="relative aspect-[4/3] overflow-hidden block"
+                  className="relative aspect-[4/3] overflow-visible block"
                 >
                   <img
                     src={e.image}
