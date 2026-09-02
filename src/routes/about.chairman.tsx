@@ -23,21 +23,14 @@ function Chairman() {
       subtitle="Leadership rooted in values, vision and an unwavering belief in agricultural India."
       breadcrumbs={[{ label: "About", href: "/about" }, { label: "Chairman's Message" }]}
     >
-      <div className="grid grid-cols-[38%_1fr] gap-4 sm:gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[500px_1fr] gap-8 lg:gap-12 items-start">
         <div className="lg:sticky lg:top-28">
-          <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[4/4] grid place-items-center bg-gradient-soft">
+          <div className="rounded-3xl overflow-hidden shadow-glow border bg-card aspect-[4/4] sm:aspect-[3/4] lg:aspect-[4/4] grid place-items-center bg-gradient-soft">
             <img src={chairman} alt="Chairman" className="mx-auto h-full w-full object-cover" />
-            {/* <div className="text-center p-8">
-              <div className="mt-6 font-display text-xl font-bold">Thiru. M. Manickam</div>
-              <div className="text-sm text-muted-foreground mt-1">Chairman</div>
-              <div className="text-xs text-primary mt-1">Imayam Educational Trust</div>
-            </div> */}
           </div>
-          <div className="rounded-2xl border bg-card p-5 shadow-soft space-y-3 text-sm">
-            <div className="text-center px-8 py-2">
-              <div className="mt-2 font-display text-xl font-bold">Rtn. A. Andi</div>
-              <div className="text-sm text-muted-foreground mt-1">Secretary</div>
-            </div>
+          <div className="mt-4 rounded-2xl border bg-card p-5 shadow-soft text-center">
+            <div className="font-display text-xl font-bold text-foreground">Rtn. A. Andi</div>
+            <div className="text-sm text-muted-foreground mt-1">Secretary, Imayam Educational Trust</div>
           </div>
         </div>
 
