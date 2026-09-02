@@ -101,10 +101,10 @@ export function ChairmanMessage() {
   return (
     <section id="chairman" className="py-24 lg:py-32">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-[40%_1fr] gap-4 sm:gap-6 lg:grid-cols-[460px_1fr] lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[460px_1fr] gap-8 lg:gap-16 items-start">
           {/* Carousel */}
           <div className="relative">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border shadow-glow bg-gradient-soft">
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-3xl overflow-hidden border shadow-glow bg-gradient-soft">
               <AnimatePresence mode="sync">
                 <motion.img
                   key={index}
@@ -117,13 +117,20 @@ export function ChairmanMessage() {
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </AnimatePresence>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-16">
+              {/* Name overlay only on lg+; on mobile it lives below the image for cleaner stacking */}
+              <div className="hidden lg:block absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-16">
                 <div className="font-display text-xl font-bold text-white">{active.name}</div>
                 <div className="text-sm text-white/80">{active.role}</div>
               </div>
             </div>
 
-            <div className="mt-5 flex items-center gap-4">
+            {/* Mobile/tablet name caption placed after the image */}
+            <div className="lg:hidden mt-4 rounded-2xl border bg-card p-4 shadow-soft text-center">
+              <div className="font-display text-lg sm:text-xl font-bold text-foreground">{active.name}</div>
+              <div className="text-sm text-muted-foreground">{active.role}</div>
+            </div>
+
+            <div className="mt-5 flex items-center justify-center lg:justify-start gap-4">
               <div className="flex gap-2">
                 <button
                   onClick={prev}
@@ -155,13 +162,13 @@ export function ChairmanMessage() {
 
           {/* Message */}
           <div>
-            <div className="text-[11px] sm:text-sm font-semibold text-primary tracking-widest uppercase">
+            <div className="text-sm font-semibold text-primary tracking-widest uppercase">
               {active.eyebrow}
             </div>
-            <h2 className="mt-2 font-display text-xl sm:text-3xl lg:text-5xl font-bold leading-tight">
+            <h2 className="mt-2 font-display text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight">
               {active.heading[0]} <span className="text-gradient">{active.heading[1]}</span>
             </h2>
-            <Quote className="mt-4 h-7 w-7 sm:h-10 sm:w-10 text-primary/30" />
+            <Quote className="mt-4 h-8 w-8 sm:h-10 sm:w-10 text-primary/30" />
             <div className="mt-3 space-y-3 text-foreground/80 leading-relaxed text-sm sm:text-base lg:text-lg">
               {active.paragraphs.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
@@ -169,7 +176,7 @@ export function ChairmanMessage() {
             </div>
             <a
               href={active.href}
-              className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-primary px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow"
+              className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow"
             >
               Read full message <ArrowRight className="h-4 w-4" />
             </a>
