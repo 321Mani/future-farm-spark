@@ -83,7 +83,7 @@
 //           </div>
 //         </div>
 
-//         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+//         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 //           {events.map((e, i) => (
 //             <motion.article
 //               key={e.title}
@@ -200,13 +200,13 @@ export function Events() {
         </div>
 
         {loading ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[0, 1, 2, 3].map((i) => (
               <div key={i} className="aspect-[4/3] rounded-3xl bg-card border shadow-soft animate-pulse" />
             ))}
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {events.map((e, i) => (
               <motion.article
                 key={e.id}

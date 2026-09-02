@@ -53,7 +53,7 @@ export function Gallery() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.05 }}
-              className={`group relative overflow-hidden rounded-2xl shadow-soft`}
+              className={`group relative self-start overflow-hidden rounded-2xl shadow-soft`}
             >
               <img
                 src={img.src}

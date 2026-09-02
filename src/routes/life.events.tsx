@@ -300,7 +300,7 @@
 //       <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest mt-10">
 //         Upcoming Events
 //       </div>
-//       <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+//       <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 //         {upcoming.map((e, i) => (
 //           <EventCard key={e.title} e={e} i={i} />
 //         ))}
@@ -309,7 +309,7 @@
 //       <div className="mt-20 inline-flex items-center gap-2 rounded-full bg-muted px-4 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-widest">
 //         Past Events
 //       </div>
-//       <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+//       <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 //         {past.map((e, i) => (
 //           <EventCard key={e.title} e={e} i={i} />
 //         ))}
@@ -470,7 +470,7 @@ function EventsPage() {
       <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-widest mt-10">
         Upcoming Events
       </div>
-      <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {loading
           ? [0, 1, 2, 3].map((i) => <SkeletonCard key={i} />)
           : upcoming.map((e, i) => <EventCard key={e.id} e={e} i={i} />)}
@@ -482,7 +482,7 @@ function EventsPage() {
       <div className="mt-20 inline-flex items-center gap-2 rounded-full bg-muted px-4 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-widest">
         Past Events
       </div>
-      <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {loading
           ? [0, 1, 2, 3].map((i) => <SkeletonCard key={i} />)
           : past.map((e, i) => <EventCard key={e.id} e={e} i={i} />)}
