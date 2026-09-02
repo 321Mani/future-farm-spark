@@ -150,7 +150,7 @@ function PostCard({ post }: { post: SocialPost }) {
       rel="noopener noreferrer"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className="group relative w-[240px] shrink-0 snap-start overflow-hidden rounded-2xl bg-primary-foreground/10 aspect-[4/5] block"
+      className="group relative w-[220px] sm:w-[240px] shrink-0 snap-start overflow-hidden rounded-2xl bg-primary-foreground/10 aspect-[9/16] block"
     >
       {isVideo ? (
         <>

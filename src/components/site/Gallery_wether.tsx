@@ -40,7 +40,7 @@ export function Gallery() {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 auto-rows-[250px] gap-4">
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
           {filtered.map((img, i) => (
             <motion.button
               key={img.src}
@@ -49,13 +49,13 @@ export function Gallery() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.05 }}
-              className={`group relative overflow-hidden rounded-2xl shadow-soft ${img.h}`}
+              className={`group relative self-start overflow-hidden rounded-2xl shadow-soft`}
             >
               <img
                 src={img.src}
                 // alt={img.title}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80" />
               <div className="absolute bottom-0 left-0 p-4 text-left">

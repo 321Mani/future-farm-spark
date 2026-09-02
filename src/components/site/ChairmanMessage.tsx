@@ -101,7 +101,7 @@ export function ChairmanMessage() {
   return (
     <section id="chairman" className="py-24 lg:py-32">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-[460px_1fr] gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-[40%_1fr] gap-4 sm:gap-6 lg:grid-cols-[460px_1fr] lg:gap-16 items-center">
           {/* Carousel */}
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border shadow-glow bg-gradient-soft">
@@ -155,21 +155,21 @@ export function ChairmanMessage() {
 
           {/* Message */}
           <div>
-            <div className="text-sm font-semibold text-primary tracking-widest uppercase">
+            <div className="text-[11px] sm:text-sm font-semibold text-primary tracking-widest uppercase">
               {active.eyebrow}
             </div>
-            <h2 className="mt-3 font-display text-4xl lg:text-5xl font-bold leading-tight">
+            <h2 className="mt-2 font-display text-xl sm:text-3xl lg:text-5xl font-bold leading-tight">
               {active.heading[0]} <span className="text-gradient">{active.heading[1]}</span>
             </h2>
-            <Quote className="mt-6 h-10 w-10 text-primary/30" />
-            <div className="mt-4 space-y-4 text-foreground/80 leading-relaxed text-lg">
+            <Quote className="mt-4 h-7 w-7 sm:h-10 sm:w-10 text-primary/30" />
+            <div className="mt-3 space-y-3 text-foreground/80 leading-relaxed text-sm sm:text-base lg:text-lg">
               {active.paragraphs.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
             </div>
             <a
               href={active.href}
-              className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow"
+              className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-primary px-4 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-primary-foreground shadow-soft hover:shadow-glow transition-shadow"
             >
               Read full message <ArrowRight className="h-4 w-4" />
             </a>
